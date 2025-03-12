@@ -1,58 +1,58 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
+"use client"
+import React, { useState, useEffect } from "react"
+import { useParams } from "next/navigation"
 // import ModuleCard from "../components/ModuleCard";
 // import TopicList from "../components/TopicList";
 // import Navbar from "../components/Navbar";
 // import NotesData from "../notes/data";
 // import pyqLinks from "../notes/pyq";
-import ModuleCard from "@/app/components/ModuleCard";
-import TopicList from "@/app/components/TopicList";
-import NotesData from "@/app/notes/data";
-import pyqLinks from "@/app/notes/pyq";
-import useProgress from "@/app/hook/useProgress";
-import { RotateCcw } from "lucide-react";
+import ModuleCard from "@/app/components/ModuleCard"
+import TopicList from "@/app/components/TopicList"
+import NotesData from "@/app/notes/data"
+import pyqLinks from "@/app/notes/pyq"
+import useProgress from "@/app/hook/useProgress"
+import { RotateCcw, X } from "lucide-react"
 
 interface Topic {
-  title: string;
-  description: string;
+  title: string
+  description: string
   videos?: {
-    title: string;
-    url: string;
-  }[];
+    title: string
+    url: string
+  }[]
   notes?: {
-    title: string;
-    url: string;
-  }[];
+    title: string
+    url: string
+  }[]
 }
 
 interface Module {
   [key: number]: {
-    notesLink: string[];
-    topics: Topic[];
-  };
+    notesLink: string[]
+    topics: Topic[]
+  }
 }
 
 interface Subject {
-  name: string;
-  icon: React.ComponentType<{ className?: string }>;
-  modules: Module;
+  name: string
+  icon: React.ComponentType<{ className?: string }>
+  modules: Module
 }
 
 interface Subjects {
-  [subjectKey: string]: Subject;
+  [subjectKey: string]: Subject
 }
 
 interface SemesterData {
-  [key: string]: Subjects;
+  [key: string]: Subjects
 }
 
 interface BranchData {
-  [key: string]: SemesterData;
+  [key: string]: SemesterData
 }
 
 interface NotesDataType {
-  [year: string]: BranchData;
+  [year: string]: BranchData
 }
 
 const EngineeringCurriculum: React.FC = () => {
@@ -60,59 +60,58 @@ const EngineeringCurriculum: React.FC = () => {
     year: slug,
     branch,
     semester: sem,
-  } = useParams<{ year: string; branch: string; semester: string }>();
+  } = useParams<{ year: string; branch: string; semester: string }>()
   //   const searchParam = useSearchParams();
   //   const branch = searchParam.get("branch") || "";
   //   const sem = searchParam.get("sem") || "";
-  const [isMounted, setIsMounted] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [isMounted, setIsMounted] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [showResetConfirmation, setShowResetConfirmation] = useState(false)
 
-  console.log(branch, sem, slug);
+  console.log(branch, sem, slug)
 
-  const typedNotesData = NotesData as NotesDataType;
+  const typedNotesData = NotesData as NotesDataType
 
-  const subjects = slug && typedNotesData[slug]?.[branch]?.[sem];
-  const pyq = pyqLinks[slug];
+  const subjects = slug && typedNotesData[slug]?.[branch]?.[sem]
+  const pyq = pyqLinks[slug]
   // console.log(pyq)
   // const subjects = NotesData.fy.comps.oddSem;
 
   useEffect(() => {
-    setIsMounted(true);
-    console.log(isMounted);
-  }, []);
+    setIsMounted(true)
+    console.log(isMounted)
+  }, [])
 
   useEffect(() => {
     if (subjects) {
       setTimeout(() => {
-        setLoading(false);
-      }
-      , 500);
+        setLoading(false)
+      }, 500)
     }
-  }, [subjects]);
-  
+  }, [subjects])
 
-  const initialSubject = subjects ? Object.keys(subjects)[0] : "";
-  const [selectedSubject, setSelectedSubject] = useState(initialSubject);
-  const [selectedModule, setSelectedModule] = useState<number>(1);
+  const initialSubject = subjects ? Object.keys(subjects)[0] : ""
+  const [selectedSubject, setSelectedSubject] = useState(initialSubject)
+  const [selectedModule, setSelectedModule] = useState<number>(1)
 
   useEffect(() => {
     if (subjects && selectedSubject) {
       const firstModuleKey = Object.keys(
         subjects[selectedSubject]?.modules || {}
-      )[0];
-      setSelectedModule(firstModuleKey ? parseInt(firstModuleKey) : 1);
+      )[0]
+      setSelectedModule(firstModuleKey ? parseInt(firstModuleKey) : 1)
     }
-  }, [selectedSubject, subjects]);
+  }, [selectedSubject, subjects])
 
   const { progressData, updateVideoProgress, resetProgress } =
-  useProgress(selectedSubject);
+    useProgress(selectedSubject)
 
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen dark:bg-gray-900">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 dark:border-blue-400"></div>
       </div>
-    );
+    )
   }
 
   if (!subjects || Object.keys(subjects).length === 0) {
@@ -130,7 +129,7 @@ const EngineeringCurriculum: React.FC = () => {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   // const getTotalVideos = (subjectName: string): number => {
@@ -174,17 +173,24 @@ const EngineeringCurriculum: React.FC = () => {
   //   return 0;
   // };
 
-
-
   // console.log(getTotalVideos("cc"))
 
   const numberVideoInModule = (k: number) =>
     subjects[selectedSubject].modules[k].topics.reduce((acc, topic) => {
-      return acc + (topic.videos?.length || 0);
-    }, 0);
+      return acc + (topic.videos?.length || 0)
+    }, 0)
 
   // console.log("Hello")
   // console.log(numberVideoInModule)
+
+  const handleResetProgress = () => {
+    setShowResetConfirmation(true)
+  }
+
+  const confirmReset = () => {
+    resetProgress()
+    setShowResetConfirmation(false)
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-gray-900">
@@ -203,21 +209,21 @@ const EngineeringCurriculum: React.FC = () => {
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-8">
             {Object.entries(subjects).map(([key, subject]) => {
-              const Icon = subject.icon;
+              const Icon = subject.icon
               // console.log(subject)
 
               return (
                 <div
                   key={key}
                   onClick={() => {
-                    setSelectedSubject(key);
+                    setSelectedSubject(key)
                     const firstModuleKey = Object.keys(
                       subjects[key]?.modules || {}
-                    )[0];
-                    console.log(key, firstModuleKey);
+                    )[0]
+                    console.log(key, firstModuleKey)
                     setSelectedModule(
                       firstModuleKey ? parseInt(firstModuleKey) : 1
-                    );
+                    )
                   }}
                   className={`p-4 rounded-lg border cursor-pointer transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
                       ${
@@ -237,7 +243,7 @@ const EngineeringCurriculum: React.FC = () => {
                     {Object.keys(subject.modules).length} modules
                   </p>
                 </div>
-              );
+              )
             })}
           </div>
           <div className="p-4 rounded-lg border bg-white dark:bg-gray-800 shadow-sm mb-4">
@@ -256,7 +262,7 @@ const EngineeringCurriculum: React.FC = () => {
                     >
                       {pyq.title}
                     </a>
-                  );
+                  )
                 })}
             </div>
           </div>
@@ -265,7 +271,7 @@ const EngineeringCurriculum: React.FC = () => {
             <div className="space-y-3">
               {Object.keys(subjects[selectedSubject].modules).map(
                 (moduleKey) => {
-                  const moduley = parseInt(moduleKey);
+                  const moduley = parseInt(moduleKey)
                   return (
                     <ModuleCard
                       key={moduley}
@@ -278,14 +284,14 @@ const EngineeringCurriculum: React.FC = () => {
                       progressData={progressData}
                       numberOfVideos={numberVideoInModule(moduley)}
                     />
-                  );
+                  )
                 }
               )}
               <button
-                onClick={() => resetProgress()}
+                onClick={handleResetProgress}
                 className="w-full mt-4 px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                <RotateCcw />
+                <RotateCcw className="w-4 h-4" />
                 Reset Progress
               </button>
             </div>
@@ -316,8 +322,44 @@ const EngineeringCurriculum: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Reset Confirmation Modal */}
+      {showResetConfirmation && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-sm w-full mx-4">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-bold text-black dark:text-white">
+                Reset Progress
+              </h3>
+              <button
+                onClick={() => setShowResetConfirmation(false)}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              Are you sure you want to reset your progress for this subject?
+              This action cannot be undone.
+            </p>
+            <div className="flex justify-end gap-3">
+              <button
+                onClick={() => setShowResetConfirmation(false)}
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmReset}
+                className="px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-600"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default EngineeringCurriculum;
+export default EngineeringCurriculum
