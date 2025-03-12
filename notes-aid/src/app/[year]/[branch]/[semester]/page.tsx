@@ -65,6 +65,7 @@ const EngineeringCurriculum: React.FC = () => {
   //   const branch = searchParam.get("branch") || "";
   //   const sem = searchParam.get("sem") || "";
   const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   console.log(branch, sem, slug);
 
@@ -75,11 +76,20 @@ const EngineeringCurriculum: React.FC = () => {
   // console.log(pyq)
   // const subjects = NotesData.fy.comps.oddSem;
 
-  // Handle client-side mounting
   useEffect(() => {
     setIsMounted(true);
     console.log(isMounted);
   }, []);
+
+  useEffect(() => {
+    if (subjects) {
+      setTimeout(() => {
+        setLoading(false);
+      }
+      , 500);
+    }
+  }, [subjects]);
+  
 
   const initialSubject = subjects ? Object.keys(subjects)[0] : "";
   const [selectedSubject, setSelectedSubject] = useState(initialSubject);
@@ -96,6 +106,14 @@ const EngineeringCurriculum: React.FC = () => {
 
   const { progressData, updateVideoProgress, resetProgress } =
   useProgress(selectedSubject);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen dark:bg-gray-900">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 dark:border-blue-400"></div>
+      </div>
+    );
+  }
 
   if (!subjects || Object.keys(subjects).length === 0) {
     return (
