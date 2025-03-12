@@ -1,7 +1,18 @@
-// File: app/api/github-commits/route.ts
 import { NextRequest, NextResponse } from "next/server"
 
-export async function GET(request: NextRequest) {
+// Define a type for GitHub commit data
+interface GitHubCommit {
+  sha: string
+  commit: {
+    message: string
+    author: {
+      date: string
+    }
+  }
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function GET(_request: NextRequest) {
   try {
     // GitHub API endpoint for your repository
     const repoUrl = "https://api.github.com/repos/MinavKaria/Notes-Aid/commits"
@@ -19,10 +30,10 @@ export async function GET(request: NextRequest) {
       throw new Error(`GitHub API responded with status: ${response.status}`)
     }
 
-    const commits = await response.json()
+    const commits = (await response.json()) as GitHubCommit[]
 
     // Process the commits to the format your frontend expects
-    const notifications = commits.map((commit: any) => ({
+    const notifications = commits.map((commit: GitHubCommit) => ({
       id: commit.sha,
       message: commit.commit.message,
       date: commit.commit.author.date,

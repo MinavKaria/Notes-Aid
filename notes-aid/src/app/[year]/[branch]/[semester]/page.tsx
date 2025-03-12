@@ -55,6 +55,15 @@ interface NotesDataType {
   [year: string]: BranchData
 }
 
+interface PyqLink {
+  title: string
+  url: string
+}
+
+interface PyqLinks {
+  [year: string]: PyqLink[]
+}
+
 const EngineeringCurriculum: React.FC = () => {
   const {
     year: slug,
@@ -73,14 +82,14 @@ const EngineeringCurriculum: React.FC = () => {
   const typedNotesData = NotesData as NotesDataType
 
   const subjects = slug && typedNotesData[slug]?.[branch]?.[sem]
-  const pyq = pyqLinks[slug]
+  const pyq = (pyqLinks as PyqLinks)[slug] || []
   // console.log(pyq)
   // const subjects = NotesData.fy.comps.oddSem;
 
   useEffect(() => {
     setIsMounted(true)
     console.log(isMounted)
-  }, [])
+  }, [isMounted])
 
   useEffect(() => {
     if (subjects) {

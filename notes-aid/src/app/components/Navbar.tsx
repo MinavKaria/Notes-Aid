@@ -12,6 +12,13 @@ interface Notification {
   read: boolean
 }
 
+interface RawNotification {
+  id: string
+  message: string
+  date: string // Date comes as string from the API
+  read: boolean
+}
+
 const Navbar = () => {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState<boolean>(false)
@@ -52,11 +59,13 @@ const Navbar = () => {
       const data = await response.json()
 
       // Convert string dates to Date objects and apply any filtering if needed
-      const processedNotifications = data.map((item: any) => ({
+      const processedNotifications = data.map((item: RawNotification) => ({
         ...item,
         date: new Date(item.date),
         // Optional: Filter for "notify:" prefix
-        message: item.message.startsWith("notify: ") ? item.message.replace("notify: ", "") : item.message
+        message: item.message.startsWith("notify: ")
+          ? item.message.replace("notify: ", "")
+          : item.message,
       }))
 
       // Optional: Filter only messages that start with "notify:"
