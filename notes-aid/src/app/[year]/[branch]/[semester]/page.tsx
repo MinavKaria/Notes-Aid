@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { useParams } from "next/navigation"
 // import ModuleCard from "../components/ModuleCard";
 // import TopicList from "../components/TopicList";
@@ -86,10 +86,11 @@ const EngineeringCurriculum: React.FC = () => {
   // console.log(pyq)
   // const subjects = NotesData.fy.comps.oddSem;
 
+  const isMountedRef = useRef(isMounted)
   useEffect(() => {
     setIsMounted(true)
-    console.log(isMounted)
-  }, [isMounted])
+    console.log(isMountedRef.current) // Access via ref instead
+  }, [])
 
   useEffect(() => {
     if (subjects) {
