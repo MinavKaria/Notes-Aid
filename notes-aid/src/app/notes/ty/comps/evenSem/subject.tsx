@@ -318,6 +318,36 @@ const subjects: Subjects = {
           },
         ],
       },
+      3: {
+        notesLink: [
+          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
+        ],
+        topics: [
+          {
+            
+          },
+        ],
+      },
+      4: {
+        notesLink: [
+          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
+        ],
+        topics: [
+          {
+            
+          },
+        ],
+      },
+      5: {
+        notesLink: [
+          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
+        ],
+        topics: [
+          {
+            
+          },
+        ],
+      },
     },
   },
   ai: {
@@ -482,6 +512,122 @@ const subjects: Subjects = {
           },
         ],
       },
+      3: {
+        notesLink: [
+          'https://drive.google.com/file/d/1esiJaNmR6CyKEBRptQA60GMU8clbyR0n/view?usp=drive_link',
+          'https://drive.google.com/file/d/1mDPMwUxSFYGvdhVRn4mLNdWnld1Z6uCk/view?usp=drive_link',
+          'https://drive.google.com/file/d/19yLUfnPABTv3jw_umuHvCKhywIhpup6j/view?usp=drive_link',
+        ],
+        topics: [
+          {
+            title: "3.1 Solving Problems by Searching",
+            description: "Theoretical based concepts",
+            videos: [
+              {
+                title: "Problem Solving Agents",
+                url: "https://www.youtube.com/embed/PLOtEiTjSt8?si=yJq04QHdInQ3ehxb",
+              },
+              {
+                title: "8-Puzzle Problem",
+                url: "https://www.youtube.com/embed/r14GPj1YcCQ?si=StO05MSVMLYTdED3",
+              },
+              {
+                title: "Vaccum Cleaner Problem",
+                url: "https://www.youtube.com/embed/KX09yGiPW70?si=34FEEPXamWg4sEoY",
+              },
+            ],
+          },
+          {
+            title: "3.2 Uninformed Search Strategies",
+            description: "Algorithm based concepts - Important for Exam ⭐",
+            videos: [
+              {
+                title: "Breadth First Search",
+                url: "https://www.youtube.com/embed/ZjPXeJaGEus?si=7ZPlqwSbyG3_mrW3",
+              },
+              {
+                title: "Depth First Search",
+                url: "https://www.youtube.com/embed/axtcFOsKlGM?si=D00MN38REY7YgJLn",
+              },
+              {
+                title: "Depth Limited Search",
+                url: "https://www.youtube.com/embed/v3GCQ1Y-1dI?si=L6nsklY3tQ4Gy3lC",
+              },
+              {
+                title: "Iterative Deepening Depth First Search",
+                url: "https://www.youtube.com/embed/ubsBoqXnvfE?si=eSsitM-1eaJLkkHc",
+              }
+            ],
+          },
+          {
+            title: "3.3 Informed Search Strategies",
+            description: "Algorithm based concepts - Important for Exam ⭐",
+            videos: [
+              {
+                title: "Heurestic Function",
+                url: "https://www.youtube.com/embed/E48Hn3nfCqg?si=sXU_L8vKSRSoc9IY",
+              },
+              {
+                title: "Best Fit Search",
+                url: "https://www.youtube.com/embed/MboFR7C8gNQ?si=1XYTf9M_S_qa-NCV",
+              },
+              {
+                title: "A* Search",
+                url: "https://www.youtube.com/embed/tvAh0JZF2YE?si=R5HH08iQPUnx2TVq",
+              },
+              {
+                title: "AO* Search",
+                url: "https://www.youtube.com/embed/u_TE42-uWD0?si=iw06IakOO1CI-z33",
+              },
+            ],
+          },
+          {
+            title: "3.4 Local Search Algorithms",
+            description: "Algorithm based concepts - Important for Exam ⭐",
+            videos: [
+              {
+                title: "Hill Climbing Algorithm",
+                url: "https://www.youtube.com/embed/1w-2fJAYNmE?si=jubzlhvRXjiDL333",
+              },
+              {
+                title: "Hill Climbing Algorithm - Solved Numerical",
+                url: "https://www.youtube.com/embed/2SlO34_VsY4?si=PqTdXd206mCghlNZ",
+              },
+              {
+                title: "Constraint Satisfaction Problem",
+                url: "https://www.youtube.com/embed/AgyCSmDVk5s?si=2Lde08Mz0endcjx7",
+              },
+              {
+                title: "Constraint Satisfaction Problem - Part 2",
+                url: "https://www.youtube.com/embed/udOfKqeLVSg?si=sHjEZRTk9sC194Z0",
+              },
+              {
+                title: "Genetic Algorithm",
+                url: "https://www.youtube.com/embed/WueuYdDqUt0?si=_5h3AIs6BMIt6-a2",
+              },
+              {
+                title: "Genetric Algorithm - Solved Numerical",
+                url: "https://www.youtube.com/embed/Dj1AZ0T-m-I?si=0j0oFGbu7ZT7EtKL",
+              },
+              {
+                title: "Crossover and Mutation",
+                url: "https://www.youtube.com/embed/iYxM9dQQyTw?si=_BpcsMVTi9GibfVO",
+              },
+            ],
+          },
+          {
+            title: "3.5 Adversarial Search",
+            description: "Algorithm based concepts - Important for Exam ⭐",
+            videos: [
+              {
+                title: "Adversarial Search and Game Playing",
+                url: "https://www.youtube.com/embed/6k8WilOGtXY?si=cVlNmwKNPBQeCTXJ",
+              },
+            ],
+          },
+        ],
+      },
+
       // 3: {
       //   notesLink: [
       //     "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AI%20Module%203.pdf?alt=media&token=f0c4d4a0-f75e-4816-a3c2-471592794634",
@@ -637,6 +783,16 @@ const subjects: Subjects = {
           //   description: "Basic concepts and importance",
           //   videos: [],
           // },
+        ],
+      },
+      5: {
+        notesLink: [
+          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
+        ],
+        topics: [
+          {
+            
+          },
         ],
       },
       // 5: {
@@ -956,6 +1112,36 @@ const subjects: Subjects = {
               "2.3 Countermeasures: Countermeasures for Users, Countermeasures for Developers,  Countermeasure Specifically for Security, Countermeasures that Dont Work (Refer Notes for these topics from page 73)",
             description: "Basic concepts and importance",
             videos: [],
+          },
+        ],
+      },
+      3: {
+        notesLink: [
+          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
+        ],
+        topics: [
+          {
+            
+          },
+        ],
+      },
+      4: {
+        notesLink: [
+          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
+        ],
+        topics: [
+          {
+            
+          },
+        ],
+      },
+      5: {
+        notesLink: [
+          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
+        ],
+        topics: [
+          {
+            
           },
         ],
       },
