@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
-import { Sun, Moon, NotebookPen, Bell } from "lucide-react"
+import { Sun, Moon, NotebookPen, Bell, X } from "lucide-react"
 
 // Define types for notifications
 interface Notification {
@@ -74,7 +74,7 @@ const Navbar = () => {
       )
 
       setNotifications(notifyOnly)
-      setUnreadCount(notifyOnly.length) 
+      setUnreadCount(notifyOnly.length)
     } catch (error) {
       console.error("Error fetching notifications:", error)
       // Fallback to mock data if the API fails
@@ -130,63 +130,73 @@ const Navbar = () => {
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setShowDropdown(!showDropdown)}
-              className="relative p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="relative flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
               aria-label="Notifications"
             >
               <Bell className="w-5 h-5 text-gray-700 dark:text-gray-200" />
               {unreadCount > 0 && (
-                <span className="absolute top-0 right-0 inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full">
+                <span className="absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full">
                   {unreadCount}
                 </span>
               )}
             </button>
 
-            {/* Notifications Dropdown */}
+            {/* Notifications Dropdown - Centered on Mobile */}
             {showDropdown && (
-              <div className="absolute right-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-md shadow-lg z-10 border border-gray-200 dark:border-gray-700">
-                <div className="p-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
-                  <h3 className="text-sm font-medium text-gray-900 dark:text-white">
-                    Notifications
-                  </h3>
-                  {unreadCount > 0 && (
-                    <button
-                      onClick={markAllAsRead}
-                      className="text-xs text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                    >
-                      Mark all as read
-                    </button>
-                  )}
-                </div>
-
-                <div className="max-h-60 overflow-y-auto">
-                  {loading ? (
-                    <div className="p-4 text-center text-gray-500 dark:text-gray-400 text-sm">
-                      Loading...
-                    </div>
-                  ) : notifications.length > 0 ? (
-                    notifications.map((notification) => (
-                      <div
-                        key={notification.id}
-                        className={`p-3 border-b border-gray-100 dark:border-gray-700 ${
-                          !notification.read
-                            ? "bg-blue-50 dark:bg-blue-900/20"
-                            : ""
-                        }`}
+              <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm z-50 md:absolute md:transform-none md:top-auto md:left-auto md:right-0 md:mt-2 md:w-80">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-full flex flex-col">
+                  <div className="p-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center sticky top-0 bg-white dark:bg-gray-800 rounded-t-lg">
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+                      Notifications
+                    </h3>
+                    <div className="flex items-center space-x-3">
+                      {unreadCount > 0 && (
+                        <button
+                          onClick={markAllAsRead}
+                          className="text-xs text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                        >
+                          Mark all as read
+                        </button>
+                      )}
+                      <button
+                        onClick={() => setShowDropdown(false)}
+                        className="rounded-full p-1 hover:bg-gray-100 dark:hover:bg-gray-700"
                       >
-                        <p className="text-sm text-gray-800 dark:text-gray-200 mb-1">
-                          {notification.message}
-                        </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                          {notification.date.toLocaleDateString()} at{" "}
-                          {notification.date.toLocaleTimeString()}
-                        </p>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="p-4 text-center text-gray-500 dark:text-gray-400 text-sm">
-                      No notifications
+                        <X className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                      </button>
                     </div>
-                  )}
+                  </div>
+
+                  <div className="overflow-y-auto max-h-64">
+                    {loading ? (
+                      <div className="p-4 text-center text-gray-500 dark:text-gray-400 text-sm">
+                        Loading...
+                      </div>
+                    ) : notifications.length > 0 ? (
+                      notifications.map((notification) => (
+                        <div
+                          key={notification.id}
+                          className={`p-4 border-b border-gray-100 dark:border-gray-700 ${
+                            !notification.read
+                              ? "bg-blue-50 dark:bg-blue-900/20"
+                              : ""
+                          }`}
+                        >
+                          <p className="text-sm text-gray-800 dark:text-gray-200 mb-1">
+                            {notification.message}
+                          </p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
+                            {notification.date.toLocaleDateString()} at{" "}
+                            {notification.date.toLocaleTimeString()}
+                          </p>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="p-4 text-center text-gray-500 dark:text-gray-400 text-sm">
+                        No notifications
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
@@ -197,7 +207,7 @@ const Navbar = () => {
               console.log("Theme toggled")
               setTheme(theme === "dark" ? "light" : "dark")
             }}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
