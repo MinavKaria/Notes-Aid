@@ -92,20 +92,20 @@ const subjects: Subjects = {
                 url: "https://www.youtube.com/embed/yGEEvn8CzrU?si=22aPNcgJR-FcKEQu",
               },
               {
-                title:"Block Diagram & Signal Flow Graph",
-                url:"https://www.youtube.com/embed/BDI4zf9Azpk?si=OOfMbLy-cbIG4ib7"
+                title: "Block Diagram & Signal Flow Graph",
+                url: "https://www.youtube.com/embed/BDI4zf9Azpk?si=OOfMbLy-cbIG4ib7"
               },
               {
-                title:"Block Diagram & Signal Flow Graph - Part 2",
-                url:"https://www.youtube.com/embed/rjC_7YOiM3I?si=ncTFhky6vsF2PEPK"
+                title: "Block Diagram & Signal Flow Graph - Part 2",
+                url: "https://www.youtube.com/embed/rjC_7YOiM3I?si=ncTFhky6vsF2PEPK"
               },
               {
-                title:"Block Diagram & Signal Flow Graph - Part 2",
-                url:"https://www.youtube.com/embed/rjC_7YOiM3I?si=ncTFhky6vsF2PEPK"
+                title: "Block Diagram & Signal Flow Graph - Part 2",
+                url: "https://www.youtube.com/embed/rjC_7YOiM3I?si=ncTFhky6vsF2PEPK"
               },
               {
-                title:"Block Diagram & Signal Flow Graph - Part 3",
-                url:"https://www.youtube.com/embed/BYMc-YEy89E?si=6kmCxOIYxiqTARVB"
+                title: "Block Diagram & Signal Flow Graph - Part 3",
+                url: "https://www.youtube.com/embed/BYMc-YEy89E?si=6kmCxOIYxiqTARVB"
               },
               {
                 title: "Video 2 (Classification of Discrete Time System) 1",
@@ -241,7 +241,7 @@ const subjects: Subjects = {
             description: "Important Topic for Exam ⭐- Numerical based",
             videos: [
               {
-                title:"Image Negative or Digital Negative,Thresholding, Bit Plane Slicing",
+                title: "Image Negative or Digital Negative,Thresholding, Bit Plane Slicing",
                 url: "https://www.youtube.com/embed/FMDmXz6ynvk?si=7qKfBYj1VAyfMPzh",
               },
               {
@@ -249,8 +249,8 @@ const subjects: Subjects = {
                 url: "https://www.youtube.com/embed/YJIgFMoC_yg?si=KVVwA_UX-rubmTJp",
               },
               {
-                title:" Digital Negative, Bit Plane Slicing and Contrast Stretching- Part 2",
-                url:"https://www.youtube.com/embed/pu-897YlpKM?si=lSUzYYZv4185jtGH"
+                title: " Digital Negative, Bit Plane Slicing and Contrast Stretching- Part 2",
+                url: "https://www.youtube.com/embed/pu-897YlpKM?si=lSUzYYZv4185jtGH"
               },
               {
                 title: "Grey Level Slicing (Intensity slicing)",
@@ -315,36 +315,6 @@ const subjects: Subjects = {
                 url: "https://www.youtube.com/embed/_PjgOllbAxY?si=Op9s-onCtkIDmAY6",
               },
             ],
-          },
-        ],
-      },
-      3: {
-        notesLink: [
-          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
-        ],
-        topics: [
-          {
-            
-          },
-        ],
-      },
-      4: {
-        notesLink: [
-          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
-        ],
-        topics: [
-          {
-            
-          },
-        ],
-      },
-      5: {
-        notesLink: [
-          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
-        ],
-        topics: [
-          {
-            
           },
         ],
       },
@@ -745,16 +715,6 @@ const subjects: Subjects = {
               },
             ],
           },
-          // {
-          //   title: "Forward chaining",
-          //   description: "Basic concepts and importance",
-          //   videos: [],
-          // },
-          // {
-          //   title: "Backward Chaining",
-          //   description: "Basic concepts and importance",
-          //   videos: [],
-          // },
           {
             title: "Resolution",
             description: "Numerical based concepts- Important for Exam ⭐",
@@ -778,45 +738,22 @@ const subjects: Subjects = {
               },
             ],
           },
-          // {
-          //   title: "Answer set programming",
-          //   description: "Basic concepts and importance",
-          //   videos: [],
-          // },
-        ],
-      },
-      5: {
-        notesLink: [
-          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
-        ],
-        topics: [
           {
-            
+            title: "Forward chaining, backward Chaining",
+            description: "Numerical based concepts- Important for Exam ⭐",
+            videos: [
+              {
+                title: "Forward Chaining",
+                url: "https://www.youtube.com/embed/rbtr4VnjA2c?si=JDC-DHutbIFd_iMt",
+              },
+              {
+                title: "Backward Chaining",
+                url: "https://www.youtube.com/embed/2UJV1nmjNGw?si=nOUkn7Sjw6wBrxZe",
+              },
+            ],
           },
         ],
       },
-      // 5: {
-      //   notesLink: [
-      //     "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AI%20Module%205.pdf?alt=media&token=d9402e5a-73a5-4f3b-9c0a-795613b2c277",
-      //   ],
-      //   topics: [
-      //     {
-      //       title:
-      //         " Knowledge based Agents, The Wumpus World, inference procedures, First Order Logic: Syntax and Semantic, Inference in FOL, Unification and lifting, Forward chaining, backward Chaining, Resolution, Answer set programming",
-      //       description: "Basic concepts and importance",
-      //       videos: [
-      //         {
-      //           title: "Basic Concepts - Part 1",
-      //           url: "https://www.youtube.com/embed/example1",
-      //         },
-      //         {
-      //           title: "Implementation Overview - Part 2",
-      //           url: "https://www.youtube.com/embed/example2",
-      //         },
-      //       ],
-      //     },
-      //   ],
-      // },
     },
   },
   is: {
@@ -956,7 +893,7 @@ const subjects: Subjects = {
                 url: "https://www.youtube.com/embed/xw19eT5thIE?si=j93UHQsyDApxQvwL",
               },
               {
-                title:"Diffie Hellman Key Exchange Algorithm (Page 64 of the notes) - Added in Numericals as well",
+                title: "Diffie Hellman Key Exchange Algorithm (Page 64 of the notes) - Added in Numericals as well",
                 url: "https://www.youtube.com/embed/OGTQ8Y1rDuI?si=fcCOXl8jkXxuPHNb",
               },
               {
@@ -991,8 +928,8 @@ const subjects: Subjects = {
                 url: "https://www.youtube.com/embed/yUeI4nqvNs8?si=Rus3TQnCNnHAehAE",
               },
               {
-                title:"Digital Certificates",
-                url:"https://www.youtube.com/embed/stsWa9A3sOM?si=EAXhnuST9lHWRXJ6"
+                title: "Digital Certificates",
+                url: "https://www.youtube.com/embed/stsWa9A3sOM?si=EAXhnuST9lHWRXJ6"
               }
             ],
           },
@@ -1030,16 +967,16 @@ const subjects: Subjects = {
                 url: "https://www.youtube.com/embed/hHsUJxikM3g?si=G3QLNDzULooE0Su3",
               },
               {
-                title:"Rail Fence Cipher",
-                url:"https://www.youtube.com/embed/hINK8zCIxJ4?si=eEMAoRcyrR2ammG7"
+                title: "Rail Fence Cipher",
+                url: "https://www.youtube.com/embed/hINK8zCIxJ4?si=eEMAoRcyrR2ammG7"
               },
               {
-                title:"Row Column or Columnar Transposition Cipher",
-                url:"https://www.youtube.com/embed/cPQXaYUMOjQ?si=Smk9isi2haB_K5Eo"
+                title: "Row Column or Columnar Transposition Cipher",
+                url: "https://www.youtube.com/embed/cPQXaYUMOjQ?si=Smk9isi2haB_K5Eo"
               },
               {
-                title:"Row Column or Columnar Transposition Cipher - Solved Example",
-                url:"https://www.youtube.com/embed/K7Mth_55y9E?si=Be-xHMeIBkPjzYVO"
+                title: "Row Column or Columnar Transposition Cipher - Solved Example",
+                url: "https://www.youtube.com/embed/K7Mth_55y9E?si=Be-xHMeIBkPjzYVO"
               },
               {
                 title: "RSA Algorithm",
@@ -1115,58 +1052,6 @@ const subjects: Subjects = {
           },
         ],
       },
-      3: {
-        notesLink: [
-          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
-        ],
-        topics: [
-          {
-            
-          },
-        ],
-      },
-      4: {
-        notesLink: [
-          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
-        ],
-        topics: [
-          {
-            
-          },
-        ],
-      },
-      5: {
-        notesLink: [
-          'https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link',
-        ],
-        topics: [
-          {
-            
-          },
-        ],
-      },
-      // 3: {
-      //   notesLink: [
-      //     "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/4%20The%20Web%2C%20Management%20%26%20Incidents.pdf?alt=media&token=530951ec-c9e2-449e-ab3f-195b90fe9246",
-      //   ],
-      //   topics: [
-      //     {
-      //       title:
-      //         "3.1 Browser Attacks: Browser Attack Types,  How Browser Attacks Succeed: Failed Identification and Authentication",
-      //       description: "Basic concepts and importance",
-      //       videos: [
-      //         {
-      //           title: "Basic Concepts - Part 1",
-      //           url: "https://www.youtube.com/embed/example1",
-      //         },
-      //         {
-      //           title: "Implementation Overview - Part 2",
-      //           url: "https://www.youtube.com/embed/example2",
-      //         },
-      //       ],
-      //     },
-      //   ],
-      // },
     },
   },
   ac: {
@@ -1299,16 +1184,16 @@ const subjects: Subjects = {
                 url: "https://www.youtube.com/embed/hHsUJxikM3g?si=G3QLNDzULooE0Su3",
               },
               {
-                title:"Rail Fence Cipher",
-                url:"https://www.youtube.com/embed/hINK8zCIxJ4?si=eEMAoRcyrR2ammG7"
+                title: "Rail Fence Cipher",
+                url: "https://www.youtube.com/embed/hINK8zCIxJ4?si=eEMAoRcyrR2ammG7"
               },
               {
-                title:"Row Column or Columnar Transposition Cipher",
-                url:"https://www.youtube.com/embed/cPQXaYUMOjQ?si=Smk9isi2haB_K5Eo"
+                title: "Row Column or Columnar Transposition Cipher",
+                url: "https://www.youtube.com/embed/cPQXaYUMOjQ?si=Smk9isi2haB_K5Eo"
               },
               {
-                title:"Row Column or Columnar Transposition Cipher - Solved Example",
-                url:"https://www.youtube.com/embed/K7Mth_55y9E?si=Be-xHMeIBkPjzYVO"
+                title: "Row Column or Columnar Transposition Cipher - Solved Example",
+                url: "https://www.youtube.com/embed/K7Mth_55y9E?si=Be-xHMeIBkPjzYVO"
               },
               {
                 title: "Vigenere Cipher",
@@ -1334,7 +1219,7 @@ const subjects: Subjects = {
                 title: "Hill Cipher - Solved Example",
                 url: "https://www.youtube.com/embed/6T46sgty4Mk?si=4-xF3AOLYoAbVDcJ",
               },
-             
+
             ],
           },
         ],
@@ -1530,7 +1415,7 @@ const subjects: Subjects = {
                 url: "https://www.youtube.com/embed/RCIVFJLqy-s?si=sBgBWwnE2aZ20CcZ",
               },
 
-              
+
             ],
           },
 
@@ -1539,10 +1424,22 @@ const subjects: Subjects = {
               "2.3 Cloud Computing Architecture : Cloud Reference Model, Types of Clouds, Economics of the Cloud, Open Challenges",
             description: "Basic concepts and importance",
             videos: [
-              // ref models 
-              // https://www.youtube.com/embed/GKtCwEQqaMI?si=TDMH7ltS7Kknn4Wl
-
-              
+              {
+                title: "2.3.1 Cloud Reference Model",
+                url: "https://www.youtube.com/embed/pGe4VZbSmTw?si=gfd_K_eHIS7FbpIk",
+              },
+              {
+                title: "2.3.2 Types of Clouds",
+                url: "https://www.youtube.com/embed/lsvpvCU6Oxs?si=aDz06sSN7vH9S3SR",
+              },
+              {
+                title: "2.3.3 Economics of the Cloud",
+                url: "https://www.youtube.com/embed/YwkBJe9Z_cY?si=RJmSr0zZyyRWcnIg",
+              },
+              {
+                title: "2.3.4 Open Challenges",
+                url: "https://www.youtube.com/embed/icSXPCL-vZw?si=AI2hlsnwVWF3324i",
+              },
             ],
           },
         ],
@@ -1603,7 +1500,7 @@ const subjects: Subjects = {
             videos: [
               {
                 title: "1.4.1 Hadoop",
-              url: "https://www.youtube.com/embed/aReuLtY0YMI?si=Ns6rA9sMZMsOPg4U",
+                url: "https://www.youtube.com/embed/aReuLtY0YMI?si=Ns6rA9sMZMsOPg4U",
               }
             ],
           }
