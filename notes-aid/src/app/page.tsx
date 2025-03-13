@@ -96,15 +96,15 @@ export default function MainPage() {
             </h1>
           </div>
         ) : (
-          <div className="w-full max-w-4xl space-y-8">
-            <div className="flex items-center gap-3">
+          <div className="w-full max-w-4xl space-y-4">
+            <div className="flex items-center gap-3 mb-8">
               <GraduationCap className="w-8 h-8 text-[#706C61] dark:text-gray-300" />
               <h1 className="text-2xl font-bold text-[#333333] dark:text-white">
                 Academic Details
               </h1>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-4 mb-8">
               <div className="flex-grow flex-shrink min-w-[200px] group relative transition-all duration-200">
                 <label className="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-slate-200 mb-2">
                   <School className="w-4 h-4 text-[#706C61] dark:text-gray-400" />
@@ -191,15 +191,17 @@ export default function MainPage() {
               Continue to Modules
             </button>
 
+            <div className="flex items-center w-full justify-end">
             {hasPreviousSelection && (
               <button
                 onClick={handleReturnToPrevious}
-                className="w-full mt-3 border border-[#706C61] dark:border-slate-700 text-[#333333] dark:text-slate-200 font-medium py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 hover:bg-gray-100 dark:hover:bg-slate-800"
+                className="border border-[#706C61] dark:border-slate-700 text-[#333333] dark:text-slate-200 font-medium py-3 px-2 rounded-lg transition-all duration-200 flex items-center justify-center text-sm gap-2 hover:bg-gray-100 dark:hover:bg-slate-800"
               >
-                <RotateCcw className="w-4 h-4" />
+                <RotateCcw className="w-3 h-3" />
                 Return to Previous Selection
               </button>
             )}
+            </div>
           </div>
         )}
       </div>

@@ -4,7 +4,6 @@ import Link from "next/link"
 import { useTheme } from "next-themes"
 import { Sun, Moon, NotebookPen, Bell, X } from "lucide-react"
 
-// Define types for notifications
 interface Notification {
   id: string
   message: string
@@ -15,7 +14,7 @@ interface Notification {
 interface RawNotification {
   id: string
   message: string
-  date: string // Date comes as string from the API
+  date: string 
   read: boolean
 }
 
@@ -32,7 +31,6 @@ const Navbar = () => {
     setMounted(true)
     fetchNotifications()
 
-    // Close dropdown when clicking outside
     const handleClickOutside = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
@@ -49,7 +47,6 @@ const Navbar = () => {
   const fetchNotifications = async (): Promise<void> => {
     setLoading(true)
     try {
-      // Fetch commits from our own API route
       const response = await fetch("/api/github-commits")
 
       if (!response.ok) {
@@ -57,27 +54,36 @@ const Navbar = () => {
       }
 
       const data = await response.json()
+      console.log(data)
 
-      // Convert string dates to Date objects and apply any filtering if needed
+
       const processedNotifications = data.map((item: RawNotification) => ({
         ...item,
         date: new Date(item.date),
-        // Optional: Filter for "notify:" prefix
         message: item.message.startsWith("notify: ")
           ? item.message.replace("notify: ", "")
           : item.message,
       }))
 
-      // Optional: Filter only messages that start with "notify:"
       const notifyOnly = processedNotifications.filter((note: Notification) =>
         note.message.startsWith("notify: ")
       )
 
-      setNotifications(notifyOnly)
-      setUnreadCount(notifyOnly.length)
+      const k=localStorage.getItem("LastNotificationRead")
+
+    
+      if (k) {
+        const lastReadDate = new Date(k);
+        notifyOnly.forEach((notification: Notification) => {
+        notification.read = notification.date <= lastReadDate;
+        });
+      }
+
+      const unreadNotifications = notifyOnly.filter((note: Notification) => !note.read);
+      setNotifications(notifyOnly);
+      setUnreadCount(unreadNotifications.length);
     } catch (error) {
       console.error("Error fetching notifications:", error)
-      // Fallback to mock data if the API fails
       const mockNotifications: Notification[] = [
         {
           id: "1",
@@ -88,7 +94,7 @@ const Navbar = () => {
         {
           id: "2",
           message: "Fixed dark mode toggle issues",
-          date: new Date(Date.now() - 86400000), // 1 day ago
+          date: new Date(Date.now() - 86400000), 
           read: false,
         },
       ]
@@ -103,6 +109,7 @@ const Navbar = () => {
   const markAllAsRead = (): void => {
     setNotifications(notifications.map((note) => ({ ...note, read: true })))
     setUnreadCount(0)
+    localStorage.setItem("LastNotificationRead", new Date().toISOString())
   }
 
   if (!mounted) {
@@ -141,9 +148,8 @@ const Navbar = () => {
               )}
             </button>
 
-            {/* Notifications Dropdown - Centered on Mobile */}
             {showDropdown && (
-              <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm z-50 md:absolute md:transform-none md:top-auto md:left-auto md:right-0 md:mt-2 md:w-80">
+                 <div className="absolute transform-none top-auto left-auto right-0 mt-2 w-80">
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-full flex flex-col">
                   <div className="p-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center sticky top-0 bg-white dark:bg-gray-800 rounded-t-lg">
                     <h3 className="text-sm font-medium text-gray-900 dark:text-white">
