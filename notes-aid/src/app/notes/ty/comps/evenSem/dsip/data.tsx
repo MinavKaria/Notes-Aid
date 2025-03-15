@@ -312,6 +312,79 @@ const dsip = {
         },
       ],
     },
+    3: {
+      notesLink: [
+        "https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link",
+      ],
+      topics: [
+        {
+          title: "3.1 Image Transformation - DFT, FFT, DIT-FFT",
+          description: "Numerical based concepts- Important for Exam ⭐",
+          videos: [
+            {
+              title: "Need for Image Transformation", 
+              url: "https://www.youtube.com/embed/YvTVI0dboiM?si=vgPnYnxdkOJLN25L",
+            },
+            {
+              title: "Discrete Fourier Transform (DFT)",
+              url: "https://www.youtube.com/embed/oGwIPM7aLfg?si=qOJg98EbNVGbdFBv",
+            },
+            {
+              title: "Discrete Fourier Transform (DFT) - Solved Numerical",
+              url: "https://www.youtube.com/embed/qDDziKkr6FY?si=ALRefWF_y_pIsTwl",
+            },
+            {
+              title: "Fast Fourier Transform (FFT)",
+              url: "https://www.youtube.com/embed/BXghmsH-mKY?si=8Ob1NY_00i_p4nq_",
+            },
+            {
+              title: "4-Point DIT-FFT",
+              url: "https://www.youtube.com/embed/t5sBJWD53nE?si=ySKz2vDTCbWZfYXS",
+            },
+            {
+              title: "8-Point DIT-FFT",
+              url: "https://www.youtube.com/embed/4H6e7iLgtbI?si=soM4pkHoEKB5dtFr",
+            },
+          ],
+        },
+        {
+          title: "3.2 Image Transformation - DCT, Walsh, Hadamard, Haar, PCA",
+          description: "Numerical based concepts- Important for Exam ⭐",
+          videos: [
+            {
+              title: "Discrete Cosine Transform (DCT)",
+              url: "https://www.youtube.com/embed/mK9Avw7jX6E?si=OdjBT-9OxqdiOusj",
+            },
+            {
+              title: "Walsh Transform",
+              url: "https://www.youtube.com/embed/n0zYz8eQtU4?si=K1cID_CuK-cfM09q",
+            },
+            {
+              title: "Hadamard Transform",
+              url: "https://www.youtube.com/embed/avFvEsw1fgs?si=EPAZ4lFZYznoRxZR",
+            },
+            {
+              title: "Haar Transform",
+              url: "https://www.youtube.com/embed/s02VrcLObvU?si=615BzJM2p90_N9WP",
+            },
+            {
+              title: "Principal Component Analysis (PCA) / Karhunen-Loeve Transform",
+              url: "https://www.youtube.com/embed/sjCCdY3ySd0?si=1GnNhADQAUR97oc7",
+            },
+          ],
+        },
+        {
+          title: "3.3 Frequency Domain Filtering - Low and High Pass",
+          description: "Basic theoretical concepts",
+          videos: [
+            {
+              title: "Frequency Domain Filtering",
+              url: "https://www.youtube.com/embed/guPIbJIZ7QI?si=iQt0-qo_z-OXSyn9",
+            },
+          ],
+        },
+      ],
+    },
   },
 };
 
