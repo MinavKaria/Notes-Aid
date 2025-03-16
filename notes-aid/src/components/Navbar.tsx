@@ -18,9 +18,24 @@ interface RawNotification {
   read: boolean
 }
 
+// Define the BeforeInstallPromptEvent interface since it's not in standard TypeScript
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>
   userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>
+}
+
+// Define the Navigator extension for getInstalledRelatedApps
+interface NavigatorWithInstalledApps extends Navigator {
+  getInstalledRelatedApps?: () => Promise<InstalledRelatedApp[]>
+  standalone?: boolean
+}
+
+// Define the InstalledRelatedApp interface
+interface InstalledRelatedApp {
+  id: string
+  platform: string
+  url?: string
+  version?: string
 }
 
 const Navbar = () => {
@@ -32,6 +47,7 @@ const Navbar = () => {
   const [loading, setLoading] = useState<boolean>(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
+  // PWA installation states
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(null)
   const [isAppInstalled, setIsAppInstalled] = useState<boolean>(false)
@@ -49,21 +65,23 @@ const Navbar = () => {
       }
     }
 
+    // More reliable app installation detection
     const checkAppInstalled = () => {
       // Method 1: Check if in standalone mode or display-mode is standalone
       if (
         window.matchMedia("(display-mode: standalone)").matches ||
-        (window.navigator as any).standalone === true
+        (navigator as NavigatorWithInstalledApps).standalone === true
       ) {
         setIsAppInstalled(true)
         return true
       }
 
       // Method 2: Use the new getInstalledRelatedApps API (if available)
-      if ("getInstalledRelatedApps" in navigator) {
-        ;(navigator as any)
+      const navigatorExt = navigator as NavigatorWithInstalledApps
+      if (navigatorExt.getInstalledRelatedApps) {
+        navigatorExt
           .getInstalledRelatedApps()
-          .then((apps: any[]) => {
+          .then((apps: InstalledRelatedApp[]) => {
             if (apps.length > 0) {
               setIsAppInstalled(true)
               return true
@@ -77,38 +95,51 @@ const Navbar = () => {
       return false
     }
 
+    // Listen for the beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
+      // If we're already installed, ignore the prompt
       if (checkAppInstalled()) {
         return
       }
 
+      // Prevent the mini-infobar from appearing on mobile
       e.preventDefault()
+      // Stash the event so it can be triggered later
       setDeferredPrompt(e as BeforeInstallPromptEvent)
+      // Update UI to notify the user they can install the PWA
       console.log("App can be installed")
     }
 
+    // Listen for app installed event
     const handleAppInstalled = () => {
+      // Hide the install button
       setIsAppInstalled(true)
       setDeferredPrompt(null)
       console.log("PWA was installed")
     }
 
+    // Listen for display mode changes
     const handleDisplayModeChange = (e: MediaQueryListEvent) => {
       if (e.matches) {
+        // User switched to standalone mode, app is installed
         setIsAppInstalled(true)
         setDeferredPrompt(null)
       }
     }
 
+    // Check if app is already installed on component mount
     checkAppInstalled()
 
+    // Set up display mode change listener
     const mediaQuery = window.matchMedia("(display-mode: standalone)")
     mediaQuery.addEventListener("change", handleDisplayModeChange)
 
+    // Add event listeners
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
     window.addEventListener("appinstalled", handleAppInstalled)
     document.addEventListener("mousedown", handleClickOutside)
 
+    // Cleanup event listeners on unmount
     return () => {
       window.removeEventListener(
         "beforeinstallprompt",
@@ -120,12 +151,15 @@ const Navbar = () => {
     }
   }, [])
 
+  // Re-check installation status when the component becomes visible
+  // This helps detect if the app was installed while the browser was minimized
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.visibilityState === "visible") {
+        // Check if the app is in standalone mode
         if (
           window.matchMedia("(display-mode: standalone)").matches ||
-          (window.navigator as any).standalone === true
+          (navigator as NavigatorWithInstalledApps).standalone === true
         ) {
           setIsAppInstalled(true)
           setDeferredPrompt(null)
@@ -213,14 +247,17 @@ const Navbar = () => {
     localStorage.setItem("LastNotificationRead", new Date().toISOString())
   }
 
+  // Handle PWA installation
   const handleInstallClick = async () => {
     if (!deferredPrompt) {
       console.log("Installation prompt not available")
       return
     }
 
+    // Show the install prompt
     deferredPrompt.prompt()
 
+    // Wait for the user to respond to the prompt
     const { outcome } = await deferredPrompt.userChoice
 
     if (outcome === "accepted") {
@@ -230,6 +267,7 @@ const Navbar = () => {
       console.log("User dismissed the install prompt")
     }
 
+    // Clear the saved prompt as it can't be used again
     setDeferredPrompt(null)
   }
 
