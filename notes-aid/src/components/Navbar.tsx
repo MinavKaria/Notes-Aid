@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
-import { Sun, Moon, NotebookPen, Bell, X, Download } from "lucide-react"
+import { Sun, Moon, NotebookPen, Bell, X, Download, Share2 } from "lucide-react"
 
 interface Notification {
   id: string
@@ -14,14 +14,14 @@ interface Notification {
 interface RawNotification {
   id: string
   message: string
-  date: string
+  date: string 
   read: boolean
 }
 
 // Define the BeforeInstallPromptEvent interface since it's not in standard TypeScript
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>
-  userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed', platform: string }>
 }
 
 // Define the Navigator extension for getInstalledRelatedApps
@@ -51,10 +51,21 @@ const Navbar = () => {
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(null)
   const [isAppInstalled, setIsAppInstalled] = useState<boolean>(false)
+  const [isIOS, setIsIOS] = useState<boolean>(false)
+  const [iOSInstructionsVisible, setIOSInstructionsVisible] =
+    useState<boolean>(false)
 
   useEffect(() => {
     setMounted(true)
     fetchNotifications()
+
+    // Check if user is on iOS
+    const checkIOS = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase()
+      return /iphone|ipad|ipod/.test(userAgent)
+    }
+
+    setIsIOS(checkIOS())
 
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -247,8 +258,14 @@ const Navbar = () => {
     localStorage.setItem("LastNotificationRead", new Date().toISOString())
   }
 
-  // Handle PWA installation
+  // Handle PWA installation for non-iOS devices
   const handleInstallClick = async () => {
+    if (isIOS) {
+      // Show iOS installation instructions
+      setIOSInstructionsVisible(!iOSInstructionsVisible)
+      return
+    }
+
     if (!deferredPrompt) {
       console.log("Installation prompt not available")
       return
@@ -293,16 +310,42 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          {/* PWA Install Button - Only show if installation is possible and app is not installed */}
-          {deferredPrompt && !isAppInstalled && (
-            <button
-              onClick={handleInstallClick}
-              className="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-              aria-label="Install app"
-              title="Install Notes-Aid"
-            >
-              <Download className="w-5 h-5 text-gray-700 dark:text-gray-200" />
-            </button>
+          {/* PWA Install Button - Check for iOS or standard installation */}
+          {!isAppInstalled && (isIOS || deferredPrompt) && (
+            <div className="relative">
+              <button
+                onClick={handleInstallClick}
+                className="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                aria-label="Install app"
+                title={isIOS ? "Add to Home Screen" : "Install Notes-Aid"}
+              >
+                {isIOS ? (
+                  <Share2 className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                ) : (
+                  <Download className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                )}
+              </button>
+
+              {/* iOS installation instructions popup */}
+              {isIOS && iOSInstructionsVisible && (
+                <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
+                  <button
+                    onClick={() => setIOSInstructionsVisible(false)}
+                    className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                  <h4 className="font-medium text-gray-900 dark:text-white mb-2">
+                    Add to Home Screen
+                  </h4>
+                  <ol className="text-sm text-gray-700 dark:text-gray-300 space-y-2 ml-4 list-decimal">
+                    <li>Tap the Share button in your browser&apos;s toolbar</li>
+                    <li>Scroll down and tap &quot;Add to Home Screen&quot;</li>
+                    <li>Tap &quot;Add&quot; in the top right corner</li>
+                  </ol>
+                </div>
+              )}
+            </div>
           )}
 
           <div className="relative" ref={dropdownRef}>
@@ -350,21 +393,18 @@ const Navbar = () => {
                         Loading...
                       </div>
                     ) : notifications.length > 0 ? (
-                      notifications.map((notification) => (
+                      notifications.map((note) => (
                         <div
-                          key={notification.id}
-                          className={`p-4 border-b border-gray-100 dark:border-gray-700 ${
-                            !notification.read
-                              ? "bg-blue-50 dark:bg-blue-900/20"
-                              : ""
+                          key={note.id}
+                          className={`p-3 border-b border-gray-200 dark:border-gray-700 ${
+                            note.read ? "bg-gray-100 dark:bg-gray-700" : ""
                           }`}
                         >
-                          <p className="text-sm text-gray-800 dark:text-gray-200 mb-1">
-                            {notification.message.replace("notify:", "")}
+                          <p className="text-sm text-gray-900 dark:text-white">
+                            {note.message.replace("notify:", "")}
                           </p>
                           <p className="text-xs text-gray-500 dark:text-gray-400">
-                            {notification.date.toLocaleDateString()} at{" "}
-                            {notification.date.toLocaleTimeString()}
+                            {note.date.toLocaleString()}
                           </p>
                         </div>
                       ))
