@@ -29,17 +29,18 @@ We appreciate the contributions of our amazing team:
 ├── 📂 src
 │   ├── 📂 app
 │   │   ├── 📂 api/auth
-│   │   ├── 📂 components
+│   │   ├── 📂 [year]/[branch]/[semester]
 │   │   ├── 📂 edit
 │   │   │   ├── 📂 editor
 │   │   │   ├── 📂 login
-│   │   ├── 📂 interfaces
-│   │   ├── 📂 metrics
-│   │   ├── 📂 notes
-│   │   │   ├── 📂 fy, sy, ty
-│   │   │   │   ├── 📂 comps (evenSem, oddSem)
-│   │   │   │   ├── 📂 it (evenSem, oddSem)
-│   │   ├── 📂 [year]/[branch]/[semester]
+│   ├── 📂 components
+│   │   📂 interfaces
+│   │   📂 metrics
+│   │   📂 notes
+│   │   ├── 📂 fy, sy, ty
+│   │   │   ├── 📂 comps (evenSem, oddSem)
+│   │   │   ├── 📂 it (evenSem, oddSem)
+│   │   
 ```
 
 ---

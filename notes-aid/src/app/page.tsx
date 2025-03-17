@@ -1,6 +1,6 @@
-"use client"
-import React, { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+"use client";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import {
   GraduationCap,
   BookOpen,
@@ -9,78 +9,92 @@ import {
   Calendar,
   NotebookText,
   RotateCcw,
-} from "lucide-react"
-
+} from "lucide-react";
 
 const branches = [
   { value: "comps", label: "Computer Science" },
   { value: "mech", label: "Mechanical Engineering" },
   { value: "excp", label: "Electronics & Computer Engineering" },
   { value: "it", label: "Information Technology" },
-]
+  { value: "extc", label: "Electronics & Telecommunication Engineering" },
+  { value: "rai", label: "Robotics & Automation Engineering" },
+  { value: "cce", label: "Computer and Communication Engineering" },
+  { value: "csbs", label: "Computer Science and Business Studies" },
+  { value: "aids", label: "Artificial Intelligence and Data Science" },
+];
 
 const years = [
   { value: "fy", label: "First Year" },
   { value: "sy", label: "Second Year" },
   { value: "ty", label: "Third Year" },
   { value: "ly", label: "Fourth Year" },
-]
+];
 
 const semesters = [
   { value: "odd", label: "Odd Semester" },
   { value: "even", label: "Even Semester" },
-]
+  // { value: "p", label: "P Group" },
+  // { value: "c", label: "C Group" },
+];
 
 export default function MainPage() {
-  const router = useRouter()
-  const [selectedBranch, setSelectedBranch] = useState("")
-  const [selectedYear, setSelectedYear] = useState("")
-  const [selectedSemester, setSelectedSemester] = useState("")
-  const [isLoading, setIsLoading] = useState(true)
-  const [showForm, setShowForm] = useState(false)
-  const [hasPreviousSelection, setHasPreviousSelection] = useState(false)
+  const router = useRouter();
+  const [selectedBranch, setSelectedBranch] = useState("");
+  const [selectedYear, setSelectedYear] = useState("");
+  const [selectedSemester, setSelectedSemester] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [showForm, setShowForm] = useState(false);
+  const [hasPreviousSelection, setHasPreviousSelection] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false)
-      setShowForm(true)
-    }, 750)
+      setIsLoading(false);
+      setShowForm(true);
+    }, 750);
 
     // Check for previous selections in localStorage
-    const previousBranch = localStorage.getItem("selectedBranch")
-    const previousYear = localStorage.getItem("selectedYear")
-    const previousSemester = localStorage.getItem("selectedSemester")
+    const previousBranch = localStorage.getItem("selectedBranch");
+    const previousYear = localStorage.getItem("selectedYear");
+    const previousSemester = localStorage.getItem("selectedSemester");
 
     if (previousBranch && previousYear && previousSemester) {
-      setHasPreviousSelection(true)
+      setHasPreviousSelection(true);
     }
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleContinue = () => {
     if (selectedBranch && selectedYear && selectedSemester) {
       // Save current selections to localStorage
-      localStorage.setItem("selectedBranch", selectedBranch)
-      localStorage.setItem("selectedYear", selectedYear)
-      localStorage.setItem("selectedSemester", selectedSemester)
+      localStorage.setItem("selectedBranch", selectedBranch);
+      localStorage.setItem("selectedYear", selectedYear);
+      localStorage.setItem("selectedSemester", selectedSemester);
 
       console.log(
         `Selected Branch: ${selectedBranch}, Selected Year: ${selectedYear}, Semester: ${selectedSemester}`
-      )
-      router.push(`/${selectedYear}/${selectedBranch}/${selectedSemester}`)
+      );
+
+      if (
+        selectedYear === "fy" &&
+        !(selectedBranch === "comps" || selectedBranch === "aids")
+      ) {
+        if (selectedSemester === "odd") router.push(`/fy/comps/even`);
+        else router.push(`/fy/comps/odd`);
+      } else
+        router.push(`/${selectedYear}/${selectedBranch}/${selectedSemester}`);
     }
-  }
+  };
 
   const handleReturnToPrevious = () => {
-    const previousBranch = localStorage.getItem("selectedBranch")
-    const previousYear = localStorage.getItem("selectedYear")
-    const previousSemester = localStorage.getItem("selectedSemester")
+    const previousBranch = localStorage.getItem("selectedBranch");
+    const previousYear = localStorage.getItem("selectedYear");
+    const previousSemester = localStorage.getItem("selectedSemester");
 
     if (previousBranch && previousYear && previousSemester) {
-      router.push(`/${previousYear}/${previousBranch}/${previousSemester}`)
+      router.push(`/${previousYear}/${previousBranch}/${previousSemester}`);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#E1F4F3] via-white to-[#E1F4F3] dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0f172a] flex flex-col transition-colors duration-300">
@@ -192,19 +206,19 @@ export default function MainPage() {
             </button>
 
             <div className="flex items-center w-full justify-end">
-            {hasPreviousSelection && (
-              <button
-                onClick={handleReturnToPrevious}
-                className="border flex-1 md:flex-none border-[#706C61] dark:border-slate-700 text-[#333333] dark:text-slate-200 font-medium py-3 px-2 rounded-lg transition-all duration-200 flex items-center justify-center text-sm gap-2 hover:bg-gray-100 dark:hover:bg-slate-800"
-              >
-                <RotateCcw className="w-3 h-3" />
-                Return to Previous Selection
-              </button>
-            )}
+              {hasPreviousSelection && (
+                <button
+                  onClick={handleReturnToPrevious}
+                  className="border flex-1 md:flex-none border-[#706C61] dark:border-slate-700 text-[#333333] dark:text-slate-200 font-medium py-3 px-2 rounded-lg transition-all duration-200 flex items-center justify-center text-sm gap-2 hover:bg-gray-100 dark:hover:bg-slate-800"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  Return to Previous Selection
+                </button>
+              )}
             </div>
           </div>
         )}
       </div>
     </div>
-  )
+  );
 }

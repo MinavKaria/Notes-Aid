@@ -1,67 +1,72 @@
-"use client"
-import React, { useState, useEffect, useRef } from "react"
-import { useParams } from "next/navigation"
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import { useParams } from "next/navigation";
 // import ModuleCard from "../components/ModuleCard";
 // import TopicList from "../components/TopicList";
 // import Navbar from "../components/Navbar";
 // import NotesData from "../notes/data";
 // import pyqLinks from "../notes/pyq";
-import ModuleCard from "@/app/components/ModuleCard"
-import TopicList from "@/app/components/TopicList"
-import NotesData from "@/app/notes/data"
-import pyqLinks from "@/app/notes/pyq"
-import useProgress from "@/app/hook/useProgress"
-import { RotateCcw, X } from "lucide-react"
+import ModuleCard from "@/components/ModuleCard";
+import TopicList from "@/components/TopicList";
+import NotesData from "@/notes/data";
+import pyqLinks from "@/notes/pyq";
+import useProgress from "@/hook/useProgress";
+import { RotateCcw, X } from "lucide-react";
 
 interface Topic {
-  title: string
-  description: string
+  title: string;
+  description: string;
   videos?: {
-    title: string
-    url: string
-  }[]
+    title: string;
+    url: string;
+  }[];
   notes?: {
-    title: string
-    url: string
-  }[]
+    title: string;
+    url: string;
+  }[];
+}
+
+interface NotesLink {
+  title: string;
+  url: string;
 }
 
 interface Module {
   [key: number]: {
-    notesLink: string[]
-    topics: Topic[]
-  }
+    notesLink: NotesLink[];
+    topics: Topic[];
+  };
 }
 
 interface Subject {
-  name: string
-  icon: React.ComponentType<{ className?: string }>
-  modules: Module
+  name: string;
+  icon: React.ComponentType<{ className?: string }>;
+  modules: Module;
 }
 
 interface Subjects {
-  [subjectKey: string]: Subject
+  [subjectKey: string]: Subject;
 }
 
 interface SemesterData {
-  [key: string]: Subjects
+  [key: string]: Subjects;
 }
 
 interface BranchData {
-  [key: string]: SemesterData
+  [key: string]: SemesterData;
 }
 
 interface NotesDataType {
-  [year: string]: BranchData
+  [year: string]: BranchData;
 }
 
 interface PyqLink {
-  title: string
-  url: string
+  title: string;
+  url: string;
 }
 
 interface PyqLinks {
-  [year: string]: PyqLink[]
+  [year: string]: PyqLink[];
 }
 
 const EngineeringCurriculum: React.FC = () => {
@@ -69,59 +74,59 @@ const EngineeringCurriculum: React.FC = () => {
     year: slug,
     branch,
     semester: sem,
-  } = useParams<{ year: string; branch: string; semester: string }>()
+  } = useParams<{ year: string; branch: string; semester: string }>();
   //   const searchParam = useSearchParams();
   //   const branch = searchParam.get("branch") || "";
   //   const sem = searchParam.get("sem") || "";
-  const [isMounted, setIsMounted] = useState(false)
-  const [loading, setLoading] = useState(true)
-  const [showResetConfirmation, setShowResetConfirmation] = useState(false)
+  const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [showResetConfirmation, setShowResetConfirmation] = useState(false);
 
-  console.log(branch, sem, slug)
+  console.log(branch, sem, slug);
 
-  const typedNotesData = NotesData as NotesDataType
+  const typedNotesData = NotesData as NotesDataType;
 
-  const subjects = slug && typedNotesData[slug]?.[branch]?.[sem]
-  const pyq = (pyqLinks as PyqLinks)[slug] || []
+  const subjects = slug && typedNotesData[slug]?.[branch]?.[sem];
+  const pyq = (pyqLinks as PyqLinks)[slug] || [];
   // console.log(pyq)
   // const subjects = NotesData.fy.comps.oddSem;
 
-  const isMountedRef = useRef(isMounted)
+  const isMountedRef = useRef(isMounted);
   useEffect(() => {
-    setIsMounted(true)
-    console.log(isMountedRef.current) // Access via ref instead
-  }, [])
+    setIsMounted(true);
+    console.log(isMountedRef.current); // Access via ref instead
+  }, []);
 
   useEffect(() => {
     if (subjects) {
       setTimeout(() => {
-        setLoading(false)
-      }, 500)
+        setLoading(false);
+      }, 500);
     }
-  }, [subjects])
+  }, [subjects]);
 
-  const initialSubject = subjects ? Object.keys(subjects)[0] : ""
-  const [selectedSubject, setSelectedSubject] = useState(initialSubject)
-  const [selectedModule, setSelectedModule] = useState<number>(1)
+  const initialSubject = subjects ? Object.keys(subjects)[0] : "";
+  const [selectedSubject, setSelectedSubject] = useState(initialSubject);
+  const [selectedModule, setSelectedModule] = useState<number>(1);
 
   useEffect(() => {
     if (subjects && selectedSubject) {
       const firstModuleKey = Object.keys(
         subjects[selectedSubject]?.modules || {}
-      )[0]
-      setSelectedModule(firstModuleKey ? parseInt(firstModuleKey) : 1)
+      )[0];
+      setSelectedModule(firstModuleKey ? parseInt(firstModuleKey) : 1);
     }
-  }, [selectedSubject, subjects])
+  }, [selectedSubject, subjects]);
 
   const { progressData, updateVideoProgress, resetProgress } =
-    useProgress(selectedSubject)
+    useProgress(selectedSubject);
 
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen dark:bg-gray-900">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 dark:border-blue-400"></div>
       </div>
-    )
+    );
   }
 
   if (!subjects || Object.keys(subjects).length === 0) {
@@ -139,7 +144,7 @@ const EngineeringCurriculum: React.FC = () => {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   // const getTotalVideos = (subjectName: string): number => {
@@ -187,20 +192,20 @@ const EngineeringCurriculum: React.FC = () => {
 
   const numberVideoInModule = (k: number) =>
     subjects[selectedSubject].modules[k].topics.reduce((acc, topic) => {
-      return acc + (topic.videos?.length || 0)
-    }, 0)
+      return acc + (topic.videos?.length || 0);
+    }, 0);
 
   // console.log("Hello")
   // console.log(numberVideoInModule)
 
   const handleResetProgress = () => {
-    setShowResetConfirmation(true)
-  }
+    setShowResetConfirmation(true);
+  };
 
   const confirmReset = () => {
-    resetProgress()
-    setShowResetConfirmation(false)
-  }
+    resetProgress();
+    setShowResetConfirmation(false);
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-gray-900">
@@ -219,21 +224,21 @@ const EngineeringCurriculum: React.FC = () => {
 
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-8">
             {Object.entries(subjects).map(([key, subject]) => {
-              const Icon = subject.icon
+              const Icon = subject.icon;
               // console.log(subject)
 
               return (
                 <div
                   key={key}
                   onClick={() => {
-                    setSelectedSubject(key)
+                    setSelectedSubject(key);
                     const firstModuleKey = Object.keys(
                       subjects[key]?.modules || {}
-                    )[0]
-                    console.log(key, firstModuleKey)
+                    )[0];
+                    console.log(key, firstModuleKey);
                     setSelectedModule(
                       firstModuleKey ? parseInt(firstModuleKey) : 1
-                    )
+                    );
                   }}
                   className={`p-4 rounded-lg border cursor-pointer transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
                       ${
@@ -253,7 +258,7 @@ const EngineeringCurriculum: React.FC = () => {
                     {Object.keys(subject.modules).length} modules
                   </p>
                 </div>
-              )
+              );
             })}
           </div>
           <div className="p-4 rounded-lg border bg-white dark:bg-gray-800 shadow-sm mb-4">
@@ -272,7 +277,7 @@ const EngineeringCurriculum: React.FC = () => {
                     >
                       {pyq.title}
                     </a>
-                  )
+                  );
                 })}
             </div>
           </div>
@@ -281,7 +286,7 @@ const EngineeringCurriculum: React.FC = () => {
             <div className="space-y-3">
               {Object.keys(subjects[selectedSubject].modules).map(
                 (moduleKey) => {
-                  const moduley = parseInt(moduleKey)
+                  const moduley = parseInt(moduleKey);
                   return (
                     <ModuleCard
                       key={moduley}
@@ -294,7 +299,7 @@ const EngineeringCurriculum: React.FC = () => {
                       progressData={progressData}
                       numberOfVideos={numberVideoInModule(moduley)}
                     />
-                  )
+                  );
                 }
               )}
               <button
@@ -369,7 +374,7 @@ const EngineeringCurriculum: React.FC = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default EngineeringCurriculum
+export default EngineeringCurriculum;

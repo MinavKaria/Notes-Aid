@@ -1,26 +1,31 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import Metrics from "./metrics";
-import Footer from './components/Footer';
-import Navbar from "./components/Navbar";
+import Metrics from "../metrics";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import { Inter, Poppins, JetBrains_Mono } from "next/font/google";
-import SessionProvider from "./components/SessionProvider";
-
+import SessionProvider from "../components/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const poppins = Poppins({ subsets: ["latin"], weight: "400", variable: "--font-poppins" });
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-poppins",
+});
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+});
 
-
-export const viewport:Viewport={
+export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   minimumScale: 1,
   userScalable: false,
   maximumScale: 1,
   viewportFit: "cover",
-}
+};
 
 export const metadata: Metadata = {
   title: "Notes-Aid",
@@ -40,7 +45,7 @@ export const metadata: Metadata = {
         alt: "Icon",
       },
     ],
-  } ,
+  },
   icons: {
     icon: [
       { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -56,39 +61,42 @@ export const metadata: Metadata = {
         url: "/favicon.ico",
       },
     ],
-  } ,
-  authors:[{
-    url:"minavkaria.xyz",
-    name:"Minav Karia"
   },
-  {
-    url:"vedanshsavla.xyz",
-    name:"Vedansh Savla"
-  },
-  {
-    url:"aarushsaboo.xyz",
-    name:"Aarush Saboo"
-  }
-  ]
+  authors: [
+    {
+      url: "minavkaria.xyz",
+      name: "Minav Karia",
+    },
+    {
+      url: "vedanshsavla.xyz",
+      name: "Vedansh Savla",
+    },
+    {
+      url: "aarushsaboo.xyz",
+      name: "Aarush Saboo",
+    },
+  ],
 };
-
-
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable}`}
+    >
       <body>
         <SessionProvider>
-        <ThemeProvider attribute="class" >
+          <ThemeProvider attribute="class">
             <Navbar />
             {children}
             <Metrics />
             <Footer />
-        </ThemeProvider>
+          </ThemeProvider>
         </SessionProvider>
       </body>
     </html>
