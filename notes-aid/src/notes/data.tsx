@@ -56,17 +56,17 @@ const NotesData = {
       even: subjects_comps_ty_even,
     },
     it: {
-      // odd: subjects_it_ty_odd,
+      odd: {},
       even: subjects_it_ty_even,
     },
     excp: {
-      // odd: subjects_excp_ty_odd,
+      odd: {},
       even: subjects_excp_ty_even,
     },
-    // mech: {
-    //   odd: subjects_mech_ty_odd,
-    //   even: subjects_mech_ty_even,
-    // },
+    mech: {
+      odd: {},
+      even: {},
+    },
   },
   ly: {
     comps: {
