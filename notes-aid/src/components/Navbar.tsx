@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
-import { Sun, Moon, NotebookPen, Bell, X, Download, Share2 } from "lucide-react"
+import { Sun, Moon, NotebookPen, Bell, X, Download } from "lucide-react"
 
 interface Notification {
   id: string
@@ -178,6 +178,8 @@ const Navbar = () => {
       }
     }
 
+    // console.log(deferredPrompt,isIOS,isAppInstalled,iOSInstructionsVisible)
+
     document.addEventListener("visibilitychange", handleVisibilityChange)
 
     return () => {
@@ -233,14 +235,8 @@ const Navbar = () => {
       const mockNotifications: Notification[] = [
         {
           id: "1",
-          message: "Added responsive design to mobile view",
+          message: "Welcome to Notes-Aid!",
           date: new Date(),
-          read: false,
-        },
-        {
-          id: "2",
-          message: "Fixed dark mode toggle issues",
-          date: new Date(Date.now() - 86400000),
           read: false,
         },
       ]
@@ -310,7 +306,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          {/* PWA Install Button - Check for iOS or standard installation */}
+  
           {!isAppInstalled && (isIOS || deferredPrompt) && (
             <div className="relative">
               <button
@@ -319,11 +315,7 @@ const Navbar = () => {
                 aria-label="Install app"
                 title={isIOS ? "Add to Home Screen" : "Install Notes-Aid"}
               >
-                {isIOS ? (
-                  <Share2 className="w-5 h-5 text-gray-700 dark:text-gray-200" />
-                ) : (
-                  <Download className="w-5 h-5 text-gray-700 dark:text-gray-200" />
-                )}
+                <Download className="w-5 h-5 text-gray-700 dark:text-gray-200" />
               </button>
 
               {/* iOS installation instructions popup */}
