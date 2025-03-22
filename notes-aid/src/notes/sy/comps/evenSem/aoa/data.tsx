@@ -1,6 +1,9 @@
 import {
   Signal,
 } from "lucide-react";
+import {
+  Signal,
+} from "lucide-react";
 
 const aoa = {
 name: "Analysis of Algorithms",
