@@ -8,11 +8,11 @@ const os = {
     1: {
       notesLink: [
         {
-          title: "Viraj's Notes MOD 1",
+          title: "Viraj's Notes",
           url: "https://drive.google.com/file/d/1M1RFzW0xAQHZHL8kvb9fBTsn_vI6gaYn/view?usp=drive_link",
         },
         {
-          title: "College Notes",
+          title: "College Notes MOD 1",
           url: "https://drive.google.com/drive/folders/1JR-GzaLlc9ziQWZJl-ysRlPCWFugUHu0?usp=sharing",
         },
       ],
@@ -91,11 +91,11 @@ const os = {
     5: {
       notesLink: [
         {
-          title: "Viraj's Notes for OS",
+          title: "Viraj's Notes",
           url: "https://drive.google.com/file/d/1rm-3zhheYRbHynk00XqyFZLxnAmEvmJf/view?usp=drive_link",
         },
         {
-          title: "Pdf and PPT Notes ",
+          title: "College Notes MOD 5",
           url: "https://drive.google.com/drive/folders/1JR-GzaLlc9ziQWZJl-ysRlPCWFugUHu0?usp=sharing",
         },
       ],
