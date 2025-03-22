@@ -8,11 +8,11 @@ const os = {
     1: {
       notesLink: [
         {
-          title: "Viraj's Notes for OS",
-          url: "https://drive.google.com/drive/folders/1uL71k4xAjap_yRd1vOOZC_3oPzXumdNT?usp=sharing",
+          title: "Viraj's Notes MOD 1",
+          url: "https://drive.google.com/file/d/1M1RFzW0xAQHZHL8kvb9fBTsn_vI6gaYn/view?usp=drive_link",
         },
         {
-          title: "Pdf and PPT Notes ",
+          title: "College Notes",
           url: "https://drive.google.com/drive/folders/1JR-GzaLlc9ziQWZJl-ysRlPCWFugUHu0?usp=sharing",
         },
       ],
@@ -88,11 +88,11 @@ const os = {
         
       ],
     },
-    2: {
+    5: {
       notesLink: [
         {
           title: "Viraj's Notes for OS",
-          url: "https://drive.google.com/drive/folders/1uL71k4xAjap_yRd1vOOZC_3oPzXumdNT?usp=sharing",
+          url: "https://drive.google.com/file/d/1rm-3zhheYRbHynk00XqyFZLxnAmEvmJf/view?usp=drive_link",
         },
         {
           title: "Pdf and PPT Notes ",
@@ -136,13 +136,6 @@ const os = {
               title:"Questions on First, best, worst fit, next fit ",
               url:"https://www.youtube.com/embed/W7wDlABjCQI?si=Nb3LWIYbYafAzyWA"
             },
-            {
-              title:"Questions on First, best, worst fit, next fit",
-              url:""
-            }
-            
-            
-            
           ],
         },
        
