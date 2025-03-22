@@ -11,7 +11,7 @@ modules: {
   1: {
     notesLink: [
       {
-        title: "Handwritten Notes for Module 1",
+        title: "Handwritten Notes",
         url: "https://drive.google.com/file/d/17z1CWEZoU1WckKzN6jTfmdN5dwwsoSzV/view",
       },
       {
