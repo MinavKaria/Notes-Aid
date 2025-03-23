@@ -1,8 +1,8 @@
-import { Signal } from "lucide-react";
+import { Brain } from "lucide-react";
 
 const aoa = {
   name: "Analysis of Algorithms",
-  icon: Signal,
+  icon: Brain,
   color: "blue",
   modules: {
     1: {
@@ -256,6 +256,77 @@ const aoa = {
       ],
     },
     // Modules 3 and 4 can be added similarly...
+    3: {
+      notesLink: [
+        {
+          title: "String Matching Notes",
+          url: "https://drive.google.com/file/d/13Qk71xYXWR3ApZP9E3h0RdVFb_18KLme/view",
+        },
+      ],
+      topics: [
+        {
+          title: "3.1: Naive String Matching Algorithm",
+          description: "Basic string matching algorithm",
+          videos: [
+            {
+              title: "3.1.1: Naive String Matching Algorithm",
+              url: "https://www.youtube.com/embed/nK7SLhXcqRo?si=-VbB-j-GH4JcVds0",
+            },
+          ],
+        },
+        {
+          title: "3.2: Knuth-Morris-Pratt (KMP) Algorithm",
+          description: "Efficient string matching algorithm",
+          videos: [
+            {
+              title: "3.2.1: Knuth-Morris-Pratt Algorithm",
+              url: "https://www.youtube.com/embed/V5-7GzOfADQ?si=l-5M1rkhZBFJF8a7",
+            },
+          ],
+        },
+        {
+          title: "3.3: Longest Common Subsequence",
+          description: "Finding the longest subsequence common to two sequences",
+          videos: [
+            {
+              title: "3.3.1: Longest Common Subsequence",
+              url: "https://www.youtube.com/embed/sSno9rV8Rhg?si=dzHN0uhYZ1vPjMF4",
+            },
+          ],
+        },
+      ],
+    },
+    4: {
+      notesLink: [
+        {
+          title: "pdf notes",
+          url: "https://drive.google.com/file/d/1dxsj5RseZnBm-za0ttj1PzPIEH060oZt/view",
+        },
+      ],
+      topics: [
+        {
+          title: "4.1: Polynomial Time, NP Completeness , Reduction",
+          description: "Understanding algorithms that run in polynomial time",
+          videos: [
+            {
+              title: "4.1.1: Polynomial Time, NP completeness, Reduction",
+              url: "https://www.youtube.com/embed/e2cF8a5aAhE?si=6N2_bTPdWLIpzr3n",
+            },
+          ],
+        },
+        {
+          title: "4.2: NP Completeness Proof: Vertex Cover Problem",
+          description: "Proof of NP completeness using the Vertex Cover Problem",
+          videos: [
+            {
+              title: "4.2.1: Vertex Cover Problem",
+              url: "https://www.youtube.com/embed/Mj-alDLtNVU?si=dAEVOzEZKEgnFkiR",
+            },
+          ],
+        },
+        
+      ],
+    },
   },
 };
 
