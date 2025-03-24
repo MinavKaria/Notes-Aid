@@ -197,6 +197,10 @@ const dsip = {
           title: "Notes 1",
           url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/Chapter%202.pdf?alt=media&token=050c1cc3-45f5-425f-a1eb-a05c93d9e445",
         },
+        {
+          title: "Handwritten Notes",
+          url: "https://drive.google.com/file/d/190UVY2j67gyvap5fNC8ev-nkT3U-ey2y/view",
+        },
       ],
       topics: [
         {
