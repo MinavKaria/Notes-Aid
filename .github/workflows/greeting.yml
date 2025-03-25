@@ -1,0 +1,33 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |
+            👋 Welcome to **Notes-Aid**! 🎉  
+
+            Thank you for creating your first issue. We appreciate your contribution to making academic notes more accessible.  
+
+            🔥 Please Checkout our [Contributing Guidelines](https://github.com/MinavKaria/Notes-Aid/blob/main/CONTRIBUTING.md) to know how to contribute to the code or notes.  
+
+            🚀 We're excited to collaborate with you. Happy contributing!
+          
+          pr-message: |
+            👋 Hey there! Welcome to **Notes-Aid**! 🚀  
+
+            Thank you for submitting your first pull request. Your contribution is valuable in enhancing academic learning for everyone. 💙  
+
+            ✅ Our team will review your PR soon. In the meantime:
+            - Ensure your changes follow the [Contributing Guidelines](https://github.com/MinavKaria/Notes-Aid/blob/main/CONTRIBUTING.md).
+            - If you are adding Notes, Comment down which subject's modules have you added in the notes. 
+
+            🌟 We're grateful for your support in improving **Notes-Aid**. Happy coding! 💻
