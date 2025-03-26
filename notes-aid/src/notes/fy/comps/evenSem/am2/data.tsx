@@ -214,6 +214,109 @@ const am2 = {
 
     ]
    },
+   5:{
+    notesLink:[
+      {
+        title: "Notes",
+        url:"https://drive.google.com/file/d/1arrawqF-1rVpZDbcCgRHWx0n63Byudy-/view?usp=drive_link"
+      }
+    ],
+    topics:[
+      {
+        title: "5.1 Double integration",
+        description:"Intro, evaluation, cartesian and polar coordinates",
+        videos: [
+          {
+            title: "Evaluation of Direct double integral",
+            url: "https://www.youtube.com/embed/swF628VHQDo?si=JUpK9dIaXodJMEGq"   ,
+          },
+          {
+            title: "Change the integral from cartesian to polar",
+            url: "https://www.youtube.com/embed/3IgY__Hpv1k?si=V13s8p2jzv5ZLzoY"  ,
+          },
+          
+        ]
+      },
+      {
+        title: "5.2 Order of integration",
+        description:"Evaluation of double integration by change in order",
+        videos: [
+          {
+            title: "Change the order of integral",
+            url: "https://www.youtube.com/embed/IvXED51OTDc?si=-uwNiFyF9sLa_rN4" ,
+          },
+          {
+            title: "Change the order of integral pt 2",
+            url:"https://www.youtube.com/embed/aL9xskWW26s?si=C1JpPeKe3xrAXX00" ,
+          },
+        ]
+      },
+      {
+        title: "5.3 Area computation",
+        description:"Application of double integrals to compute area",
+        videos: [
+          {
+            title: "limit is not given(region)",
+            url: "https://www.youtube.com/embed/GtgY7Jw8avY?si=Jejm3JqBi0BO2Xqq" ,
+          },
+          {
+            title: "Area",
+            url: "https://www.youtube.com/embed/adUgrMHOKXM?si=9EH2ietXB6I0HLzi" ,
+          },
+          {
+            title: "Area-2",
+            url: "https://www.youtube.com/embed/XC6UNtvnG_A?si=loq793z-QqBd0g2E" ,
+          },
+          {
+            title: "Area-3",
+            url: "https://www.youtube.com/embed/FVZhdEPldIk?si=pVl8WC7WLxjU-Npa" ,
+          },
+          
+        ]
+      },
+      {
+        title: "5.4 Triple integration",
+        description:"Introduction and evaluation in cartesian form",
+        videos: [
+          {
+            title: "triple integration problems",
+            url: "https://www.youtube.com/embed/E2yfGTX8aoI?si=1kM-mJ-fK9ewOXyI",
+          },
+          
+        ]
+      },
+      {
+        title: "5.5 Triple integration Application",
+        description:"using cylindrical and spherical polar coordinates",
+        videos: [
+          {
+            title: "problems on planes and spheres",
+            url: "https://www.youtube.com/embed/2d-mBknxEhU?si=Ll2FMUjvuw0-xp2K",
+          },
+          {
+            title: "problems on planes and spheres",
+            url: "https://www.youtube.com/embed/2d-mBknxEhU?si=Ll2FMUjvuw0-xp2K",
+          },
+          {
+            title: "problems on ellipsoid, cylinder",
+            url: "https://www.youtube.com/embed/sdvlyp0chtQ?si=KzzKa6gFk2Li5BPr",
+          },
+         
+        ]
+      },
+      {
+        title: "5.6 Application of Triple integration to compute volume",
+        description:"Volume computation",
+        videos: [
+          {
+            title: "Volume by triple integral",
+            url: "https://www.youtube.com/embed/XZbvZabU5ik?si=4KXKG_EMGDvRfXbs",
+          },
+        ]
+      },
+
+    ]
+   }
   },
 };
 
