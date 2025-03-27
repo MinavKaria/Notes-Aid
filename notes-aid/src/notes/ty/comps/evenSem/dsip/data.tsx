@@ -1,6 +1,6 @@
 import {
-    Signal,
-  } from "lucide-react";
+  Signal,
+} from "lucide-react";
 
 const dsip = {
   name: "Digital Systems and Image Processing",
@@ -10,8 +10,8 @@ const dsip = {
     1: {
       notesLink: [
         {
-          title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/Chapter%201%20DSIP%202022.pptx.pdf?alt=media&token=7d6bd8e7-ce2a-4d1d-bf88-c38fee89642e",
+          title: "Module 1 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/ESBuYepwEaVMt47UEvY205EBy9Yn0k_hqwg4H291YT-cHQ?e=ZDB3xA",
         },
       ],
       topics: [
@@ -37,16 +37,6 @@ const dsip = {
               url: "https://www.youtube.com/embed/XyZerq7-IvA?si=5D4KVG8u27VPgHV-",
             },
           ],
-          // notes: [
-          //   {
-          //     title: "Lecture Notes - Week 1",
-          //     url: "https://example.com/notes1.pdf",
-          //   },
-          //   {
-          //     title: "Practice Problems",
-          //     url: "https://example.com/practice1.pdf",
-          //   },
-          // ],
         },
         {
           title: "1.1.2 Properties and operations on digital signals.",
@@ -95,11 +85,11 @@ const dsip = {
               url: "https://www.youtube.com/embed/rjC_7YOiM3I?si=ncTFhky6vsF2PEPK",
             },
             {
-              title: "Block Diagram & Signal Flow Graph - Part 2",
+              title: "Block Diagram & Signal Flow Graph - Part 3",
               url: "https://www.youtube.com/embed/rjC_7YOiM3I?si=ncTFhky6vsF2PEPK",
             },
             {
-              title: "Block Diagram & Signal Flow Graph - Part 3",
+              title: "Block Diagram & Signal Flow Graph - Part 4",
               url: "https://www.youtube.com/embed/BYMc-YEy89E?si=6kmCxOIYxiqTARVB",
             },
             {
@@ -194,8 +184,12 @@ const dsip = {
     2: {
       notesLink: [
         {
-          title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/Chapter%202.pdf?alt=media&token=050c1cc3-45f5-425f-a1eb-a05c93d9e445",
+          title: "Module 2 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/EUooAGVXc8FBpuSuPndasDUBydjhwjAOpB-U92PQ1JZ5Gg?e=D9aWjN",
+        },
+        {
+          title: "Handwritten Notes",
+          url: "https://drive.google.com/file/d/190UVY2j67gyvap5fNC8ev-nkT3U-ey2y/view",
         },
       ],
       topics: [
@@ -320,7 +314,10 @@ const dsip = {
     },
     3: {
       notesLink: [
-        {url:"https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link", title:"Notes 1"},
+        {
+          title: "Module 3 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/Ed7kDlN4_gpLjNi5_wqwGV8BqaLszTjVJvG7I8t68N7T8A?e=BraFhT",
+        },
       ],
       topics: [
         {
@@ -328,7 +325,7 @@ const dsip = {
           description: "Numerical based concepts- Important for Exam ⭐",
           videos: [
             {
-              title: "Need for Image Transformation", 
+              title: "Need for Image Transformation",
               url: "https://www.youtube.com/embed/YvTVI0dboiM?si=vgPnYnxdkOJLN25L",
             },
             {

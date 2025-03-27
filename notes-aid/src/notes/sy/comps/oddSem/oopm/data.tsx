@@ -1,7 +1,7 @@
 import { Brain } from "lucide-react";
 
 const oopm = {
-  name: "Engineering Drawing",
+  name: "Object Oriented Programming Methodology",
   icon: Brain,
   color: "blue",
   modules: {

@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   
 };
 
+
 const withPWA = require('next-pwa')({
   dest: 'public', // Output directory for service worker
   register: true, // Automatically register service worker
