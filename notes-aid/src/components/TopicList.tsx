@@ -70,7 +70,7 @@ const TopicList: React.FC<TopicListProps> = ({
   return (
     <div className="space-y-3">
       {Object.keys(notesLink).length > 0 && (
-        <h5 className="text-sm font-medium text-black dark:text-white mb-2">
+        <h5 className="text-sm font-medium text-black dark:text-primary mb-2">
           Study Materials for Module {moduleNumber}
         </h5>
       )}
@@ -82,7 +82,7 @@ const TopicList: React.FC<TopicListProps> = ({
             href={note.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-cards text-blue-600 dark:text-icons rounded-lg text-sm font-medium hover:bg-blue-100 dark:hover:bg-bgOpac transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-background border dark:border-border text-blue-600 dark:text-icons rounded-lg text-sm font-medium hover:bg-blue-100 dark:hover:bg-borderHover transition-colors "
           >
             <BookOpen className="w-4 h-4" />
             {note.title}
@@ -92,7 +92,7 @@ const TopicList: React.FC<TopicListProps> = ({
       ))}
       </div>
       
-      {Object.keys(topics).length>0 && <h5 className="text-sm font-medium text-black dark:text-white my-2">Videos</h5>}
+      {Object.keys(topics).length>0 && <h5 className="text-sm font-medium text-black dark:text-primary my-2">Videos</h5>}
       {Object.keys(topics).length>0 && topics.map((topic, index) => {
 
         const topicKey = `${subjectName}-module${moduleKey}-topic${topic.title.replace(/\s/g, '')}`;
@@ -122,21 +122,21 @@ const TopicList: React.FC<TopicListProps> = ({
 
         return(<div
           key={index}
-          className="bg-white dark:bg-bgOpac rounded-lg border dark:border-cardsBorder overflow-hidden"
+          className="bg-white dark:bg-background rounded-lg border dark:border-cardsBorder overflow-hidden"
         >
             <ProgressBar total={topic.videos?.length ?? 0} completed={completedTopics}  />
           <div
             onClick={() => toggleTopic(index)}
-            className="p-3 cursor-pointer hover:bg-slate-50 dark:hover:bg-background transition-colors"
+            className="p-3 cursor-pointer hover:bg-background dark:hover:bg-borderHover transition-colors"
           >
              
             <div className="flex items-start gap-3">
-              <div className="p-2 bg-blue-50 dark:bg-cards rounded">
+              <div className="p-2 bg-blue-50 dark:bg-background rounded">
                 <BookOpen className="w-4 h-4 text-blue-500 dark:text-icons" />
               </div>
               <div className="flex-1">
                 <div className="flex justify-between items-center">
-                  <h4 className="font-medium text-sm text-black dark:text-white">
+                  <h4 className="font-medium text-sm text-black dark:text-primary">
                     {topic.title}
                   </h4>
                   <ChevronDown
@@ -160,14 +160,14 @@ const TopicList: React.FC<TopicListProps> = ({
             <div className="p-3 pt-0">
               {topic.videos && topic.videos.length > 0 ? (
                 <div className="mt-3 border-t dark:border-cardsBorder pt-3">
-                  <h5 className="text-sm font-medium text-black dark:text-white mb-2">
+                  <h5 className="text-sm font-medium text-black dark:text-primary mb-2">
                     Lecture Videos
                   </h5>
                   <VideoAccordion videos={topic.videos} topicKey={topic.title.replace(/\s/g, '')} moduleKey={moduleKey} updateVideoProgress={updateVideoProgress} subjectName={subjectName}/>
                 </div>
               ):(
                 <div className="mt-3 border-t dark:border-gray-700 pt-3">
-                  <h5 className="text-sm font-medium text-black dark:text-white mb-2">
+                  <h5 className="text-sm font-medium text-black dark:text-primary mb-2">
                     No videos available, We will update soon, Till then refer the notes
                   </h5>
                 </div>
@@ -177,7 +177,7 @@ const TopicList: React.FC<TopicListProps> = ({
 
               {topic.notes && topic.notes.length > 0 && (
                 <div className="mt-3 border-t dark:border-gray-700 pt-3">
-                  <h5 className="text-sm font-medium text-black dark:text-white mb-2">
+                  <h5 className="text-sm font-medium text-black dark:text-primary mb-2">
                     Study Materials
                   </h5>
                   <div className="flex flex-wrap gap-2">

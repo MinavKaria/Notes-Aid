@@ -295,7 +295,7 @@ const Navbar = () => {
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer">
               <NotebookPen className="w-6 h-6 text-gray-700 dark:text-gray-200" />
-              <h1 className="text-xl font-bold text-gray-800 dark:text-white">
+              <h1 className="text-xl font-bold text-gray-800 dark:text-primary">
                 Notes-Aid
                 <sup className="text-xs font-normal text-gray-500 dark:text-gray-400 mx-2">
                   Beta
@@ -327,7 +327,7 @@ const Navbar = () => {
                   >
                     <X className="w-4 h-4" />
                   </button>
-                  <h4 className="font-medium text-gray-900 dark:text-white mb-2">
+                  <h4 className="font-medium text-gray-900 dark:text-primary mb-2">
                     Add to Home Screen
                   </h4>
                   <ol className="text-sm text-gray-700 dark:text-gray-300 space-y-2 ml-4 list-decimal">
@@ -358,7 +358,7 @@ const Navbar = () => {
               <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm z-50 md:absolute md:transform-none md:top-auto md:left-auto md:right-0 md:mt-2 md:w-80">
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-full flex flex-col">
                   <div className="p-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center sticky top-0 bg-white dark:bg-gray-800 rounded-t-lg">
-                    <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+                    <h3 className="text-sm font-medium text-gray-900 dark:text-primary">
                       Notifications
                     </h3>
                     <div className="flex items-center space-x-3">
@@ -392,7 +392,7 @@ const Navbar = () => {
                             note.read ? "bg-gray-100 dark:bg-gray-700" : ""
                           }`}
                         >
-                          <p className="text-sm text-gray-900 dark:text-white">
+                          <p className="text-sm text-gray-900 dark:text-primary">
                             {note.message.replace("notify:", "")}
                           </p>
                           <p className="text-xs text-gray-500 dark:text-gray-400">

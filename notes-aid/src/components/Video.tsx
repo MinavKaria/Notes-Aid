@@ -65,7 +65,7 @@ function Video({
           onClick={() => toggleVideo(index)}
           className="p-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-bgOpac flex justify-between items-center flex-1 gap-2"
         >
-          <span className="text-sm font-medium text-black dark:text-white">
+          <span className="text-sm font-medium text-black dark:text-primary">
             {video.title}
           </span>
           <ChevronDown

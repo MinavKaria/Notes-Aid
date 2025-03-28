@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --background: #ffffff;
@@ -17,35 +19,43 @@
   --c3: #faf9d2;
   --c4: #1e1d1c;
   --c5: #d97757;
+  --t1: #C2C0B6;
 }
 
 .dark {
   --foreground: #f9fafb;
-  --primary: #60a5fa;
+  --primary: #C2C0B6;
   --secondary: #34d399;
   --accent: #a78bfa;
   --muted: #2d3748;
   --error: #f87171;
   --success: #4ade80;
-  --background: #1e1d1c;
+  --background: #262624;
   --bgOpac: #353434;
   --icons: #d97757;
   --iconsHover: #d74e21;
-  --borderHover: #d18c75;
-  --border: #fbf9f4;
+  --borderHover: #161515;
+  --border: #65645F;
   --cards: #ffffff;
   --cardsBorder: #898986;
+  --cardHover: #f2f2f4;
+  --selected: #161515;
+  
+}
+
+.text-gray {
+  color: #C2C0B6;
 }
 
 body {
-  font-family: var(--font-inter), sans-serif;
+  font-family: "Libre Baskerville", Helvetica;
   color: var(--foreground);
   background: var(--background);
 }
 h1,
 h2,
 h3 {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: "Libre Baskerville", Helvetica;
 }
 code {
   font-family: var(--font-jetbrains-mono), monospace;

@@ -53,9 +53,10 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
         transition-all 
         cursor-pointer 
         hover:shadow-md
+        dark:hover:bg-cardHover
         ${
           isActive
-            ? "border-blue-500 bg-blue-50 dark:bg-background dark:border-borderHover"
+            ? "border-blue-500 bg-blue-50 dark:bg-borderHover dark:border-border"
             : "border-slate-200 dark:border-border hover:border-blue-200 dark:hover:border-bgOpac"
         }
       `}
@@ -63,7 +64,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <h3 className="text-base font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-base font-semibold text-gray-900 dark:text-primary">
               Module {module}
             </h3>
             <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-icons rounded-full text-gray-600 dark:text-background">
@@ -81,7 +82,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
           <div className="flex-1">
             <ProgressBar total={numberOfVideos} completed={(progressData.moduleProgress[module] || 0)} />
           </div>
-          <span className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">
+          <span className="text-xs text-gray-500 dark:text-primary whitespace-nowrap">
             {(progressData.moduleProgress[module] || 0)}/{numberOfVideos} videos
           </span>
         </div>
