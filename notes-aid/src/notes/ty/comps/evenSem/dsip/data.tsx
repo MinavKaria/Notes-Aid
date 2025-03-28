@@ -81,6 +81,10 @@ const dsip = {
               url: "https://www.youtube.com/embed/BDI4zf9Azpk?si=OOfMbLy-cbIG4ib7",
             },
             {
+              title: "Block Diagram & Signal Flow Graph - Part 2",
+              url: "https://www.youtube.com/embed/rjC_7YOiM3I?si=ncTFhky6vsF2PEPK",
+            },
+            {
               title: "Block Diagram & Signal Flow Graph - Part 3",
               url: "https://www.youtube.com/embed/rjC_7YOiM3I?si=ncTFhky6vsF2PEPK",
             },
@@ -310,7 +314,10 @@ const dsip = {
     },
     3: {
       notesLink: [
-        {url:"https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link", title:"Notes 1"},
+        {
+          title: "Module 3 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/Ed7kDlN4_gpLjNi5_wqwGV8BqaLszTjVJvG7I8t68N7T8A?e=BraFhT",
+        },
       ],
       topics: [
         {
@@ -364,8 +371,7 @@ const dsip = {
               url: "https://www.youtube.com/embed/s02VrcLObvU?si=615BzJM2p90_N9WP",
             },
             {
-              title:
-                "Principal Component Analysis (PCA) / Karhunen-Loeve Transform",
+              title: "Principal Component Analysis (PCA) / Karhunen-Loeve Transform",
               url: "https://www.youtube.com/embed/sjCCdY3ySd0?si=1GnNhADQAUR97oc7",
             },
           ],
