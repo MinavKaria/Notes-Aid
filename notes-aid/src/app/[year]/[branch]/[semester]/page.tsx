@@ -264,11 +264,11 @@ const EngineeringCurriculum: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 ">
             <div className="space-y-3 border border-border p-4 rounded-lg">
-              <div className="p-4 rounded-lg bg-white dark:bg-background shadow-sm mb-4">
-                <h2 className="text-sm md:text-base font-bold mb-2 text-black dark:text-primary">
+
+               <h2 className="text-base md:text-lg font-bold  text-black dark:text-primary">
                   Important Links
                 </h2>
-                <div className="flex gap-2 flex-wrap">
+                <div className="flex gap-2 flex-wrap !mb-8">
                   {Object.keys(pyq).length > 0 &&
                     pyq.map((pyq, index) => {
                       return (
@@ -283,8 +283,10 @@ const EngineeringCurriculum: React.FC = () => {
                       );
                     })}
                 </div>
-              </div>
-
+              
+                <h2 className="text-base md:text-lg font-bold mb-1 text-black dark:text-primary">
+                  Modules
+                </h2>
               {Object.keys(subjects[selectedSubject].modules).map(
                 (moduleKey) => {
                   const moduley = parseInt(moduleKey);

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,14 +48,14 @@
 }
 
 body {
-  font-family: "Libre Baskerville", Helvetica;
+  font-family: Helvetica;
   color: var(--foreground);
   background: var(--background);
 }
 h1,
 h2,
 h3 {
-  font-family: "Libre Baskerville", Helvetica;
+  font-family: Helvetica;
 }
 code {
   font-family: var(--font-jetbrains-mono), monospace;
