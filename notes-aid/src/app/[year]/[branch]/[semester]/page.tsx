@@ -208,9 +208,9 @@ const EngineeringCurriculum: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-slate-50 dark:bg-background">
       <div className="w-full p-4 md:p-6">
-        <div className="max-w-full mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 md:p-6">
+        <div className="max-w-full mx-auto bg-white dark:bg-bgOpac rounded-lg shadow-sm p-4 md:p-6">
           <div className="mb-6 md:mb-8 text-center md:text-left">
             <h1 className="text-lg md:text-2xl font-bold mb-2 text-black dark:text-white">
               Engineering Curriculum of {branch.toUpperCase()} /{" "}
@@ -243,13 +243,13 @@ const EngineeringCurriculum: React.FC = () => {
                   className={`p-4 rounded-lg border cursor-pointer transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
                       ${
                         selectedSubject === key
-                          ? "border-blue-500 bg-blue-50 dark:bg-[#2D336B] dark:border-[#7886C7]"
-                          : "bg-blue-200 dark:bg-[#000957] hover:border-blue-200 dark:hover:border-[#A9B5DF]"
+                          ? "border-blue-500 bg-blue-50 dark:bg-background dark:border-borderHover"
+                          : "bg-blue-200 dark:bg-background hover:border-blue-200 dark:hover:border-bgOpac"
                       }
                     `}
                 >
                   <div className="flex items-center justify-center gap-2 mb-2 flex-col">
-                    <Icon className="w-6 h-6 text-blue-500 dark:text-blue-400" />
+                    <Icon className="w-6 h-6 text-blue-500 dark:text-icons" />
                     <h3 className="font-medium text-black dark:text-white text-sm md:text-base">
                       {subject.name}
                     </h3>
@@ -261,29 +261,30 @@ const EngineeringCurriculum: React.FC = () => {
               );
             })}
           </div>
-          <div className="p-4 rounded-lg border bg-white dark:bg-gray-800 shadow-sm mb-4">
-            <h2 className="text-sm md:text-base font-bold mb-2 text-black dark:text-white">
-              Important Links
-            </h2>
-            <div className="flex gap-2 flex-wrap">
-              {Object.keys(pyq).length > 0 &&
-                pyq.map((pyq, index) => {
-                  return (
-                    <a
-                      href={pyq.url}
-                      target="_blank"
-                      className="inline-block px-4 py-2 mt-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-500"
-                      key={index}
-                    >
-                      {pyq.title}
-                    </a>
-                  );
-                })}
-            </div>
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <div className="space-y-3">
+              <div className="p-4 rounded-lg bg-white dark:bg-background shadow-sm mb-4">
+                <h2 className="text-sm md:text-base font-bold mb-2 text-black dark:text-white">
+                  Important Links
+                </h2>
+                <div className="flex gap-2 flex-wrap">
+                  {Object.keys(pyq).length > 0 &&
+                    pyq.map((pyq, index) => {
+                      return (
+                        <a
+                          href={pyq.url}
+                          target="_blank"
+                          className="inline-block px-4 py-2 mt-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-600 dark:bg-bgOpac dark:hover:bg-borderHover"
+                          key={index}
+                        >
+                          {pyq.title}
+                        </a>
+                      );
+                    })}
+                </div>
+              </div>
+
               {Object.keys(subjects[selectedSubject].modules).map(
                 (moduleKey) => {
                   const moduley = parseInt(moduleKey);
@@ -302,16 +303,17 @@ const EngineeringCurriculum: React.FC = () => {
                   );
                 }
               )}
+
               <button
                 onClick={handleResetProgress}
-                className="w-full mt-4 px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 transition-colors duration-200 flex items-center justify-center gap-2"
+                className="w-full px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 <RotateCcw className="w-4 h-4" />
                 Reset Progress
               </button>
             </div>
 
-            <div className="md:col-span-2 bg-slate-50 dark:bg-gray-900 rounded-lg p-4 md:p-6">
+            <div className="md:col-span-2 bg-slate-50 dark:bg-background rounded-lg p-4 md:p-6">
               <h2 className="text-base md:text-lg font-bold mb-1 text-black dark:text-white">
                 {subjects[selectedSubject].name} - Module {selectedModule || 1}
               </h2>
@@ -340,7 +342,7 @@ const EngineeringCurriculum: React.FC = () => {
       {/* Reset Confirmation Modal */}
       {showResetConfirmation && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-sm w-full mx-4">
+          <div className="bg-white dark:bg-bgOpac rounded-lg p-6 max-w-sm w-full mx-4">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-bold text-black dark:text-white">
                 Reset Progress
@@ -359,7 +361,7 @@ const EngineeringCurriculum: React.FC = () => {
             <div className="flex justify-end gap-3">
               <button
                 onClick={() => setShowResetConfirmation(false)}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-background dark:text-gray-200 dark:hover:bg-gray-600"
               >
                 Cancel
               </button>

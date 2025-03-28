@@ -1,6 +1,4 @@
-import {
-    Signal,
-  } from "lucide-react";
+import { Signal } from "lucide-react";
 
 const dsip = {
   name: "Digital Systems and Image Processing",
@@ -89,10 +87,6 @@ const dsip = {
             {
               title: "Block Diagram & Signal Flow Graph",
               url: "https://www.youtube.com/embed/BDI4zf9Azpk?si=OOfMbLy-cbIG4ib7",
-            },
-            {
-              title: "Block Diagram & Signal Flow Graph - Part 2",
-              url: "https://www.youtube.com/embed/rjC_7YOiM3I?si=ncTFhky6vsF2PEPK",
             },
             {
               title: "Block Diagram & Signal Flow Graph - Part 2",
@@ -320,7 +314,10 @@ const dsip = {
     },
     3: {
       notesLink: [
-        {url:"https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link", title:"Notes 1"},
+        {
+          url: "https://drive.google.com/file/d/1kiOclPKHD8JUWR5AVooKY0Bwe_e5zhLB/view?usp=drive_link",
+          title: "Notes 1",
+        },
       ],
       topics: [
         {
@@ -328,7 +325,7 @@ const dsip = {
           description: "Numerical based concepts- Important for Exam ⭐",
           videos: [
             {
-              title: "Need for Image Transformation", 
+              title: "Need for Image Transformation",
               url: "https://www.youtube.com/embed/YvTVI0dboiM?si=vgPnYnxdkOJLN25L",
             },
             {
@@ -374,7 +371,8 @@ const dsip = {
               url: "https://www.youtube.com/embed/s02VrcLObvU?si=615BzJM2p90_N9WP",
             },
             {
-              title: "Principal Component Analysis (PCA) / Karhunen-Loeve Transform",
+              title:
+                "Principal Component Analysis (PCA) / Karhunen-Loeve Transform",
               url: "https://www.youtube.com/embed/sjCCdY3ySd0?si=1GnNhADQAUR97oc7",
             },
           ],
