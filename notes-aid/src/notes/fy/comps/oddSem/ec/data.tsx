@@ -19,7 +19,7 @@ const ec = {
       topics: [
         {
           title: "1.1 Introduction, Types of Hardness",
-          desc: "Introduction to Water Chemistry",
+          description: "Introduction to Water Chemistry",
           videos: [
             {
               title: "Water and it's importance",
@@ -45,7 +45,7 @@ const ec = {
         },
         {
           title: "1.2 Water Treatment, BOD & COD",
-          desc: "Water Treatment: Lime soda method Zeolite method, Ion Exchange process, BOD & COD",
+          description: "Water Treatment: Lime soda method Zeolite method, Ion Exchange process, BOD & COD",
           videos: [
             {
               title: "EDTA Method Part 1",
@@ -79,7 +79,7 @@ const ec = {
         },
         {
           title: "1.3 AI and IoT",
-          desc: "Artificial Intelligence & Internet of Things in Water Management",
+          description: "Artificial Intelligence & Internet of Things in Water Management",
           videos: []
         }
       ],
@@ -107,7 +107,7 @@ const ec = {
     topics: [
       {
         title: "2.1 Polymers",
-        desc: "Polymers as Industrials Materials, Conducting polymers, Fabrications of Polymers, Biodegradable Polymers",
+        description: "Polymers as Industrials Materials, Conducting polymers, Fabrications of Polymers, Biodegradable Polymers",
         videos: [
           {
             title: "Introduction to Polymers",
@@ -141,7 +141,7 @@ const ec = {
       },
       {
         title: "2.2 Nanomaterials",
-        desc: " Introductions, Classifications, Growth Techniques for Nanomaterials, Applications",
+        description: " Introductions, Classifications, Growth Techniques for Nanomaterials, Applications",
         videos: [
           {
             title: "Introduction to Nanomaterials",
@@ -155,11 +155,13 @@ const ec = {
       },
         {
           title: "2.3 Biomaterials",
-          desc: "Metals & Alloys, Bio Ceramics, Composites, new materials in prosthetics",
+          description: "Metals & Alloys, Bio Ceramics, Composites, new materials in prosthetics",
+          videos: []
         },
         {
           title: "2.4 MEMS and Microsystems",
-          desc: " Introduction, Active substrate materials, Silicon as substrate materials",
+          description: " Introduction, Active substrate materials, Silicon as substrate materials",
+          videos: []
         }
     ],
   },
@@ -181,7 +183,7 @@ const ec = {
     topics: [
       {
         title: "3.1 Energy & Sustainable Development",
-        desc: "Renewable Energy, Solar Energy, solar Photovoltaic, solar heater",
+        description: "Renewable Energy, Solar Energy, solar Photovoltaic, solar heater",
         videos: [
           {
             title: "Fuels and Properties",
@@ -191,7 +193,7 @@ const ec = {
       },
       {
         title: "3.2 Hydrocarbon as Fuel, Bio Diesel, Power Alcohol",
-        desc: "Unit of Energy, characteristic of good fuel, Bio Diesel, Power Alcohol",
+        description: "Unit of Energy, characteristic of good fuel, Bio Diesel, Power Alcohol",
         videos: [
           {
             title: "Calorific Value- Higher and Lower",
@@ -209,7 +211,8 @@ const ec = {
       },
       {
         title: "3.3 Rechargeable Batteries",
-        desc: "Lead acid battery, Lithium ion battery, Nickel based battery, other battery technology",
+        description: "Lead acid battery, Lithium ion battery, Nickel based battery, other battery technology",
+        videos: []
       },
     ],
   },
@@ -227,7 +230,7 @@ const ec = {
     topics: [
       {
         title: "4.1 UV Spectroscopy",
-        desc: "Principle, Instrumentation and application",
+        description: "Principle, Instrumentation and application",
         videos: [
           {
             title: "Introduction to Spectroscopy",
@@ -249,7 +252,7 @@ const ec = {
       },
       {
         title: "4.2 IR Spectroscopy",
-        desc: "Basic Principle, Instrumentation and applications",
+        description: "Basic Principle, Instrumentation and applications",
         videos: [
           {
             title: "Infrared Spectroscopy Part 1",
@@ -267,7 +270,7 @@ const ec = {
       },
       {
         title: "4.3 1H NMR Spectroscopy",
-        desc: "Principle, Instrumentation, Chemical Shift, Factors affecting chemical shift, Applications",
+        description: "Principle, Instrumentation, Chemical Shift, Factors affecting chemical shift, Applications",
         videos: [
           {
             title: "Nuclear Magnetic Resonance(NMR) Spectroscopy",
@@ -285,7 +288,8 @@ const ec = {
       },
       {
         title: "4.4 Ph Metry, Conductometry",
-        desc: "Electroanalytical techniques, pH-metry, Conductometry, Potentiometry",
+        description: "Electroanalytical techniques, pH-metry, Conductometry, Potentiometry",
+        videos: []
       },
     ],  
   },
@@ -307,15 +311,18 @@ const ec = {
     topics: [
       {
         title: "5.1 Computational Chemistry",
-        desc: "Software and Hardware, Applications of Computational Chemistry",
+        description: "Software and Hardware, Applications of Computational Chemistry",
+        videos: []
       },
       {
         title: "5.2 Cheminformatics and Bioinformatics",
-        desc: "Computational approach in Cheminformatics and Bioinformatics",
+        description: "Computational approach in Cheminformatics and Bioinformatics",
+        videos: []
       },
       {
         title: "5.3 E-waste Management",
-        desc: ": Sustainable Development & e-waste management, impact of legislations on materials used in electronics",
+        description: ": Sustainable Development & e-waste management, impact of legislations on materials used in electronics",
+        videos: []
       },
     ],  
   },
