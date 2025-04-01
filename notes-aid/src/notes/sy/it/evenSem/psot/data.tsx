@@ -1,6 +1,6 @@
 import { Brain } from "lucide-react";
 
-const psot : any = {
+const psot = {
     name: "PSOT",
     icon: Brain,
     color: "blue",
