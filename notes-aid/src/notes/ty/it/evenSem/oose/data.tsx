@@ -9,7 +9,11 @@ const oose = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%201.pdf?alt=media&token=42db56c3-72f1-4758-acb8-8f3ecab36ff3",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EQ5ME-69nZFEuZBe1QBhzZUB1Sf_Zh6JmlZ7k9FejpJFnA?e=e3Tc4G",
+        },
+        {
+          title: "Notes 2",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EVima4jDBJ1JmynEqd9zqEUBiIhNGoK-7sXKVRInfjGUAw?e=CctPD7",
         },
       ],
       topics: [
@@ -99,7 +103,11 @@ const oose = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%202.pdf?alt=media&token=e83fe56e-c1e6-4b86-935e-ff49986cad74",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/Ec_GKX_k7vVGoOY9nVEpTs0B05HHAAG_6VxKJuX-QbVl3A?e=vzjE5G",
+        },
+        {
+          title: "Notes 2",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EY5yp4mtBitHlSpYEMZsBEwBIjr0TFRFjq3ekBQt4Wo_uw?e=ARMhif",
         },
       ],
       topics: [
@@ -173,10 +181,10 @@ const oose = {
 
     3: {
       notesLink: [
-        {
-          title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%202.pdf?alt=media&token=e83fe56e-c1e6-4b86-935e-ff49986cad74",
-        },
+        // {
+        //   title: "Notes 1",
+        //   url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%202.pdf?alt=media&token=e83fe56e-c1e6-4b86-935e-ff49986cad74",
+        // },
       ],
       topics: [
         {

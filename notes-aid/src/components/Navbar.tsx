@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
-import { Sun, Moon, NotebookPen, Bell, X } from "lucide-react"
+import { Sun, Moon, NotebookPen, Bell, X, Download } from "lucide-react"
 
 interface Notification {
   id: string
@@ -18,6 +18,25 @@ interface RawNotification {
   read: boolean
 }
 
+// Define the BeforeInstallPromptEvent interface since it's not in standard TypeScript
+interface BeforeInstallPromptEvent extends Event {
+  prompt: () => Promise<void>
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed', platform: string }>
+}
+
+// Define the Navigator extension for getInstalledRelatedApps
+interface NavigatorWithInstalledApps extends Navigator {
+  getInstalledRelatedApps?: () => Promise<InstalledRelatedApp[]>
+  standalone?: boolean
+}
+
+// Define the InstalledRelatedApp interface
+interface InstalledRelatedApp {
+  id: string
+  platform: string
+  url?: string
+  version?: string
+}
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme()
@@ -28,9 +47,25 @@ const Navbar = () => {
   const [loading, setLoading] = useState<boolean>(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
+  // PWA installation states
+  const [deferredPrompt, setDeferredPrompt] =
+    useState<BeforeInstallPromptEvent | null>(null)
+  const [isAppInstalled, setIsAppInstalled] = useState<boolean>(false)
+  const [isIOS, setIsIOS] = useState<boolean>(false)
+  const [iOSInstructionsVisible, setIOSInstructionsVisible] =
+    useState<boolean>(false)
+
   useEffect(() => {
     setMounted(true)
     fetchNotifications()
+
+    // Check if user is on iOS
+    const checkIOS = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase()
+      return /iphone|ipad|ipod/.test(userAgent)
+    }
+
+    setIsIOS(checkIOS())
 
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -41,8 +76,115 @@ const Navbar = () => {
       }
     }
 
+    // More reliable app installation detection
+    const checkAppInstalled = () => {
+      // Method 1: Check if in standalone mode or display-mode is standalone
+      if (
+        window.matchMedia("(display-mode: standalone)").matches ||
+        (navigator as NavigatorWithInstalledApps).standalone === true
+      ) {
+        setIsAppInstalled(true)
+        return true
+      }
+
+      // Method 2: Use the new getInstalledRelatedApps API (if available)
+      const navigatorExt = navigator as NavigatorWithInstalledApps
+      if (navigatorExt.getInstalledRelatedApps) {
+        navigatorExt
+          .getInstalledRelatedApps()
+          .then((apps: InstalledRelatedApp[]) => {
+            if (apps.length > 0) {
+              setIsAppInstalled(true)
+              return true
+            }
+          })
+          .catch((error: Error) => {
+            console.error("Error checking installed related apps:", error)
+          })
+      }
+
+      return false
+    }
+
+    // Listen for the beforeinstallprompt event
+    const handleBeforeInstallPrompt = (e: Event) => {
+      // If we're already installed, ignore the prompt
+      if (checkAppInstalled()) {
+        return
+      }
+
+      // Prevent the mini-infobar from appearing on mobile
+      e.preventDefault()
+      // Stash the event so it can be triggered later
+      setDeferredPrompt(e as BeforeInstallPromptEvent)
+      // Update UI to notify the user they can install the PWA
+      console.log("App can be installed")
+    }
+
+    // Listen for app installed event
+    const handleAppInstalled = () => {
+      // Hide the install button
+      setIsAppInstalled(true)
+      setDeferredPrompt(null)
+      console.log("PWA was installed")
+    }
+
+    // Listen for display mode changes
+    const handleDisplayModeChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        // User switched to standalone mode, app is installed
+        setIsAppInstalled(true)
+        setDeferredPrompt(null)
+      }
+    }
+
+    // Check if app is already installed on component mount
+    checkAppInstalled()
+
+    // Set up display mode change listener
+    const mediaQuery = window.matchMedia("(display-mode: standalone)")
+    mediaQuery.addEventListener("change", handleDisplayModeChange)
+
+    // Add event listeners
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
+    window.addEventListener("appinstalled", handleAppInstalled)
     document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
+
+    // Cleanup event listeners on unmount
+    return () => {
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt
+      )
+      window.removeEventListener("appinstalled", handleAppInstalled)
+      document.removeEventListener("mousedown", handleClickOutside)
+      mediaQuery.removeEventListener("change", handleDisplayModeChange)
+    }
+  }, [])
+
+  // Re-check installation status when the component becomes visible
+  // This helps detect if the app was installed while the browser was minimized
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        // Check if the app is in standalone mode
+        if (
+          window.matchMedia("(display-mode: standalone)").matches ||
+          (navigator as NavigatorWithInstalledApps).standalone === true
+        ) {
+          setIsAppInstalled(true)
+          setDeferredPrompt(null)
+        }
+      }
+    }
+
+    // console.log(deferredPrompt,isIOS,isAppInstalled,iOSInstructionsVisible)
+
+    document.addEventListener("visibilitychange", handleVisibilityChange)
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
+    }
   }, [])
 
   const fetchNotifications = async (): Promise<void> => {
@@ -57,52 +199,44 @@ const Navbar = () => {
       const data = await response.json()
       // console.log(data)
 
-
       const processedNotifications = data.map((item: RawNotification) => ({
         ...item,
         date: new Date(item.date),
-        message: item.message
+        message: item.message,
       }))
 
-      const notifyOnly = processedNotifications.filter((note: RawNotification) =>
-        note.message.startsWith("notify:")
+      const notifyOnly = processedNotifications.filter(
+        (note: RawNotification) => note.message.startsWith("notify:")
       )
 
       // console.log(notifyOnly)
 
-      const k=localStorage.getItem("LastNotificationRead")
+      const k = localStorage.getItem("LastNotificationRead")
 
-    
       if (k) {
-        const lastReadDate = new Date(k);
+        const lastReadDate = new Date(k)
         notifyOnly.forEach((notification: Notification) => {
-        notification.read = notification.date <= lastReadDate;
-        });
-        const unreadCount = notifyOnly.reduce((count:number, note:Notification) => count + (note.read ? 0 : 1), 0);
-        setNotifications(notifyOnly);
-        setUnreadCount(unreadCount);
-      }
-      else
-      {
-        setNotifications(notifyOnly);
-        setUnreadCount(notifyOnly.length);
+          notification.read = notification.date <= lastReadDate
+        })
+        const unreadCount = notifyOnly.reduce(
+          (count: number, note: Notification) => count + (note.read ? 0 : 1),
+          0
+        )
+        setNotifications(notifyOnly)
+        setUnreadCount(unreadCount)
+      } else {
+        setNotifications(notifyOnly)
+        setUnreadCount(notifyOnly.length)
       }
 
       // const unreadNotifications = notifyOnly.filter((note: Notification) => !note.read);
-    
     } catch (error) {
       console.error("Error fetching notifications:", error)
       const mockNotifications: Notification[] = [
         {
           id: "1",
-          message: "Added responsive design to mobile view",
+          message: "Welcome to Notes-Aid!",
           date: new Date(),
-          read: false,
-        },
-        {
-          id: "2",
-          message: "Fixed dark mode toggle issues",
-          date: new Date(Date.now() - 86400000), 
           read: false,
         },
       ]
@@ -118,6 +252,36 @@ const Navbar = () => {
     setNotifications(notifications.map((note) => ({ ...note, read: true })))
     setUnreadCount(0)
     localStorage.setItem("LastNotificationRead", new Date().toISOString())
+  }
+
+  // Handle PWA installation for non-iOS devices
+  const handleInstallClick = async () => {
+    if (isIOS) {
+      // Show iOS installation instructions
+      setIOSInstructionsVisible(!iOSInstructionsVisible)
+      return
+    }
+
+    if (!deferredPrompt) {
+      console.log("Installation prompt not available")
+      return
+    }
+
+    // Show the install prompt
+    deferredPrompt.prompt()
+
+    // Wait for the user to respond to the prompt
+    const { outcome } = await deferredPrompt.userChoice
+
+    if (outcome === "accepted") {
+      console.log("User accepted the install prompt")
+      setIsAppInstalled(true)
+    } else {
+      console.log("User dismissed the install prompt")
+    }
+
+    // Clear the saved prompt as it can't be used again
+    setDeferredPrompt(null)
   }
 
   if (!mounted) {
@@ -142,6 +306,40 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
+  
+          {!isAppInstalled && (isIOS || deferredPrompt) && (
+            <div className="relative">
+              <button
+                onClick={handleInstallClick}
+                className="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                aria-label="Install app"
+                title={isIOS ? "Add to Home Screen" : "Install Notes-Aid"}
+              >
+                <Download className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+              </button>
+
+              {/* iOS installation instructions popup */}
+              {isIOS && iOSInstructionsVisible && (
+                <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
+                  <button
+                    onClick={() => setIOSInstructionsVisible(false)}
+                    className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                  <h4 className="font-medium text-gray-900 dark:text-white mb-2">
+                    Add to Home Screen
+                  </h4>
+                  <ol className="text-sm text-gray-700 dark:text-gray-300 space-y-2 ml-4 list-decimal">
+                    <li>Tap the Share button in your browser&apos;s toolbar</li>
+                    <li>Scroll down and tap &quot;Add to Home Screen&quot;</li>
+                    <li>Tap &quot;Add&quot; in the top right corner</li>
+                  </ol>
+                </div>
+              )}
+            </div>
+          )}
+
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setShowDropdown(!showDropdown)}
@@ -157,7 +355,7 @@ const Navbar = () => {
             </button>
 
             {showDropdown && (
-                <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm z-50 md:absolute md:transform-none md:top-auto md:left-auto md:right-0 md:mt-2 md:w-80">
+              <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-11/12 max-w-sm z-50 md:absolute md:transform-none md:top-auto md:left-auto md:right-0 md:mt-2 md:w-80">
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-full flex flex-col">
                   <div className="p-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center sticky top-0 bg-white dark:bg-gray-800 rounded-t-lg">
                     <h3 className="text-sm font-medium text-gray-900 dark:text-white">
@@ -187,21 +385,18 @@ const Navbar = () => {
                         Loading...
                       </div>
                     ) : notifications.length > 0 ? (
-                      notifications.map((notification) => (
+                      notifications.map((note) => (
                         <div
-                          key={notification.id}
-                          className={`p-4 border-b border-gray-100 dark:border-gray-700 ${
-                            !notification.read
-                              ? "bg-blue-50 dark:bg-blue-900/20"
-                              : ""
+                          key={note.id}
+                          className={`p-3 border-b border-gray-200 dark:border-gray-700 ${
+                            note.read ? "bg-gray-100 dark:bg-gray-700" : ""
                           }`}
                         >
-                          <p className="text-sm text-gray-800 dark:text-gray-200 mb-1">
-                            {notification.message.replace("notify:","")}
+                          <p className="text-sm text-gray-900 dark:text-white">
+                            {note.message.replace("notify:", "")}
                           </p>
                           <p className="text-xs text-gray-500 dark:text-gray-400">
-                            {notification.date.toLocaleDateString()} at{" "}
-                            {notification.date.toLocaleTimeString()}
+                            {note.date.toLocaleString()}
                           </p>
                         </div>
                       ))

@@ -8,7 +8,7 @@ const ai = {
     1: {
       notesLink: [
         {
-            title: "Notes 1",
+            title: "Module 1 PPT",
             url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ea5TxRERSnNMk8dJziSwhr4B59EW4oP51sNa7uOmTKA1ZA?e=JueEIi",
           },
       ],
@@ -76,7 +76,7 @@ const ai = {
     2: {
       notesLink: [
         {
-            title: "Notes 1",
+            title: "Module 2 PPT",
             url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EVTpki7L6b1Nsq50m8uOL6EB-8Td3LndwzkLk-VMQCbTbg?e=CYBbWp",
           },
       ],
@@ -100,7 +100,7 @@ const ai = {
           ],
         },
         {
-          title: "2.1 The concept of rationality",
+          title: "2.2 The concept of rationality",
           description: "Theoretical based concepts",
           videos: [
             {
@@ -110,7 +110,7 @@ const ai = {
           ],
         },
         {
-          title: "2.1 The Task environment and their properties",
+          title: "2.3 The Task environment and their properties",
           description: "Theoretical based concepts",
           videos: [
             {
@@ -124,7 +124,7 @@ const ai = {
           ],
         },
         {
-          title: "2.1 PEAS",
+          title: "2.4 PEAS",
           description: "Theoretical based concepts- Important for Exam ⭐",
           videos: [
             {
@@ -142,7 +142,7 @@ const ai = {
           ],
         },
         {
-          title: "2.1 The structure of Agents & Types of Agents",
+          title: "2.5 The structure of Agents & Types of Agents",
           description: "Theoretical based concepts- Important for Exam ⭐",
           videos: [
             {
@@ -156,7 +156,7 @@ const ai = {
           ],
         },
         {
-          title: "2.1 Learning Agent",
+          title: "2.6 Learning Agent",
           description: "Theoretical based concepts",
           videos: [
             {
@@ -170,16 +170,16 @@ const ai = {
     3: {
       notesLink: [
         {
-            title: "Notes 1",
-            url: "https://drive.google.com/file/d/1esiJaNmR6CyKEBRptQA60GMU8clbyR0n/view?usp=drive_link",
+            title: "Module 3 PPT 1",
+            url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EbDVbQiNJe5Ao5BRyesS3sEBN5vPJW86v-WY2wk9QqsJxQ?e=KGhHiR",
           },
           {
-            title: "Notes 2",
-            url: "https://drive.google.com/file/d/1mDPMwUxSFYGvdhVRn4mLNdWnld1Z6uCk/view?usp=drive_link",
+            title: "Module 3 PPT 2",
+            url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ESJkwxQ-ny5DszzK_vxROB8BjHBipMW4J9Hx8dPY2uygVw?e=U5CBm5",
           },
           {
-            title: "Notes 3",
-            url: "https://drive.google.com/file/d/19yLUfnPABTv3jw_umuHvCKhywIhpup6j/view?usp=drive_link",
+            title: "Module 3 PPT 3",
+            url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ER5XERGgcqBOswRS3OpwPS0BB9JCDOQtIpkxnnEfbMnxpQ?e=cfLkqK",
           },
       ],
       topics: [
@@ -291,33 +291,10 @@ const ai = {
         },
       ],
     },
-
-    // 3: {
-    //   notesLink: [
-    //     "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AI%20Module%203.pdf?alt=media&token=f0c4d4a0-f75e-4816-a3c2-471592794634",
-    //   ],
-    //   topics: [
-    //     {
-    //       title:
-    //         " Knowledge based Agents, The Wumpus World, inference procedures, First Order Logic: Syntax and Semantic, Inference in FOL, Unification and lifting, Forward chaining, backward Chaining, Resolution, Answer set programming",
-    //       description: "Basic concepts and importance",
-    //       videos: [
-    //         {
-    //           title: "Basic Concepts - Part 1",
-    //           url: "https://www.youtube.com/embed/example1",
-    //         },
-    //         {
-    //           title: "Implementation Overview - Part 2",
-    //           url: "https://www.youtube.com/embed/example2",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
     4: {
       notesLink: [
         {
-            title: "Notes 1",
+            title: "Module 4 PPT",
             url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ea0c7C72Nv9DhETaPxfCfZgB_JiRc_fBV3FeMcCWRRMuqw?e=DoEypQ",
           },
       ],
@@ -358,10 +335,6 @@ const ai = {
               title: "Propositional Logic",
               url: "https://www.youtube.com/embed/6490tKrGEic?si=9uVqYLxqbP3UYEg6",
             },
-            // {
-            //   title: "Inference Procedures (Refer Page 7 of the notes)",
-            //   url: "https://www.youtube.com/embed/aVwcNDKXcHU?si=oy47KP1SzhDAyUj3",
-            // },
           ],
         },
         {
