@@ -1,6 +1,6 @@
 import { Brain } from "lucide-react";
 
-const itc : any = {
+const itc = {
   name: "Information theory and coding",
   icon: Brain,
   color: "blue",
