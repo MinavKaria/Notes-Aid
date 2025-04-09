@@ -55,7 +55,7 @@ function Video({
           className="w-6 h-6"
         >
           {isCompleted ? (
-            <CheckSquare className="text-blue-500" />
+            <CheckSquare className="text-icons" />
           ) : (
             <Square className="text-gray-400" />
           )}
@@ -63,7 +63,7 @@ function Video({
 
         <div
           onClick={() => toggleVideo(index)}
-          className="p-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-gray-700 flex justify-between items-center flex-1 gap-2"
+          className="p-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-bgOpac flex justify-between items-center flex-1 gap-2"
         >
           <span className="text-sm font-medium text-black dark:text-white">
             {video.title}
