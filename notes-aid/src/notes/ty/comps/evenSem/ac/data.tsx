@@ -256,6 +256,99 @@ const ac = {
         },
       ],
     },
+    3:{
+      notesLink:[
+
+      ],
+      topics:[
+        {
+          title:"3.1 Mathematics of Asymmetric Key Cryptography: Primes,Primality Testing, Factorization, Quadratic Congruence,Exponentiation and Logarithm",
+          description :"Theoretical based concepts",
+          videos: [
+           
+          ],
+        },
+        {
+          title:"3.2 Public key cryptography: Principles of public key cryptosystems, The RSA algorithm, attacks on RSA",
+          description :"Theoretical based concepts",
+          videos:[
+
+          ]
+        },
+        {
+          title:"3.3 Key management: Diffie Hellman Key exchange, Man-in Middle attack",
+          description :"Theoretical based concepts",
+          videos:[
+            
+          ]
+        }
+      ]
+    },
+    4:{
+
+      notesLink:[
+        
+        ],
+      topics:[
+        {
+          title:"4.1 4.1 Message Authentication Approaches, Hash Function, Cryptographic Hash Function Requirements, Cryptographic Hash Function Security, Cryptographic Hash Function Structure, SHA, HMAC, MD5.",
+          description :"Theoretical based concepts",
+          videos:[
+
+          ]
+        },
+        {
+          title:"4.2 Using Symmetric Encryption for Message Authentication, Message Authentication Code (MAC), Digital Authentication Algorithm (DAA)",
+          description :"Theoretical based concepts",
+          videos:[
+
+          ]
+        },
+        {
+          title:"4.3 Using Public Key for Authentication, Digital Signatures, Properties of Digital Signatures beyondMessage Authentication, DSS, Authentication Applications: Kerberos, X.509 Authentication Service",
+          description :"Theoretical based concepts",
+          videos:[
+
+          ]
+        }
+      ]
+      
+    },
+    5:{
+      notesLink:[
+
+      ],
+      topics:[
+        {
+          title:"5.1 Quantum Cryptography, Quantum key distribution-QKD",
+          description :"Theoretical based concepts",
+          videos:[
+
+          ]
+        },
+        {
+          title:"5.2 Homomorphic Encryption",
+          description :"Theoretical based concepts",
+          videos:[
+
+          ]
+        },
+        {
+          title:"5.3 Secure Multi-Party Computation (MPC) In particular,Zero-Knowledge Proofs",
+          description :"Theoretical based concepts",
+          videos:[
+
+          ]
+        },
+        {
+          title:"5.4 Cryptographic Obfuscation",
+          description:"Theoretical based concepts",
+          videos:[
+          ]
+        }
+      ]
+    }
+
   },
 };
 

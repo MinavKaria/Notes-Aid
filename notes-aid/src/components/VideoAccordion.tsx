@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Video from "./Video";
 
 const VideoAccordion: React.FC<{
-  videos: { title: string; url: string }[];
+  videos: { title: string; url?: string }[];
   topicKey:string;
   moduleKey:string;
   updateVideoProgress: (moduleIndex: string, videoIndex: string, topicName: string) => void;

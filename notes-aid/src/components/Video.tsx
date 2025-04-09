@@ -9,7 +9,7 @@ interface VideoProps {
   toggleVideo: (index: number) => void;
   openVideoIndex: number | null;
   index: number;
-  video: { title: string; url: string };
+  video: { title: string; url?: string };
   videoRefs: RefObject<(HTMLIFrameElement | null)[]>;
   videoKey: string;
   updateVideoProgress: (
@@ -82,7 +82,7 @@ function Video({
             : "max-h-0 opacity-0"
         }`}
       >
-        {openVideoIndex === index && (
+        {openVideoIndex === index && video.url && video.url!=="" && (
           <div className="p-2">
             <div className="aspect-video">
               <iframe
@@ -100,6 +100,12 @@ function Video({
             </div>
           </div>
         )}
+        {openVideoIndex === index && !video.url && (
+          <div className="p-2 text-sm text-gray-500 dark:text-gray-400">
+            We could&apos;nt find a video for this topic. Please check the notes.
+          </div>
+        )}
+            
       </div>
     </>
   );

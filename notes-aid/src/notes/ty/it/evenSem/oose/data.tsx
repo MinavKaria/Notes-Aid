@@ -9,7 +9,11 @@ const oose = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%201.pdf?alt=media&token=42db56c3-72f1-4758-acb8-8f3ecab36ff3",
+          url: "https://drive.google.com/file/d/1E6_QIhgWAPDzA7MswJPR-QHM-9zJoHGm/view?usp=sharing",
+        },
+        {
+          title: "Notes 2",
+          url: "https://drive.google.com/file/d/11yUrBxYymeJL6eRLeoR-JA5md9NxR6Qz/view?usp=sharing",
         },
       ],
       topics: [
@@ -99,7 +103,11 @@ const oose = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%202.pdf?alt=media&token=e83fe56e-c1e6-4b86-935e-ff49986cad74",
+          url: "https://drive.google.com/file/d/1w4pJvgyxqMunrpOMMGFN8BSMHmZlgOto/view?usp=sharing",
+        },
+        {
+          title: "Notes 2",
+          url: "https://drive.google.com/file/d/1TmgQh5qu8yhTUkXCuUZld5wO8VIDF6AF/view?usp=sharing",
         },
       ],
       topics: [
@@ -173,10 +181,10 @@ const oose = {
 
     3: {
       notesLink: [
-        {
-          title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%202.pdf?alt=media&token=e83fe56e-c1e6-4b86-935e-ff49986cad74",
-        },
+        // {
+        //   title: "Notes 1",
+        //   url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%202.pdf?alt=media&token=e83fe56e-c1e6-4b86-935e-ff49986cad74",
+        // },
       ],
       topics: [
         {
