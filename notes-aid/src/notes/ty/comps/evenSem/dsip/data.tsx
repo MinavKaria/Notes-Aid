@@ -389,7 +389,11 @@ const dsip = {
       ],
     },
     4:{
-      notesLink:[],
+      notesLink:[{
+        title: "Module 4 PPT",
+        url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EWgKpYtL0DBBjKe3yBZrfhQBvaj4wVgdrRQcFgjJ_xuCRA?e=6RqENl",
+
+      }],
       topics:[
         {
           title: "4.1 Image segmentation based on discontinuities: point, line and edge detection (Laplacian, Cany), edge linking, Thresholding (Global, local, optimum), Region based segmentation, edge based segmentation: Hough Transform.",
@@ -408,7 +412,12 @@ const dsip = {
       ]
     },
     5:{
-      notesLink:[],
+      notesLink:[
+        {
+          title: "Module 5 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/Efn3u05ej6FOqw6Pqb3QfKMByzL8vWTEgx7Uu7wHHilJlA?e=xVSmjE",
+        }
+      ],
       topics:[
         {
           title: "5.1 Morphological operations: Dilation, Erosion, Opening,Closing, Hit or Miss Transform, Boundary extraction",

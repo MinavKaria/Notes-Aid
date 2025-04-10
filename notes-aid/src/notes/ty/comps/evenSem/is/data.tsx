@@ -358,8 +358,28 @@ const is = {
     4: {
       notesLink: [
         {
-          title: "Notes 1",
+          title: "Module 4 PPT",
           url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/romil_l_somaiya_edu/EUBK1ClVMrNIphtf7zLmTzUBYcoWe9dDt4wicpWMljakww?e=XGBkqb",
+        },
+        {
+          title: "Notes 1",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EcTehaW_35dOqAz-y_mBHJQBBLezxh6vEGlQlWOXAUrAIw?e=iTsYRt",
+        },
+        {
+          title: "Notes 2",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/EepCh1pxYdRLvXRQo3T1LUoB4BpvuErWsirV91pzaqnWQw?e=zCKBUN",
+        },
+        {
+          title: "Notes 3 - DDoS",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/EYLfdE2Gfo9Bl9VvA8O-KkUBmWRIKs7YF1OXvHyNg8Zt-w?e=YLISPL",
+        },
+        {
+          title: "Notes 4 - Firewall",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/ERA8N5k75-xGpnxcW8fOIwQBlCSb-PNSkjKQiXtt-Xg1rw?e=SvZCjC",
+        },
+        {
+          title: "Notes 5 - Network Security",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/ES2vyrswtStGrYZOx6wKZx4BlkmsPF2SQbD-iHAO01aaig?e=rCu2wC",
         },
       ],
       topics: [
