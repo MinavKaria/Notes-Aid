@@ -9,8 +9,8 @@ const rdbms = {
     1: {
       notesLink: [
         {
-          title: "Module 1 Notes (Placeholder)",
-          url: "https://your-link-here.com/module1-notes",
+          title: "Module 1 Notes",
+          url: "https://drive.google.com/drive/u/2/folders/1WqJ_SK-aGEXXWeQYhaR3JPRY0P696cNl",
         },
       ],
       topics: [
@@ -61,8 +61,8 @@ const rdbms = {
     2: {
       notesLink: [
         {
-          title: "Module 2 Notes (Placeholder)",
-          url: "https://your-link-here.com/module2-notes",
+          title: "Module 2 Notes",
+          url: "https://drive.google.com/drive/u/2/folders/1WqJ_SK-aGEXXWeQYhaR3JPRY0P696cNl",
         },
       ],
       topics: [
@@ -136,8 +136,12 @@ const rdbms = {
     3: {
       notesLink: [
         {
-          title: "Module 3 Notes (Placeholder)",
-          url: "https://your-link-here.com/module3-notes",
+          title: "Relational Algebra Notes",
+          url: "https://drive.google.com/file/d/11Y963QZLOPT93PZ2YpOfUWT6DCo5J7rO/view",
+        },
+        {
+          title: "SQL Notes",
+          url: "https://drive.google.com/file/d/1zyATWUGjDjfjoPCrr9sFbqdgFjLSjnBA/view",
         },
       ],
       topics: [
@@ -166,8 +170,8 @@ const rdbms = {
     4: {
       notesLink: [
         {
-          title: "Module 4 Notes (Placeholder)",
-          url: "https://your-link-here.com/module4-notes",
+          title: "Module 4 Notes",
+          url: "https://drive.google.com/drive/u/2/folders/1WqJ_SK-aGEXXWeQYhaR3JPRY0P696cNl",
         },
       ],
       topics: [
@@ -228,46 +232,82 @@ const rdbms = {
         },
       ],
     },
-    // 5: {
-    //   notesLink: [
-    //     {
-    //       title: "Module 5 Notes (Placeholder)",
-    //       url: "https://your-link-here.com/module5-notes",
-    //     },
-    //   ],
-    //   topics: [
-    //     {
-    //       title: "5.1: Transaction Processing Concepts",
-    //       description: "ACID, Recoverability, Serializability",
-    //       videos: [
-    //         {
-    //           title: "5.1.1: Video Placeholder",
-    //           url: "https://www.youtube.com/embed/your-video-id",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "5.2: Concurrency Control Techniques",
-    //       description: "Lock-based, Timestamp, Validation, Deadlocks",
-    //       videos: [
-    //         {
-    //           title: "5.2.1: Video Placeholder",
-    //           url: "https://www.youtube.com/embed/your-video-id",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: "5.3: Recovery Techniques",
-    //       description: "Deferred & Immediate Update, Shadow Paging",
-    //       videos: [
-    //         {
-    //           title: "5.3.1: Video Placeholder",
-    //           url: "https://www.youtube.com/embed/your-video-id",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
+    5: {
+      notesLink: [
+        {
+          title: "Module 5 Notes ",
+          url: "https://drive.google.com/drive/u/2/folders/1WqJ_SK-aGEXXWeQYhaR3JPRY0P696cNl",
+        },
+      ],
+      topics: [
+        {
+          title: "5.1: Transaction Processing Concepts",
+          description: "ACID, Recoverability, Serializability",
+          videos: [
+            {
+              title: "5.1.1: Introduction to Transactions",
+              url: "https://www.youtube.com/embed/t5hsV9lC1rU?si=-Ag-VyIl7DcLr0T1",
+            },
+            {
+              title: "5.1.2: ACID Properties",
+              url: "https://www.youtube.com/embed/-GS0OxFJsYQ?si=81SpOu-srFvOLCM5",
+            },
+            {
+              title: "5.1.3: Serializability",
+              url: "https://www.youtube.com/embed/s8QlJoL1G6w?si=hYBzn-FiYWEIn-8l",
+            },
+            {
+              title: "5.1.4: Recoverability",
+              url: "https://www.youtube.com/embed/g2gZKA8E1yA?si=c5xB8i-40ijugBOO",
+            }
+          ],
+        },
+        {
+          title: "5.2: Concurrency Control Techniques",
+          description: "Lock-based, Timestamp, Validation, Deadlocks",
+          videos: [
+            {
+              title: "5.2.1:Shared and Exclusive Locks",
+              url: "https://www.youtube.com/embed/94C0V7f2zm4?si=28lvnowEmqhUJKLJ",
+            },
+            {
+              title: "5.2.2: Two Phase Locking",
+              url: "https://www.youtube.com/embed/1pUaEDNLWi4?si=6ys8bHnLaHj_BAV4",
+            },
+            {
+              title: "5.2.3: Timestamp Ordering",
+              url: "https://www.youtube.com/embed/27NtGV1vNoY?si=gICUWntQytNtV_1B",
+            },
+            {
+              title: "5.2.4: Validation Based Protocols",
+              url: "https://www.youtube.com/embed/Q2VcUdxruc8?si=FU91qNHIU75lLaBx",
+            },
+            {
+              title: "5.2.5: Deadlock Detection and Recovery",
+              url: "https://www.youtube.com/embed/7N94uNqrf6E?si=6vr7f3B2iHLqx0uF",
+            }
+          ],
+        },
+        {
+          title: "5.3: Recovery Techniques",
+          description: "Deferred & Immediate Update, Shadow Paging",
+          videos: [
+            {
+              title: "5.3.1: Deferred Update",
+              url: "https://www.youtube.com/embed/0YhOYqPeq0g?si=GiNz1tzApffrFDcF",
+            },
+            {
+              title: "5.3.2: Immediate Update",
+              url: "https://www.youtube.com/embed/47LvbDGD4cc?si=qqR3UoOJBzh1GJbY",
+            },
+            {
+              title: "5.3.3: Shadow Paging",
+              url: "https://www.youtube.com/embed/YA0sXVDoHig?si=BYtf0HchmZE9UWcR",
+            },
+          ],
+        },
+      ],
+    },
   },
 };
 

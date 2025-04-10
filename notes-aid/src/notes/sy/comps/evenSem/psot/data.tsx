@@ -1,7 +1,7 @@
 import { Brain } from "lucide-react";
 
 const psot = {
-    name: "PSOT",
+    name: "Probability Statistics and Optimization Techniques",
     icon: Brain,
     color: "blue",
     modules: {
@@ -128,11 +128,11 @@ const psot = {
             videos: [
               {
                 title: "2.1.1: Correlation",
-                url: ""
+                url: "https://www.youtube.com/embed/lBB4stn3exM?si=H0-hKwILJhwZKQHA"
               },
               {
                 title: "2.1.2: Co-variance",
-                url: ""
+                url: "https://www.youtube.com/embed/lBB4stn3exM?si=H0-hKwILJhwZKQHA"
               },
               {
                 title: "2.1.3: Karl Pearson Coefficient of Correlation",
@@ -162,20 +162,20 @@ const psot = {
               }
             ]
           },
-          {
-        title: "2.3: Self-Learning topics: Correlation and regression in Multivariate",
-            description: "Advanced correlation and regression techniques",
-            videos: [
-              {
-                title: "2.3.1: Correlation in Multivariate",
-                url: ""
-              },
-              {
-                title: "2.3.2: Regression in Multivariate",
-                url: ""
-              }
-            ]
-          }
+        //   {
+        // title: "2.3: Self-Learning topics: Correlation and regression in Multivariate",
+        //     description: "Advanced correlation and regression techniques",
+        //     videos: [
+        //       {
+        //         title: "2.3.1: Correlation in Multivariate",
+        //         url: ""
+        //       },
+        //       {
+        //         title: "2.3.2: Regression in Multivariate",
+        //         url: ""
+        //       }
+        //     ]
+        //   }
         ]
       },
       3: {
@@ -226,7 +226,7 @@ const psot = {
               },
               {
                 title: "3.2.2: Test of Hypothesis",
-                url: ""
+                url: "https://www.youtube.com/embed/0toZWkY8kxI?si=hFFnnOASjHjNDe7x"
               },
               {
                 title: "3.2.3: Level of significance",
@@ -238,11 +238,11 @@ const psot = {
               },
               {
                 title: "3.2.5: One tailed and two tailed tests",
-                url: ""
+                url: "https://www.youtube.com/embed/XvzXVxggQGs?si=CYgKBemNtsizw_2Q"
               },
               {
                 title: "3.2.6: Interval Estimation of population parameters",
-                url: ""
+                url: "https://www.youtube.com/embed/UjrAZQm-ycU?si=lhu6X1GUM2FJurVK"
               },
               {
                 title: "3.2.7: Large samples",
@@ -300,11 +300,11 @@ const psot = {
               },
               {
                 title: "3.5.2: Test of the Goodness of fit",
-                url: ""
+                url: "https://www.youtube.com/embed/EqhyVBItCzw?si=5luy1ZKA53cHuCbl"
               },
               {
                 title: "3.5.3: Yate's correction",
-                url: ""
+                url: "https://www.youtube.com/embed/nu5jtXDDOPQ?si=PaYu7E7Oa5wIUhDo"
               }
             ]
           }
@@ -368,7 +368,7 @@ const psot = {
               },
               {
                 title: "4.3.3: Lagrange's Multiplier method",
-                url: ""
+                url: "https://www.youtube.com/embed/WrthZ0Xul-w?si=KVxhF6QBCjN4OPAJ"
               }
             ]
           },
@@ -378,7 +378,7 @@ const psot = {
             videos: [
               {
                 title: "4.4.1: Problems of two or three variables with one inequality constraint",
-                url: ""
+                url: "https://www.youtube.com/embed/WrthZ0Xul-w?si=KVxhF6QBCjN4OPAJ"
               },
               {
                 title: "4.4.2: Kuhn-Tucker conditions",
