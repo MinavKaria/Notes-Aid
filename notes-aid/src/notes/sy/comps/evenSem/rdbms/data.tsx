@@ -1,4 +1,4 @@
-import { url } from "inspector";
+
 import { Brain } from "lucide-react";
 
 const rdbms = {
