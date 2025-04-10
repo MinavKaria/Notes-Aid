@@ -388,6 +388,51 @@ const dsip = {
         },
       ],
     },
+    4:{
+      notesLink:[],
+      topics:[
+        {
+          title: "4.1 Image segmentation based on discontinuities: point, line and edge detection (Laplacian, Cany), edge linking, Thresholding (Global, local, optimum), Region based segmentation, edge based segmentation: Hough Transform.",
+          description: "Basic theoretical concepts",
+          videos: [
+           
+          ],
+        },
+        {
+          title: "4.2 Boundary descriptors: Signature, Chain code, Shape number, Moments",
+          description: "Basic theoretical concepts",
+          videos: [
+            
+          ],
+        },
+      ]
+    },
+    5:{
+      notesLink:[],
+      topics:[
+        {
+          title: "5.1 Morphological operations: Dilation, Erosion, Opening,Closing, Hit or Miss Transform, Boundary extraction",
+          description: "Basic theoretical concepts",
+          videos: [
+            
+          ],
+        },
+        {
+          title: "5.2 Introduction, redundancies: coding, inter-pixel, psycho-visual, compression ratio, fidelity criteria Lossless compression techniques: Run length coding, Arithmetic coding, Huffman coding, Differential PCM",
+          description: "Basic theoretical concepts",
+          videos: [
+            
+          ],
+        },
+        {
+          title: "5.3 Lossy Compression techniques: Improved grey scale quantization, Vector quantization, Transform coding, JPEG.",
+          description: "Basic theoretical concepts",
+          videos: [
+            
+          ],
+        },
+      ]
+    }
   },
 };
 

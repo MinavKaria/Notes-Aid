@@ -9,11 +9,11 @@ const oose = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EQ5ME-69nZFEuZBe1QBhzZUB1Sf_Zh6JmlZ7k9FejpJFnA?e=e3Tc4G",
+          url: "https://drive.google.com/file/d/1E6_QIhgWAPDzA7MswJPR-QHM-9zJoHGm/view?usp=sharing",
         },
         {
           title: "Notes 2",
-          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EVima4jDBJ1JmynEqd9zqEUBiIhNGoK-7sXKVRInfjGUAw?e=CctPD7",
+          url: "https://drive.google.com/file/d/11yUrBxYymeJL6eRLeoR-JA5md9NxR6Qz/view?usp=sharing",
         },
       ],
       topics: [
@@ -103,11 +103,11 @@ const oose = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/Ec_GKX_k7vVGoOY9nVEpTs0B05HHAAG_6VxKJuX-QbVl3A?e=vzjE5G",
+          url: "https://drive.google.com/file/d/1w4pJvgyxqMunrpOMMGFN8BSMHmZlgOto/view?usp=sharing",
         },
         {
           title: "Notes 2",
-          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EY5yp4mtBitHlSpYEMZsBEwBIjr0TFRFjq3ekBQt4Wo_uw?e=ARMhif",
+          url: "https://drive.google.com/file/d/1TmgQh5qu8yhTUkXCuUZld5wO8VIDF6AF/view?usp=sharing",
         },
       ],
       topics: [

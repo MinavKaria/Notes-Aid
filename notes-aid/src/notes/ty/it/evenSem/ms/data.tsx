@@ -10,11 +10,11 @@ const ms = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EfdK4cplKBxBk1Tvt-iX8k0BAckEkquJmCD0aO_v1sXTZQ?e=8OcZT9",
+          url: "https://drive.google.com/file/d/1qgr_cnuJcDATP_9Nqu8_ACkCyw7IY8Q4/view?usp=sharing",
         },
         {
           title: "Notes 2",
-          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EcY1Fuh600NAvc5m9BPF2wEBkNV3ptfqpXYT7hWXHq7YXg?e=L2dc5o",
+          url: "https://drive.google.com/file/d/1OCZ6emP9s9o09xhW9Ail3eLTUF4WXn7v/view?usp=sharing",
         },
       ],
       topics: [
@@ -45,7 +45,7 @@ const ms = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EfZd9u7lo4dIhirjjlytoaUBl5_MH09XzEtNq9E0sf_2ew?e=VfmAwa",
+          url: "https://drive.google.com/file/d/1VCSxCoozy5OUFTHRUR-JbuIFLQKNhgrQ/view?usp=sharing",
         },
       ],
       topics: [

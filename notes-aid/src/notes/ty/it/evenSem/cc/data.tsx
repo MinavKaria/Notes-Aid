@@ -10,7 +10,7 @@ const cc = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/aarush_s_somaiya_edu/EWbYXPoNaMJLi5ba1eZ3g2UB94fJmQyCSeXZiJbkhg7jYw?e=OppCHZ",
+          url: "https://drive.google.com/file/d/143Z9L3ITDx6O-5As9_FeULgQMKTplgjL/view?usp=sharing",
         },
       ],
       topics: [
@@ -79,7 +79,7 @@ const cc = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://somaiya0-my.sharepoint.com/:w:/g/personal/aarush_s_somaiya_edu/EfNjvGO3_dxDu27gmjQnuIsBFaS8ctNnzQIb-hOOLhwQkQ?e=JWvR6I",
+          url: "https://docs.google.com/document/d/1k_YJHXFs2lsqJQBIZbj62RGQ2lRUo1p0/edit?usp=sharing&ouid=112370671294819108110&rtpof=true&sd=true",
         },
       ],
       topics: [
