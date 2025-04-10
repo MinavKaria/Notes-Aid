@@ -168,28 +168,48 @@ const subjects: Subjects = {
       4: {
         notesLink: [
           {
-            title: "Notes 1",
+            title: "Clustering",
             url: "https://drive.google.com/file/d/1RbLSaz9NbJ77TE1FPD-U4pZjWP2F7Hnz/view?usp=drive_link",
           },
           {
-            title: "Notes 2",
+            title: "Hierarchial Clustering",
             url: "https://drive.google.com/file/d/1icdkCzmQ1nayrfX-CZmO7mjla1FFOvm8/view?usp=drive_link",
           },
           {
-            title: "Notes 3",
+            title: "Aggolomerative Clustering",
             url: "https://drive.google.com/file/d/1QMeVY6BVN_t1RnHuz72EhrrgSIYqtOv8/view?usp=drive_link",
           },
           {
-            title: "Notes 4",
+            title: "Complete Linkage",
             url: "https://drive.google.com/file/d/1K1Goft-MF16n0YRZPvitc6IICxUbPbJ4/view?usp=drive_link",
           },
           {
-            title: "Notes 5",
+            title: "K-Means Clustering - 1",
             url: "https://drive.google.com/file/d/1utyDeaQF7T9MUeLWG9I3AtfoUJWhmLbd/view?usp=drive_link",
           },
           {
-            title: "Notes 6",
+            title: "K-Means Clustering - 2",
             url: "https://drive.google.com/file/d/1P4G76f9NttJXtZN-ZbAua2R6LE6wNMX7/view?usp=drive_link",
+          },
+          {
+            title: "Text Mining",
+            url: "https://drive.google.com/file/d/1QzLr-KmXKAw6NWvqlvmCz_fQtQs2XX39/view?usp=drive_link",
+          },
+          {
+            title: "TF-IDF",
+            url: "https://drive.google.com/file/d/1lBFfvG4oMKQkvLnDnFVTGpwKCGZEey_U/view?usp=drive_link",
+          },
+          {
+            title: "Bag of Words vs TF-IDF",
+            url: "https://drive.google.com/file/d/14-lfVEjhwu_MBtuJtr1b4qtUK8eeE5cd/view?usp=drive_link",
+          },
+          {
+            title: "Recommender Systems",
+            url: "https://drive.google.com/file/d/1ykf45vqnM_cdOwWxu1x6ScgkwxPuPpD1/view?usp=drive_link",
+          },
+          {
+            title: "Hybrid Recommender Systems",
+            url: "https://drive.google.com/file/d/1iXT8UpYRV6bfT4sD3qxLVfVfIo8O1KyW/view?usp=drive_link",
           },
         ],
         topics: [
