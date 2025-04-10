@@ -10,7 +10,7 @@ const cc = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%201.pdf?alt=media&token=42db56c3-72f1-4758-acb8-8f3ecab36ff3",
+          url: "https://drive.google.com/file/d/143Z9L3ITDx6O-5As9_FeULgQMKTplgjL/view?usp=sharing",
         },
       ],
       topics: [
@@ -79,7 +79,7 @@ const cc = {
       notesLink: [
         {
           title: "Notes 1",
-          url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%202.pdf?alt=media&token=e83fe56e-c1e6-4b86-935e-ff49986cad74",
+          url: "https://docs.google.com/document/d/1k_YJHXFs2lsqJQBIZbj62RGQ2lRUo1p0/edit?usp=sharing&ouid=112370671294819108110&rtpof=true&sd=true",
         },
       ],
       topics: [

@@ -28,7 +28,7 @@ const subjects: Subjects = {
       1: {
         notesLink: [
           {
-            title: "Noteswdawd",
+            title: "Notes 1",
             url: "https://drive.google.com/file/d/1yMCgNSGgRlqBfouRmyNXgXEEaPRjOL86/view?usp=sharing",
           },
           {
