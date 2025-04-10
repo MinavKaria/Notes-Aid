@@ -6,7 +6,7 @@ const ep = {
   color: "blue",
   modules: {
     1: {
-      notesLink: [],
+      notesLink: ["https://drive.google.com/drive/folders/1xVDw2nE9gypl9OIuWQEd1Mu7lazjBmu1?usp=drive_link"],
       topics: [
         {
           title: "1.1 Lasers",
@@ -31,7 +31,7 @@ const ep = {
       ]
     },
     2: {
-      notesLink: [],
+      notesLink: ["https://drive.google.com/drive/folders/1nYx8pLm7Z5OCMjgLR69xdGri_-JpOV6l?usp=drive_link"],
       topics: [
         {
           title: "2.1 Semiconductor",
@@ -66,7 +66,7 @@ const ep = {
       ]
     },
     3: {
-      notesLink: [],
+      notesLink: ["https://drive.google.com/drive/folders/1M6UAZ1jMc88Au-dh804sxLsyXUscZOgr?usp=drive_link"],
       topics: [
         {
           title: "3.1 Quantum Mechanics",
@@ -81,7 +81,7 @@ const ep = {
       ]
     },
     4: {
-      notesLink: [],
+      notesLink: ["https://drive.google.com/drive/folders/1d0Yb0QHV4NeYbIZwRMPwfQ3B8ak9LNfA?usp=drive_link"],
       topics: [
         {
           title: "4.1 Electromagnetism and Introduction to Plasma Physics",
@@ -91,7 +91,7 @@ const ep = {
       ]
     },
     5: {
-      notesLink: [],
+      notesLink: ["https://drive.google.com/drive/folders/1Bdh7hUxWNbV1roc1h3HFjcKGp9O_fqp-?usp=drive_link"],
       topics: [
         {
           title: "5.1 Physics of Sensors for IoT Applications",
