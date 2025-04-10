@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
   
 };
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 const withPWA = require('next-pwa')({
   dest: 'public', // Output directory for service worker
   register: true, // Automatically register service worker
