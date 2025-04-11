@@ -19,15 +19,15 @@ const ep = {
           videos: [
 
             {
-              title: "Part 1",
+              title: "Spontaneous Emission, Stimulated Emission, Light Amplification",
               url: "https://www.youtube.com/embed/wOyVaF-DG4A?si=ixsPvtf461h-tjz8"
             },
             {
-              title: "Part 2",
+              title: "Nd YAG laser, He Ne laser and Semiconductor Laser",
               url: "https://www.youtube.com/embed/eQGVkFBjGzE?si=kmA1gOExdo5Rl0qB"
             },
             {
-              title: "Part 3",
+              title: "Einstein Relations and Applications of Laser(Very Important)",
 
               url: "https://www.youtube.com/embed/He-ygEP8ifo?si=CFZXivNojDHAM-Ep"
             },
@@ -40,7 +40,7 @@ const ep = {
           description: "Easy to cover topic",
           videos: [
             {
-              title: "Optical Fibers",
+              title: "Optical Fibers Complete Video",
               url: "https://www.youtube.com/embed/ntTjTsiZ478?si=aVMUpEu6EJXrIv12"
             }
           ]
@@ -60,86 +60,81 @@ const ep = {
           description: "Bit complex to understand",
           videos: [
             {
-              title: "Part 1",
+              title: "Formation of Energy Bands, Direct and Indirect Gap Semiconductors",
               url: "https://www.youtube.com/embed/CXFtbpYaBXw"
             },
             {
-              title: "Part 2",
+              title: "Fermi Level and Fermi-Dirac Distribution Function",
               url: "https://www.youtube.com/embed/6ShYjai83bA"
             },
             {
-              title: "Part 3",
+              title: "Conductivity, Current Density, and Mobility",
               url: "https://www.youtube.com/embed/67QXoPW0eE0"
             },
             {
-              title: "Part 4",
+              title: "Hall Effect",
               url: "https://www.youtube.com/embed/5iEsqeMOZAc"
             },
             {
-              title: "Part 5",
+              title: "p-n Junction Diode",
               url: "https://www.youtube.com/embed/Z-mdnY2ObRg"
             },
             {
-              title: "Part 6",
+              title: "Zener Diode, LED, and Solar Cell",
               url: "https://www.youtube.com/embed/85KspLpuoXU"
             }
           ]
+
         },
         {
           title: "2.2 Dielectric",
           description: "Quite Lengthy theory Focus on numericals",
-          videos: [
-
+          videos:[
             {
-              title: "Part 1",
+              title: "Non-Polar & Polar Dielectrics, Polarization, Susceptibility",
               url: "https://www.youtube.com/embed/ZC4GgMapjHo"
             },
             {
-              title: "Part 2",
+              title: "Electronic Polarization & Polarizability",
               url: "https://www.youtube.com/embed/MsDfu0kh14Q"
             },
             {
-              title: "Part 3",
+              title: "Ionic Polarization & Polarizability",
               url: "https://www.youtube.com/embed/Idq5jiO1qSA"
             },
             {
-              title: "Part 4",
+              title: "Orientational Polarization & Polarizability",
               url: "https://www.youtube.com/embed/3b8YoeR9ew8"
             },
             {
-              title: "Part 5",
+              title: "Local/Internal Field, Lorentz Field",
               url: "https://www.youtube.com/embed/3pCcixzTgws"
             },
             {
-              title: "Part 6",
+              title: "Macroscopic & Local Field Concepts",
               url: "https://www.youtube.com/embed/ZNcFK2ky6uc"
             },
             {
-              title: "Part 7",
+              title: "Clausius-Mossotti Equation",
               url: "https://www.youtube.com/embed/k-iwlRzvpOE"
             },
             {
-              title: "Part 8",
-              url: "https://www.youtube.com/embed/UUPSBh5NmSU"
-            },
-            {
-              title: "Part 9",
+              title: "Ferroelectrics – Properties & Applications",
               url: "https://www.youtube.com/embed/-LB5cnuGGTs"
             },
             {
-              title: "Part 10",
+              title: "Dielectric Loss & Breakdown",
               url: "https://www.youtube.com/embed/y-RH0iT_p2U"
             }
-
-
           ]
+          
         },
         {
           title: "2.3 Liquid Crystal",
           description: "Easy to cover topic, But do attend the online lecture taken by faculty for this",
           videos: [
             {
-              title: "Liquid Crystal",
+              title: "Basics Of Liquid Crystals",
               url: "https://www.youtube.com/embed/_2z-uWRkXh8?si=ZuwI9xiKcTETXkHH"
             }
           ]
@@ -157,39 +152,38 @@ const ep = {
         {
           title: "3.1 Quantum Mechanics",
           description: "Needs Some Foundational basics to understand, bit hard though",
-          videos: [
-
+          videos:[
             {
-              title: "Part 1",
+              title: "Session 1: de Broglie Hypothesis",
               url: "https://www.youtube.com/embed/R3YIlcCZWxQ"
             },
             {
-              title: "Part 2",
+              title: "Session 2: de Broglie Problems",
               url: "https://www.youtube.com/embed/TBDrutCvKN4"
             },
             {
-              title: "Part 3",
+              title: "Session 3: Uncertainty Principle",
               url: "https://www.youtube.com/embed/nC_OAaG7T50"
             },
             {
-              title: "Part 4",
+              title: "Session 4: HUP Problems",
               url: "https://www.youtube.com/embed/caAPH4RT_Ec"
             },
             {
-              title: "Part 5",
+              title: "Session 5: Schrödinger's Equations",
               url: "https://www.youtube.com/embed/P6YnCbvvvHY"
             },
             {
-              title: "Part 6",
+              title: "Session 6: Infinite Potential Well",
               url: "https://www.youtube.com/embed/EtNBK8uoFDY"
             },
             {
-              title: "Part 7",
+              title: "Session 7: Quantum Applications",
               url: "https://www.youtube.com/embed/4Lvnk0FwHEo"
             }
-
-
           ]
+          
+
         }
       ]
     },
@@ -204,24 +198,22 @@ const ep = {
         {
           title: "4.1 Electromagnetism and Introduction to Plasma Physics",
           description: "Bit complex and Lengthy, Focus on Derivations from this",
-          videos: [
-
-
+          videos:[
             {
-              title: "Part 1",
+              title: "Session 1: Scalar & Vector Fields",
               url: "https://www.youtube.com/embed/cWZSCK2UiZc"
             },
             {
-              title: "Part 2",
+              title: "Session 2: Grad, Div & Curl",
               url: "https://www.youtube.com/embed/UsZHdfpQZkA"
             },
             {
-              title: "Part 3",
+              title: "Session 3: Maxwell Equations",
               url: "https://www.youtube.com/embed/Npr77Hg_Tmw"
             }
-
-
           ]
+          
+
         }
       ]
     },
@@ -237,27 +229,24 @@ const ep = {
           title: "5.1 Physics of Sensors for IoT Applications",
           description: "Easy to cover topic",
           videos: [
-
-
             {
-              title: "Part 1",
+              title: "PT100 Resistive Sensor",
               url: "https://www.youtube.com/embed/WbeR0Ey3qPA"
             },
             {
-              title: "Part 2",
+              title: "Capacitive Proximity Sensor",
               url: "https://www.youtube.com/embed/dFIk4nGEREg"
             },
             {
-              title: "Part 3",
+              title: "Piezoelectric & Ultrasonic Sensors",
               url: "https://www.youtube.com/embed/kCbZW6b9FKc"
             },
             {
-              title: "Part 4",
+              title: "Optical & Pyroelectric Sensors",
               url: "https://www.youtube.com/embed/of3-ibcfrdk"
             }
-
-
           ]
+          
         }
       ]
     }
