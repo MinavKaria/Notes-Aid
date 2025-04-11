@@ -1,5 +1,4 @@
 import { Brain } from "lucide-react";
-import { title } from "process";
 
 const os = {
   name: "Operating System",
