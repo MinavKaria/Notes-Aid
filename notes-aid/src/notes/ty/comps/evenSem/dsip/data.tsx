@@ -13,6 +13,10 @@ const dsip = {
           title: "Module 1 PPT",
           url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/ESBuYepwEaVMt47UEvY205EBy9Yn0k_hqwg4H291YT-cHQ?e=ZDB3xA",
         },
+        {
+          title: "Aakriti's Short Notes ",
+          url: "https://drive.google.com/file/d/1dN0IDXK-WZnTqIkFE2WXwSwuYDzxdEfC/view?usp=drive_link",
+        }
       ],
       topics: [
         {
@@ -190,6 +194,10 @@ const dsip = {
         {
           title: "Handwritten Notes",
           url: "https://drive.google.com/file/d/190UVY2j67gyvap5fNC8ev-nkT3U-ey2y/view",
+        },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1DqV_-WG3lCvWFaT8B7cWHEnYyrJAglda/view?usp=drive_link",
         },
       ],
       topics: [
