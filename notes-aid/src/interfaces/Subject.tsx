@@ -2,7 +2,7 @@ import { LucideIcon } from 'lucide-react';
 
 interface Video {
   title: string;
-  url: string;
+  url?: string;
   completed?: boolean;
 }
 
