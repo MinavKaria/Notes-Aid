@@ -76,5 +76,3 @@ Want to improve **Notes-Aid**? Follow these steps:
 Your contributions are **always welcome!** 🎉  
 
 ---
-
-This version **enhances readability**, **improves structure**, and **provides clear information**. 🚀 Let me know if you'd like any more tweaks!
