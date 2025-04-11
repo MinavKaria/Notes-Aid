@@ -15,6 +15,10 @@ const is = {
           title: "Module 1 PPT 2",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EWwlgn-6XwtPkkvOuAZaYzABH7lyU8zalnfStfnXvR39Lw?e=UzSgfT",
         },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/15_AvWIUnrOtFV8WGOJ0kJGn0HosRjM6-/view?usp=drive_link",
+        },
       ],
       topics: [
         {
@@ -248,6 +252,10 @@ const is = {
         {
           title: "Module 2 PPT",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EbC0J0qXM51Hul6n180RkVgBFKCkvvT890W_tQDhM8dNaw?e=gGeE1a",
+        },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1rMOylslZaZhnTFe9_g9lkOeXEwsaXcfV/view?usp=drive_link",
         },
       ],
       topics: [
