@@ -25,6 +25,16 @@ const ed = {
       ],
       topics: [
         {
+          title: "Understading Engineering Drawing",
+          description: "Basics of Engineering Drawing",
+          videos: [
+            {
+              title: "Understading Engineering Drawing",
+              url: "https://www.youtube.com/embed/ht9GwXQMgpo?si=BHcs9DzqweFbj5CH",
+            },
+          ]
+        },
+        {
           title: "Introduction to Engineering Drawings",
           description: "1.1",
           videos: [
