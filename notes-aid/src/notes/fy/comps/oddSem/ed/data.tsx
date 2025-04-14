@@ -1,6 +1,4 @@
 import { Brain } from "lucide-react";
-import { describe } from "node:test";
-
 const ed = {
   name: "Engineering Drawing",
   icon: Brain,
@@ -28,7 +26,7 @@ const ed = {
       topics: [
         {
           title: "Introduction to Engineering Drawings",
-          description: "",
+          description: "1.1",
           videos: [
             {
               title: "Things to Carry",
@@ -38,7 +36,7 @@ const ed = {
         },
         {
           title: "Projections of Point,Lines and Planes",
-          description: "Introduction and AutoCad",
+          description: "1.2",
           videos: [
             {
               title: "Projections of Lines and Planes",
@@ -70,13 +68,24 @@ const ed = {
       topics:[
         {
           title: "Orthogonal Projection of Solids",
-          description: "",
+          description: "2.1",
           videos: [
             {
               title: "Introductions to Orthogonal Projections",
               url: "https://www.youtube.com/embed/bVy-_iqLo1k?si=nkYYTdNKoqLDuvcR&amp;controls=0",
             }
           ]
+        },
+        {
+          title:"Orthographic Projection of Solids",
+          description:"2.2",
+          videos:[
+            {
+              title:"Sectional Orthographic Projections",
+              url:"https://www.youtube.com/embed/LLREqqFov2c?si=CYzaKXFOHOVsZPZz",
+            }
+          ]
+          
         }
       ]
     },
@@ -90,6 +99,17 @@ const ed = {
       topics: [
         {
           title:"Isometric Views",
+          description:"3.1",
+          videos:[
+            {
+              title:"Introduction to Isometric Views",
+              url:"https://www.youtube.com/embed/8j7l1OWhMlE?si=OB9PhwM1bgg5wXF4",
+            }
+          ]
+        },
+        {
+          title:"Isometric Views",
+          description:"3.2",
           videos:[
             {
               title:"How to construct a Isometric View of an Object",
@@ -99,38 +119,38 @@ const ed = {
         },
         {
           title: "Quetions on Isometric Views",
-          description: "",
+          description: "Draw Isometric View",
           videos: [
             {
-              title: "Q1",
+              title: "Q1-Draw Isometric View of the following.",
               url: "https://www.youtube.com/embed/qvfBXHrIaWE?si=RYEhmgi7JN31Nt1z",
             },
             {
-              title: "Q2",
+              title: "Q2- Given Front View and Top View",
               url: "https://www.youtube.com/embed/WSME3_4sLoA?si=42aYrEvmcxmib3aL",
             },
             {
-              title: "Q3",
+              title: "Q3- Given Front View and Top View ",
               url: "https://www.youtube.com/embed/yF2hsEr7AI8?si=PKoznNIwSgGJtX0y",
             },
             {
-              title: "Q4",
+              title: "Q4- Given Front View and Top View",
               url: "https://www.youtube.com/embed/vqvJ0RK32Es?si=Sk09S7p-W15_TX06",
             },
             {
-              title: "Q5",
-              url: "https://www.youtube.com/embed/jys3XcdLdWw?si=ZdA_4Ewltl0fptgy",
+              title: "Q5- Given Front View and Top View",
+              url: "https://www.youtube.com/embed/caWBryWxXBM?si=WNe6eViftS5n7yaI",
             },
             {
-              title: "Q6",
+              title: "Q6- Given Top View and Left Side View",
               url: "https://www.youtube.com/embed/jys3XcdLdWw?si=WsbRH6IuBNrcq_hO",
             },
             {
-              title: "Q7",
+              title: "Q7- Given Front View and Top View",
               url: "https://www.youtube.com/embed/HiAAyZz24oA?si=nPTtb8wvJxdDjBvy",
             },
             {
-              title: "Q8",
+              title: "Q8- Given Front View and Top View",
               url: "https://www.youtube.com/embed/RjpQMnK0w2Y?si=vJZlhdfqZO0BcJwM",
             }
           ]
@@ -157,15 +177,25 @@ const ed = {
         }
       ],
       topics: [
-        
         {
-          title: "Projection of Solids",
-          description: "",
+          title:"Projection of Solids",
+          description:"4.1",
           videos: [
             {
               title: "True Shape Orientation",
               url: "https://www.youtube.com/embed/zi7XYYoqg9E?si=1Vxeokc7f2qjNKW6",
             },
+            {
+              title: "Projection of Square Pyramid",
+              url: "https://www.youtube.com/embed/Ht922zIOE1k?si=l0bAc50sbrhei9Yg", 
+            }
+          ]
+        },
+        
+        {
+          title: "Projection of Solids",
+          description: "4.2",
+          videos: [
             {
               title: "Projection of Square Pyramid",
               url: "https://www.youtube.com/embed/Ht922zIOE1k?si=l0bAc50sbrhei9Yg", 
@@ -201,7 +231,7 @@ const ed = {
       topics: [
         {
           title: "Sectional and Development of Solids",
-          description: "",
+          description: "5.1",
           videos: [
             {
               title: "Sectional Orthographic Projections",
@@ -210,6 +240,16 @@ const ed = {
             {
               title: "Sectional of Petagon Prism",
               url:"https://www.youtube.com/embed/A7RuvwMXdSI?si=P2I4Eb6CbdHZJ_pt" ,
+            },
+          ]
+        },
+        {
+          title:"Lateral Surfaces of Solids",
+          description:"5.2",
+          video:[
+            {
+              title:"Lateral Surfaces of Cone",
+              url:"https://www.youtube.com/embed/uKvZB_fjMxs?si=bE3Rj7rt2-ZpqRFC",
             },
           ]
         }
