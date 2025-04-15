@@ -79,7 +79,7 @@ export default function Contributors() {
                                         className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                                     />
                                 </div>
-                                <div className="absolute inset-0 rounded-full bg-black bg-opacity-0 group-hover:bg-opacity-10 dark:group-hover:bg-opacity-30 transition-all duration-300"></div>
+                                <div className="absolute inset-0 rounded-full bg-gray-500 opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 transition-all duration-300"></div>
                             </div>
                             
                             <h2 className="text-lg font-semibold text-center text-gray-800 dark:text-gray-200 mb-2">

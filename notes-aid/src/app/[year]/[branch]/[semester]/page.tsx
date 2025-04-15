@@ -134,7 +134,7 @@ const EngineeringCurriculum: React.FC = () => {
       <div className="min-h-screen bg-slate-50 dark:bg-gray-900">
         <div className="w-full min-h-[calc(100vh-4rem)] flex items-center justify-center p-4 md:p-6">
           <div className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xs p-6 text-center">
-            <h2 className="text-lg md:text-2xl font-bold mb-4 text-black dark:text-primary">
+            <h2 className="text-lg md:text-2xl font-bold mb-4 text-black dark:text-base">
               No Subjects Found
             </h2>
             <p className="text-slate-600 dark:text-slate-300">
@@ -212,12 +212,12 @@ const EngineeringCurriculum: React.FC = () => {
       <div className="w-full p-4 md:p-6">
         <div className="max-w-full mx-auto bg-white dark:bg-background rounded-lg shadow-xs p-4 md:p-6">
           <div className="mb-6 md:mb-8 text-center md:text-left">
-            <h1 className="text-lg md:text-2xl font-bold mb-2 text-black dark:text-primary">
+            <h1 className="text-lg md:text-2xl font-bold mb-2 text-black dark:text-base">
               Engineering Curriculum of {branch.toUpperCase()} /{" "}
               {slug.toUpperCase()} /{" "}
               {sem.charAt(0).toUpperCase() + sem.slice(1)}
             </h1>
-            <p className="text-slate-600 dark:text-primary">
+            <p className="text-slate-600 dark:text-base">
               Explore subjects and their module-wise topics
             </p>
           </div>
@@ -250,11 +250,11 @@ const EngineeringCurriculum: React.FC = () => {
                 >
                   <div className="flex items-center justify-center gap-2 mb-2 flex-col">
                     <Icon className="w-6 h-6 text-blue-500 dark:text-icons" />
-                    <h3 className="font-medium text-black dark:text-primary text-sm md:text-base">
+                    <h3 className="font-medium text-black dark:text-base text-sm md:text-base">
                       {subject.name}
                     </h3>
                   </div>
-                  <p className="text-xs text-slate-500 dark:text-primary md:text-sm">
+                  <p className="text-xs text-slate-500 dark:text-base md:text-sm">
                     {Object.keys(subject.modules).length} modules
                   </p>
                 </div>
@@ -264,29 +264,28 @@ const EngineeringCurriculum: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 ">
             <div className="space-y-3 border border-border p-4 rounded-lg">
+              <h2 className="text-base md:text-lg font-bold  text-black dark:text-base">
+                Important Links
+              </h2>
+              <div className="flex gap-2 flex-wrap mb-8!">
+                {Object.keys(pyq).length > 0 &&
+                  pyq.map((pyq, index) => {
+                    return (
+                      <a
+                        href={pyq.url}
+                        target="_blank"
+                        className="inline-block px-4 py-2 mt-2 text-sm font-medium text-center text-white dark:text-base bg-blue-500 rounded-lg hover:bg-blue-600 dark:bg-bgOpac dark:hover:bg-borderHover"
+                        key={index}
+                      >
+                        {pyq.title}
+                      </a>
+                    );
+                  })}
+              </div>
 
-               <h2 className="text-base md:text-lg font-bold  text-black dark:text-primary">
-                  Important Links
-                </h2>
-                <div className="flex gap-2 flex-wrap mb-8!">
-                  {Object.keys(pyq).length > 0 &&
-                    pyq.map((pyq, index) => {
-                      return (
-                        <a
-                          href={pyq.url}
-                          target="_blank"
-                          className="inline-block px-4 py-2 mt-2 text-sm font-medium text-center text-white dark:text-primary bg-blue-500 rounded-lg hover:bg-blue-600 dark:bg-bgOpac dark:hover:bg-borderHover"
-                          key={index}
-                        >
-                          {pyq.title}
-                        </a>
-                      );
-                    })}
-                </div>
-              
-                <h2 className="text-base md:text-lg font-bold mb-1 text-black dark:text-primary">
-                  Modules
-                </h2>
+              <h2 className="text-base md:text-lg font-bold mb-1 text-black dark:text-base">
+                Modules
+              </h2>
               {Object.keys(subjects[selectedSubject].modules).map(
                 (moduleKey) => {
                   const moduley = parseInt(moduleKey);
@@ -316,7 +315,7 @@ const EngineeringCurriculum: React.FC = () => {
             </div>
 
             <div className="md:col-span-2 bg-slate-50 dark:bg-background rounded-lg p-4 md:p-6 border border-border">
-              <h2 className="text-base md:text-lg font-bold mb-1 text-black dark:text-primary">
+              <h2 className="text-base md:text-lg font-bold mb-1 text-black dark:text-base">
                 {subjects[selectedSubject].name} - Module {selectedModule || 1}
               </h2>
               <p className=" text-red-500 mb-4">
@@ -346,12 +345,12 @@ const EngineeringCurriculum: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white dark:bg-bgOpac rounded-lg p-6 max-w-sm w-full mx-4">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-bold text-black dark:text-primary">
+              <h3 className="text-lg font-bold text-black dark:text-base">
                 Reset Progress
               </h3>
               <button
                 onClick={() => setShowResetConfirmation(false)}
-                className="text-gray-500 hover:text-gray-700 dark:text-primary dark:hover:text-gray-200"
+                className="text-gray-500 hover:text-gray-700 dark:text-base dark:hover:text-gray-200"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -363,7 +362,7 @@ const EngineeringCurriculum: React.FC = () => {
             <div className="flex justify-end gap-3">
               <button
                 onClick={() => setShowResetConfirmation(false)}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-background dark:text-primary dark:hover:bg-gray-600"
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-background dark:text-base dark:hover:bg-gray-600"
               >
                 Cancel
               </button>

@@ -105,7 +105,7 @@ export default function MainPage() {
       >
         {!showForm ? (
           <div className="flex flex-col items-center justify-center text-center transition-transform duration-500 transform scale-150">
-            <h1 className="text-4xl font-bold text-black dark:text-primary text-center opacity-100 animate-fade-out delay-150 absolute inset-0 flex items-center justify-center">
+            <h1 className="text-4xl font-bold text-black dark:text-base text-center opacity-100 animate-fade-out delay-150 absolute inset-0 flex items-center justify-center">
               Welcome, let&apos;s get productive!
             </h1>
           </div>
@@ -113,7 +113,7 @@ export default function MainPage() {
           <div className="w-full max-w-4xl space-y-4">
             <div className="flex items-center gap-3 mb-8">
               <GraduationCap className="w-8 h-8 text-[#706C61] dark:text-gray-300" />
-              <h1 className="text-2xl font-bold text-[#333333] dark:text-primary">
+              <h1 className="text-2xl font-bold text-[#333333] dark:text-base">
                 Academic Details
               </h1>
             </div>

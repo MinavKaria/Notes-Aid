@@ -9,7 +9,7 @@ export default function ProgressBar({ total, completed }: ProgressBarProps) {
   const percentage = total > 0 ? (completed / total) * 100 : 0;
 
   return (
-    <div className="w-full bg-primary rounded-full h-1 overflow-hidden">
+    <div className="w-full bg-base rounded-full h-1 overflow-hidden">
       <div
         className="h-full bg-icons transition-all duration-500"
         style={{ width: `${percentage}%` }}

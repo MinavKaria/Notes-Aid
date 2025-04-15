@@ -36,13 +36,16 @@ function Video({
 }: VideoProps) {
   // console.log(videoKey)
 
-  const storedProgress = typeof window !== 'undefined' ? localStorage.getItem(subjectName + "-progress") : null;
-  const progressData = storedProgress ? JSON.parse(storedProgress): { completeVideos: {} };
+  const storedProgress =
+    typeof window !== "undefined"
+      ? localStorage.getItem(subjectName + "-progress")
+      : null;
+  const progressData = storedProgress
+    ? JSON.parse(storedProgress)
+    : { completeVideos: {} };
 
   const key = `${subjectName}-module${moduleKey}-topic${topicKey}-video${videoKey}`;
   const isCompleted = progressData.completeVideos[key] === true;
-
-
 
   return (
     <>
@@ -65,7 +68,7 @@ function Video({
           onClick={() => toggleVideo(index)}
           className="p-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-bgOpac flex justify-between items-center flex-1 gap-2"
         >
-          <span className="text-sm font-medium text-black dark:text-primary">
+          <span className="text-sm font-medium text-black dark:text-base">
             {video.title}
           </span>
           <ChevronDown

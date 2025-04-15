@@ -10,7 +10,7 @@ layer(base);
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
+  --color-base: var(--base);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
@@ -46,7 +46,7 @@ layer(base);
 :root {
   --background: #ffffff;
   --foreground: #1a1a1a;
-  --primary: #3b82f6;
+  --base: #3b82f6;
   --secondary: #10b981;
   --accent: #8b5cf6;
   --muted: #f3f4f6;
@@ -63,7 +63,7 @@ layer(base);
 
 .dark {
   --foreground: #f9fafb;
-  --primary: #C2C0B6;
+  --base: #C2C0B6;
   --secondary: #34d399;
   --accent: #a78bfa;
   --muted: #2d3748;
