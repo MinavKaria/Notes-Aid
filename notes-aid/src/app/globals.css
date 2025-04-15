@@ -2,34 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --primary: #3b82f6;
+  --secondary: #10b981;
+  --accent: #8b5cf6;
+  --muted: #f3f4f6;
+  --border: #e5e7eb;
+  --error: #ef4444;
+  --success: #22c55e;
+  --c1: #898986;
+  --c2: #faf9f5;
+  --c3: #faf9d2;
+  --c4: #1e1d1c;
+  --c5: #d97757;
+}
+
+.dark {
+  --foreground: #f9fafb;
+  --primary: #60a5fa;
+  --secondary: #34d399;
+  --accent: #a78bfa;
+  --muted: #2d3748;
+  --error: #f87171;
+  --success: #4ade80;
+  --background: #1e1d1c;
+  --bgOpac: #353434;
+  --icons: #d97757;
+  --iconsHover: #d74e21;
+  --borderHover: #d18c75;
+  --border: #fbf9f4;
+  --cards: #ffffff;
+  --cardsBorder: #898986;
+}
 
 body {
   font-family: var(--font-inter), sans-serif;
+  color: var(--foreground);
+  background: var(--background);
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-poppins), sans-serif;
 }
 code {
   font-family: var(--font-jetbrains-mono), monospace;
 }
-
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
-/* body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
 
 /* this is a test */

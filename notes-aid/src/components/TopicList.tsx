@@ -82,7 +82,7 @@ const TopicList: React.FC<TopicListProps> = ({
             href={note.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-lg text-sm font-medium hover:bg-blue-100 dark:hover:bg-blue-800 transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-cards text-blue-600 dark:text-icons rounded-lg text-sm font-medium hover:bg-blue-100 dark:hover:bg-bgOpac transition-colors"
           >
             <BookOpen className="w-4 h-4" />
             {note.title}
@@ -122,17 +122,17 @@ const TopicList: React.FC<TopicListProps> = ({
 
         return(<div
           key={index}
-          className="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 overflow-hidden"
+          className="bg-white dark:bg-bgOpac rounded-lg border dark:border-cardsBorder overflow-hidden"
         >
             <ProgressBar total={topic.videos?.length ?? 0} completed={completedTopics}  />
           <div
             onClick={() => toggleTopic(index)}
-            className="p-3 cursor-pointer hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors"
+            className="p-3 cursor-pointer hover:bg-slate-50 dark:hover:bg-background transition-colors"
           >
              
             <div className="flex items-start gap-3">
-              <div className="p-2 bg-blue-50 dark:bg-blue-900 rounded">
-                <BookOpen className="w-4 h-4 text-blue-500 dark:text-blue-400" />
+              <div className="p-2 bg-blue-50 dark:bg-cards rounded">
+                <BookOpen className="w-4 h-4 text-blue-500 dark:text-icons" />
               </div>
               <div className="flex-1">
                 <div className="flex justify-between items-center">
@@ -159,7 +159,7 @@ const TopicList: React.FC<TopicListProps> = ({
           >
             <div className="p-3 pt-0">
               {topic.videos && topic.videos.length > 0 ? (
-                <div className="mt-3 border-t dark:border-gray-700 pt-3">
+                <div className="mt-3 border-t dark:border-cardsBorder pt-3">
                   <h5 className="text-sm font-medium text-black dark:text-white mb-2">
                     Lecture Videos
                   </h5>
