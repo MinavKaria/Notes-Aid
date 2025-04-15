@@ -210,16 +210,16 @@ const EngineeringCurriculum: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-background">
+    <div className="min-h-screen bg-base-100">
       <div className="w-full p-4 md:p-6">
-        <div className="max-w-full mx-auto bg-white dark:bg-background rounded-lg shadow-xs p-4 md:p-6">
+        <div className="max-w-full mx-auto bg-base-300 rounded-lg shadow-xs p-4 md:p-6">
           <div className="mb-6 md:mb-8 text-center md:text-left">
-            <h1 className="text-lg md:text-2xl font-bold mb-2 text-black dark:text-base">
+            <h1 className="text-lg md:text-2xl font-bold mb-2 text-base-content">
               Engineering Curriculum of {branch.toUpperCase()} /{" "}
               {slug.toUpperCase()} /{" "}
               {sem.charAt(0).toUpperCase() + sem.slice(1)}
             </h1>
-            <p className="text-slate-600 dark:text-base">
+            <p className="text-base-content">
               Explore subjects and their module-wise topics
             </p>
           </div>
@@ -266,7 +266,7 @@ const EngineeringCurriculum: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 ">
             <div className="space-y-3 border border-border p-4 rounded-lg">
-              <h2 className="text-base md:text-lg font-bold  text-black dark:text-base">
+              <h2 className="text-base md:text-lg font-bold  text-base-content">
                 Important Links
               </h2>
               <div className="flex gap-2 flex-wrap mb-8!">
@@ -276,7 +276,7 @@ const EngineeringCurriculum: React.FC = () => {
                       <a
                         href={pyq.url}
                         target="_blank"
-                        className="inline-block px-4 py-2 mt-2 text-sm font-medium text-center text-white dark:text-base bg-blue-500 rounded-lg hover:bg-blue-600 dark:bg-bgOpac dark:hover:bg-borderHover"
+                        className="inline-block px-4 py-2 mt-2 text-sm font-medium text-center  dark:text-base bg-secondary rounded-lg  text-primary-text "
                         key={index}
                       >
                         {pyq.title}
@@ -285,7 +285,7 @@ const EngineeringCurriculum: React.FC = () => {
                   })}
               </div>
 
-              <h2 className="text-base md:text-lg font-bold mb-1 text-black dark:text-base">
+              <h2 className="text-base md:text-lg font-bold mb-1  text-primary-text">
                 Modules
               </h2>
               {Object.keys(subjects[selectedSubject].modules).map(
@@ -309,7 +309,7 @@ const EngineeringCurriculum: React.FC = () => {
 
               <button
                 onClick={handleResetProgress}
-                className="w-full px-4 py-2 text-sm font-medium text-white bg-icons rounded-lg hover:bg-iconsHover transition-colors duration-200 flex items-center justify-center gap-2"
+                className="w-full px-4 py-2 text-sm font-medium text-warning-content bg-warning rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 <RotateCcw className="w-4 h-4" />
                 Reset Progress

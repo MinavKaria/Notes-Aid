@@ -56,15 +56,15 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
         dark:hover:bg-cardHover
         ${
           isActive
-            ? "border-blue-500 bg-blue-50 dark:bg-borderHover dark:border-border"
-            : "border-slate-200 dark:border-border hover:border-blue-200 dark:hover:border-bgOpac"
+            ? "border-blue-500 bg-base-100"
+            : "border-slate-200 bg-base-300"
         }
       `}
       >
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <h3 className="text-base font-semibold text-gray-900 dark:text-base">
+              <h3 className={` font-semibold text-base-content`}>
                 Module {module}
               </h3>
               <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-icons rounded-full text-gray-600 dark:text-background">
