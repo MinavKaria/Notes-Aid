@@ -87,6 +87,9 @@ const EngineeringCurriculum: React.FC = () => {
   const typedNotesData = NotesData as NotesDataType;
 
   const subjects = slug && typedNotesData[slug]?.[branch]?.[sem];
+  // console.log(subjects)
+  
+
   const pyq = (pyqLinks as PyqLinks)[slug] || [];
   // console.log(pyq)
   // const subjects = NotesData.fy.comps.oddSem;
@@ -98,11 +101,10 @@ const EngineeringCurriculum: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (subjects) {
       setTimeout(() => {
         setLoading(false);
       }, 500);
-    }
+   
   }, [subjects]);
 
   const initialSubject = subjects ? Object.keys(subjects)[0] : "";
@@ -129,7 +131,7 @@ const EngineeringCurriculum: React.FC = () => {
     );
   }
 
-  if (!subjects || Object.keys(subjects).length === 0) {
+  if (!subjects || Object.keys(subjects).length === 0 ) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-gray-900">
         <div className="w-full min-h-[calc(100vh-4rem)] flex items-center justify-center p-4 md:p-6">
