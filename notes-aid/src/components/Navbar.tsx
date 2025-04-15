@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { Sun, Moon, NotebookPen, Bell, X, Download } from "lucide-react";
+import { NotebookPen, Bell, X, Download } from "lucide-react";
+import ThemeSwitcher from "./ThemeChanger";
 
 interface Notification {
   id: string;
@@ -39,7 +39,6 @@ interface InstalledRelatedApp {
 }
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState<boolean>(false);
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
@@ -289,15 +288,15 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="w-full py-4 px-6 border-b transition-colors duration-200 bg-white dark:bg-background">
+    <nav className="w-full py-4 px-6 border-b transition-colors duration-200 bg-base-300 ">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer">
-              <NotebookPen className="w-6 h-6 text-gray-700 dark:text-gray-200" />
-              <h1 className="text-xl font-bold text-gray-800 dark:text-base">
+              <NotebookPen className="w-6 h-6 text-base-content " />
+              <h1 className="text-xl font-bold text-base-content ">
                 Notes-Aid
-                <sup className="text-xs font-normal text-gray-500 dark:text-gray-400 mx-2">
+                <sup className="text-xs font-normal text-base-content  mx-2">
                   Beta
                 </sup>
               </h1>
@@ -314,17 +313,17 @@ const Navbar = () => {
                 aria-label="Install app"
                 title={isIOS ? "Add to Home Screen" : "Install Notes-Aid"}
               >
-                <Download className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                <Download className="w-5 h-5  dark:text-gray-200 text-base-content " />
               </button>
 
               {/* iOS installation instructions popup */}
               {isIOS && iOSInstructionsVisible && (
-                <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
+                <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50 ">
                   <button
                     onClick={() => setIOSInstructionsVisible(false)}
-                    className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                    className="absolute top-2 right-2  text-base-content "
                   >
-                    <X className="w-4 h-4" />
+                    <X className="w-4 h-4 " />
                   </button>
                   <h4 className="font-medium text-gray-900 dark:text-base mb-2">
                     Add to Home Screen
@@ -345,7 +344,7 @@ const Navbar = () => {
               className="relative flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
               aria-label="Notifications"
             >
-              <Bell className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+              <Bell className="w-5 h-5  text-base-content " />
               {unreadCount > 0 && (
                 <span className="absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full">
                   {unreadCount}
@@ -410,20 +409,8 @@ const Navbar = () => {
             )}
           </div>
 
-          <button
-            onClick={() => {
-              console.log("Theme toggled");
-              setTheme(theme === "dark" ? "light" : "dark");
-            }}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-5 h-5 text-gray-200" />
-            ) : (
-              <Moon className="w-5 h-5 text-gray-700" />
-            )}
-          </button>
+
+          <ThemeSwitcher/>
         </div>
       </div>
     </nav>
