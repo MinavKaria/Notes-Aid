@@ -54,7 +54,7 @@ export default function Contributors() {
     );
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-12">
+        <div className="min-h-screen bg-linear-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-12">
             <div className="container mx-auto px-4">
                 <h1 className="text-3xl font-bold text-center mb-3 text-gray-800 dark:text-gray-100">
                     Project Contributors
@@ -67,7 +67,7 @@ export default function Contributors() {
                     {contributors.map(contributor => (
                         <div 
                             key={contributor.id} 
-                            className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 p-6 flex flex-col items-center"
+                            className="bg-white dark:bg-gray-800 rounded-lg shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 p-6 flex flex-col items-center"
                         >
                             <div className="relative group mb-4">
                                 <div className="h-24 w-24 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-700 ring-4 ring-gray-50 dark:ring-gray-700">

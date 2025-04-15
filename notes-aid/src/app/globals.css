@@ -1,8 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap')
+layer(base);
+@import 'tailwindcss';
 
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-error: var(--error);
+  --color-success: var(--success);
+  --color-bg-opac: var(--bgOpac);
+  --color-icons: var(--icons);
+  --color-icons-hover: var(--iconsHover);
+  --color-cards-border: var(--cardsBorder);
+  --color-cards: var(--cards);
+  --color-border-hover: var(--borderHover);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
   --background: #ffffff;

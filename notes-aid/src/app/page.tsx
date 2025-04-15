@@ -97,7 +97,7 @@ export default function MainPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#E1F4F3] via-white to-[#E1F4F3] dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0f172a] flex flex-col transition-colors duration-300">
+    <div className="min-h-screen bg-linear-to-br from-[#E1F4F3] via-white to-[#E1F4F3] dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0f172a] flex flex-col transition-colors duration-300">
       <div
         className={`flex-1 grid place-items-center p-4 transition-all duration-500 ${
           isLoading ? "opacity-0" : "opacity-100"
@@ -119,14 +119,14 @@ export default function MainPage() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-4 mb-8">
-              <div className="flex-grow flex-shrink min-w-[200px] group relative transition-all duration-200">
+              <div className="grow shrink min-w-[200px] group relative transition-all duration-200">
                 <label className="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-slate-200 mb-2">
                   <School className="w-4 h-4 text-[#706C61] dark:text-gray-400" />
                   Branch
                 </label>
                 <div className="relative">
                   <select
-                    className="w-full p-3 pr-10 bg-white dark:bg-slate-900 dark:border-slate-700 border-[#706C61] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#706C61] dark:focus:ring-cyan-400 text-[#333333] dark:text-slate-100 appearance-none"
+                    className="w-full p-3 pr-10 bg-white dark:bg-slate-900 dark:border-slate-700 border-[#706C61] rounded-lg focus:outline-hidden focus:ring-1 focus:ring-[#706C61] dark:focus:ring-cyan-400 text-[#333333] dark:text-slate-100 appearance-none"
                     value={selectedBranch}
                     onChange={(e) => setSelectedBranch(e.target.value)}
                   >
@@ -143,14 +143,14 @@ export default function MainPage() {
                 </div>
               </div>
 
-              <div className="flex-grow flex-shrink min-w-[200px] group relative transition-all duration-200">
+              <div className="grow shrink min-w-[200px] group relative transition-all duration-200">
                 <label className="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-slate-200 mb-2">
                   <Calendar className="w-4 h-4 text-[#706C61] dark:text-gray-400" />
                   Year
                 </label>
                 <div className="relative">
                   <select
-                    className="w-full p-3 pr-10 bg-white dark:bg-slate-900 dark:border-slate-700 border-[#706C61] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#706C61] dark:focus:ring-cyan-400 text-[#333333] dark:text-slate-100 appearance-none"
+                    className="w-full p-3 pr-10 bg-white dark:bg-slate-900 dark:border-slate-700 border-[#706C61] rounded-lg focus:outline-hidden focus:ring-1 focus:ring-[#706C61] dark:focus:ring-cyan-400 text-[#333333] dark:text-slate-100 appearance-none"
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(e.target.value)}
                   >
@@ -167,14 +167,14 @@ export default function MainPage() {
                 </div>
               </div>
 
-              <div className="flex-grow flex-shrink min-w-[200px] group relative transition-all duration-200">
+              <div className="grow shrink min-w-[200px] group relative transition-all duration-200">
                 <label className="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-slate-200 mb-2">
                   <NotebookText className="w-4 h-4 text-[#706C61] dark:text-gray-400" />
                   Semester
                 </label>
                 <div className="relative">
                   <select
-                    className="w-full p-3 pr-10 bg-white dark:bg-slate-900 dark:border-slate-700 border-[#706C61] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#706C61] dark:focus:ring-cyan-400 text-[#333333] dark:text-slate-100 appearance-none"
+                    className="w-full p-3 pr-10 bg-white dark:bg-slate-900 dark:border-slate-700 border-[#706C61] rounded-lg focus:outline-hidden focus:ring-1 focus:ring-[#706C61] dark:focus:ring-cyan-400 text-[#333333] dark:text-slate-100 appearance-none"
                     value={selectedSemester}
                     onChange={(e) => setSelectedSemester(e.target.value)}
                   >

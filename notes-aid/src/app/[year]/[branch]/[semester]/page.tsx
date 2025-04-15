@@ -133,7 +133,7 @@ const EngineeringCurriculum: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-gray-900">
         <div className="w-full min-h-[calc(100vh-4rem)] flex items-center justify-center p-4 md:p-6">
-          <div className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 text-center">
+          <div className="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xs p-6 text-center">
             <h2 className="text-lg md:text-2xl font-bold mb-4 text-black dark:text-primary">
               No Subjects Found
             </h2>
@@ -210,7 +210,7 @@ const EngineeringCurriculum: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-background">
       <div className="w-full p-4 md:p-6">
-        <div className="max-w-full mx-auto bg-white dark:bg-background rounded-lg shadow-sm p-4 md:p-6">
+        <div className="max-w-full mx-auto bg-white dark:bg-background rounded-lg shadow-xs p-4 md:p-6">
           <div className="mb-6 md:mb-8 text-center md:text-left">
             <h1 className="text-lg md:text-2xl font-bold mb-2 text-black dark:text-primary">
               Engineering Curriculum of {branch.toUpperCase()} /{" "}
@@ -268,7 +268,7 @@ const EngineeringCurriculum: React.FC = () => {
                <h2 className="text-base md:text-lg font-bold  text-black dark:text-primary">
                   Important Links
                 </h2>
-                <div className="flex gap-2 flex-wrap !mb-8">
+                <div className="flex gap-2 flex-wrap mb-8!">
                   {Object.keys(pyq).length > 0 &&
                     pyq.map((pyq, index) => {
                       return (

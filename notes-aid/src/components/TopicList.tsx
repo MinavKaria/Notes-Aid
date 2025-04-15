@@ -131,7 +131,7 @@ const TopicList: React.FC<TopicListProps> = ({
           >
              
             <div className="flex items-start gap-3">
-              <div className="p-2 bg-blue-50 dark:bg-background rounded">
+              <div className="p-2 bg-blue-50 dark:bg-background rounded-sm">
                 <BookOpen className="w-4 h-4 text-blue-500 dark:text-icons" />
               </div>
               <div className="flex-1">
