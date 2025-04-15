@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap')
 layer(base);
 @import 'tailwindcss';
+@plugin "daisyui" {
+  themes: all;
+}
 
 @custom-variant dark (&:is(.dark *));
 
