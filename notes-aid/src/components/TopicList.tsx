@@ -70,7 +70,7 @@ const TopicList: React.FC<TopicListProps> = ({
   return (
     <div className="space-y-3">
       {Object.keys(notesLink).length > 0 && (
-        <h5 className="text-sm font-medium text-black dark:text-base mb-2">
+        <h5 className="text-sm font-medium text-base-content">
           Study Materials for Module {moduleNumber}
         </h5>
       )}
@@ -82,7 +82,7 @@ const TopicList: React.FC<TopicListProps> = ({
               href={note.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-background border dark:border-border text-blue-600 dark:text-icons rounded-lg text-sm font-medium hover:bg-blue-100 dark:hover:bg-borderHover transition-colors "
+              className="btn inline-flex items-center gap-2 px-4 py-2 bg-neutral text-neutral-content  border-2 border-primary"
             >
               <BookOpen className="w-4 h-4" />
               {note.title}
@@ -92,7 +92,7 @@ const TopicList: React.FC<TopicListProps> = ({
       </div>
 
       {Object.keys(topics).length > 0 && (
-        <h5 className="text-sm font-medium text-black dark:text-base my-2">
+        <h5 className="text-sm font-medium text-base-content">
           Videos
         </h5>
       )}
@@ -131,7 +131,7 @@ const TopicList: React.FC<TopicListProps> = ({
           return (
             <div
               key={index}
-              className="bg-white dark:bg-background rounded-lg border dark:border-cardsBorder overflow-hidden"
+              className="bg-base-100 rounded-lg border overflow-hidden"
             >
               <ProgressBar
                 total={topic.videos?.length ?? 0}
@@ -139,15 +139,15 @@ const TopicList: React.FC<TopicListProps> = ({
               />
               <div
                 onClick={() => toggleTopic(index)}
-                className="p-3 cursor-pointer hover:bg-background dark:hover:bg-borderHover transition-colors"
+                className="p-3 cursor-pointer bg-base-300 transition-colors"
               >
                 <div className="flex items-start gap-3">
-                  <div className="p-2 bg-blue-50 dark:bg-background rounded-sm">
-                    <BookOpen className="w-4 h-4 text-blue-500 dark:text-icons" />
+                  <div className="p-2 bg-base-100 rounded-sm">
+                    <BookOpen className="w-4 h-4 text-primary" />
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-center">
-                      <h4 className="font-medium text-sm text-black dark:text-base">
+                      <h4 className="text-sm text-base-content font-bold">
                         {topic.title}
                       </h4>
                       <ChevronDown
@@ -156,7 +156,7 @@ const TopicList: React.FC<TopicListProps> = ({
                         }`}
                       />
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                    <p className="text-sm text-base-content mt-1">
                       {topic.description}
                     </p>
                   </div>
@@ -171,7 +171,7 @@ const TopicList: React.FC<TopicListProps> = ({
                 <div className="p-3 pt-0">
                   {topic.videos && topic.videos.length > 0 ? (
                     <div className="mt-3 border-t dark:border-cardsBorder pt-3">
-                      <h5 className="text-sm font-medium text-black dark:text-base mb-2">
+                      <h5 className="text-sm font-medium text-base-content mb-2">
                         Lecture Videos
                       </h5>
                       <VideoAccordion

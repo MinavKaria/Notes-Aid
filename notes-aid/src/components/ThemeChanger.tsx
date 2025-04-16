@@ -24,7 +24,19 @@ const ThemeSwitcher = () => {
     "black",
     "luxury",
     "dracula",
+    "cmyk",
+    "autumn",
+    "business",
+    "acid",
+    "lemonade",
+    "night",
+    "coffee",
+    "winter",
+    "dim",
+    "nord",
+    "sunset"
   ];
+  
 
   const [currentTheme, setCurrentTheme] = useState("light");
 

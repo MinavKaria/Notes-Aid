@@ -245,18 +245,18 @@ const EngineeringCurriculum: React.FC = () => {
                   className={`p-4 rounded-lg border cursor-pointer transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
                       ${
                         selectedSubject === key
-                          ? "border-blue-500 bg-blue-50 dark:bg-borderHover dark:border-border"
-                          : "bg-blue-200 dark:bg-background hover:border-blue-200 dark:hover:border-bgOpac dark:border-border"
+                          ? "bg-base-100 border-white shadow-xl"
+                          : "bg-base-300 border-gray-200 shadow-sm"
                       }
                     `}
                 >
                   <div className="flex items-center justify-center gap-2 mb-2 flex-col">
-                    <Icon className="w-6 h-6 text-blue-500 dark:text-icons" />
-                    <h3 className="font-medium text-black dark:text-base text-sm md:text-base">
+                    <Icon className="w-6 h-6 text-primary" />
+                    <h3 className="font-medium  dark:text-base text-sm md:text-base">
                       {subject.name}
                     </h3>
                   </div>
-                  <p className="text-xs text-slate-500 dark:text-base md:text-sm">
+                  <p className="text-xs  md:text-sm">
                     {Object.keys(subject.modules).length} modules
                   </p>
                 </div>
@@ -266,17 +266,17 @@ const EngineeringCurriculum: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 ">
             <div className="space-y-3 border border-border p-4 rounded-lg">
-              <h2 className="text-base md:text-lg font-bold  text-base-content">
+              <h2 className=" md:text-lg font-bold  text-base-content">
                 Important Links
               </h2>
-              <div className="flex gap-2 flex-wrap mb-8!">
+              <div className="flex gap-2 flex-wrap mb-8">
                 {Object.keys(pyq).length > 0 &&
                   pyq.map((pyq, index) => {
                     return (
                       <a
                         href={pyq.url}
                         target="_blank"
-                        className="inline-block px-4 py-2 mt-2 text-sm font-medium text-center  dark:text-base bg-secondary rounded-lg  text-primary-text "
+                        className="btn inline-block px-4 py-2 mt-2 text-sm font-medium text-center bg-neutral text-neutral-content  border-2 border-primary "
                         key={index}
                       >
                         {pyq.title}
@@ -316,8 +316,8 @@ const EngineeringCurriculum: React.FC = () => {
               </button>
             </div>
 
-            <div className="md:col-span-2 bg-slate-50 dark:bg-background rounded-lg p-4 md:p-6 border border-border">
-              <h2 className="text-base md:text-lg font-bold mb-1 text-black dark:text-base">
+            <div className="md:col-span-2 bg-base-200 text-base-content rounded-lg p-4 md:p-6 border border-border">
+              <h2 className="text-base md:text-lg font-bold mb-1 text-base-content">
                 {subjects[selectedSubject].name} - Module {selectedModule || 1}
               </h2>
               <p className=" text-red-500 mb-4">

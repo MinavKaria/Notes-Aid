@@ -58,17 +58,17 @@ function Video({
           className="w-6 h-6"
         >
           {isCompleted ? (
-            <CheckSquare className="text-icons" />
+            <CheckSquare className="text-primary" />
           ) : (
-            <Square className="text-gray-400" />
+            <Square className="text-base-content" />
           )}
         </button>
 
         <div
           onClick={() => toggleVideo(index)}
-          className="p-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-bgOpac flex justify-between items-center flex-1 gap-2"
+          className="p-2 cursor-pointer hover:bg-base-200  flex justify-between items-center flex-1 gap-2"
         >
-          <span className="text-sm font-medium text-black dark:text-base">
+          <span className="text-sm font-medium text-base-content">
             {video.title}
           </span>
           <ChevronDown

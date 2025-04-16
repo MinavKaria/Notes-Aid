@@ -52,8 +52,8 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
         border 
         transition-all 
         cursor-pointer 
-        hover:shadow-md
-        dark:hover:bg-cardHover
+        shadow-md
+        hover:shadow-2xl
         ${
           isActive
             ? "border-blue-500 bg-base-100"
@@ -61,7 +61,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
         }
       `}
       >
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 ">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <h3 className={` font-semibold text-base-content`}>
