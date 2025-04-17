@@ -7,7 +7,7 @@ interface Topic {
   description: string;
   videos?: {
     title: string;
-    url: string;
+    url?: string;
   }[];
   notes?: {
     title: string;

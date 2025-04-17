@@ -8,9 +8,17 @@ const ai = {
     1: {
       notesLink: [
         {
-            title: "Module 1 PPT",
-            url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ea5TxRERSnNMk8dJziSwhr4B59EW4oP51sNa7uOmTKA1ZA?e=JueEIi",
-          },
+          title: "Module 1 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ea5TxRERSnNMk8dJziSwhr4B59EW4oP51sNa7uOmTKA1ZA?e=JueEIi",
+        },
+        {
+          title: "Yashank's Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EWUcH6cYJRhHhRMEf4DxNp4Bny3IKv6koHukQ1sBwtKp6A?e=vVay8W"
+        },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1et0nqfAJS1NDkAeh2sKf2HWzxUGC4aWc/view?usp=drive_link"
+        }
       ],
       topics: [
         {
@@ -76,9 +84,17 @@ const ai = {
     2: {
       notesLink: [
         {
-            title: "Module 2 PPT",
-            url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EVTpki7L6b1Nsq50m8uOL6EB-8Td3LndwzkLk-VMQCbTbg?e=CYBbWp",
-          },
+          title: "Module 2 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EVTpki7L6b1Nsq50m8uOL6EB-8Td3LndwzkLk-VMQCbTbg?e=CYBbWp",
+        },
+        {
+          title: "Yashank's Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ER2W8O5TunFGqcQOd6QW6s4Bc0FPnNCybXYwQ5FYs30hbw?e=ONONQC"
+        },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1MUdJiZZgvSHHaBwlyTFDot7Yrz_b-3wq/view?usp=drive_link"
+        }
       ],
       topics: [
         {
@@ -170,17 +186,17 @@ const ai = {
     3: {
       notesLink: [
         {
-            title: "Module 3 PPT 1",
-            url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EbDVbQiNJe5Ao5BRyesS3sEBN5vPJW86v-WY2wk9QqsJxQ?e=KGhHiR",
-          },
-          {
-            title: "Module 3 PPT 2",
-            url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ESJkwxQ-ny5DszzK_vxROB8BjHBipMW4J9Hx8dPY2uygVw?e=U5CBm5",
-          },
-          {
-            title: "Module 3 PPT 3",
-            url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ER5XERGgcqBOswRS3OpwPS0BB9JCDOQtIpkxnnEfbMnxpQ?e=cfLkqK",
-          },
+          title: "Module 3 PPT 1",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EbDVbQiNJe5Ao5BRyesS3sEBN5vPJW86v-WY2wk9QqsJxQ?e=KGhHiR",
+        },
+        {
+          title: "Module 3 PPT 2",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ESJkwxQ-ny5DszzK_vxROB8BjHBipMW4J9Hx8dPY2uygVw?e=U5CBm5",
+        },
+        {
+          title: "Module 3 PPT 3",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ER5XERGgcqBOswRS3OpwPS0BB9JCDOQtIpkxnnEfbMnxpQ?e=cfLkqK",
+        },
       ],
       topics: [
         {
@@ -294,9 +310,17 @@ const ai = {
     4: {
       notesLink: [
         {
-            title: "Module 4 PPT",
-            url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ea0c7C72Nv9DhETaPxfCfZgB_JiRc_fBV3FeMcCWRRMuqw?e=DoEypQ",
-          },
+          title: "Module 4 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ea0c7C72Nv9DhETaPxfCfZgB_JiRc_fBV3FeMcCWRRMuqw?e=DoEypQ",
+        },
+        {
+          title: "Yashank's Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ERglU4KA1elBgwuv9UdpBukB-Ax7SakY2fUFwPdBzaRzLw?e=PsKcaZ"
+        },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1AYlAal_x7qB1el_YkdQwTKOhQyiKzLgf/view?usp=drive_link"
+        }
       ],
       topics: [
         {
@@ -423,6 +447,37 @@ const ai = {
         },
       ],
     },
+    5: {
+      notesLink: [
+        {
+          title: "Module 5 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EW7dWqat-pZCkXN9_bTTSggBSPhiO5-6StnNBI6Tj3gdMg?e=fxcMIw",
+        }
+      ],
+      topics: [
+        {
+          title: "5.1 The planning problem, Planning Vs Searching, STRIPS and ADL, Planning with state space search, Partial order planning, Hierarchical planning, Contingent Planning",
+          description: "Theoretical based concepts",
+          videos: [
+
+          ],
+        },
+        {
+          title: "5.2 Learning: Forms of Learning, Inductive Learning, Learning Decision Tree, applications of learning",
+          description: "Theoretical based concepts",
+          videos: [
+
+          ],
+        },
+        {
+          title: "5.3 Applications of AI and Current State of research in AI: Natural Language Processing(NLP):Language models, text classification, information retrieval, information extraction. Expert Systems: Components of expert systems, ES vs Traditional System. Characteristics of expert systems, roles in ES implementation, ES implementation process, applications, advantages and limitations of ES Live face de-identification in Video, ReAgent Serving Platform(RSP), AI habitat, Robust visual question answering",
+          description: "Theoretical based concepts",
+          videos: [
+
+          ],
+        }
+      ]
+    }
   },
 };
 

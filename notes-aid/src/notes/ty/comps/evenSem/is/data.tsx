@@ -15,6 +15,10 @@ const is = {
           title: "Module 1 PPT 2",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EWwlgn-6XwtPkkvOuAZaYzABH7lyU8zalnfStfnXvR39Lw?e=UzSgfT",
         },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/15_AvWIUnrOtFV8WGOJ0kJGn0HosRjM6-/view?usp=drive_link",
+        },
       ],
       topics: [
         {
@@ -249,6 +253,10 @@ const is = {
           title: "Module 2 PPT",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EbC0J0qXM51Hul6n180RkVgBFKCkvvT890W_tQDhM8dNaw?e=gGeE1a",
         },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1rMOylslZaZhnTFe9_g9lkOeXEwsaXcfV/view?usp=drive_link",
+        },
       ],
       topics: [
         {
@@ -308,6 +316,123 @@ const is = {
         },
       ],
     },
+    3: {
+      notesLink: [
+        {
+          title: "Notes 1",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/romil_l_somaiya_edu/EZqeozsif7xDv3K98Fal-agByMycvI2kD4o22MsnSrEqyA?e=x1Axfs",
+        },
+        {
+          title: "Notes 2",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/romil_l_somaiya_edu/EY1z3Dn4XGlAptiklz-nQkkBqWBl7m6FmeoD4klYQyIYzQ?e=uN2LnU",
+        },
+        {
+          title: "Notes 3",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/romil_l_somaiya_edu/EUBK1ClVMrNIphtf7zLmTzUBYcoWe9dDt4wicpWMljakww?e=XGBkqb",
+        },
+      ],
+      topics: [
+        {
+          title:
+            "3.1 Browser Attacks: Browser Attack Types, How Browser Attacks Succeed: Failed Identification and Authentication",
+          description: "Basic concepts and importance",
+          videos: [],
+        },
+        {
+          title:
+            "3.2 Web Attacks Targeting Users - False or Misleading Content, Malicious Web Content, Protecting Against Malicious Web Pages",
+          description: "Basic concepts and importance",
+          videos: [],
+        },
+        {
+          title:
+            "3.3 Obtaining User or Website Data- Code Within Data, Website Data: A User’s Problem, Foiling Data Attacks",
+          description: "Basic concepts and importance",
+          videos: [],
+        },
+        {
+          title:
+            "3.4 Email Attacks - Fake Email, Fake Email Messages as Spam, Fake (Inaccurate) Email Header Data, Phishing, Protecting Against Email Attacks",
+          description: "Basic concepts and importance",
+          videos: [],
+        },
+        {
+          title: "3.5 Open Web Application Security Project(OWASP)",
+          description: "Basic concepts and importance",
+          videos: [],
+        },
+      ],
+    },
+    4: {
+      notesLink: [
+        {
+          title: "Module 4 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/romil_l_somaiya_edu/EUBK1ClVMrNIphtf7zLmTzUBYcoWe9dDt4wicpWMljakww?e=XGBkqb",
+        },
+        {
+          title: "Notes 1",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EcTehaW_35dOqAz-y_mBHJQBBLezxh6vEGlQlWOXAUrAIw?e=iTsYRt",
+        },
+        {
+          title: "Notes 2",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/EepCh1pxYdRLvXRQo3T1LUoB4BpvuErWsirV91pzaqnWQw?e=zCKBUN",
+        },
+        {
+          title: "Notes 3 - DDoS",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/EYLfdE2Gfo9Bl9VvA8O-KkUBmWRIKs7YF1OXvHyNg8Zt-w?e=YLISPL",
+        },
+        {
+          title: "Notes 4 - Firewall",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/ERA8N5k75-xGpnxcW8fOIwQBlCSb-PNSkjKQiXtt-Xg1rw?e=SvZCjC",
+        },
+        {
+          title: "Notes 5 - Network Security",
+          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/ES2vyrswtStGrYZOx6wKZx4BlkmsPF2SQbD-iHAO01aaig?e=rCu2wC",
+        },
+      ],
+      topics: [
+        {
+          title:
+            "4.1 Threats to Network Communications - Interception: Eavesdropping and Wiretapping, Modification, Fabrication: Data Corruption, Interruption: Loss of Service Port Scanning Wireless Network Security - WiFi Background Vulnerabilities in Wireless Networks, Failed Countermeasure: WEP (Wired Equivalent Privacy), Stronger Protocol Suite: WPA (WiFi Protected Access)",
+          description: "Basic concepts and importance",
+          videos: [],
+        },
+        {
+          title:
+            "4.2 Denial of Service- How service is Denied, Flooding Attacks, Network Flooding Caused by Malicious Code, Network Flooding by Resource Exhaustion, Denial of Service by Addressing Failures, Traffic Redirection, DNS Attacks, Exploiting Known Vulnerabilities Physical Disconnection Distributed Denial of-Service- Scripted Denial-of-Service Attacks, Bots, Botnets, Malicious Autonomous Mobile Agents, Autonomous Mobile Protective Agents",
+          description: "Basic concepts and importance",
+          videos: [],
+        },
+        {
+          title:
+            "4.3 Firewalls - What Is a Firewall? , Design of Firewalls, Types of Firewalls, Personal Firewalls, Comparison of Firewall, Types Example Firewall, Configurations Network Address Translation (NAT), Data Loss Prevention",
+          description: "Basic concepts and importance",
+          videos: [],
+        },
+      ],
+    },
+    5:{
+      notesLink:[
+        
+      ],
+      topics:[
+        {
+          title:"5.1 Protecting Programs and Data- Copyrights, Patents, Trade Secrets, Special Cases",
+          description:"Basic concepts and importance",
+          videos:[
+
+          ]
+        },
+        {
+          title:"5.2 Ethical Issues in Computer Security - Differences Between the Law and Ethics, Studying Ethics, Ethical Reasoning",
+          description:"Basic concepts and importance",
+          videos:[
+
+          ]
+        }
+
+      ]
+    }
   },
 };
 

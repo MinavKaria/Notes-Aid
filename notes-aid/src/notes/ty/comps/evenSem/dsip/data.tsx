@@ -13,6 +13,10 @@ const dsip = {
           title: "Module 1 PPT",
           url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/ESBuYepwEaVMt47UEvY205EBy9Yn0k_hqwg4H291YT-cHQ?e=ZDB3xA",
         },
+        {
+          title: "Aakriti's Short Notes ",
+          url: "https://drive.google.com/file/d/1dN0IDXK-WZnTqIkFE2WXwSwuYDzxdEfC/view?usp=drive_link",
+        }
       ],
       topics: [
         {
@@ -191,6 +195,10 @@ const dsip = {
           title: "Handwritten Notes",
           url: "https://drive.google.com/file/d/190UVY2j67gyvap5fNC8ev-nkT3U-ey2y/view",
         },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1DqV_-WG3lCvWFaT8B7cWHEnYyrJAglda/view?usp=drive_link",
+        },
       ],
       topics: [
         {
@@ -329,16 +337,28 @@ const dsip = {
               url: "https://www.youtube.com/embed/YvTVI0dboiM?si=vgPnYnxdkOJLN25L",
             },
             {
-              title: "Discrete Fourier Transform (DFT)",
+              title: "What is Discrete Fourier Transform (DFT) and it's properties",
               url: "https://www.youtube.com/embed/oGwIPM7aLfg?si=qOJg98EbNVGbdFBv",
             },
             {
-              title: "Discrete Fourier Transform (DFT) - Solved Numerical",
+              title: "Basic of DFT and IDFT and examples",
+              url: "https://www.youtube.com/embed/2oEt5lbsyhM?si=sdlWMWofsVOXr7VE",
+            },
+            {
+              title: "Discrete Fourier Transform (1D DFT) - Solved Numerical",
               url: "https://www.youtube.com/embed/qDDziKkr6FY?si=ALRefWF_y_pIsTwl",
+            },
+            {
+              title:"Discrete Fourier Transform (2D DFT) - Solved Numerical (Watch on Youtube) ",
+              url:"https://www.youtube.com/embed/frYAFuHm5AU?si=FN_JHYiMxc4JTCi8"
             },
             {
               title: "Fast Fourier Transform (FFT)",
               url: "https://www.youtube.com/embed/BXghmsH-mKY?si=8Ob1NY_00i_p4nq_",
+            },
+            {
+              title:"Twiddle Factor",
+              url:"https://www.youtube.com/embed/rDF_v4Kp1xE?si=HZ9JQvooPNV9fmwB"
             },
             {
               title: "4-Point DIT-FFT",
@@ -388,6 +408,60 @@ const dsip = {
         },
       ],
     },
+    4:{
+      notesLink:[{
+        title: "Module 4 PPT",
+        url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EWgKpYtL0DBBjKe3yBZrfhQBvaj4wVgdrRQcFgjJ_xuCRA?e=6RqENl",
+
+      }],
+      topics:[
+        {
+          title: "4.1 Image segmentation based on discontinuities: point, line and edge detection (Laplacian, Cany), edge linking, Thresholding (Global, local, optimum), Region based segmentation, edge based segmentation: Hough Transform.",
+          description: "Basic theoretical concepts",
+          videos: [
+           
+          ],
+        },
+        {
+          title: "4.2 Boundary descriptors: Signature, Chain code, Shape number, Moments",
+          description: "Basic theoretical concepts",
+          videos: [
+            
+          ],
+        },
+      ]
+    },
+    5:{
+      notesLink:[
+        {
+          title: "Module 5 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/Efn3u05ej6FOqw6Pqb3QfKMByzL8vWTEgx7Uu7wHHilJlA?e=xVSmjE",
+        }
+      ],
+      topics:[
+        {
+          title: "5.1 Morphological operations: Dilation, Erosion, Opening,Closing, Hit or Miss Transform, Boundary extraction",
+          description: "Basic theoretical concepts",
+          videos: [
+            
+          ],
+        },
+        {
+          title: "5.2 Introduction, redundancies: coding, inter-pixel, psycho-visual, compression ratio, fidelity criteria Lossless compression techniques: Run length coding, Arithmetic coding, Huffman coding, Differential PCM",
+          description: "Basic theoretical concepts",
+          videos: [
+            
+          ],
+        },
+        {
+          title: "5.3 Lossy Compression techniques: Improved grey scale quantization, Vector quantization, Transform coding, JPEG.",
+          description: "Basic theoretical concepts",
+          videos: [
+            
+          ],
+        },
+      ]
+    }
   },
 };
 
