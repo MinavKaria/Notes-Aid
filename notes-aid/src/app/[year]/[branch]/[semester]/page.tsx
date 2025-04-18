@@ -233,34 +233,52 @@ const EngineeringCurriculum: React.FC = () => {
                 <div
                   key={key}
                   onClick={() => {
-                    setSelectedSubject(key);
+                    setSelectedSubject(key)
                     const firstModuleKey = Object.keys(
                       subjects[key]?.modules || {}
-                    )[0];
-                    console.log(key, firstModuleKey);
+                    )[0]
+                    console.log(key, firstModuleKey)
                     setSelectedModule(
                       firstModuleKey ? parseInt(firstModuleKey) : 1
-                    );
+                    )
                   }}
-                  className={`p-4 rounded-lg border cursor-pointer transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
+                  className={`p-4 rounded-4xl cursor-pointer transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
                       ${
                         selectedSubject === key
-                          ? "bg-base-100 border-white shadow-xl"
-                          : "bg-base-300 border-gray-200 shadow-sm"
+                          ? "bg-primary text-primary-content border-white shadow-xl"
+                          : "bg-neutral text-neutral-content  border-gray-200 shadow-sm"
                       }
                     `}
                 >
                   <div className="flex items-center justify-center gap-2 mb-2 flex-col">
-                    <Icon className="w-6 h-6 text-primary" />
-                    <h3 className="font-medium  dark:text-base text-sm md:text-base">
+                    <Icon
+                      className={`w-6 h-6 ${
+                        selectedSubject === key
+                          ? "text-primary-content"
+                          : "text-neutral-content"
+                      }`}
+                    />
+                    <h3
+                      className={`font-medium dark:text-base text-sm md:text-base ${
+                        selectedSubject === key
+                          ? "text-primary-content"
+                          : "text-neutral-content"
+                      }`}
+                    >
                       {subject.name}
                     </h3>
                   </div>
-                  <p className="text-xs  md:text-sm">
+                  <p
+                    className={`text-xs  md:text-sm${
+                      selectedSubject === key
+                        ? "text-primary-content"
+                        : "text-neutral-content"
+                    }`}
+                  >
                     {Object.keys(subject.modules).length} modules
                   </p>
                 </div>
-              );
+              )
             })}
           </div>
 
@@ -273,15 +291,22 @@ const EngineeringCurriculum: React.FC = () => {
                 {Object.keys(pyq).length > 0 &&
                   pyq.map((pyq, index) => {
                     return (
-                      <a
-                        href={pyq.url}
-                        target="_blank"
-                        className="btn inline-block px-4 py-2 mt-2 text-sm font-medium text-center bg-neutral text-neutral-content  border-2 border-primary "
-                        key={index}
-                      >
-                        {pyq.title}
-                      </a>
-                    );
+                      <>
+                        <div className="tooltip">
+                          <div className="tooltip-content">
+                            <div className="animate-bounce text-orange-400 -rotate-10 text-2xl font-black">Wow!</div>
+                          </div>
+                        <a
+                          href={pyq.url}
+                          target="_blank"
+                          className="btn inline-block px-4 py-2 mt-2 text-sm font-medium text-center btn-soft btn-neutral"
+                          key={index}
+                        >
+                          {pyq.title}
+                            </a>
+                          </div>
+                      </>
+                    )
                   })}
               </div>
 

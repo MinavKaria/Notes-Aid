@@ -49,7 +49,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
         className={`
         p-3 
         rounded-lg 
-        border 
+        
         transition-all 
         cursor-pointer 
         shadow-md
@@ -67,7 +67,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
               <h3 className={` font-semibold text-base-content`}>
                 Module {module}
               </h3>
-              <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-icons rounded-full text-gray-600 dark:text-background">
+              <span className="text-xs px-2 py-0.5 bg-neutral text-neutral-content dark:bg-icons rounded-full dark:text-background">
                 {topics} topics
               </span>
             </div>

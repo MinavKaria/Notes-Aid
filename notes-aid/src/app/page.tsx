@@ -97,7 +97,7 @@ export default function MainPage() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-[#E1F4F3] via-white to-[#E1F4F3] dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0f172a] flex flex-col transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-base-200 via-base-100 to-base-200 dark:from-neutral dark:via-base-300 dark:to-neutral flex flex-col transition-colors duration-300">
       <div
         className={`flex-1 grid place-items-center p-4 transition-all duration-500 ${
           isLoading ? "opacity-0" : "opacity-100"
@@ -105,28 +105,29 @@ export default function MainPage() {
       >
         {!showForm ? (
           <div className="flex flex-col items-center justify-center text-center transition-transform duration-500 transform scale-150">
-            <h1 className="text-4xl font-bold text-black dark:text-base text-center opacity-100 animate-fade-out delay-150 absolute inset-0 flex items-center justify-center">
+            <h1 className="text-4xl font-bold text-base-content text-center opacity-100 animate-fade-out delay-150 absolute inset-0 flex items-center justify-center">
               Welcome, let&apos;s get productive!
             </h1>
           </div>
         ) : (
           <div className="w-full max-w-4xl space-y-4">
             <div className="flex items-center gap-3 mb-8">
-              <GraduationCap className="w-8 h-8 text-[#706C61] dark:text-gray-300" />
-              <h1 className="text-2xl font-bold text-[#333333] dark:text-base">
+              <GraduationCap className="w-8 h-8 text-neutral dark:text-neutral-content" />
+              <h1 className="text-2xl font-bold text-neutral dark:text-neutral-content">
                 Academic Details
               </h1>
             </div>
 
             <div className="flex flex-col md:flex-row gap-4 mb-8">
+              {/* Branch */}
               <div className="grow shrink min-w-[200px] group relative transition-all duration-200">
-                <label className="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-slate-200 mb-2">
-                  <School className="w-4 h-4 text-[#706C61] dark:text-gray-400" />
+                <label className="flex items-center gap-2 text-sm font-medium text-neutral dark:text-neutral-content mb-2">
+                  <School className="w-4 h-4 text-neutral dark:text-neutral-content" />
                   Branch
                 </label>
                 <div className="relative">
                   <select
-                    className="w-full p-3 pr-10 bg-white dark:bg-slate-900 dark:border-slate-700 border-[#706C61] rounded-lg focus:outline-hidden focus:ring-1 focus:ring-[#706C61] dark:focus:ring-cyan-400 text-[#333333] dark:text-slate-100 appearance-none"
+                    className="select select-bordered w-full text-base-content dark:text-neutral-content"
                     value={selectedBranch}
                     onChange={(e) => setSelectedBranch(e.target.value)}
                   >
@@ -139,18 +140,19 @@ export default function MainPage() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="w-5 h-5 text-[#706C61] dark:text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <ChevronDown className="w-5 h-5 text-neutral dark:text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
               </div>
 
+              {/* Year */}
               <div className="grow shrink min-w-[200px] group relative transition-all duration-200">
-                <label className="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-slate-200 mb-2">
-                  <Calendar className="w-4 h-4 text-[#706C61] dark:text-gray-400" />
+                <label className="flex items-center gap-2 text-sm font-medium text-neutral dark:text-neutral-content mb-2">
+                  <Calendar className="w-4 h-4 text-neutral dark:text-neutral-content" />
                   Year
                 </label>
                 <div className="relative">
                   <select
-                    className="w-full p-3 pr-10 bg-white dark:bg-slate-900 dark:border-slate-700 border-[#706C61] rounded-lg focus:outline-hidden focus:ring-1 focus:ring-[#706C61] dark:focus:ring-cyan-400 text-[#333333] dark:text-slate-100 appearance-none"
+                    className="select select-bordered w-full text-base-content dark:text-neutral-content"
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(e.target.value)}
                   >
@@ -163,18 +165,19 @@ export default function MainPage() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="w-5 h-5 text-[#706C61] dark:text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <ChevronDown className="w-5 h-5 text-neutral dark:text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
               </div>
 
+              {/* Semester */}
               <div className="grow shrink min-w-[200px] group relative transition-all duration-200">
-                <label className="flex items-center gap-2 text-sm font-medium text-[#333333] dark:text-slate-200 mb-2">
-                  <NotebookText className="w-4 h-4 text-[#706C61] dark:text-gray-400" />
+                <label className="flex items-center gap-2 text-sm font-medium text-neutral dark:text-neutral-content mb-2">
+                  <NotebookText className="w-4 h-4 text-neutral dark:text-neutral-content" />
                   Semester
                 </label>
                 <div className="relative">
                   <select
-                    className="w-full p-3 pr-10 bg-white dark:bg-slate-900 dark:border-slate-700 border-[#706C61] rounded-lg focus:outline-hidden focus:ring-1 focus:ring-[#706C61] dark:focus:ring-cyan-400 text-[#333333] dark:text-slate-100 appearance-none"
+                    className="select select-bordered w-full text-base-content dark:text-neutral-content"
                     value={selectedSemester}
                     onChange={(e) => setSelectedSemester(e.target.value)}
                   >
@@ -187,7 +190,7 @@ export default function MainPage() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="w-5 h-5 text-[#706C61] dark:text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <ChevronDown className="w-5 h-5 text-neutral dark:text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
               </div>
             </div>
@@ -195,10 +198,10 @@ export default function MainPage() {
             <button
               onClick={handleContinue}
               disabled={!selectedBranch || !selectedYear || !selectedSemester}
-              className={`w-full bg-[#333333] dark:bg-slate-800 dark:hover:bg-slate-700 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 ${
+              className={`w-full btn btn-neutral dark:btn-primary transition-all duration-200 flex items-center justify-center gap-2 ${
                 !selectedBranch || !selectedYear || !selectedSemester
-                  ? "opacity-50 cursor-not-allowed dark:bg-slate-900"
-                  : "hover:bg-[#706C61] dark:hover:bg-slate-700"
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
               }`}
             >
               <BookOpen className="w-4 h-4" />
@@ -209,7 +212,7 @@ export default function MainPage() {
               {hasPreviousSelection && (
                 <button
                   onClick={handleReturnToPrevious}
-                  className="border flex-1 md:flex-none border-[#706C61] dark:border-slate-700 text-[#333333] dark:text-slate-200 font-medium py-3 px-2 rounded-lg transition-all duration-200 flex items-center justify-center text-sm gap-2 hover:bg-gray-100 dark:hover:bg-slate-800"
+                  className="btn btn-outline text-sm gap-2"
                 >
                   <RotateCcw className="w-3 h-3" />
                   Return to Previous Selection
@@ -220,5 +223,5 @@ export default function MainPage() {
         )}
       </div>
     </div>
-  );
+  )
 }
