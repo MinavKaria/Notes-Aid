@@ -1,5 +1,4 @@
 import { Brain } from "lucide-react";
-import { title } from "process";
 
 const eeee = {
   name: "Elements of Electrical and Electronics Engineering",
