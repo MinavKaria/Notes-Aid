@@ -126,7 +126,7 @@ const EngineeringCurriculum: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen dark:bg-gray-900">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 dark:border-blue-400"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
       </div>
     );
   }
@@ -245,8 +245,8 @@ const EngineeringCurriculum: React.FC = () => {
                   className={`p-4 rounded-4xl cursor-pointer transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
                       ${
                         selectedSubject === key
-                          ? "bg-primary text-primary-content border-white shadow-xl"
-                          : "bg-neutral text-neutral-content  border-gray-200 shadow-sm"
+                          ? "bg-neutral text-neutral-content border-white shadow-xl"
+                          : "bg-base-200  text-base-content  border-gray-200 shadow-sm"
                       }
                     `}
                 >
@@ -254,15 +254,15 @@ const EngineeringCurriculum: React.FC = () => {
                     <Icon
                       className={`w-6 h-6 ${
                         selectedSubject === key
-                          ? "text-primary-content"
-                          : "text-neutral-content"
+                          ? " text-neutral-content"
+                          : "text-base-content"
                       }`}
                     />
                     <h3
                       className={`font-medium dark:text-base text-sm md:text-base ${
                         selectedSubject === key
-                          ? "text-primary-content"
-                          : "text-neutral-content"
+                          ? "text-neutral-content"
+                          : "text-base-content"
                       }`}
                     >
                       {subject.name}
@@ -292,14 +292,11 @@ const EngineeringCurriculum: React.FC = () => {
                   pyq.map((pyq, index) => {
                     return (
                       <>
-                        <div className="tooltip">
-                          <div className="tooltip-content">
-                            <div className="animate-bounce text-orange-400 -rotate-10 text-2xl font-black">Wow!</div>
-                          </div>
+                        <div className=""> 
                         <a
                           href={pyq.url}
                           target="_blank"
-                          className="btn inline-block px-4 py-2 mt-2 text-sm font-medium text-center btn-soft btn-neutral"
+                          className="btn inline-block px-4 py-2 mt-2 text-sm font-medium bg-neutral text-neutral-content btn-soft btn-neutral border-1 border-primary"
                           key={index}
                         >
                           {pyq.title}
@@ -369,8 +366,8 @@ const EngineeringCurriculum: React.FC = () => {
       </div>
       {/* Reset Confirmation Modal */}
       {showResetConfirmation && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-bgOpac rounded-lg p-6 max-w-sm w-full mx-4">
+        <div className="fixed inset-0 bg-black/50  flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-sm w-full mx-4">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-bold text-black dark:text-base">
                 Reset Progress

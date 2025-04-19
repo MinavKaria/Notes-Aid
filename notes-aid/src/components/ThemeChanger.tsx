@@ -61,7 +61,7 @@ const ThemeSwitcher = () => {
       <div
         tabIndex={0}
         role="button"
-        className="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+        className="flex items-center justify-center p-2 rounded-full hover:bg-gray-500 transition-colors duration-200"
       >
          <div className="bg-base-100 border-base-content/10 grid shrink-0 grid-cols-2 gap-0.5 rounded-md border p-1">
                 <div className="bg-base-content size-1 rounded-full"></div>{" "}

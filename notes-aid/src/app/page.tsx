@@ -112,8 +112,8 @@ export default function MainPage() {
         ) : (
           <div className="w-full max-w-4xl space-y-4">
             <div className="flex items-center gap-3 mb-8">
-              <GraduationCap className="w-8 h-8 text-neutral dark:text-neutral-content" />
-              <h1 className="text-2xl font-bold text-neutral dark:text-neutral-content">
+              <GraduationCap className="w-8 h-8  text-base-content" />
+              <h1 className="text-2xl font-bold text-base-content">
                 Academic Details
               </h1>
             </div>
@@ -121,13 +121,13 @@ export default function MainPage() {
             <div className="flex flex-col md:flex-row gap-4 mb-8">
               {/* Branch */}
               <div className="grow shrink min-w-[200px] group relative transition-all duration-200">
-                <label className="flex items-center gap-2 text-sm font-medium text-neutral dark:text-neutral-content mb-2">
-                  <School className="w-4 h-4 text-neutral dark:text-neutral-content" />
+                <label className="flex items-center gap-2 text-sm font-medium text-base-content mb-2">
+                  <School className="w-4 h-4 text-base-content" />
                   Branch
                 </label>
                 <div className="relative">
                   <select
-                    className="select select-bordered w-full text-base-content dark:text-neutral-content"
+                    className="select select-bordered w-full text-base-content"
                     value={selectedBranch}
                     onChange={(e) => setSelectedBranch(e.target.value)}
                   >
@@ -140,14 +140,14 @@ export default function MainPage() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="w-5 h-5 text-neutral dark:text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <ChevronDown className="w-5 h-5 text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
               </div>
 
               {/* Year */}
               <div className="grow shrink min-w-[200px] group relative transition-all duration-200">
-                <label className="flex items-center gap-2 text-sm font-medium text-neutral dark:text-neutral-content mb-2">
-                  <Calendar className="w-4 h-4 text-neutral dark:text-neutral-content" />
+                <label className="flex items-center gap-2 text-sm font-medium text-base-content mb-2">
+                  <Calendar className="w-4 h-4 text-base-content" />
                   Year
                 </label>
                 <div className="relative">
@@ -165,14 +165,14 @@ export default function MainPage() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="w-5 h-5 text-neutral dark:text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <ChevronDown className="w-5 h-5 text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
               </div>
 
               {/* Semester */}
               <div className="grow shrink min-w-[200px] group relative transition-all duration-200">
-                <label className="flex items-center gap-2 text-sm font-medium text-neutral dark:text-neutral-content mb-2">
-                  <NotebookText className="w-4 h-4 text-neutral dark:text-neutral-content" />
+                <label className="flex items-center gap-2 text-sm font-medium text-base-content mb-2">
+                  <NotebookText className="w-4 h-4 text-base-content" />
                   Semester
                 </label>
                 <div className="relative">
@@ -190,7 +190,7 @@ export default function MainPage() {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="w-5 h-5 text-neutral dark:text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <ChevronDown className="w-5 h-5 text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
               </div>
             </div>

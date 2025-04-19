@@ -309,7 +309,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={handleInstallClick}
-                className="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                className="flex items-center justify-center p-2 rounded-full hover:hover:bg-gray-500 transition-colors duration-200"
                 aria-label="Install app"
                 title={isIOS ? "Add to Home Screen" : "Install Notes-Aid"}
               >
@@ -341,7 +341,7 @@ const Navbar = () => {
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setShowDropdown(!showDropdown)}
-              className="relative flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="relative flex items-center justify-center p-2 rounded-full hover:bg-gray-500 transition-colors duration-200"
               aria-label="Notifications"
             >
               <Bell className="w-5 h-5  text-base-content " />
@@ -353,10 +353,10 @@ const Navbar = () => {
             </button>
 
             {showDropdown && (
-              <div className="fixed top-16 left-1/2 transform  max-w-sm z-50 md:absolute md:transform-none md:top-auto md:left-auto md:right-0 md:mt-2 md:w-80">
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-full flex flex-col">
-                  <div className="p-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center sticky top-0 bg-white dark:bg-gray-800 rounded-t-lg">
-                    <h3 className="text-sm font-medium text-gray-900 dark:text-base">
+               <div className="fixed top-16 left-1/2 -translate-x-1/2 md:-translate-x-0 w-11/12 max-w-sm z-50 md:absolute md:transform-none md:top-auto md:left-auto md:right-0 md:mt-2 md:w-80">
+                <div className="bg-base-100 rounded-lg shadow-lg w-full flex flex-col">
+                  <div className="p-3  border-gray-200 dark:border-gray-700 flex justify-between items-center sticky top-0 bg-base-200  rounded-t-lg">
+                    <h3 className="text-sm font-medium text-base-content ">
                       Notifications
                     </h3>
                     <div className="flex items-center space-x-3">
@@ -370,9 +370,9 @@ const Navbar = () => {
                       )}
                       <button
                         onClick={() => setShowDropdown(false)}
-                        className="rounded-full p-1 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        className="rounded-full p-1 hover:bg-gray-500"
                       >
-                        <X className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                        <X className="w-4 h-4 hover:text-gray-800" />
                       </button>
                     </div>
                   </div>
@@ -386,14 +386,14 @@ const Navbar = () => {
                       notifications.map((note) => (
                         <div
                           key={note.id}
-                          className={`p-3 border-b border-gray-200 dark:border-gray-700 ${
-                            note.read ? "bg-gray-100 dark:bg-gray-700" : ""
+                          className={`p-3  ${
+                            note.read ? "bg-base-100 " : "bg-primary/20 border-2 border-base-300"
                           }`}
                         >
-                          <p className="text-sm text-gray-900 dark:text-base">
+                          <p className="text-sm text-base-content">
                             {note.message.replace("notify:", "")}
                           </p>
-                          <p className="text-xs text-gray-500 dark:text-gray-400">
+                          <p className="text-xs text-base-content/60">
                             {note.date.toLocaleString()}
                           </p>
                         </div>

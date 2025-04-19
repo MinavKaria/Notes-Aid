@@ -82,7 +82,7 @@ const TopicList: React.FC<TopicListProps> = ({
               href={note.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn inline-flex items-center gap-2 px-4 py-2 bg-neutral text-neutral-content  border-2 border-primary"
+              className="btn inline-flex items-center gap-2 px-4 py-2 bg-neutral text-neutral-content  border-1 border-primary"
             >
               <BookOpen className="w-4 h-4" />
               {note.title}
