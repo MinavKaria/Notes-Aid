@@ -31,6 +31,10 @@ const pyqLinks:pyqLink={
         {
             title:"Textbooks",
             url:"https://drive.google.com/drive/folders/1nDhVCxdEF3xE6v65PAbnzzdn3XGsZ1xd?usp=sharing"
+        },
+        {
+            title: "Importance Percentage per Module (csv sheet)",
+            url: "https://docs.google.com/spreadsheets/d/1agK0A8mo7oSlWpDf_gpGYutzdHXBSyl1vNkIJPoSh1Q/edit?usp=sharing",
         }
     ],
     ly:[],
