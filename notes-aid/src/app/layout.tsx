@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { ThemeProvider } from "next-themes";
+// import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Metrics from "../metrics";
 import Footer from "../components/Footer";
@@ -91,12 +91,12 @@ export default function RootLayout({
     >
       <body>
         <SessionProvider>
-          <ThemeProvider attribute="class">
+          {/* <ThemeProvider attribute="class"> */}
             <Navbar />
             {children}
             <Metrics />
             <Footer />
-          </ThemeProvider>
+          {/* </ThemeProvider> */}
         </SessionProvider>
       </body>
     </html>

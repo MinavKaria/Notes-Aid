@@ -36,17 +36,20 @@ function Video({
 }: VideoProps) {
   // console.log(videoKey)
 
-  const storedProgress = typeof window !== 'undefined' ? localStorage.getItem(subjectName + "-progress") : null;
-  const progressData = storedProgress ? JSON.parse(storedProgress): { completeVideos: {} };
+  const storedProgress =
+    typeof window !== "undefined"
+      ? localStorage.getItem(subjectName + "-progress")
+      : null;
+  const progressData = storedProgress
+    ? JSON.parse(storedProgress)
+    : { completeVideos: {} };
 
   const key = `${subjectName}-module${moduleKey}-topic${topicKey}-video${videoKey}`;
   const isCompleted = progressData.completeVideos[key] === true;
 
-
-
   return (
     <>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 hover:bg-base-200 ">
         <button
           onClick={() => {
             updateVideoProgress(moduleKey, videoKey, topicKey);
@@ -55,17 +58,17 @@ function Video({
           className="w-6 h-6"
         >
           {isCompleted ? (
-            <CheckSquare className="text-blue-500" />
+            <CheckSquare className="text-primary" />
           ) : (
-            <Square className="text-gray-400" />
+            <Square className="text-base-content" />
           )}
         </button>
 
         <div
           onClick={() => toggleVideo(index)}
-          className="p-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-gray-700 flex justify-between items-center flex-1 gap-2"
+          className="p-2 cursor-pointer hover:bg-base-200  flex justify-between items-center flex-1 gap-2"
         >
-          <span className="text-sm font-medium text-black dark:text-white">
+          <span className="text-sm font-medium text-base-content">
             {video.title}
           </span>
           <ChevronDown
@@ -101,7 +104,7 @@ function Video({
           </div>
         )}
         {openVideoIndex === index && !video.url && (
-          <div className="p-2 text-sm text-gray-500 dark:text-gray-400">
+          <div className="p-2 text-sm text-base-content">
             We could&apos;nt find a video for this topic. Please check the notes.
           </div>
         )}

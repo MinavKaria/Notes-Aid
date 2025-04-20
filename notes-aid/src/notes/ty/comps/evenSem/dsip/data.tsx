@@ -13,6 +13,10 @@ const dsip = {
           title: "Module 1 PPT",
           url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/ESBuYepwEaVMt47UEvY205EBy9Yn0k_hqwg4H291YT-cHQ?e=ZDB3xA",
         },
+        {
+          title: "Aakriti's Short Notes ",
+          url: "https://drive.google.com/file/d/1dN0IDXK-WZnTqIkFE2WXwSwuYDzxdEfC/view?usp=drive_link",
+        }
       ],
       topics: [
         {
@@ -191,6 +195,10 @@ const dsip = {
           title: "Handwritten Notes",
           url: "https://drive.google.com/file/d/190UVY2j67gyvap5fNC8ev-nkT3U-ey2y/view",
         },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1DqV_-WG3lCvWFaT8B7cWHEnYyrJAglda/view?usp=drive_link",
+        },
       ],
       topics: [
         {
@@ -329,16 +337,28 @@ const dsip = {
               url: "https://www.youtube.com/embed/YvTVI0dboiM?si=vgPnYnxdkOJLN25L",
             },
             {
-              title: "Discrete Fourier Transform (DFT)",
+              title: "What is Discrete Fourier Transform (DFT) and it's properties",
               url: "https://www.youtube.com/embed/oGwIPM7aLfg?si=qOJg98EbNVGbdFBv",
             },
             {
-              title: "Discrete Fourier Transform (DFT) - Solved Numerical",
+              title: "Basic of DFT and IDFT and examples",
+              url: "https://www.youtube.com/embed/2oEt5lbsyhM?si=sdlWMWofsVOXr7VE",
+            },
+            {
+              title: "Discrete Fourier Transform (1D DFT) - Solved Numerical",
               url: "https://www.youtube.com/embed/qDDziKkr6FY?si=ALRefWF_y_pIsTwl",
+            },
+            {
+              title:"Discrete Fourier Transform (2D DFT) - Solved Numerical (Watch on Youtube) ",
+              url:"https://www.youtube.com/embed/frYAFuHm5AU?si=FN_JHYiMxc4JTCi8"
             },
             {
               title: "Fast Fourier Transform (FFT)",
               url: "https://www.youtube.com/embed/BXghmsH-mKY?si=8Ob1NY_00i_p4nq_",
+            },
+            {
+              title:"Twiddle Factor",
+              url:"https://www.youtube.com/embed/rDF_v4Kp1xE?si=HZ9JQvooPNV9fmwB"
             },
             {
               title: "4-Point DIT-FFT",
@@ -351,39 +371,55 @@ const dsip = {
           ],
         },
         {
-          title: "3.2 Image Transformation - DCT, Walsh, Hadamard, Haar, PCA",
+          title: "3.2 Image Transformation - DCT, Walsh, Hadamard, Haar, PCA, Intro to Wavelet Transform",
           description: "Numerical based concepts- Important for Exam ⭐",
           videos: [
             {
-              title: "Discrete Cosine Transform (DCT)",
-              url: "https://www.youtube.com/embed/mK9Avw7jX6E?si=OdjBT-9OxqdiOusj",
+              title: "Discrete Cosine Transform (DCT) and Haar Transform",
+              url: "https://www.youtube.com/embed/lQnUex31f5Q?si=IWSLP0cnfBBI5s3T",
             },
             {
-              title: "Walsh Transform",
-              url: "https://www.youtube.com/embed/n0zYz8eQtU4?si=K1cID_CuK-cfM09q",
+              title:"Discrete Cosine Transform (DCT) - Concept and Properties",
+              url:"https://www.youtube.com/embed/j8LJpQMxmZQ?si=4qiocGjJ5gbl-TaG"
             },
             {
-              title: "Hadamard Transform",
-              url: "https://www.youtube.com/embed/avFvEsw1fgs?si=EPAZ4lFZYznoRxZR",
+              title:" Discrete Cosine Transform (DCT) 1D and 2D - Solved Numerical",
+              url:"https://www.youtube.com/embed/RYqQT4W85t4?si=4A0MpWg-W1C9bYbl"
             },
             {
-              title: "Haar Transform",
-              url: "https://www.youtube.com/embed/s02VrcLObvU?si=615BzJM2p90_N9WP",
+              title:"Hadamard Transform and Walsh Transform",
+              url:"https://www.youtube.com/embed/IDj2l9s_pAs?si=a6UxCv1aOmk-fJWZ"
             },
             {
-              title: "Principal Component Analysis (PCA) / Karhunen-Loeve Transform",
+              title: "Walsh Transform- Part 2",
+              url: "https://www.youtube.com/embed/6R0KnhD0pSQ?si=CsGW3JFbv_46X092",
+            },
+            {
+              title: "Principal Component Analysis (PCA) (Very less chances of coming in exam) ",
               url: "https://www.youtube.com/embed/sjCCdY3ySd0?si=1GnNhADQAUR97oc7",
+            },
+            {
+              title: "Introduction to Wavelet Transform (from 6:02)",
+              url: "https://www.youtube.com/embed/s02VrcLObvU?si=iF8Z4v_v0OEeFbhI&amp;start=362",
             },
           ],
         },
         {
-          title: "3.3 Frequency Domain Filtering - Low and High Pass",
-          description: "Basic theoretical concepts",
+          title: "3.3 Frequency Domain Filtering - Low and High Pass (Ideal, Butterworth, Gaussian) & Homomorphic filter",
+          description: "Important theoretical concepts - Can be asked in exam as short notes",
           videos: [
             {
-              title: "Frequency Domain Filtering",
+              title: "Frequency Domain Filtering- Low Pass and High Pass",
               url: "https://www.youtube.com/embed/guPIbJIZ7QI?si=iQt0-qo_z-OXSyn9",
             },
+            {
+              title:"Homomorphic Filter",
+              url:"https://www.youtube.com/embed/NIM78sVsEVg?si=cbmQKkfiRe24sthH"
+            },
+            {
+              title:"Homomorphic Filter - Part 2",
+              url:"https://www.youtube.com/embed/c9P0Xsmcuxc?si=qG_XZwSNm3uCbFIN"
+            }
           ],
         },
       ],
@@ -397,16 +433,74 @@ const dsip = {
       topics:[
         {
           title: "4.1 Image segmentation based on discontinuities: point, line and edge detection (Laplacian, Cany), edge linking, Thresholding (Global, local, optimum), Region based segmentation, edge based segmentation: Hough Transform.",
-          description: "Basic theoretical concepts",
+          description: "Theoretical concepts - Short notes can be asked in exam ⭐",
           videos: [
-           
+           {
+            title:"Introduction to Image Segmentation",
+            url:"https://www.youtube.com/embed/bsneXRECPWI?si=_D4XlapdxtznZROS"
+           },
+           {
+            title:"Detection of Discontinuities: Point, Line - Part 1",
+            url:"https://www.youtube.com/embed/4BO4NvFk5Po?si=TELywmvqtJFos_sY"
+           },
+           {
+            title:"Detection of Discontinuities: Point, Line - Part 2",
+            url:"https://www.youtube.com/embed/2XonhnHLxCM?si=w0naVlYk6HLtzWKR"
+           },
+           {
+            title:"Detection of Discontinuities: Point, Line, Edge",
+            url:"https://www.youtube.com/embed/i3ANIRt9qRg?si=3A3Keyc7Wldg5PVK"
+           },
+           {
+            title:"First Order Edge Detection Gradient Operators: Sobel, Prewitt, Roberts (watch till 16:20)",
+            url:"https://www.youtube.com/embed/3JEazuT7_T4?si=rTptzoH3HB58nZmw"
+           },
+           {
+            title:"Second Order Derivative Filters in Image Segmentation: Laplacian , Laplacian of Gaussian (LoG), Canny Edge Detector",
+            url:"https://www.youtube.com/embed/8s1nWVWrhz4?si=Vo1ycT1JFtHuy9C8"
+           },
+           {
+            title:"Hough Transform Explained with Example",
+            url:"https://www.youtube.com/embed/t1GXMvK9m84?si=_neCFOseyjKz3Pc1"
+           },
+           {
+            title:"Hough Transform Example - Part 2",
+            url:"https://www.youtube.com/embed/LEJc02pIay0?si=3-bDQvQTwh9UCF9Y"
+           },
+           {
+            title:"Hough Transform Example - Part 3",
+            url:"https://www.youtube.com/embed/fiDDn_F9U74?si=q95VgLRIrBcFA2DX"
+           },
+           {
+            title:"Region Growing Algorithm",
+            url:"https://www.youtube.com/embed/ZAXjI9CFvDU?si=Apae6tE2Cu3kPuXY"
+           },
+           {
+            title:"Region Growing Algorithm - Part 2",
+            url:"https://www.youtube.com/embed/mn3nD3bEnO0?si=XZemekoLNU1gHTkL"
+           },
+           {
+            title:"Region Splitting and Merging Algorithm",
+            url:"https://www.youtube.com/embed/0kUGpgIrZIw?si=0ifmXpOL4rydBlJ_"
+           }
           ],
         },
         {
           title: "4.2 Boundary descriptors: Signature, Chain code, Shape number, Moments",
-          description: "Basic theoretical concepts",
+          description: "Theoretical concepts- Short notes can be asked in exam ",
           videos: [
-            
+            {
+              title:"Signature (Watch on Youtube)",
+              url:"https://www.youtube.com/embed/QvR1zrogGBY?si=F9gVotT78P5hEbjK"
+            },
+            {
+              title:"Chain Code and Normalize Chain Code (Shape Number)",
+              url:"https://www.youtube.com/embed/NPyBHVmlyDY?si=QZ_3v3HQxGBSiyvy"
+             },
+             {
+              title:"Image Moments",
+              url:"https://www.youtube.com/embed/fiK1YBESnXU?si=et7snU4a-2Chv_B5"
+             }
           ],
         },
       ]
@@ -421,23 +515,105 @@ const dsip = {
       topics:[
         {
           title: "5.1 Morphological operations: Dilation, Erosion, Opening,Closing, Hit or Miss Transform, Boundary extraction",
-          description: "Basic theoretical concepts",
+          description: "Theoretical concepts",
           videos: [
-            
+            {
+              title:"Morphological Image Processing: Dilation, Erosion, Hit or Miss Transform",
+              url:"https://www.youtube.com/embed/bRa770kRapc?si=FaM-FWaFrc5Jyzqw"
+            },
+            {
+              title:"Dilation and Erosion - Part 2 (in Detail - May not be asked in exam)",
+              url:"https://www.youtube.com/embed/1TsoVEOOTbM?si=T6TgrVhwTHhkjKJi"
+            },
+            {
+                title:"Hit or Miss Transform Example - Part 2",
+                url:"https://www.youtube.com/embed/CNB1aMcZMsM?si=t5o_Cj1B-NfkMKKg"
+            },
+            {
+              title:"Opening and Closing",
+              url:"https://www.youtube.com/embed/C8Od0oxJzk4?si=gEEHdVNyq84R8TDC"
+            },
+            {
+              title:"Opening and Closing - Part 2",
+              url:"https://www.youtube.com/embed/H1uQMfJtbKA?si=gKiGc_O6YfhaaeZm"
+            }
           ],
         },
         {
           title: "5.2 Introduction, redundancies: coding, inter-pixel, psycho-visual, compression ratio, fidelity criteria Lossless compression techniques: Run length coding, Arithmetic coding, Huffman coding, Differential PCM",
           description: "Basic theoretical concepts",
           videos: [
-            
+            {
+              title:"Introduction to Redundancy, Types of Redundancy: Coding, Inter-pixel, Psycho-visual, Fidelity Criteria",
+              url:"https://www.youtube.com/embed/CJa_L5Ml4b8?si=0BaS5e4pqbUJwQIs"
+            },
+            {
+              title:"Types of Redundancy - Part 2",
+              url:"https://www.youtube.com/embed/Re4jhORfE3E?si=wBFhVgRA8nXQMaji"
+            },
+            {
+              title:"Compression Ratio",
+              url:"https://www.youtube.com/embed/U_r4vemDt34?si=Lzo_qHGupMByR5cF"
+            },
+            {
+              title:"Run Length Coding",
+              url:"https://www.youtube.com/embed/eqBUphYXsGk?si=VPcTFy2aO9_BVIVK"
+            },
+            {
+              title:"Run Length Coding - Part 2",
+              url:"https://www.youtube.com/embed/uqIZSfLWMk0?si=cpgFarQLvVP9_T5a"
+            },
+            {
+              title:"Arithmetic Coding",
+              url:"https://www.youtube.com/embed/G6u8bt5unZk?si=Msu9cHg1CjqHcuXR"
+            },
+            {
+              title:"Huffman Coding",
+              url:"https://www.youtube.com/embed/CKbgVHg0w1U?si=-k-JoQxqElvPvjDe"
+            },
+            {
+              title:"Huffman Coding - Part 2",
+              url:"https://www.youtube.com/embed/acEaM2W-Mfw?si=BJ6OVoOi5fBWQ_Tn"
+            },
+            {
+              title:"Huffman Coding Example - Part 3",
+              url:"https://www.youtube.com/embed/vc_ZvsHq6cM?si=0Dr6RZMICRj6_fNP"
+            },
+            {
+              title:"Differential Pulse Code Modulation (DPCM)- Learn only theory",
+              url:"https://www.youtube.com/embed/UTsZ0_Q4lzI?si=5KKgF0lb2zfSDvdH"
+            },
+           
           ],
         },
         {
           title: "5.3 Lossy Compression techniques: Improved grey scale quantization, Vector quantization, Transform coding, JPEG.",
           description: "Basic theoretical concepts",
           videos: [
-            
+            {
+              title:"Improved Grey Scale Quantization",
+              url:"https://www.youtube.com/embed/8sjEzsnBa3U?si=HTjWmELjnlwxjNSw"
+            },
+            {
+              title:"Vector Quantization",
+              url:"https://www.youtube.com/embed/zCGfMLDMVgk?si=Vu8fL9ll04W-h0Sy"
+            },
+            {
+              title:"Vector Quantization - Part 2",
+              url:"https://www.youtube.com/embed/qzhIXfxMDpM?si=nleGcoAIdBYvaWsU"
+            },
+            {
+              title:"Transform Coding",
+              url:"https://www.youtube.com/embed/NpNemKZcODM?si=-446-wTYYqgxQPcM"
+            },
+            {
+              title:"JPEG Compression",
+              url:"https://www.youtube.com/embed/2DfPyaddl-E?si=YGXjyivwIKc1KFUs"
+            },
+            {
+              title:"JPEG Compression",
+              url:"https://www.youtube.com/embed/42dWHkYh5Wo?si=kqiMPDXjdP7ZmCHd"
+            }
           ],
         },
       ]

@@ -14,6 +14,10 @@ const ai = {
         {
           title: "Yashank's Notes",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EWUcH6cYJRhHhRMEf4DxNp4Bny3IKv6koHukQ1sBwtKp6A?e=vVay8W"
+        },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1et0nqfAJS1NDkAeh2sKf2HWzxUGC4aWc/view?usp=drive_link"
         }
       ],
       topics: [
@@ -86,6 +90,10 @@ const ai = {
         {
           title: "Yashank's Notes",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ER2W8O5TunFGqcQOd6QW6s4Bc0FPnNCybXYwQ5FYs30hbw?e=ONONQC"
+        },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1MUdJiZZgvSHHaBwlyTFDot7Yrz_b-3wq/view?usp=drive_link"
         }
       ],
       topics: [
@@ -308,6 +316,10 @@ const ai = {
         {
           title: "Yashank's Notes",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ERglU4KA1elBgwuv9UdpBukB-Ax7SakY2fUFwPdBzaRzLw?e=PsKcaZ"
+        },
+        {
+          title: "Aakriti's Short Notes",
+          url: "https://drive.google.com/file/d/1AYlAal_x7qB1el_YkdQwTKOhQyiKzLgf/view?usp=drive_link"
         }
       ],
       topics: [

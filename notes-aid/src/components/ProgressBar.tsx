@@ -11,7 +11,7 @@ export default function ProgressBar({ total, completed }: ProgressBarProps) {
   return (
     <div className="w-full bg-gray-200 rounded-full h-1 overflow-hidden">
       <div
-        className="h-full bg-blue-500 transition-all duration-500"
+        className="h-full bg-neutral bg-icons transition-all duration-500 range range-neutral"
         style={{ width: `${percentage}%` }}
       />
     </div>

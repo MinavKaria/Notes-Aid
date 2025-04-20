@@ -60,7 +60,7 @@ export default function Home() {
             <p>Welcome, <span className="font-medium">{session.user?.name}</span>!</p>
             <button 
               onClick={() => signOut()}
-              className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
+              className="px-4 py-2 bg-gray-200 text-gray-800 rounded-sm hover:bg-gray-300"
             >
               Logout
             </button>
@@ -75,7 +75,7 @@ export default function Home() {
                   type="text"
                   value={repoInfo.owner}
                   onChange={(e) => setRepoInfo({...repoInfo, owner: e.target.value})}
-                  className="w-full border rounded p-2"
+                  className="w-full border rounded-sm p-2"
                   placeholder="e.g., octocat"
                 />
               </div>
@@ -85,7 +85,7 @@ export default function Home() {
                   type="text"
                   value={repoInfo.repo}
                   onChange={(e) => setRepoInfo({...repoInfo, repo: e.target.value})}
-                  className="w-full border rounded p-2"
+                  className="w-full border rounded-sm p-2"
                   placeholder="e.g., hello-world"
                 />
               </div>
@@ -96,7 +96,7 @@ export default function Home() {
                 type="text"
                 value={repoInfo.filePath}
                 onChange={(e) => setRepoInfo({...repoInfo, filePath: e.target.value})}
-                className="w-full border rounded p-2"
+                className="w-full border rounded-sm p-2"
                 placeholder="e.g., docs/notes.md"
               />
             </div>
@@ -108,7 +108,7 @@ export default function Home() {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="Enter your content here..."
-              className="w-full h-64 border rounded p-2 font-mono"
+              className="w-full h-64 border rounded-sm p-2 font-mono"
             />
           </div>
           
@@ -120,7 +120,7 @@ export default function Home() {
                 type="text"
                 value={prInfo.title}
                 onChange={(e) => setPrInfo({...prInfo, title: e.target.value})}
-                className="w-full border rounded p-2"
+                className="w-full border rounded-sm p-2"
                 placeholder="Leave blank for default title"
               />
             </div>
@@ -129,7 +129,7 @@ export default function Home() {
               <textarea
                 value={prInfo.body}
                 onChange={(e) => setPrInfo({...prInfo, body: e.target.value})}
-                className="w-full h-24 border rounded p-2"
+                className="w-full h-24 border rounded-sm p-2"
                 placeholder="Description of the changes"
               />
             </div>
