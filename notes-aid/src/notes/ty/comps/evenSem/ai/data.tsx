@@ -459,21 +459,71 @@ const ai = {
           title: "5.1 The planning problem, Planning Vs Searching, STRIPS and ADL, Planning with state space search, Partial order planning, Hierarchical planning, Contingent Planning",
           description: "Theoretical based concepts",
           videos: [
-
+            {
+              title: "Planning Problem",
+              url: "https://www.youtube.com/embed/Innl4i5LLOg?si=RqNVZmEpANk6E6J9",
+            },
+            {
+              title: "Air Cargo Problem",
+              url: "https://www.youtube.com/embed/NGIlbmst8pA?si=arYYJZSCRbSdZ0rD",
+            },
+{
+              title: "STRIPS and ADL",
+              url: "https://www.youtube.com/embed/10fjfz_tmEk?si=yoo3scx8mUqErPJJ",
+            },
+            {
+              title: "Planning with State Space Search (Forward and Backward)",
+              url: "https://www.youtube.com/embed/nZMmsmaA400?si=pegn6SboDws7FJGu" 
+            },
+            {
+              title: "Partial Order Planning",
+              url: "https://www.youtube.com/embed/hPPJXEHf6po?si=BdOaSuyJIztrBPq_",
+            },
+            {
+              title: "Hierarchical Planning",
+              url: "https://www.youtube.com/embed/u26dvQy--I8?si=AL15QCxFO2jsnloR",
+            },
+            
           ],
         },
         {
           title: "5.2 Learning: Forms of Learning, Inductive Learning, Learning Decision Tree, applications of learning",
           description: "Theoretical based concepts",
           videos: [
-
+            {
+              title: "Forms of Learning",
+              url: "https://www.youtube.com/embed/4dwsSz_fNSQ?si=4h43xKFD4k97Ob7m",
+            },
+            {
+              title: "Inductive Learning",
+              url: "https://www.youtube.com/embed/5O3AHyOUblc?si=50aKXRw78coJjDo0",
+            },
+            {
+              title: "Decision Tree Part - 1",
+              url: "https://www.youtube.com/embed/Svo4MTtkHXo?si=amAPeGQgBAwLEHBo",
+            },
+            {
+              title: "Decision Tree Part - 2",
+              url: "https://www.youtube.com/embed/UzpwBb3qAbs?si=QDkq_f6z8zmFmdIe",
+            },
           ],
         },
         {
           title: "5.3 Applications of AI and Current State of research in AI: Natural Language Processing(NLP):Language models, text classification, information retrieval, information extraction. Expert Systems: Components of expert systems, ES vs Traditional System. Characteristics of expert systems, roles in ES implementation, ES implementation process, applications, advantages and limitations of ES Live face de-identification in Video, ReAgent Serving Platform(RSP), AI habitat, Robust visual question answering",
           description: "Theoretical based concepts",
           videos: [
-
+            {
+              title: "Applications of AI",
+              url: "https://www.youtube.com/embed/I7T7XbmVN4g?si=QbbwSuxiHazrSdzV",
+            },
+            {
+              title: "Natural Language Processing",
+              url: "https://www.youtube.com/embed/bPpwZxasJo0?si=HsuijHCDRpju2zxe",
+            },
+            {
+              title: "Expert Systems",
+              url: "https://www.youtube.com/embed/o0GFC6c_k4g?si=ONk-L2aZPrt8d-54",
+            },
           ],
         }
       ]
