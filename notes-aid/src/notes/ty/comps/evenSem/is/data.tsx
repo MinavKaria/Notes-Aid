@@ -1,5 +1,4 @@
 import { EarthLock } from "lucide-react";
-import { title } from "process";
 
 const is = {
   name: "Information Security",
