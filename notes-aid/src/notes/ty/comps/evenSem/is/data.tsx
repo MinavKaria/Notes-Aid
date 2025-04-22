@@ -257,6 +257,10 @@ const is = {
           title: "Aakriti's Short Notes",
           url: "https://drive.google.com/file/d/1rMOylslZaZhnTFe9_g9lkOeXEwsaXcfV/view?usp=drive_link",
         },
+        {
+          title:"Rahil's Notes",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ES0-jpg74NxAmqM4_YGtzhgBtzdkaPDmkrxWkPXHfbJmiQ?e=vDkekX"
+        }
       ],
       topics: [
         {
@@ -319,17 +323,21 @@ const is = {
     3: {
       notesLink: [
         {
-          title: "Notes 1",
-          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/romil_l_somaiya_edu/EZqeozsif7xDv3K98Fal-agByMycvI2kD4o22MsnSrEqyA?e=x1Axfs",
+          title: "Module 3 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EWoE1TsgzkVNiPbZDeaWHbwBFJZ4WOk-hbG5-OJ2Ak_pgQ?e=lbfE09",
         },
         {
-          title: "Notes 2",
-          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/romil_l_somaiya_edu/EY1z3Dn4XGlAptiklz-nQkkBqWBl7m6FmeoD4klYQyIYzQ?e=uN2LnU",
+          title: "Module 3.5 PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EfRlrZO-18FNgkj8phBYEY8BJ4V-J5QLKe_9s3IqwrZFKg?e=tzPiVQ",
         },
         {
-          title: "Notes 3",
-          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/romil_l_somaiya_edu/EUBK1ClVMrNIphtf7zLmTzUBYcoWe9dDt4wicpWMljakww?e=XGBkqb",
+          title: "Email Security PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EVfKhB9zWzVHt26aICD8h1EBaBE3We8zgkLKfTE21SOAMA?e=ydDcIL",
         },
+        {
+          title:"OWASP PPT",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ed67Td02W_VKiyKFf1M5kAwBfgxhBlPSFlpa3oR7eenF8A?e=oHLrMy"
+        }
       ],
       topics: [
         {
@@ -366,15 +374,11 @@ const is = {
     4: {
       notesLink: [
         {
-          title: "Module 4 PPT",
-          url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/romil_l_somaiya_edu/EUBK1ClVMrNIphtf7zLmTzUBYcoWe9dDt4wicpWMljakww?e=XGBkqb",
-        },
-        {
-          title: "Notes 1",
+          title: "Notes 1 - Networks",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EcTehaW_35dOqAz-y_mBHJQBBLezxh6vEGlQlWOXAUrAIw?e=iTsYRt",
         },
         {
-          title: "Notes 2",
+          title: "Notes 2 - Wireless Networks",
           url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/EepCh1pxYdRLvXRQo3T1LUoB4BpvuErWsirV91pzaqnWQw?e=zCKBUN",
         },
         {
@@ -413,7 +417,10 @@ const is = {
     },
     5:{
       notesLink:[
-        
+        {
+          title:"Module 5 PPT- Legal Issues & Ethics",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EYDhv-YvjZ5DrJ_s1ZPEXR4BwcyarZazG9i59Ktnaw942w?e=l0SQgD"
+        }
       ],
       topics:[
         {

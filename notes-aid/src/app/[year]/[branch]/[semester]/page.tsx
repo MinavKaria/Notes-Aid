@@ -82,7 +82,7 @@ const EngineeringCurriculum: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [showResetConfirmation, setShowResetConfirmation] = useState(false);
 
-  console.log(branch, sem, slug);
+  // console.log(branch, sem, slug);
 
   const typedNotesData = NotesData as NotesDataType;
 
@@ -237,7 +237,7 @@ const EngineeringCurriculum: React.FC = () => {
                     const firstModuleKey = Object.keys(
                       subjects[key]?.modules || {}
                     )[0]
-                    console.log(key, firstModuleKey)
+                    // console.log(key, firstModuleKey)
                     setSelectedModule(
                       firstModuleKey ? parseInt(firstModuleKey) : 1
                     )
