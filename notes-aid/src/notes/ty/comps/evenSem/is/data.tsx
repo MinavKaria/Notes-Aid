@@ -438,7 +438,20 @@ const is = {
           title:
             "4.3 Firewalls - What Is a Firewall? , Design of Firewalls, Types of Firewalls, Personal Firewalls, Comparison of Firewall, Types Example Firewall, Configurations Network Address Translation (NAT), Data Loss Prevention",
           description: "Basic concepts and importance",
-          videos: [],
+          videos: [
+            {
+              title: "Firewall",
+              url: "https://www.youtube.com/embed/o_vyfo3Hw0Y?si=CEDXHizMCmQaqqMe",
+            },
+            {
+              title: "Firewall - Part 2",
+              url: "https://www.youtube.com/embed/CHtTLireUCA?si=0MLd0KgAnsEBxxTM",
+            },
+            {
+              title: "Types of Firewalls",
+              url: "https://www.youtube.com/embed/aUPoA3MSajU?si=ylMcWS9TXTNYs3xz",
+            }
+          ],
         },
       ],
     },
