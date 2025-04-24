@@ -322,7 +322,10 @@ const ac = {
     },
     5: {
       notesLink: [
-
+        {
+          title:"Module 5 PPT",
+          url:"https://somaiya0-my.sharepoint.com/:p:/g/personal/minav_karia_somaiya_edu/EdV9HQ_ccb5EuXJCAtEAEy0BlAn0pWUJ3wyxvepNCl8UlQ?e=YwXBPD"
+        }
       ],
       topics: [
         {

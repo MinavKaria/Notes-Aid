@@ -71,9 +71,9 @@ export default function MainPage() {
       localStorage.setItem("selectedYear", selectedYear);
       localStorage.setItem("selectedSemester", selectedSemester);
 
-      console.log(
-        `Selected Branch: ${selectedBranch}, Selected Year: ${selectedYear}, Semester: ${selectedSemester}`
-      );
+      // console.log(
+      //   `Selected Branch: ${selectedBranch}, Selected Year: ${selectedYear}, Semester: ${selectedSemester}`
+      // );
 
       if (
         selectedYear === "fy" &&

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Check } from "lucide-react";
 
 const ThemeSwitcher = () => {
   const themes = [
@@ -89,8 +89,10 @@ const ThemeSwitcher = () => {
                 <div className="bg-accent size-1 rounded-full"></div>
               </div>
                 <span data-theme={currentTheme}>{theme.charAt(0).toUpperCase() + theme.slice(1)}</span>
+                {currentTheme === theme && <Check className="w-5 h-5" />}
               </div>
             </button>
+
           </div>
         ))}
       </div>
