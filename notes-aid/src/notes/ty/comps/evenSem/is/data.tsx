@@ -258,8 +258,8 @@ const is = {
           url: "https://drive.google.com/file/d/1rMOylslZaZhnTFe9_g9lkOeXEwsaXcfV/view?usp=drive_link",
         },
         {
-          title:"Rahil's Notes",
-          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ES0-jpg74NxAmqM4_YGtzhgBtzdkaPDmkrxWkPXHfbJmiQ?e=vDkekX"
+          title: "Rahil's Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ES0-jpg74NxAmqM4_YGtzhgBtzdkaPDmkrxWkPXHfbJmiQ?e=vDkekX"
         }
       ],
       topics: [
@@ -294,7 +294,12 @@ const is = {
           title:
             "Time-of Check to Time-of-Use,  Undocumented Access Point Off-by-One,  Error Integer Overflow, Unterminated Null-Terminated String, Parameter Length, Type, and Number,  Unsafe Utility Program, Race Condition (Refer Notes for these topics from page 32)",
           description: "Basic concepts and importance",
-          videos: [],
+          videos: [
+            {
+              title: "Time-of-Check to Time-of-Use",
+              url: "https://www.youtube.com/embed/dTBItqNcc4o?si=JcYIIakzk1TOBKfq",
+            },
+          ],
         },
         {
           title:
@@ -335,8 +340,8 @@ const is = {
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EVfKhB9zWzVHt26aICD8h1EBaBE3We8zgkLKfTE21SOAMA?e=ydDcIL",
         },
         {
-          title:"OWASP PPT",
-          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ed67Td02W_VKiyKFf1M5kAwBfgxhBlPSFlpa3oR7eenF8A?e=oHLrMy"
+          title: "OWASP PPT",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ed67Td02W_VKiyKFf1M5kAwBfgxhBlPSFlpa3oR7eenF8A?e=oHLrMy"
         }
       ],
       topics: [
@@ -362,7 +367,16 @@ const is = {
           title:
             "3.4 Email Attacks - Fake Email, Fake Email Messages as Spam, Fake (Inaccurate) Email Header Data, Phishing, Protecting Against Email Attacks",
           description: "Basic concepts and importance",
-          videos: [],
+          videos: [
+            {
+              title: "Phishing Attack",
+              url: "https://www.youtube.com/embed/XBkzBrXlle0?si=y9_68agePCoK_KrH",
+            },
+            {
+              title: "Email Spoofing",
+              url: "https://www.youtube.com/embed/u0rYFl691D8?si=_6_I5PYaEC2fTy-4",
+            },
+          ],
         },
         {
           title: "3.5 Open Web Application Security Project(OWASP)",
@@ -459,11 +473,11 @@ const is = {
         },
       ],
     },
-    5:{
-      notesLink:[
+    5: {
+      notesLink: [
         {
-          title:"Module 5 PPT- Legal Issues & Ethics",
-          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EYDhv-YvjZ5DrJ_s1ZPEXR4BwcyarZazG9i59Ktnaw942w?e=l0SQgD"
+          title: "Module 5 PPT- Legal Issues & Ethics",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EYDhv-YvjZ5DrJ_s1ZPEXR4BwcyarZazG9i59Ktnaw942w?e=l0SQgD"
         }
       ],
       topics: [
