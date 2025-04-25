@@ -181,10 +181,7 @@ const oose = {
 
     3: {
       notesLink: [
-        // {
-        //   title: "Notes 1",
-        //   url: "https://firebasestorage.googleapis.com/v0/b/acm-bruh.appspot.com/o/AC%20Module%202.pdf?alt=media&token=e83fe56e-c1e6-4b86-935e-ff49986cad74",
-        // },
+        
       ],
       topics: [
         {
