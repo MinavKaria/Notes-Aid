@@ -42,6 +42,8 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
 
   // setdone(40);
 
+  // console.log(progressData.moduleProgress[module])
+  
   return (
     <>
       <div

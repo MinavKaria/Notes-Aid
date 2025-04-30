@@ -26,16 +26,21 @@ const useProgress = (subjectName: string) => {
 
   
     useEffect(() => {
-        const storedProgress = localStorage.getItem(key);
-        if (storedProgress) {
-            try {
-                setProgressData(JSON.parse(storedProgress));
-                // console.log("Progress Data is: "+JSON.parse(storedProgress))
-            } catch {
-                console.error("Failed to parse stored progress data");
+        const loadProgress = async () => {
+            const storedProgress = localStorage.getItem(key);
+            if (storedProgress) {
+                try {
+                    const parsedData = await JSON.parse(storedProgress);
+                    setProgressData(parsedData);
+                    // console.log("Progress Data is: "+parsedData)
+                } catch {
+                    console.error("Failed to parse stored progress data");
+                }
             }
-        }
-    }, [key]);
+        };
+        
+        loadProgress();
+    }, [key, subjectName]);
 
 
     const saveToLocalStorage = (data: ProgressData) => {

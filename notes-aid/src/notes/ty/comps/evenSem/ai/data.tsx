@@ -222,8 +222,12 @@ const ai = {
           description: "Algorithm based concepts - Important for Exam ⭐",
           videos: [
             {
-              title: "Breadth First Search",
+              title: "Introduction of Uninformed Search Strategies",
               url: "https://www.youtube.com/embed/ZjPXeJaGEus?si=7ZPlqwSbyG3_mrW3",
+            },
+            {
+              title:"Breadth First Search ",
+              url:"https://www.youtube.com/embed/v6aD3bS90MY?si=l7EX61hyhvdgxs1I"
             },
             {
               title: "Depth First Search",
@@ -256,9 +260,25 @@ const ai = {
               url: "https://www.youtube.com/embed/tvAh0JZF2YE?si=R5HH08iQPUnx2TVq",
             },
             {
+              title:"A* Search - Part 2",
+              url:"https://www.youtube.com/embed/pZO1CwGsHzY?si=gesKKvOLUu6Jgina"
+            },
+            {
+              title:"A* Search - Solved Numerical",
+              url:"https://www.youtube.com/embed/lusRf5v-TI0?si=JLANcRJi_cr6Iaav"
+            },
+            {
+              title:"A* Search (8 Puzzle Problem) - Solved Numerical",
+              url:"https://www.youtube.com/embed/dvWk0vgHijs?si=fSEmmOjmSC1S9P40"
+            },
+            {
               title: "AO* Search",
               url: "https://www.youtube.com/embed/u_TE42-uWD0?si=iw06IakOO1CI-z33",
             },
+            {
+              title:"Difference between Informed and Uninformed Search",
+              url:"https://www.youtube.com/embed/gZpUcsB9TFc?si=AMdvdSYsJ5O14AsG"
+            }
           ],
         },
         {
@@ -302,6 +322,18 @@ const ai = {
             {
               title: "Adversarial Search and Game Playing",
               url: "https://www.youtube.com/embed/6k8WilOGtXY?si=cVlNmwKNPBQeCTXJ",
+            },
+            {
+              title:"Introduction to Game Playing",
+              url:"https://www.youtube.com/embed/FFzdXJ49KAI?si=WkGIgVSgMctVkq8S"
+            },
+            {
+              title:"Alpha-Beta Pruning",
+              url:"https://www.youtube.com/embed/dEs_kbvu_0s?si=_9rr7swzsSWptO23"
+            },
+            {
+              title:"Minimax Algorithm",
+              url:"https://www.youtube.com/embed/Ntu8nNBL28o?si=PSkbCrsODLZ8m0_9"
             },
           ],
         },

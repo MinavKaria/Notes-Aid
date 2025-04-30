@@ -120,8 +120,7 @@ const EngineeringCurriculum: React.FC = () => {
     }
   }, [selectedSubject, subjects]);
 
-  const { progressData, updateVideoProgress, resetProgress } =
-    useProgress(selectedSubject);
+  const { progressData, updateVideoProgress, resetProgress } = useProgress(selectedSubject);
 
   if (loading) {
     return (
