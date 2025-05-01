@@ -25,6 +25,7 @@ interface ModuleCardProps {
   progressData: ProgressData;
   numberOfVideos: number;
   subjectName: string;
+  numberOfVideosCompleted: number;
 }
 
 const ModuleCard: React.FC<ModuleCardProps> = ({
@@ -34,7 +35,8 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
   onClick,
   progressData,
   numberOfVideos,
-  subjectName
+  subjectName,
+  numberOfVideosCompleted
 }) => {
   // const total = 100;
   // const [done, setdone] = useState(20);
@@ -99,11 +101,11 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
             <div className="flex-1">
               <ProgressBar
                 total={numberOfVideos}
-                completed={progressData2.moduleProgress[module] || 0}
+                completed={numberOfVideosCompleted || 0}
               />
             </div>
             <span className="text-xs text-gray-500 dark:text-base whitespace-nowrap">
-              {progressData2.moduleProgress[module] || 0}/{numberOfVideos} videos
+              {numberOfVideosCompleted || 0}/{numberOfVideos} videos
             </span>
           </div>
         </div>
