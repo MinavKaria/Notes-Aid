@@ -50,7 +50,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
   // const [progressDataa, setProgressData2] = useState({});
 
   const { progressData: progressData2 } = useProgress(subjectName);
-  // console.log( progressData2);
+  console.log( progressData2);
   // setProgressData2(progressData2);
   // console.log("Progress Data is: " + progressDataa);
 
@@ -98,7 +98,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
             <div className="flex-1">
               <ProgressBar
                 total={numberOfVideos}
-                completed={progressData.moduleProgress[module] || 0}
+                completed={progressData2.moduleProgress[module] || 0}
               />
             </div>
             <span className="text-xs text-gray-500 dark:text-base whitespace-nowrap">
