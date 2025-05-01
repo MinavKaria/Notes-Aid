@@ -291,7 +291,7 @@ const EngineeringCurriculum: React.FC = () => {
                   pyq.map((pyq, index) => {
                     return (
                       <>
-                        <div className=""> 
+                        <div key={index} > 
                         <a
                           href={pyq.url}
                           target="_blank"
@@ -323,6 +323,7 @@ const EngineeringCurriculum: React.FC = () => {
                       onClick={() => setSelectedModule(moduley)}
                       progressData={progressData}
                       numberOfVideos={numberVideoInModule(moduley)}
+                      subjectName={selectedSubject}
                     />
                   );
                 }

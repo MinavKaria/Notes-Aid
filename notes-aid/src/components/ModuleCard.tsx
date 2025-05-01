@@ -2,6 +2,7 @@ import React from "react";
 // import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import ProgressBar from "./ProgressBar";
+import useProgress from "@/hook/useProgress";
 
 interface ProgressData {
   completeVideos: {
@@ -23,6 +24,7 @@ interface ModuleCardProps {
   onClick: () => void;
   progressData: ProgressData;
   numberOfVideos: number;
+  subjectName: string;
 }
 
 const ModuleCard: React.FC<ModuleCardProps> = ({
@@ -32,6 +34,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
   onClick,
   progressData,
   numberOfVideos,
+  subjectName
 }) => {
   // const total = 100;
   // const [done, setdone] = useState(20);
@@ -43,6 +46,17 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
   // setdone(40);
 
   // console.log(progressData.moduleProgress[module])
+
+  // const [progressDataa, setProgressData2] = useState({});
+
+  const { progressData: progressData2 } = useProgress(subjectName);
+  // console.log( progressData2);
+  // setProgressData2(progressData2);
+  // console.log("Progress Data is: " + progressDataa);
+
+
+
+  // console.log(progressData2);
   
   return (
     <>
@@ -88,7 +102,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
               />
             </div>
             <span className="text-xs text-gray-500 dark:text-base whitespace-nowrap">
-              {progressData.moduleProgress[module] || 0}/{numberOfVideos} videos
+              {progressData2.moduleProgress[module] || 0}/{numberOfVideos} videos
             </span>
           </div>
         </div>
