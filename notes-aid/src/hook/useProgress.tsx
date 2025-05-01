@@ -27,7 +27,8 @@ const useProgress = (subjectName: string) => {
   
     useEffect(() => {
         const loadProgress = async () => {
-            const storedProgress = localStorage.getItem(key);
+            const localKey = `${subjectName}-progress`; 
+            const storedProgress = localStorage.getItem(localKey);
             if (storedProgress) {
                 try {
                     const parsedData = await JSON.parse(storedProgress);
@@ -40,7 +41,7 @@ const useProgress = (subjectName: string) => {
         };
         
         loadProgress();
-    }, [key, subjectName]);
+    }, [subjectName]);
 
 
     const saveToLocalStorage = (data: ProgressData) => {
