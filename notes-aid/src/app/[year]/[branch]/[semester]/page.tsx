@@ -275,12 +275,11 @@ const EngineeringCurriculum: React.FC = () => {
                       }
                       isActive={selectedModule === moduley}
                       onClick={() => setSelectedModule(moduley)}
-                      progressData={progressData}
                       numberOfVideosCompleted={
                         progressData.moduleProgress[moduley] || 0
                       }
                       numberOfVideos={numberVideoInModule(moduley)}
-                      subjectName={selectedSubject}
+                
                     />
                   );
                 }
