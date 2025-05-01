@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react"
 
 interface ProgressData {
@@ -14,7 +15,6 @@ interface ProgressData {
 }
 
 const useProgress = (subjectName: string) => {
-  // Don't store key outside the functions - it needs to use the current subjectName
 
   const [progressData, setProgressData] = useState<ProgressData>({
     completeVideos: {},
@@ -25,7 +25,6 @@ const useProgress = (subjectName: string) => {
 
   useEffect(() => {
     const loadProgress = async () => {
-      // Use current subjectName to form the key
       const localKey = `${subjectName}-progress`
 
       const storedProgress = localStorage.getItem(localKey)
@@ -37,7 +36,6 @@ const useProgress = (subjectName: string) => {
           console.error("Failed to parse stored progress data")
         }
       } else {
-        // Reset progress data when switching to a subject with no saved data
         setProgressData({
           completeVideos: {},
           moduleProgress: {},
@@ -48,10 +46,9 @@ const useProgress = (subjectName: string) => {
     }
 
     loadProgress()
-  }, [subjectName]) // This dependency is correct
+  }, [subjectName]) 
 
   const saveToLocalStorage = (data: ProgressData) => {
-    // Always use current subjectName to form the key
     const localKey = `${subjectName}-progress`
     localStorage.setItem(localKey, JSON.stringify(data))
   }
@@ -93,7 +90,7 @@ const useProgress = (subjectName: string) => {
       : progressData.subjectProgress + 1
 
     setProgressData(newProgressData)
-    saveToLocalStorage(newProgressData) // This now uses the current subjectName
+    saveToLocalStorage(newProgressData) 
   }
 
   const resetProgress = () => {
@@ -104,7 +101,6 @@ const useProgress = (subjectName: string) => {
       subjectProgress: 0,
     }
     setProgressData(resetData)
-    // Use current subjectName to form the key
     const localKey = `${subjectName}-progress`
     localStorage.removeItem(localKey)
   }
@@ -117,3 +113,4 @@ const useProgress = (subjectName: string) => {
 }
 
 export default useProgress
+

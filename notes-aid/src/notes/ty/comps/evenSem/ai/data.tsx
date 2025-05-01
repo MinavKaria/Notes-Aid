@@ -276,13 +276,17 @@ const ai = {
               url: "https://www.youtube.com/embed/u_TE42-uWD0?si=iw06IakOO1CI-z33",
             },
             {
+              title:"AO* Search - Solved Numerical",
+              url:"https://www.youtube.com/embed/NiY32wS2UVw?si=5owungZ1fPeWwNws"
+            },
+            {
               title:"Difference between Informed and Uninformed Search",
               url:"https://www.youtube.com/embed/gZpUcsB9TFc?si=AMdvdSYsJ5O14AsG"
             }
           ],
         },
         {
-          title: "3.4 Local Search Algorithms",
+          title: "3.4.1 Local Search Algorithms, Optimization Problems, Constraint satisfaction Problems, Genetic Algorithm",
           description: "Algorithm based concepts - Important for Exam ⭐",
           videos: [
             {
@@ -313,10 +317,35 @@ const ai = {
               title: "Crossover and Mutation",
               url: "https://www.youtube.com/embed/iYxM9dQQyTw?si=_BpcsMVTi9GibfVO",
             },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - SEND + MORE = MONEY",
+              url:"https://www.youtube.com/embed/jWvWOUb0hOI?si=8vUuPgBHnflE46M2"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - LOGIC + LOGIC = PROLOG",
+              url:"https://www.youtube.com/embed/3bDHF_aJuYM?si=sXuc5PDbVeE5iV1d"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - TO + GO = OUT",
+              url:"https://www.youtube.com/embed/aZblDSAx4cg?si=n4pZ0dMgNzk1DXpF"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - EAT + THAT = APPLE",
+              url:"https://www.youtube.com/embed/qo2RmonoK5Y?si=c5BYp_Yvb8v9ofig"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - SOME + TIME = SPENT",
+              url:"https://www.youtube.com/embed/bmvAfz3BhqM?si=fMfXV2wOqQ6em4yc"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - BASE + BALL = GAMES",
+              url:"https://www.youtube.com/embed/BrraXMroIos?si=s4PDI0ZTzTqmILrY"
+            }
+           
           ],
         },
         {
-          title: "3.5 Adversarial Search",
+          title: "3.4.2 Adversarial Search",
           description: "Algorithm based concepts - Important for Exam ⭐",
           videos: [
             {
