@@ -54,6 +54,8 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
   const { progressData: progressData2 } = useProgress(subjectName);
   console.log( progressData2);
   console.log(progressData.moduleProgress[module] || 0);
+
+  console.log(subjectName)
   // setProgressData2(progressData2);
   // console.log("Progress Data is: " + progressDataa);
 
