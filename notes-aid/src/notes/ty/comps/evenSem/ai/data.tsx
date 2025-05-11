@@ -1,4 +1,5 @@
 import { Brain } from "lucide-react";
+import { title } from "process";
 
 const ai = {
   name: "Artificial Intelligence",
@@ -18,6 +19,10 @@ const ai = {
         {
           title: "Aakriti's Short Notes",
           url: "https://drive.google.com/file/d/1et0nqfAJS1NDkAeh2sKf2HWzxUGC4aWc/view?usp=drive_link"
+        },
+        {
+          title: "Rohit's Short Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EaBHJEe0vLdEpvPeWXlEWykBBfJLYlzDRDFC9LBamBxyhA?e=hE1toc"
         }
       ],
       topics: [
@@ -94,6 +99,10 @@ const ai = {
         {
           title: "Aakriti's Short Notes",
           url: "https://drive.google.com/file/d/1MUdJiZZgvSHHaBwlyTFDot7Yrz_b-3wq/view?usp=drive_link"
+        },
+        {
+          title: "Rohit's Short Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ERtPjG8zYZdGqK7bCufpAmsBJ1ewnwCpZcY_uzlq6LI0Jw?e=5rd6WJ"
         }
       ],
       topics: [
@@ -197,6 +206,10 @@ const ai = {
           title: "Module 3 PPT 3",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ER5XERGgcqBOswRS3OpwPS0BB9JCDOQtIpkxnnEfbMnxpQ?e=cfLkqK",
         },
+        {
+          title: "Rohit's Short Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EU6eqmo06HBLs3lOYGxKPn4BI_InkmY5MM-3SltxRiSDCA?e=WXO2rA"
+        }
       ],
       topics: [
         {
@@ -320,6 +333,10 @@ const ai = {
         {
           title: "Aakriti's Short Notes",
           url: "https://drive.google.com/file/d/1AYlAal_x7qB1el_YkdQwTKOhQyiKzLgf/view?usp=drive_link"
+        },
+        {
+          title: "Rohit's Short Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ERoRFnelindOn3wxL3orT2QBsr0SwjBY6apUvBYZ7JxFZQ?e=GFQjwo"
         }
       ],
       topics: [
@@ -452,6 +469,10 @@ const ai = {
         {
           title: "Module 5 PPT",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EW7dWqat-pZCkXN9_bTTSggBSPhiO5-6StnNBI6Tj3gdMg?e=fxcMIw",
+        },
+        {
+          title: "Rohit's Short Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EXXd4iaZLqdLiMMx_5A-rz4B8KSJOXM_KgNOGFGT4s8jdg?e=Hk6MdJ"
         }
       ],
       topics: [
