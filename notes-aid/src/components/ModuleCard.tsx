@@ -3,26 +3,13 @@ import React from "react";
 import { ChevronDown } from "lucide-react";
 import ProgressBar from "./ProgressBar";
 
-interface ProgressData {
-  completeVideos: {
-    [key: string]: boolean;
-  };
-  moduleProgress: {
-    [key: string]: number;
-  };
-  topicProgress: {
-    [key: string]: number;
-  };
-  subjectProgress: number;
-}
-
 interface ModuleCardProps {
   module: number;
   topics: number;
   isActive: boolean;
   onClick: () => void;
-  progressData: ProgressData;
   numberOfVideos: number;
+  numberOfVideosCompleted: number;
 }
 
 const ModuleCard: React.FC<ModuleCardProps> = ({
@@ -30,8 +17,8 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
   topics,
   isActive,
   onClick,
-  progressData,
   numberOfVideos,
+  numberOfVideosCompleted
 }) => {
   // const total = 100;
   // const [done, setdone] = useState(20);
@@ -42,6 +29,24 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
 
   // setdone(40);
 
+  // console.log(progressData.moduleProgress[module])
+
+
+  // const [progressDataa, setProgressData2] = useState({});
+
+  // const { progressData: progressData2 } = useProgress(subjectName);
+//   console.log( progressData2);
+//   console.log(progressData.moduleProgress[module] || 0);
+
+  //   console.log(subjectName)
+  // setProgressData2(progressData2);
+  // console.log("Progress Data is: " + progressDataa);
+
+
+
+  // console.log(progressData2);
+
+  
   return (
     <>
       <div
@@ -82,11 +87,11 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
             <div className="flex-1">
               <ProgressBar
                 total={numberOfVideos}
-                completed={progressData.moduleProgress[module] || 0}
+                completed={numberOfVideosCompleted || 0}
               />
             </div>
             <span className="text-xs text-gray-500 dark:text-base whitespace-nowrap">
-              {progressData.moduleProgress[module] || 0}/{numberOfVideos} videos
+              {numberOfVideosCompleted || 0}/{numberOfVideos} videos
             </span>
           </div>
         </div>

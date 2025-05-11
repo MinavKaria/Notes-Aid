@@ -16,6 +16,10 @@ const is = {
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EWwlgn-6XwtPkkvOuAZaYzABH7lyU8zalnfStfnXvR39Lw?e=UzSgfT",
         },
         {
+          title: "Yashank's Notes",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EfSd32oryWNDkMGNK-5uOWsBfjTm01G9nbgQ-oZp52qtlQ?e=rlvR4r"
+        },
+        {
           title: "Aakriti's Short Notes",
           url: "https://drive.google.com/file/d/15_AvWIUnrOtFV8WGOJ0kJGn0HosRjM6-/view?usp=drive_link",
         },
@@ -258,6 +262,10 @@ const is = {
           url: "https://drive.google.com/file/d/1rMOylslZaZhnTFe9_g9lkOeXEwsaXcfV/view?usp=drive_link",
         },
         {
+          title:"Yashank's Notes",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EVUINgSGzvFHnzkooVNDv4QBQkJrWwTcb8egI_akCOp21w?e=2lsZiT"
+        },
+        {
           title: "Rahil's Notes",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ES0-jpg74NxAmqM4_YGtzhgBtzdkaPDmkrxWkPXHfbJmiQ?e=vDkekX"
         }
@@ -342,6 +350,14 @@ const is = {
         {
           title: "OWASP PPT",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/Ed67Td02W_VKiyKFf1M5kAwBfgxhBlPSFlpa3oR7eenF8A?e=oHLrMy"
+        },
+        {
+          title:"Yashank's Notes",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EU3g45Z4NvtPhjhyn_N61XQBJx0CROiDSxG3FkzkJLh-Fw?e=pLJgDP"
+        },
+        {
+          title:"Rahil's Notes",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EdUtz_TBqhFEtMyn2aDq0j0BJaqVNvXHyBgX6gZWaDCq8g?e=LwzIBh"
         }
       ],
       topics: [
@@ -412,6 +428,15 @@ const is = {
           title: "Notes 5 - Network Security",
           url: "https://somaiya0-my.sharepoint.com/:p:/g/personal/rohit_sd_somaiya_edu/ES2vyrswtStGrYZOx6wKZx4BlkmsPF2SQbD-iHAO01aaig?e=rCu2wC",
         },
+        {
+          title:"Yashank's Notes",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ESlnVnf40ANEge9j-isnYxEBU8Loazf0H3PsUaZ6FRxU5Q?e=OGDtMr"
+        },
+        {
+          title:"Rahil's Notes",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/ESKF8IGKNUBMvBzSwpXAEAcBjUDzcoGCWP0GRLm8TgIwbw?e=dP4Dfe"
+        }
+        
       ],
       topics: [
         {
@@ -478,6 +503,10 @@ const is = {
         {
           title: "Module 5 PPT- Legal Issues & Ethics",
           url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EYDhv-YvjZ5DrJ_s1ZPEXR4BwcyarZazG9i59Ktnaw942w?e=l0SQgD"
+        },
+        {
+          title:"Yashank's Notes",
+          url:"https://somaiya0-my.sharepoint.com/:b:/g/personal/minav_karia_somaiya_edu/EcTOh07yj21CmwHcTK6KHEUB6HyqvQKlOushPw0uHMOLtQ?e=kwrLpe"
         }
       ],
       topics: [

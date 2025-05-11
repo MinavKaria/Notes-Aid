@@ -235,8 +235,12 @@ const ai = {
           description: "Algorithm based concepts - Important for Exam ⭐",
           videos: [
             {
-              title: "Breadth First Search",
+              title: "Introduction of Uninformed Search Strategies",
               url: "https://www.youtube.com/embed/ZjPXeJaGEus?si=7ZPlqwSbyG3_mrW3",
+            },
+            {
+              title:"Breadth First Search ",
+              url:"https://www.youtube.com/embed/v6aD3bS90MY?si=l7EX61hyhvdgxs1I"
             },
             {
               title: "Depth First Search",
@@ -257,6 +261,10 @@ const ai = {
           description: "Algorithm based concepts - Important for Exam ⭐",
           videos: [
             {
+              title:"What is Heuristic Function?",
+              url:"https://www.youtube.com/embed/5F9YzkpnaRw?si=p5MOLLeHgIY3-UBb"
+            },
+            {
               title: "Heurestic Function",
               url: "https://www.youtube.com/embed/E48Hn3nfCqg?si=sXU_L8vKSRSoc9IY",
             },
@@ -269,13 +277,33 @@ const ai = {
               url: "https://www.youtube.com/embed/tvAh0JZF2YE?si=R5HH08iQPUnx2TVq",
             },
             {
+              title:"A* Search - Part 2",
+              url:"https://www.youtube.com/embed/pZO1CwGsHzY?si=gesKKvOLUu6Jgina"
+            },
+            {
+              title:"A* Search - Solved Numerical",
+              url:"https://www.youtube.com/embed/lusRf5v-TI0?si=JLANcRJi_cr6Iaav"
+            },
+            {
+              title:"A* Search (8 Puzzle Problem) - Solved Numerical",
+              url:"https://www.youtube.com/embed/dvWk0vgHijs?si=fSEmmOjmSC1S9P40"
+            },
+            {
               title: "AO* Search",
               url: "https://www.youtube.com/embed/u_TE42-uWD0?si=iw06IakOO1CI-z33",
             },
+            {
+              title:"AO* Search - Solved Numerical",
+              url:"https://www.youtube.com/embed/NiY32wS2UVw?si=5owungZ1fPeWwNws"
+            },
+            {
+              title:"Difference between Informed and Uninformed Search",
+              url:"https://www.youtube.com/embed/gZpUcsB9TFc?si=AMdvdSYsJ5O14AsG"
+            }
           ],
         },
         {
-          title: "3.4 Local Search Algorithms",
+          title: "3.4.1 Local Search Algorithms, Optimization Problems, Constraint satisfaction Problems, Genetic Algorithm",
           description: "Algorithm based concepts - Important for Exam ⭐",
           videos: [
             {
@@ -296,25 +324,66 @@ const ai = {
             },
             {
               title: "Genetic Algorithm",
-              url: "https://www.youtube.com/embed/WueuYdDqUt0?si=_5h3AIs6BMIt6-a2",
+              url: "https://www.youtube.com/embed/96-u9s6D16k?si=HvVD_Waawhc8Ummj",
             },
             {
-              title: "Genetric Algorithm - Solved Numerical",
-              url: "https://www.youtube.com/embed/Dj1AZ0T-m-I?si=0j0oFGbu7ZT7EtKL",
+              title: "Genetric Algorithm - Part 2",
+              url: "https://www.youtube.com/embed/Fgq3xDhRBv8?si=xl6E3t427zWO26vz",
             },
             {
               title: "Crossover and Mutation",
               url: "https://www.youtube.com/embed/iYxM9dQQyTw?si=_BpcsMVTi9GibfVO",
             },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - SEND + MORE = MONEY",
+              url:"https://www.youtube.com/embed/jWvWOUb0hOI?si=8vUuPgBHnflE46M2"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - LOGIC + LOGIC = PROLOG",
+              url:"https://www.youtube.com/embed/3bDHF_aJuYM?si=sXuc5PDbVeE5iV1d"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - TO + GO = OUT",
+              url:"https://www.youtube.com/embed/aZblDSAx4cg?si=n4pZ0dMgNzk1DXpF"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - EAT + THAT = APPLE",
+              url:"https://www.youtube.com/embed/qo2RmonoK5Y?si=c5BYp_Yvb8v9ofig"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - SOME + TIME = SPENT",
+              url:"https://www.youtube.com/embed/bmvAfz3BhqM?si=fMfXV2wOqQ6em4yc"
+            },
+            {
+              title:"Constraint Satisfaction Problem - Solved Numerical - BASE + BALL = GAMES",
+              url:"https://www.youtube.com/embed/BrraXMroIos?si=s4PDI0ZTzTqmILrY"
+            }
+           
           ],
         },
         {
-          title: "3.5 Adversarial Search",
+          title: "3.4.2 Adversarial Search",
           description: "Algorithm based concepts - Important for Exam ⭐",
           videos: [
             {
               title: "Adversarial Search and Game Playing",
               url: "https://www.youtube.com/embed/6k8WilOGtXY?si=cVlNmwKNPBQeCTXJ",
+            },
+            {
+              title:"Introduction to Game Playing",
+              url:"https://www.youtube.com/embed/FFzdXJ49KAI?si=WkGIgVSgMctVkq8S"
+            },
+            {
+              title:"Alpha-Beta Pruning - Solved Numerical",
+              url:"https://www.youtube.com/embed/9D1hVGumxCo?si=RGpY_tT-NxvRlASf"
+            },
+            {
+              title:"Alpha-Beta Pruning",
+              url:"https://www.youtube.com/embed/dEs_kbvu_0s?si=_9rr7swzsSWptO23"
+            },
+            {
+              title:"Minimax Algorithm",
+              url:"https://www.youtube.com/embed/Ntu8nNBL28o?si=PSkbCrsODLZ8m0_9"
             },
           ],
         },
@@ -446,6 +515,14 @@ const ai = {
               title: "Resolution : FOL to CNF , Resolution Tree",
               url: "https://www.youtube.com/embed/7g6cB3kIHJI?si=yjpEr7fKxLm5pGEX",
             },
+            {
+              title:"Resolution - Example",
+              url:"https://www.youtube.com/embed/nEEyPdYxBFY?si=NiXCrzctHXw3qP_8"
+            },
+            {
+              title:"Resolution - Example - Part 2",
+              url:"https://www.youtube.com/embed/bdkTWgPbygg?si=aXoFjJlZHIeX80Vu"
+            }
           ],
         },
         {
@@ -460,6 +537,45 @@ const ai = {
               title: "Backward Chaining",
               url: "https://www.youtube.com/embed/2UJV1nmjNGw?si=nOUkn7Sjw6wBrxZe",
             },
+          ],
+        },
+        {
+          title: "Bayesian Networks",
+          description: "Numerical based concepts",
+          videos: [
+            {
+              title: "Bayesian Network with Examples",
+              url: "https://www.youtube.com/embed/DVnubVOjZtg?si=5GWHR0VLfuGE3Fdo",
+            },
+            {
+              title:"Bayesian Network - Example - Part 2",
+              url:"https://www.youtube.com/embed/xDyMuT9BliI?si=Ik8TBdkuKSTz8HGj"
+            },
+            {
+              title: "1.  Bayesian Belief Network | BBN | Solved Numerical Example | Burglar Alarm System ",
+              url: "https://www.youtube.com/embed/hEZjPZ-Ze0A"
+            },
+            {
+              title: "2.  Bayesian Belief Network | BBN | Solved Numerical Example Burglar Alarm System ",
+              url: "https://www.youtube.com/embed/iz7Kl2gcmlk"
+            },
+            {
+              title: "3. Bayesian Belief Network BBN Solved Numerical Example Battery Gauge Fuel Start Car ",
+              url: "https://www.youtube.com/embed/-h_h7pnwY8A"
+            },
+            {
+              title: "#4. Bayesian belief network Solved Example Milage Engine Air Conditioner Car Value ",
+              url: "https://www.youtube.com/embed/zLTiayj_aSI"
+            },
+            {
+              title: "#5. Bayesian belief network Solved Numerical Example | BBN Example | Machine Learning ",
+              url: "https://www.youtube.com/embed/K3QHrVb62Ow"
+            },
+            {
+              title: "#6. Bayesian Belief Network | BBN | Heart Disease Problem | BBN Solved Example  ",
+              url: "https://www.youtube.com/embed/bdWZNoV4Lkc"
+            }
+            
           ],
         },
       ],

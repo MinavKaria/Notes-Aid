@@ -1,110 +1,116 @@
-import { useState, useEffect } from "react";
-// import { Subjects } from "../interfaces/Subject";
+
+import { useState, useEffect } from "react"
 
 interface ProgressData {
-    completeVideos: {
-        [key: string]: boolean;
-    };
-    moduleProgress: {
-        [key: string]: number;
-    };
-    topicProgress: {
-        [key: string]: number;
-    };
-    subjectProgress: number;
+  completeVideos: {
+    [key: string]: boolean
+  }
+  moduleProgress: {
+    [key: string]: number
+  }
+  topicProgress: {
+    [key: string]: number
+  }
+  subjectProgress: number
 }
 
 const useProgress = (subjectName: string) => {
-    const key = subjectName + "-progress";
-    
-    const [progressData, setProgressData] = useState<ProgressData>({
-        completeVideos: {},
-        moduleProgress: {},
-        topicProgress: {},
-        subjectProgress: 0
-    });
 
-  
-    useEffect(() => {
-        const storedProgress = localStorage.getItem(key);
-        if (storedProgress) {
-            try {
-                setProgressData(JSON.parse(storedProgress));
-                // console.log("Progress Data is: "+JSON.parse(storedProgress))
-            } catch {
-                console.error("Failed to parse stored progress data");
-            }
+  const [progressData, setProgressData] = useState<ProgressData>({
+    completeVideos: {},
+    moduleProgress: {},
+    topicProgress: {},
+    subjectProgress: 0,
+  })
+
+  useEffect(() => {
+    const loadProgress = async () => {
+      const localKey = `${subjectName}-progress`
+
+      const storedProgress = localStorage.getItem(localKey)
+      if (storedProgress) {
+        try {
+          const parsedData = await JSON.parse(storedProgress)
+          setProgressData(parsedData)
+        } catch {
+          console.error("Failed to parse stored progress data")
         }
-    }, [key]);
+      } else {
+        setProgressData({
+          completeVideos: {},
+          moduleProgress: {},
+          topicProgress: {},
+          subjectProgress: 0,
+        })
+      }
+    }
 
+    loadProgress()
+  }, [subjectName]) 
 
-    const saveToLocalStorage = (data: ProgressData) => {
-        localStorage.setItem(key, JSON.stringify(data));
-    };
+  const saveToLocalStorage = (data: ProgressData) => {
+    const localKey = `${subjectName}-progress`
+    localStorage.setItem(localKey, JSON.stringify(data))
+  }
 
-  
-    const updateVideoProgress = (moduleIndex: string, videoIndex: string, topicName: string) => {
-        const videoKey = `${subjectName}-module${moduleIndex}-topic${topicName}-video${videoIndex}`;
-        const isVideoCompleted = progressData.completeVideos[videoKey] === true;
+  const updateVideoProgress = (
+    moduleIndex: string,
+    videoIndex: string,
+    topicName: string
+  ) => {
+    const videoKey = `${subjectName}-module${moduleIndex}-topic${topicName}-video${videoIndex}`
+    const isVideoCompleted = progressData.completeVideos[videoKey] === true
 
-        // console.log(videoKey)
-        
-   
-        const newProgressData = { ...progressData };
-        
-  
-        newProgressData.completeVideos = {
-            ...progressData.completeVideos,
-            [videoKey]: !isVideoCompleted
-        };
-        
-      
-        const currentModuleProgress = progressData.moduleProgress[moduleIndex] || 0;
-        newProgressData.moduleProgress = {
-            ...progressData.moduleProgress,
-            [moduleIndex]: isVideoCompleted 
-                ? Math.max(0, currentModuleProgress - 1) 
-                : currentModuleProgress + 1
-        };
-        
+    const newProgressData = { ...progressData }
 
-        const topicKey = `${subjectName}-module${moduleIndex}-topic${topicName}`;
-        const currentTopicProgress = progressData.topicProgress[topicKey] || 0;
-        newProgressData.topicProgress = {
-            ...progressData.topicProgress,
-            [topicKey]: isVideoCompleted 
-                ? Math.max(0, currentTopicProgress - 1)
-                : currentTopicProgress + 1
-        };
-        
-      
-        newProgressData.subjectProgress = isVideoCompleted
-            ? Math.max(0, progressData.subjectProgress - 1)
-            : progressData.subjectProgress + 1;
-        
-      
-        setProgressData(newProgressData);
-        saveToLocalStorage(newProgressData);
-    };
+    newProgressData.completeVideos = {
+      ...progressData.completeVideos,
+      [videoKey]: !isVideoCompleted,
+    }
 
+    const currentModuleProgress = progressData.moduleProgress[moduleIndex] || 0
+    newProgressData.moduleProgress = {
+      ...progressData.moduleProgress,
+      [moduleIndex]: isVideoCompleted
+        ? Math.max(0, currentModuleProgress - 1)
+        : currentModuleProgress + 1,
+    }
 
-    const resetProgress = () => {
-        const resetData: ProgressData = {
-            completeVideos: {},
-            moduleProgress: {},
-            topicProgress: {},
-            subjectProgress: 0
-        };
-        setProgressData(resetData);
-        localStorage.removeItem(key);
-    };
+    const topicKey = `${subjectName}-module${moduleIndex}-topic${topicName}`
+    const currentTopicProgress = progressData.topicProgress[topicKey] || 0
+    newProgressData.topicProgress = {
+      ...progressData.topicProgress,
+      [topicKey]: isVideoCompleted
+        ? Math.max(0, currentTopicProgress - 1)
+        : currentTopicProgress + 1,
+    }
 
-    return {
-        progressData,
-        updateVideoProgress,
-        resetProgress
-    };
-};
+    newProgressData.subjectProgress = isVideoCompleted
+      ? Math.max(0, progressData.subjectProgress - 1)
+      : progressData.subjectProgress + 1
 
-export default useProgress;
+    setProgressData(newProgressData)
+    saveToLocalStorage(newProgressData) 
+  }
+
+  const resetProgress = () => {
+    const resetData: ProgressData = {
+      completeVideos: {},
+      moduleProgress: {},
+      topicProgress: {},
+      subjectProgress: 0,
+    }
+    setProgressData(resetData)
+    const localKey = `${subjectName}-progress`
+    localStorage.removeItem(localKey)
+  }
+
+  return {
+    progressData,
+    updateVideoProgress,
+    resetProgress,
+  }
+}
+
+export default useProgress
 

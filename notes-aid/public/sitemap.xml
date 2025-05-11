@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://notes-aid.minavkaria.tech/</loc>
+    <lastmod>2025-05-07</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://notes-aid.minavkaria.tech/ty/comps/even</loc>
+    <lastmod>2025-05-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://notes-aid.minavkaria.tech/sy/comps/even</loc>
+    <lastmod>2025-05-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>https://notes-aid.minavkaria.tech/fy/comps/even</loc>
+    <lastmod>2025-05-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://notes-aid.minavkaria.tech/fy/comps/odd</loc>
+    <lastmod>2025-05-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+</urlset>

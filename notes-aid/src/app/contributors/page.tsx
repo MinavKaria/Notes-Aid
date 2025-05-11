@@ -87,6 +87,7 @@ export default function Contributors() {
                         width={96}
                         height={96}
                         className="object-cover"
+                        unoptimized
                       />
                       <div className="absolute inset-0 rounded-full bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                     </div>

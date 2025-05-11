@@ -120,8 +120,7 @@ const EngineeringCurriculum: React.FC = () => {
     }
   }, [selectedSubject, subjects]);
 
-  const { progressData, updateVideoProgress, resetProgress } =
-    useProgress(selectedSubject);
+  const { progressData, updateVideoProgress, resetProgress } = useProgress(selectedSubject);
 
   if (loading) {
     return (
@@ -149,57 +148,11 @@ const EngineeringCurriculum: React.FC = () => {
     );
   }
 
-  // const getTotalVideos = (subjectName: string): number => {
-  //   const subject = subjects[subjectName];
-  //   let count = 0;
-
-  //   Object.keys(subject.modules).forEach((moduleKey) => {
-  //     const moduley = subject.modules[Number(moduleKey)];
-  //     moduley.topics.forEach((topic) => {
-  //       count += topic.videos?.length || 0;
-  //     });
-  //   });
-
-  //   return count;
-  // };
-
-  // const getCompletionPercentage = (subjectName: string): number => {
-  //   if (!isMounted) return 0;
-
-  //   const total = getTotalVideos(subjectName);
-  //   if (total === 0) return 0;
-
-  //   if (subjectName === selectedSubject) {
-
-  //     return Math.min(Math.round((progressData.subjectProgress / total) * 100), 100);
-  //   }
-
-  //   try {
-  //     if (typeof window !== 'undefined') {
-  //       const storedData = localStorage.getItem(`${subjectName}-progress`);
-  //       if (storedData) {
-  //         const parsedData = JSON.parse(storedData);
-  //         const completed = parsedData.subjectProgress || 0;
-  //         return Math.min(Math.round((completed / total) * 100), 100);
-  //       }
-  //     }
-  //   } catch (error) {
-  //     console.error("Error reading progress data:", error);
-  //   }
-
-  //   return 0;
-  // };
-
-  // console.log(getTotalVideos("cc"))
-
   const numberVideoInModule = (k: number) =>
     subjects[selectedSubject].modules[k].topics.reduce((acc, topic) => {
       return acc + (topic.videos?.length || 0);
     }, 0);
-
-  // console.log("Hello")
-  // console.log(numberVideoInModule)
-
+  
   const handleResetProgress = () => {
     setShowResetConfirmation(true);
   };
@@ -292,7 +245,7 @@ const EngineeringCurriculum: React.FC = () => {
                   pyq.map((pyq, index) => {
                     return (
                       <>
-                        <div className=""> 
+                        <div key={index} > 
                         <a
                           href={pyq.url}
                           target="_blank"
@@ -322,8 +275,11 @@ const EngineeringCurriculum: React.FC = () => {
                       }
                       isActive={selectedModule === moduley}
                       onClick={() => setSelectedModule(moduley)}
-                      progressData={progressData}
+                      numberOfVideosCompleted={
+                        progressData.moduleProgress[moduley] || 0
+                      }
                       numberOfVideos={numberVideoInModule(moduley)}
+                
                     />
                   );
                 }
