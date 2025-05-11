@@ -1,5 +1,5 @@
 import { Brain } from "lucide-react";
-import { title } from "process";
+// import { title } from "process";
 
 const ai = {
   name: "Artificial Intelligence",
