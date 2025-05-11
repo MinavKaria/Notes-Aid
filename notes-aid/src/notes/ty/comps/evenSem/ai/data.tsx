@@ -1,5 +1,6 @@
 import { Brain } from "lucide-react";
 // import { title } from "process";
+// import { title } from "process";
 
 const ai = {
   name: "Artificial Intelligence",
@@ -19,6 +20,10 @@ const ai = {
         {
           title: "Aakriti's Short Notes",
           url: "https://drive.google.com/file/d/1et0nqfAJS1NDkAeh2sKf2HWzxUGC4aWc/view?usp=drive_link"
+        },
+        {
+          title: "Rohit's Short Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/EaBHJEe0vLdEpvPeWXlEWykBBfJLYlzDRDFC9LBamBxyhA?e=hE1toc"
         },
         {
           title: "Rohit's Short Notes",
@@ -99,6 +104,10 @@ const ai = {
         {
           title: "Aakriti's Short Notes",
           url: "https://drive.google.com/file/d/1MUdJiZZgvSHHaBwlyTFDot7Yrz_b-3wq/view?usp=drive_link"
+        },
+        {
+          title: "Rohit's Short Notes",
+          url: "https://somaiya0-my.sharepoint.com/:b:/g/personal/rohit_sd_somaiya_edu/ERtPjG8zYZdGqK7bCufpAmsBJ1ewnwCpZcY_uzlq6LI0Jw?e=5rd6WJ"
         },
         {
           title: "Rohit's Short Notes",
