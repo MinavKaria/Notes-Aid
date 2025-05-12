@@ -287,6 +287,10 @@ const Navbar = () => {
     return null;
   }
 
+  const handleBestCalc = () => {
+    window.location.href = "https://redisitic.xyz";
+  };
+
   return (
     <nav className="w-full py-4 px-6 border-b transition-colors duration-200 bg-base-300 ">
       <div className="container mx-auto flex items-center justify-between">
@@ -408,8 +412,7 @@ const Navbar = () => {
               </div>
             )}
           </div>
-
-
+          <button className="hidden" onClick={handleBestCalc}>Click this for the Best Calculator ever!!!</button>
           <ThemeSwitcher/>
         </div>
       </div>
