@@ -36,7 +36,7 @@ const VideoAccordion: React.FC<{
         
         return(<div
           key={index}
-          className=" rounded-lg  justify-center overflow-hidden bg-base-300 hover:bg-base-200  p-2 w-full flex flex-col"
+          className=" rounded-lg justify-center overflow-hidden bg-base-100 hover:bg-base-300  p-2 w-full flex flex-col"
         >
           <Video
             checked={checked[index]}

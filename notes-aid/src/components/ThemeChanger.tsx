@@ -5,6 +5,7 @@ const ThemeSwitcher = () => {
   const themes = [
     "light",
     "dark",
+    "ShadCN",
     "cupcake",
     "bumblebee",
     "emerald",

@@ -14,7 +14,7 @@ interface ModuleCardProps {
 
 const ModuleCard: React.FC<ModuleCardProps> = ({
   module,
-  topics,
+  topics, 
   isActive,
   onClick,
   numberOfVideos,
@@ -52,21 +52,25 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
       <div
         onClick={onClick}
         className={`
+        bg-base-100
         p-3 
         rounded-lg 
-        
         transition-all 
         cursor-pointer 
         shadow-md
         hover:shadow-2xl
+        border-[0.05rem]
+        border-base-200
+        border-dashed
+        hover:bg-base-300
         ${
           isActive
-            ? "border-blue-500 bg-base-100"
-            : "border-slate-200 bg-base-300"
+            ? "border-base-300 bg-base-300"
+            : "border-base-100 bg-base-100"
         }
       `}
       >
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <h3 className={` font-semibold text-base-content`}>
