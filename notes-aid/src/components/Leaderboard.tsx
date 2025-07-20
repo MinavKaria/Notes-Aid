@@ -4,14 +4,13 @@ import { useState, useEffect, useMemo } from 'react';
 import { Card, CardContent } from './ui/Card';
 import { Input } from './ui/Input';
 import { useDebounce } from '../hook/useDebounce';
-import { useAuth } from '../context/AuthContext';
 import { Search, Trophy, Medal, Award, Users, ChevronLeft, ChevronRight, RefreshCw, Star, X, BarChart3, ChevronDown } from 'lucide-react';
+import { parseCookies } from 'nookies';
 
-// Utility function to construct API URLs properly
 const getApiUrl = (endpoint: string) => {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-  const cleanBase = baseUrl.replace(/\/+$/, ''); // Remove trailing slashes
-  const cleanEndpoint = endpoint.replace(/^\/+/, ''); // Remove leading slashes
+  const cleanBase = baseUrl.replace(/\/+$/, '');
+  const cleanEndpoint = endpoint.replace(/^\/+/, '');
   return `${cleanBase}/${cleanEndpoint}`;
 };
 
@@ -61,31 +60,37 @@ interface SemestersResponse {
 
 
 export default function Leaderboard() {
-  const { token } = useAuth();
+  // Get token from cookies instead of hardcoding
+  const [token, setToken] = useState<string>('');
   const [students, setStudents] = useState<Student[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isHydrated, setIsHydrated] = useState(false);
-    // Filter states
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedYear, setSelectedYear] = useState<string>('');
   const [selectedSemester, setSelectedSemester] = useState<string>('overall');
   const [currentPage, setCurrentPage] = useState(1);
   const [limit] = useState(500);
   
-  // Available options
   const [availableYears, setAvailableYears] = useState<number[]>([]);
   const [availableSemesters, setAvailableSemesters] = useState<number[]>([]);
   
-  // Pagination info
   const [totalPages, setTotalPages] = useState(0);
   const [totalStudents, setTotalStudents] = useState(0);
 
-  // Handle hydration
+  // Get token from cookies on component mount
   useEffect(() => {
     setIsHydrated(true);
+    const cookies = parseCookies();
+    const googleToken = cookies.googleToken;
+    if (googleToken) {
+      setToken(googleToken);
+    } else {
+      setError('No authentication token found. Please login again.');
+      setLoading(false);
+    }
   }, []);
-  // Debounced search term for client-side filtering
+
   const debouncedSearchTerm = useDebounce(searchTerm, 100);  // Client-side search filtering
   const filteredStudents = useMemo(() => {
     if (!debouncedSearchTerm) return students;
@@ -98,12 +103,13 @@ export default function Leaderboard() {
       
       return nameMatch || rollMatch || yearMatch;
     });
-  }, [students, debouncedSearchTerm]);  // Fetch available years on component mount
+  }, [students, debouncedSearchTerm]);
   useEffect(() => {
-    if (!isHydrated || !token) return; // Wait for hydration and token
+    if (!isHydrated || !token) return;
     
-    const fetchAvailableYears = async () => {      try {
-        setLoading(true); // Set loading when starting fetch
+    const fetchAvailableYears = async () => {
+      try {
+        setLoading(true);
         const response = await fetch(
           getApiUrl('api/v1/leaderboard/meta/years'),
           {
@@ -113,15 +119,18 @@ export default function Leaderboard() {
             }
           }
         );
-          if (response.ok) {
+        
+        if (response.ok) {
           const data: YearsResponse = await response.json();
           setAvailableYears(data.data || []);
           if (data.data && data.data.length > 0) {
             setSelectedYear(data.data[0].toString());
           } else {
-            // No years available, stop loading
             setLoading(false);
           }
+        } else if (response.status === 401 || response.status === 403) {
+          setError('Authentication failed. Please login again.');
+          setLoading(false);
         } else {
           console.error('Failed to fetch years:', response.status);
           setError('Failed to fetch available years');
@@ -132,12 +141,16 @@ export default function Leaderboard() {
         setError('Failed to connect to server');
         setLoading(false);
       }
-    };    fetchAvailableYears();
+    };
+    
+    fetchAvailableYears();
   }, [isHydrated, token]); // Wait for hydration and token  // Fetch available semesters when year changes
-  useEffect(() => {    const fetchAvailableSemesters = async () => {
+  useEffect(() => {
+    const fetchAvailableSemesters = async () => {
       if (!selectedYear || !token) return;
       
-      try {        const response = await fetch(
+      try {
+        const response = await fetch(
           getApiUrl(`api/v1/leaderboard/meta/semesters?admission_year=${selectedYear}`),
           {
             headers: {
@@ -150,19 +163,28 @@ export default function Leaderboard() {
         if (response.ok) {
           const data: SemestersResponse = await response.json();
           setAvailableSemesters(data.data);
+        } else if (response.status === 401 || response.status === 403) {
+          setError('Authentication failed. Please login again.');
         }
       } catch (err) {
         console.error('Error fetching semesters:', err);
       }
-    };    if (selectedYear) {
+    };
+    
+    if (selectedYear) {
       fetchAvailableSemesters();
     }
   }, [selectedYear, token]);  // Fetch leaderboard data
-  useEffect(() => {    const fetchLeaderboard = async () => {
-      if (!selectedYear || !token) {        return;
-      }      
+  useEffect(() => {
+    const fetchLeaderboard = async () => {
+      if (!selectedYear || !token) {
+        return;
+      }
+      
       setLoading(true);
-      setError(null);      try {
+      setError(null);
+      
+      try {
         let endpoint = 'api/v1/leaderboard';
         
         if (selectedSemester === 'overall') {
@@ -171,18 +193,23 @@ export default function Leaderboard() {
           endpoint += `/current?admission_year=${selectedYear}&page=${currentPage}&limit=${limit}`;
         } else {
           endpoint += `/${selectedSemester}?admission_year=${selectedYear}&page=${currentPage}&limit=${limit}`;
-        }        
+        }
+        
         const url = getApiUrl(endpoint);
         const response = await fetch(url, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
-        });        
-        if (response.ok) {          const data: LeaderboardResponse = await response.json();
+        });
+        
+        if (response.ok) {
+          const data: LeaderboardResponse = await response.json();
           setStudents(data.data || []);
           setTotalPages(data.pagination?.pages || 1);
           setTotalStudents(data.pagination?.total || 0);
+        } else if (response.status === 401 || response.status === 403) {
+          setError('Authentication failed. Please login again.');
         } else {
           const errorText = await response.text();
           console.error('API Error:', response.status, errorText);
@@ -190,10 +217,13 @@ export default function Leaderboard() {
         }
       } catch (err) {
         console.error('Network error:', err);
-        setError('Network error. Please check if the backend server is running.');      } finally {
+        setError('Network error. Please check if the backend server is running.');
+      } finally {
         setLoading(false);
       }
-    };    fetchLeaderboard();
+    };
+    
+    fetchLeaderboard();
   }, [selectedYear, selectedSemester, currentPage, limit, token]);
 
   // Reset page when filters change (but not search)
