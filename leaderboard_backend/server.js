@@ -14,8 +14,11 @@ connectToDb();
 
 // Middlewares
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'], // Add your frontend URLs
-  credentials: true
+  origin: ['http://localhost:3000', 'https://notes-aid.minavkaria.tech', 'https://notes-aid-git-fork-om-thanage-main-minavkarias-projects.vercel.app', 'https://notes-d0qrfpgl6-minavkarias-projects.vercel.app'
+],
+  credentials: true,
+  methods: ['GET', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

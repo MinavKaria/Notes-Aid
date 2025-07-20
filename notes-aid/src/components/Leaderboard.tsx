@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Card, CardContent } from './ui/Card';
 import { Input } from './ui/Input';
 import { useDebounce } from '../hook/useDebounce';
-import { Search, Trophy, Medal, Award, Users, ChevronLeft, ChevronRight, RefreshCw, Star, X, BarChart3, ChevronDown } from 'lucide-react';
+import { Search, Trophy, Medal, Award, Users, ChevronLeft, ChevronRight, RefreshCw, Star, X, BarChart3 } from 'lucide-react';
 import { parseCookies } from 'nookies';
 
 const getApiUrl = (endpoint: string) => {
@@ -146,7 +146,7 @@ export default function Leaderboard() {
     };
     
     fetchAvailableYears();
-  }, [isHydrated, token]); // Wait for hydration and token  // Fetch available semesters when year changes
+  }, [isHydrated, token]);
   useEffect(() => {
     const fetchAvailableSemesters = async () => {
       if (!selectedYear || !token) return;
@@ -470,7 +470,6 @@ export default function Leaderboard() {
                 </option>
               ))}
             </select>
-            <ChevronDown className="w-5 h-5 text-neutral-content absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
           </div>
 
           {/* Semester Selection */}
