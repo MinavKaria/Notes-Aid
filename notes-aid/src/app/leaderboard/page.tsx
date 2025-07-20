@@ -88,7 +88,7 @@ export default function LeaderboardPage() {
         <div className="w-full relative">
           <button
             onClick={handleLogout}
-            className="absolute top-4 right-4 h-12 btn btn-neutral dark:btn-primary transition-all duration-200 flex items-center justify-center gap-2"
+            className="sm:absolute relative w-full sm:w-fit right-0 top-4 sm:right-4 h-12 btn btn-neutral dark:btn-primary transition-all duration-200 flex items-center justify-center gap-2"
           >
             Logout
           </button>

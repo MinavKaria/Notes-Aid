@@ -60,13 +60,15 @@ interface SemestersResponse {
 
 
 export default function Leaderboard() {
-  // Get token from cookies instead of hardcoding
   const [token, setToken] = useState<string>('');
   const [students, setStudents] = useState<Student[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isHydrated, setIsHydrated] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  
+  // Separate the display value from the search logic
+  const [searchTerm, setSearchTerm] = useState(''); // This will update immediately
+  const debouncedSearchTerm = useDebounce(searchTerm, 300); // This will be debounced for filtering
   const [selectedYear, setSelectedYear] = useState<string>('');
   const [selectedSemester, setSelectedSemester] = useState<string>('overall');
   const [currentPage, setCurrentPage] = useState(1);
@@ -78,7 +80,6 @@ export default function Leaderboard() {
   const [totalPages, setTotalPages] = useState(0);
   const [totalStudents, setTotalStudents] = useState(0);
 
-  // Get token from cookies on component mount
   useEffect(() => {
     setIsHydrated(true);
     const cookies = parseCookies();
@@ -91,7 +92,7 @@ export default function Leaderboard() {
     }
   }, []);
 
-  const debouncedSearchTerm = useDebounce(searchTerm, 100);  // Client-side search filtering
+  // Client-side search filtering using debounced term
   const filteredStudents = useMemo(() => {
     if (!debouncedSearchTerm) return students;
     
@@ -103,7 +104,8 @@ export default function Leaderboard() {
       
       return nameMatch || rollMatch || yearMatch;
     });
-  }, [students, debouncedSearchTerm]);
+  }, [students, debouncedSearchTerm]); // Use debouncedSearchTerm for filtering
+
   useEffect(() => {
     if (!isHydrated || !token) return;
     
@@ -418,9 +420,11 @@ export default function Leaderboard() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2 text-base-content dark:text-neutral-content">Leaderboard</h1>
           <p className="text-base-content dark:text-neutral-content">Track academic excellence across batches and semesters</p>
-        </div>        {/* Search Bar */}
+        </div>
+
+        {/* Search Bar */}
         <div className="relative mb-6">
-          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-base-content dark:text-neutral-content  w-5 h-5" />
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-base-content dark:text-neutral-content w-5 h-5" />
           <Input
             placeholder="Search students by name or roll number..."
             value={searchTerm}
@@ -437,17 +441,17 @@ export default function Leaderboard() {
               </button>
             </div>
           )}
+        </div>
 
-        {/* Search Results Counter */}
-        {searchTerm && (
+        {/* Search Results Counter - use debouncedSearchTerm for display */}
+        {debouncedSearchTerm && (
           <div className="mb-4 text-center">
             <p className="text-base-content dark:text-neutral-content">
               Found {filteredStudents.length} student{filteredStudents.length !== 1 ? 's' : ''} 
-              {searchTerm && ` matching "${searchTerm}"`}
+              {debouncedSearchTerm && ` matching "${debouncedSearchTerm}"`}
             </p>
           </div>
         )}
-        </div>
 
         {/* Filters */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -729,15 +733,15 @@ export default function Leaderboard() {
               <div className="text-center">
                 <Users className="w-12 h-12 text-gray-500 mx-auto mb-4" />
                 <p className="mb-2 text-base-content dark:text-neutral-content text-xl">
-                  {searchTerm ? 'No search results found' : 'No students found'}
+                  {debouncedSearchTerm ? 'No search results found' : 'No students found'}
                 </p>
                 <p className="text-base-content dark:text-neutral-content mb-4">
-                  {searchTerm 
-                    ? `No students match "${searchTerm}". Try a different search term or check your spelling.`
+                  {debouncedSearchTerm 
+                    ? `No students match "${debouncedSearchTerm}". Try a different search term or check your spelling.`
                     : 'No data available for the selected criteria. Try selecting a different year or semester.'
                   }
                 </p>
-                {searchTerm && (
+                {debouncedSearchTerm && (
                   <button
                     onClick={() => setSearchTerm('')}
                     className="text-base-content dark:text-neutral-content"
