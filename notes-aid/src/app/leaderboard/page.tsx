@@ -7,7 +7,7 @@ import { jwtDecode } from "jwt-decode";
 
 interface DecodedToken {
   email?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export default function LeaderboardPage() {
