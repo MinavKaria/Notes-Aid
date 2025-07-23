@@ -3,6 +3,11 @@ const ed = {
   name: "Engineering Drawing",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Engineering Drawing - by N.D. Bhatt"
+  }
+  ],
   modules: {
     1: {
       notesLink: [

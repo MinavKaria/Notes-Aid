@@ -4,6 +4,18 @@ const em = {
   name: "Engineering Mechanics",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Engineering Mechanics: Statics & Dynamics – by R.C. Hibbeler (Pearson)"
+  },
+  {
+    name: "Engineering Mechanics – by S.S. Bhavikatti & K.G. Rajashekarappa (New Age Publishers)"
+  },
+  {
+    name: " A Textbook of Engineering Mechanics – by R.K. Bansal (Laxmi Publications)"
+  }
+],
+
   modules: {
     1: {
       notesLink: [

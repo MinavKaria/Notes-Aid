@@ -4,6 +4,21 @@ const aoa = {
   name: "Discrete Mathematics",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Discrete Mathematics and Its Applications – Kenneth H. Rosen"
+  },
+  {
+    name: "Discrete Mathematical Structures – B. Kolman, R.C. Busby, S. Ross"
+  },
+  {
+    name: "Elements of Discrete Mathematics – C.L. Liu"
+  },
+  {
+    name: "Discrete Mathematics – Seymour Lipschutz (Schaum's Outline Series)"
+  }
+],
+
   modules: {
     1: {
       notesLink: [

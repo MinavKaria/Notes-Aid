@@ -5,6 +5,15 @@ const dbms = {
   name: "Database Management Systems",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Database System Concepts (Abraham Silberschatz, Henry F. Korth, S. Sudarshan)"
+  },
+  {
+    name: " Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe)"
+  }
+],
+
   modules: {
    1:{
     notesLink:[

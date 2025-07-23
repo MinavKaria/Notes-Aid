@@ -284,6 +284,17 @@ const EngineeringCurriculum: React.FC = () => {
                   );
                 }
               )}
+              {subjects[selectedSubject].suggestedBooks && (
+  <div className="mt-8">
+    <h2 className="text-xl font-bold mb-2">📚 Suggested Books</h2>
+    <ul className="list-disc list-inside space-y-1">
+      {subjects[selectedSubject].suggestedBooks.map((book, index) => (
+        <li key={index}>{book.name}</li>
+      ))}
+    </ul>
+  </div>
+)}
+
 
               <button
                 onClick={handleResetProgress}

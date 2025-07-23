@@ -4,6 +4,14 @@ const ec = {
   name: "Engineering Chemistry",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Engineering Chemistry - by Jain & Jain"
+  },
+  {
+    name: "A textbook of Engineering Chemistry - by Shashi Chawla"
+  }
+  ],
   modules: {
     1: {
       notesLink: [

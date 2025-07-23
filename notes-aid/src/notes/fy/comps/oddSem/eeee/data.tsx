@@ -4,6 +4,14 @@ const eeee = {
   name: "Elements of Electrical and Electronics Engineering",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Fundamentals of Electrical and Electronics Engineering by RS Sedha"
+  },
+  {
+    name: "Basic Electrical and Electronics Engineering by SK Bhattacharya"
+  }
+  ],
   modules: {
     1: {
       notesLink: [
