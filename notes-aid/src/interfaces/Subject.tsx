@@ -34,6 +34,9 @@ interface Subject {
   icon: LucideIcon
   color: string
   modules: Module
+  suggestedBooks?: {
+    name: string
+  }[]
 }
 
 export interface Subjects {
