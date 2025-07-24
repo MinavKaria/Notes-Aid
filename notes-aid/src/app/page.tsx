@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { useDatabase } from "@/hook/useDatabase";
 import {
   GraduationCap,
   BookOpen,
@@ -39,6 +41,9 @@ const semesters = [
 
 export default function MainPage() {
   const router = useRouter();
+  const { data: session } = useSession();
+  const { updatePreferences, getUserPreferences, logAnalytics, isAuthenticated } = useDatabase();
+  
   const [selectedBranch, setSelectedBranch] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSemester, setSelectedSemester] = useState("");
@@ -52,46 +57,127 @@ export default function MainPage() {
       setShowForm(true);
     }, 750);
 
-    // Check for previous selections in localStorage
-    const previousBranch = localStorage.getItem("selectedBranch");
-    const previousYear = localStorage.getItem("selectedYear");
-    const previousSemester = localStorage.getItem("selectedSemester");
+    // Load preferences from database if authenticated, otherwise fall back to localStorage
+    const loadPreferences = async () => {
+      if (isAuthenticated) {
+        try {
+          const preferences = await getUserPreferences();
+          if (preferences) {
+            if (preferences.selectedBranch) setSelectedBranch(preferences.selectedBranch);
+            if (preferences.selectedYear) setSelectedYear(preferences.selectedYear);
+            if (preferences.selectedSemester) setSelectedSemester(preferences.selectedSemester);
+            
+            if (preferences.selectedBranch && preferences.selectedYear && preferences.selectedSemester) {
+              setHasPreviousSelection(true);
+            }
+          }
+        } catch (error) {
+          console.warn('Failed to load preferences from database, falling back to localStorage');
+          loadFromLocalStorage();
+        }
+      } else {
+        loadFromLocalStorage();
+      }
+    };
 
-    if (previousBranch && previousYear && previousSemester) {
-      setHasPreviousSelection(true);
-    }
+    const loadFromLocalStorage = () => {
+      // Check for previous selections in localStorage
+      const previousBranch = localStorage.getItem("selectedBranch");
+      const previousYear = localStorage.getItem("selectedYear");
+      const previousSemester = localStorage.getItem("selectedSemester");
+
+      if (previousBranch) setSelectedBranch(previousBranch);
+      if (previousYear) setSelectedYear(previousYear);
+      if (previousSemester) setSelectedSemester(previousSemester);
+
+      if (previousBranch && previousYear && previousSemester) {
+        setHasPreviousSelection(true);
+      }
+    };
+
+    loadPreferences();
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isAuthenticated, getUserPreferences]);
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
     if (selectedBranch && selectedYear && selectedSemester) {
-      // Save current selections to localStorage
+      // Save current selections to localStorage (for non-authenticated users)
       localStorage.setItem("selectedBranch", selectedBranch);
       localStorage.setItem("selectedYear", selectedYear);
       localStorage.setItem("selectedSemester", selectedSemester);
 
-      // console.log(
-      //   `Selected Branch: ${selectedBranch}, Selected Year: ${selectedYear}, Semester: ${selectedSemester}`
-      // );
+      // Save to database if authenticated
+      if (isAuthenticated) {
+        try {
+          await updatePreferences({
+            selectedBranch,
+            selectedYear,
+            selectedSemester
+          });
+          
+          // Log analytics
+          await logAnalytics({
+            action: 'select_academic_details',
+            year: selectedYear,
+            branch: selectedBranch,
+            semester: selectedSemester,
+            metadata: { source: 'main_page' }
+          });
+        } catch (error) {
+          console.warn('Failed to save preferences to database:', error);
+        }
+      }
 
+      // Navigate to the appropriate page
       if (
         selectedYear === "fy" &&
         !(selectedBranch === "comps" || selectedBranch === "aids")
       ) {
         if (selectedSemester === "odd") router.push(`/fy/comps/even`);
         else router.push(`/fy/comps/odd`);
-      } else
+      } else {
         router.push(`/${selectedYear}/${selectedBranch}/${selectedSemester}`);
+      }
     }
   };
 
-  const handleReturnToPrevious = () => {
-    const previousBranch = localStorage.getItem("selectedBranch");
-    const previousYear = localStorage.getItem("selectedYear");
-    const previousSemester = localStorage.getItem("selectedSemester");
+  const handleReturnToPrevious = async () => {
+    let previousBranch, previousYear, previousSemester;
+
+    // Try to get from database first if authenticated
+    if (isAuthenticated) {
+      try {
+        const preferences = await getUserPreferences();
+        if (preferences) {
+          previousBranch = preferences.selectedBranch;
+          previousYear = preferences.selectedYear;
+          previousSemester = preferences.selectedSemester;
+        }
+      } catch (error) {
+        console.warn('Failed to get preferences from database, using localStorage');
+      }
+    }
+
+    // Fall back to localStorage
+    if (!previousBranch) {
+      previousBranch = localStorage.getItem("selectedBranch");
+      previousYear = localStorage.getItem("selectedYear");
+      previousSemester = localStorage.getItem("selectedSemester");
+    }
 
     if (previousBranch && previousYear && previousSemester) {
+      // Log analytics
+      if (isAuthenticated) {
+        await logAnalytics({
+          action: 'return_to_previous_selection',
+          year: previousYear,
+          branch: previousBranch,
+          semester: previousSemester,
+          metadata: { source: 'main_page' }
+        });
+      }
+      
       router.push(`/${previousYear}/${previousBranch}/${previousSemester}`);
     }
   };
