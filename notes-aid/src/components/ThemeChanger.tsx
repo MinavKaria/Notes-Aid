@@ -48,7 +48,7 @@ const ThemeSwitcher = () => {
     } else {
       document.documentElement.setAttribute("data-theme", currentTheme);
     }
-  }, []);
+  }, [currentTheme]);
 
   const changeTheme = (theme: string) => {
     setCurrentTheme(theme);
