@@ -34,3 +34,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 🚀 Database Integration & User Progress 
+
+- Integrated scalable PostgreSQL database (Supabase) using Prisma ORM for type-safe, performant access.
+- Added NextAuth.js authentication with Google OAuth for secure user login and session management.
+- Implemented secure API endpoints for user progress, analytics, and preferences, all protected by authentication.
+- Linked progress tracking UI to the database for logged-in users—progress is now persistent and user-specific.
+- Role-based access control (admin/user) for secure admin endpoints.
+- Provided .env.example and updated documentation for easy setup.
+
+See `README-DATABASE.md` for setup and usage instructions.
+
+---
