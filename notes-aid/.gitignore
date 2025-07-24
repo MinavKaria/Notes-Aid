@@ -44,3 +44,10 @@ next-env.d.ts
 # Ignore service worker file in public
 /public/service-worker.js
 /public/workbox-*.js
+
+# Prisma
+prisma/.env
+prisma/migrations/
+
+# Local environment variables
+.env
