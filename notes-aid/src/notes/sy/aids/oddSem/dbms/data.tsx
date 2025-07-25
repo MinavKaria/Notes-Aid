@@ -7,7 +7,8 @@ const dbms = {
   color: "blue",
   suggestedBooks: [
   {
-    name: "Database System Concepts (Abraham Silberschatz, Henry F. Korth, S. Sudarshan)"
+    name: "Database System Concepts (Abraham Silberschatz, Henry F. Korth, S. Sudarshan)",
+    url: "https://db-book.com/"
   },
   {
     name: " Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe)"

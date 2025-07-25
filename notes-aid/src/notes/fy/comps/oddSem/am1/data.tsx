@@ -9,7 +9,8 @@ const am1 = {
     name: "Higher Engineering Mathematics – B.S. Grewal"
   },
   {
-    name: "Engineering Mathematics – Erwin Kreyszig"
+    name: "Engineering Mathematics – Erwin Kreyszig",
+    url: "https://www.wileyindia.com/advanced-engineering-mathematics-10ed-isv.html"
   }
   ],
   modules: {

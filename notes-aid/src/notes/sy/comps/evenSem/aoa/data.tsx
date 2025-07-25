@@ -9,7 +9,8 @@ const aoa = {
     name: "Introduction to Algorithms – Cormen, Leiserson, Rivest, Stein (CLRS)"
   },
   {
-    name: "Design and Analysis of Algorithms – S.Sridhar"
+    name: "Design and Analysis of Algorithms – S.Sridhar",
+    url: "https://www.drssridhar.com/?page_id=887"
   },
   {
     name: "Algorithm Design – Jon Kleinberg & Éva Tardos"

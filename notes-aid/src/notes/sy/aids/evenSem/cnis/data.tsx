@@ -6,7 +6,8 @@ const cnis = {
   color: "blue",
   suggestedBooks: [
   {
-    name: "Computer Networks (Andrew Tanenbaum, 5th Ed)"
+    name: "Computer Networks (Andrew Tanenbaum, 5th Ed)",
+    url: "https://www.amazon.in/Computer-Networks-Andrew-S-Tanenbaum/dp/0132126958"
   }
 ],
 

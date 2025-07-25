@@ -284,16 +284,30 @@ const EngineeringCurriculum: React.FC = () => {
                   );
                 }
               )}
-              {subjects[selectedSubject].suggestedBooks && (
+ {subjects[selectedSubject].suggestedBooks && (
   <div className="mt-8">
     <h2 className="text-xl font-bold mb-2">📚 Suggested Books</h2>
     <ul className="list-disc list-inside space-y-1">
       {subjects[selectedSubject].suggestedBooks.map((book, index) => (
-        <li key={index}>{book.name}</li>
+        <li key={index}>
+          {book.url ? (
+            <a
+              href={book.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline hover:text-blue-800"
+            >
+              {book.name}
+            </a>
+          ) : (
+            book.name
+          )}
+        </li>
       ))}
     </ul>
   </div>
 )}
+
 
 
               <button

@@ -5,7 +5,8 @@ const ed = {
   color: "blue",
   suggestedBooks: [
   {
-    name: "Engineering Drawing - by N.D. Bhatt"
+    name: "Engineering Drawing - by N.D. Bhatt",
+    url: "https://archive.org/details/engineering-drawing-by-n.-d-bhatt"
   }
   ],
   modules: {

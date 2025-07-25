@@ -6,7 +6,8 @@ const aoa = {
   color: "blue",
   suggestedBooks: [
   {
-    name: "Discrete Mathematics and Its Applications – Kenneth H. Rosen"
+    name: "Discrete Mathematics and Its Applications – Kenneth H. Rosen",
+    url: "https://mrce.in/ebooks/Maths-Discrete%20Mathematics%20&%20its%20Applications%208th%20Ed.pdf"
   },
   {
     name: "Discrete Mathematical Structures – B. Kolman, R.C. Busby, S. Ross"

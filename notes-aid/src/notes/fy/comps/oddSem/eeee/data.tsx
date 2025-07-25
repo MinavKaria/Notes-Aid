@@ -6,10 +6,12 @@ const eeee = {
   color: "blue",
   suggestedBooks: [
   {
-    name: "Fundamentals of Electrical and Electronics Engineering by RS Sedha"
+    name: "Fundamentals of Electrical and Electronics Engineering by RS Sedha",
+    url: "https://books.google.co.in/books?id=ldGpLGVbsDgC&printsec=frontcover#v=onepage&q&f=false"
   },
   {
-    name: "Basic Electrical and Electronics Engineering by SK Bhattacharya"
+    name: "Basic Electrical and Electronics Engineering by SK Bhattacharya",
+    url: "https://books.google.co.in/books?id=NgZXYVz_0cEC&printsec=frontcover#v=onepage&q&f=false"
   }
   ],
   modules: {

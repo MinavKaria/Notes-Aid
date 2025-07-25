@@ -7,7 +7,8 @@ const aoa = {
   color: "blue",
   suggestedBooks: [
   {
-    name: "Algorithm Design – by Jon Kleinberg & Éva Tardos (Pearson)"
+    name: "Algorithm Design – by Jon Kleinberg & Éva Tardos (Pearson)",
+    url: "https://www.cs.mcgill.ca/~lhamba/comp360/AlgorithmDesign.pdf"
   }
 ],
 

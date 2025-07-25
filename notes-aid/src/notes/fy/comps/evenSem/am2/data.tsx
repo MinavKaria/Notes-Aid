@@ -7,10 +7,12 @@ const am2 = {
   color: "blue",
   suggestedBooks: [
   {
-    name: "Higher Engineering Mathematics – B.S. Grewal"
+    name: "Higher Engineering Mathematics – B.S. Grewal",
+    url: "https://example.com/grewal"
   },
   {
-    name: "Engineering Mathematics – Erwin Kreyszig"
+    name: "Engineering Mathematics – Erwin Kreyszig",
+    url: "https://www.wiley.com/en-us/Advanced+Engineering+Mathematics%2C+10th+Edition-p-9781119455929"
   }
 ],
 

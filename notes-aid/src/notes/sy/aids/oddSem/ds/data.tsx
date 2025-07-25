@@ -6,7 +6,8 @@ const ds = {
   color: "blue",
   suggestedBooks: [
   {
-    name: "Data Structures Through C – Yashavant Kanetkar"
+    name: "Data Structures Through C – Yashavant Kanetkar",
+    url: "https://in.bpbonline.com/products/data-structures-through-c-5th-edition-2?srsltid=AfmBOoqwlJFk_7fWPJIfsYr6_P31_PKg7NzJ64G6nNjqzRdso4JkN15g"
   },
   {
     name: "Data Structures and Algorithm Analysis – Mark Allen Weiss"
