@@ -5,6 +5,17 @@ const am2 = {
   name: "Applied Mathematics 2",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Higher Engineering Mathematics – B.S. Grewal",
+    url: "https://example.com/grewal"
+  },
+  {
+    name: "Engineering Mathematics – Erwin Kreyszig",
+    url: "https://www.wiley.com/en-us/Advanced+Engineering+Mathematics%2C+10th+Edition-p-9781119455929"
+  }
+],
+
   modules: {
    1:{
     notesLink:[

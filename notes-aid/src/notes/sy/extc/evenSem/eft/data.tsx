@@ -5,6 +5,15 @@ const eft = {
   name: "Electromagnetic Field Theory",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Engineering Electromagnetics – William H. Hayt"
+  },
+  {
+    name: "Electromagnetic Field Theory – Sadiku"
+  }
+],
+
   modules: {
    1:{
     notesLink:[
