@@ -12,6 +12,13 @@ import NotesData from "@/notes/data";
 import pyqLinks from "@/notes/pyq";
 import useProgress from "@/hook/useProgress";
 import { RotateCcw, X } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"; // adjust path if needed
+
 
 interface Topic {
   title: string;
@@ -237,6 +244,37 @@ const EngineeringCurriculum: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 ">
             <div className="space-y-3 border border-border p-4 rounded-lg">
+            {subjects[selectedSubject].suggestedBooks && (
+  <Accordion type="single" collapsible className="mb-4 w-full">
+    <AccordionItem value="suggested-books">
+      <AccordionTrigger className="text-base md:text-lg font-bold text-primary-text">
+        📚 Suggested Books
+      </AccordionTrigger>
+      <AccordionContent>
+        <ul className="list-disc list-inside space-y-1 text-sm mt-2">
+          {subjects[selectedSubject].suggestedBooks.map((book, index) => (
+            <li key={index}>
+              {book.url ? (
+                <a
+                  href={book.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline hover:text-blue-800"
+                >
+                  {book.name}
+                </a>
+              ) : (
+                book.name
+              )}
+            </li>
+          ))}
+        </ul>
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+)}
+
+
               <h2 className=" md:text-lg font-bold  text-base-content">
                 Important Links
               </h2>
@@ -284,29 +322,7 @@ const EngineeringCurriculum: React.FC = () => {
                   );
                 }
               )}
- {subjects[selectedSubject].suggestedBooks && (
-  <div className="mt-8">
-    <h2 className="text-xl font-bold mb-2">📚 Suggested Books</h2>
-    <ul className="list-disc list-inside space-y-1">
-      {subjects[selectedSubject].suggestedBooks.map((book, index) => (
-        <li key={index}>
-          {book.url ? (
-            <a
-              href={book.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline hover:text-blue-800"
-            >
-              {book.name}
-            </a>
-          ) : (
-            book.name
-          )}
-        </li>
-      ))}
-    </ul>
-  </div>
-)}
+
 
 
 
@@ -320,9 +336,10 @@ const EngineeringCurriculum: React.FC = () => {
             </div>
 
             <div className="md:col-span-2 bg-base-200 text-base-content rounded-lg p-4 md:p-6 border border-border">
-              <h2 className="text-base md:text-lg font-bold mb-1 text-base-content">
-                {subjects[selectedSubject].name} - Module {selectedModule || 1}
-              </h2>
+<h2 className="text-base md:text-lg font-bold mb-1  text-primary-text">
+  Modules
+</h2>
+
               <p className=" text-red-500 mb-4">
                 These videos only serve as explanations for the college notes,
                 so please refer to the notes to study.
