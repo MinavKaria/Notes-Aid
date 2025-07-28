@@ -6,7 +6,7 @@ export class PerformanceMonitor {
     metric: string
     value: number
     timestamp: Date
-    metadata?: Record<string, any>
+    metadata?: Record<string, unknown>
   }> = []
 
   static getInstance(): PerformanceMonitor {
@@ -55,7 +55,7 @@ export class PerformanceMonitor {
   recordMetric(
     metric: string, 
     value: number, 
-    metadata?: Record<string, any>
+    metadata?: Record<string, unknown>
   ) {
     this.metricsBuffer.push({
       metric,

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useSession } from 'next-auth/react'
 
 interface ProgressData {
@@ -34,7 +34,7 @@ interface AnalyticsData {
   subject?: string
   module?: string
   topic?: string
-  metadata?: Record<string, any>
+  metadata?: Record<string, unknown>
 }
 
 export function useDatabase() {

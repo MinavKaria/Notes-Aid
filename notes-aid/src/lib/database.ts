@@ -20,7 +20,7 @@ export interface AnalyticsData {
   subject?: string
   module?: string
   topic?: string
-  metadata?: Record<string, any>
+  metadata?: Record<string, unknown>
 }
 
 export class DatabaseService {
@@ -194,7 +194,7 @@ export class DatabaseService {
     }
   }
 
-  static async setCachedContent(key: string, data: any, expirationMinutes: number = 60) {
+  static async setCachedContent(key: string, data: unknown, expirationMinutes: number = 60) {
     try {
       const expiresAt = new Date()
       expiresAt.setMinutes(expiresAt.getMinutes() + expirationMinutes)
