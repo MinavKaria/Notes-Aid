@@ -49,7 +49,7 @@ function Video({
 
   return (
     <>
-      <div className="flex items-center gap-2 hover:bg-base-200 ">
+      <div className="flex items-center gap-2 hover:bg-base-300 ">
         <button
           onClick={() => {
             updateVideoProgress(moduleKey, videoKey, topicKey);
@@ -66,7 +66,7 @@ function Video({
 
         <div
           onClick={() => toggleVideo(index)}
-          className="p-2 cursor-pointer hover:bg-base-200  flex justify-between items-center flex-1 gap-2"
+          className="p-2 cursor-pointer hover:bg-base-300  flex justify-between items-center flex-1 gap-2"
         >
           <span className="text-sm font-medium text-base-content">
             {video.title}
