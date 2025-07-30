@@ -4,6 +4,21 @@ const psot = {
     name: "Probability Statistics and Optimization Techniques",
     icon: Brain,
     color: "blue",
+    suggestedBooks: [
+  {
+    name: "Probability and Statistics for Engineers – Miller & Freund"
+  },
+  {
+    name: "Probability and Statistics – S.C. Gupta & V.K. Kapoor"
+  },
+  {
+    name: "Operations Research – Kanti Swarup"
+  },
+  {
+    name: "Optimization Techniques – Rao"
+  }
+],
+
     modules: {
       1: {
         notesLink: [
