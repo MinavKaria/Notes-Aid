@@ -6,6 +6,8 @@ interface BookmarkItem {
   title: string;
   subject: string;
   module?: number;
+  topics?: string;
+  url?: string;
 }
 
 export const BookmarkButton = ({ item }: { item: BookmarkItem }) => {
@@ -20,7 +22,7 @@ export const BookmarkButton = ({ item }: { item: BookmarkItem }) => {
     const bookmarks = getBookmarks();
     const updatedBookmarks = isBookmarked
       ? bookmarks.filter(b => b.id !== item.id)
-      : [...bookmarks, item];
+      : [...bookmarks, item]; // item includes url for videos
     
     localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
     setIsBookmarked(!isBookmarked);
