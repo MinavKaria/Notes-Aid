@@ -13,8 +13,6 @@ interface BookmarkItem {
       selectedsubject: string;
       selectedmodule: number;
   }
-
-
 }
 
 export const BookmarkButton = ({ item }: { item: BookmarkItem }) => {

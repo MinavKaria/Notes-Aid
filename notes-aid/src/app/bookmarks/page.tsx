@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
 
 interface BookmarkItem {
   id: string;
@@ -9,13 +10,18 @@ interface BookmarkItem {
   url?: string;
   module?: number;
   topic?: string;
-  type: 'module' | 'topic' | 'video';
 }
+
+type BookmarkType = 'modules' | 'topics' | 'videos';
 
 export default function BookmarksPage() {
   const [bookmarks, setBookmarks] = useState<BookmarkItem[]>([]);
-  const [activeTab, setActiveTab] = useState<'modules' | 'topics' | 'videos'>('modules');
+  const [activeTab, setActiveTab] = useState<BookmarkType>('modules');
   const [activeBookmarkId, setActiveBookmarkId] = useState<string | null>(null);
+
+  const toggleActive = (id: string) => {
+    setActiveBookmarkId(prev => (prev === id ? null : id));
+  };
 
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem('bookmarks') || '[]');
@@ -29,9 +35,9 @@ export default function BookmarksPage() {
   };
 
   const filteredBookmarks = bookmarks.filter(bookmark => {
-    if (activeTab === 'modules') return bookmark.type === 'module';
-    if (activeTab === 'topics') return bookmark.type === 'topic';
-    if (activeTab === 'videos') return bookmark.type === 'video';
+    if (activeTab === 'modules') return !bookmark.id.includes('topic') && !bookmark.id.includes('video');
+    if (activeTab === 'topics') return bookmark.id.includes('topic');
+    if (activeTab === 'videos') return bookmark.id.includes('video');
     return true;
   });
 
@@ -39,17 +45,25 @@ export default function BookmarksPage() {
     <div className="h-screen max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-6 dark:text-white">Your Bookmarks</h1>
       
-      {/* Tab Navigation */}
       <div className="flex border-b border-gray-200 dark:border-gray-700 mb-6">
-        {(['modules', 'topics', 'videos'] as const).map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 font-medium text-sm ${activeTab === tab ? 'text-primary border-b-2 border-primary' : 'text-gray-500 dark:text-gray-400'}`}
-          >
-            {tab.charAt(0).toUpperCase() + tab.slice(1)}
-          </button>
-        ))}
+        <button
+          onClick={() => setActiveTab('modules')}
+          className={`px-4 py-2 font-medium text-sm ${activeTab === 'modules' ? 'text-primary border-b-2 border-primary' : 'text-gray-500 dark:text-gray-400'}`}
+        >
+          Modules
+        </button>
+        <button
+          onClick={() => setActiveTab('topics')}
+          className={`px-4 py-2 font-medium text-sm ${activeTab === 'topics' ? 'text-primary border-b-2 border-primary' : 'text-gray-500 dark:text-gray-400'}`}
+        >
+          Topics
+        </button>
+        <button
+          onClick={() => setActiveTab('videos')}
+          className={`px-4 py-2 font-medium text-sm ${activeTab === 'videos' ? 'text-primary border-b-2 border-primary' : 'text-gray-500 dark:text-gray-400'}`}
+        >
+          Videos
+        </button>
       </div>
       
       {filteredBookmarks.length === 0 ? (
@@ -59,23 +73,28 @@ export default function BookmarksPage() {
       ) : (
         <div className="space-y-4">
           {filteredBookmarks.map((item) => (
-            <div key={item.id} className="p-4 border rounded-lg dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <div 
+              key={item.id}
+              className="p-4 border rounded-lg dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            >
               <div className="flex justify-between items-center">
                 <div>
-                  <h3 className="font-medium dark:text-white">{item.title}</h3>
+                  <Link href="/" className="block"> 
+                    <h3 className="font-medium dark:text-white hover:underline">
+                      {item.title}
+                    </h3>
+                  </Link>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {item.subject}
-                    {item.module && ` • Module ${item.module}`}
-                    {item.topic && ` • ${item.topic}`}
+                    {item.subject} {item.module && `• Module ${item.module}`}
                   </p>
-                  {item.type === 'video' && (
+                  {activeTab === 'videos' && (
                     <p className="text-xs text-gray-400 mt-1">Video</p>
                   )}
                 </div>
                 <div className="flex items-center gap-2">
-                  {item.type === 'video' && (
+                  {activeTab === 'videos' && (
                     <ChevronDown
-                      onClick={() => setActiveBookmarkId(prev => prev === item.id ? null : item.id)}
+                      onClick={() => toggleActive(item.id)}
                       className={`w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform duration-200 cursor-pointer ${
                         activeBookmarkId === item.id ? 'rotate-180' : ''
                       }`}
@@ -90,7 +109,7 @@ export default function BookmarksPage() {
                 </div>
               </div>
 
-              {item.type === 'video' && activeBookmarkId === item.id && item.url && (
+              {activeTab === 'videos' && activeBookmarkId === item.id && item.url && (
                 <div className="mt-3">
                   <div className="aspect-video">
                     <iframe
@@ -101,7 +120,7 @@ export default function BookmarksPage() {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="rounded-lg"
-                    />
+                    ></iframe>
                   </div>
                 </div>
               )}
