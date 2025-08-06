@@ -1,12 +1,27 @@
 'use client';
 import { useEffect, useState } from 'react';
-import type { BookmarkItem } from '@/components/BookmarkButton';
+import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+
+interface BookmarkItem {
+  id: string;
+  title: string;
+  subject: string;
+  url?: string;
+  module?: number;
+  topic?: string;
+}
 
 type BookmarkType = 'modules' | 'topics' | 'videos';
 
 export default function BookmarksPage() {
   const [bookmarks, setBookmarks] = useState<BookmarkItem[]>([]);
   const [activeTab, setActiveTab] = useState<BookmarkType>('modules');
+  const [activeBookmarkId, setActiveBookmarkId] = useState<string | null>(null);
+
+  const toggleActive = (id: string) => {
+    setActiveBookmarkId(prev => (prev === id ? null : id));
+  };
 
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem('bookmarks') || '[]');
@@ -19,9 +34,8 @@ export default function BookmarksPage() {
     setBookmarks(updated);
   };
 
-  // Filter bookmarks based on type (you may need to adjust this based on your actual data structure)
   const filteredBookmarks = bookmarks.filter(bookmark => {
-    if (activeTab === 'modules') return true; // Show all for modules tab
+    if (activeTab === 'modules') return !bookmark.id.includes('topic') && !bookmark.id.includes('video');
     if (activeTab === 'topics') return bookmark.id.includes('topic');
     if (activeTab === 'videos') return bookmark.id.includes('video');
     return true;
@@ -59,14 +73,18 @@ export default function BookmarksPage() {
         </p>
       ) : (
         <div className="space-y-4">
-          {filteredBookmarks.map(item => (
+          {filteredBookmarks.map((item) => (
             <div 
               key={item.id}
               className="p-4 border rounded-lg dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
             >
               <div className="flex justify-between items-center">
                 <div>
-                  <h3 className="font-medium dark:text-white">{item.title}</h3>
+                  <Link href="/fy/comps/odd" className="block"> {/* Simple link to your URL */}
+                    <h3 className="font-medium dark:text-white hover:underline">
+                      {item.title}
+                    </h3>
+                  </Link>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     {item.subject} {item.module && `• Module ${item.module}`}
                   </p>
@@ -74,13 +92,39 @@ export default function BookmarksPage() {
                     <p className="text-xs text-gray-400 mt-1">Video</p>
                   )}
                 </div>
-                <button
-                  onClick={() => removeBookmark(item.id)}
-                  className="text-red-500 hover:text-red-700 dark:hover:text-red-400 p-1"
-                >
-                  Remove
-                </button>
+                <div className="flex items-center gap-2">
+                  {activeTab === 'videos' && (
+                    <ChevronDown
+                      onClick={() => toggleActive(item.id)}
+                      className={`w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform duration-200 cursor-pointer ${
+                        activeBookmarkId === item.id ? 'rotate-180' : ''
+                      }`}
+                    />
+                  )}
+                  <button
+                    onClick={() => removeBookmark(item.id)}
+                    className="text-red-500 hover:text-red-700 dark:hover:text-red-400 p-1"
+                  >
+                    Remove
+                  </button>
+                </div>
               </div>
+
+              {activeTab === 'videos' && activeBookmarkId === item.id && item.url && (
+                <div className="mt-3">
+                  <div className="aspect-video">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={`${item.url}?enablejsapi=1`}
+                      title={item.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="rounded-lg"
+                    ></iframe>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

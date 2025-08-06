@@ -4,8 +4,15 @@ import { useState, useEffect } from 'react';
 interface BookmarkItem {
   id: string;
   title: string;
+  type: 'module' | 'topic' | 'video';
   subject: string;
   module?: number;
+  topics?: string;
+  url?: string;
+  state?: {
+      selectedsubject: string;
+      selectedmodule: number;
+  }
 }
 
 export const BookmarkButton = ({ item }: { item: BookmarkItem }) => {
@@ -29,7 +36,7 @@ export const BookmarkButton = ({ item }: { item: BookmarkItem }) => {
   return (
     <button
       onClick={toggleBookmark}
-      className="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+      className="p-1 h-8 w-8 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
       aria-label={isBookmarked ? 'Remove bookmark' : 'Add bookmark'}
     >
       {isBookmarked ? (

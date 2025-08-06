@@ -306,6 +306,7 @@ const EngineeringCurriculum: React.FC = () => {
                         progressData.moduleProgress[moduley] || 0
                       }
                       numberOfVideos={numberVideoInModule(moduley)}
+                      currentSubject={selectedSubject}
                     
                     />
                   );
