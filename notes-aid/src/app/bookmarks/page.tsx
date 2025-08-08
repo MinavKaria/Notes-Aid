@@ -75,7 +75,7 @@ export default function BookmarksPage() {
           {filteredBookmarks.map((item) => (
             <div 
               key={item.id}
-              className="p-4 border rounded-lg dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              className="p-4 border rounded-lg hover:bg-[#585859] hover:text-white dark:border-gray-700 transition-colors"
             >
               <div className="flex justify-between items-center">
                 <div>
@@ -84,7 +84,7 @@ export default function BookmarksPage() {
                       {item.title}
                     </h3>
                   </Link>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <p className="text-sm text-gray-400 dark:text-gray-400">
                     {item.subject} {item.module && `• Module ${item.module}`}
                   </p>
                   {activeTab === 'videos' && (
