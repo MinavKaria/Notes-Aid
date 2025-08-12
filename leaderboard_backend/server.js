@@ -14,12 +14,18 @@ connectToDb();
 
 // Middlewares
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://notes-aid.minavkaria.tech', 'https://notes-aid-git-fork-om-thanage-main-minavkarias-projects.vercel.app', 'https://notes-d0qrfpgl6-minavkarias-projects.vercel.app'
-],
+  origin: [
+    'http://localhost:3000',
+    'https://notes-aid.minavkaria.tech',
+    'https://notes-aid-git-fork-om-thanage-main-minavkarias-projects.vercel.app',
+    'https://notes-d0qrfpgl6-minavkarias-projects.vercel.app'
+  ],
   credentials: true,
-  methods: ['GET', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+app.options('*', cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());

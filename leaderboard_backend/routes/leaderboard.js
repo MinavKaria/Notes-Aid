@@ -16,8 +16,6 @@ router.get("/", verifyGoogleToken, getOverallLeaderboard);
 // GET /api/v1/leaderboard/current - Current semester leaderboard for specific admission year
 router.get("/current", verifyGoogleToken, getCurrentSemesterLeaderboard);
 
-// GET /api/v1/leaderboard/:semester - Semester-specific leaderboard for specific admission year
-router.get("/:semester", verifyGoogleToken, getSemesterLeaderboard);
 
 // Helper routes for available data
 // GET /api/v1/leaderboard/meta/years - Get available admission years
@@ -25,5 +23,9 @@ router.get("/meta/years", verifyGoogleToken, getAvailableYears);
 
 // GET /api/v1/leaderboard/meta/semesters - Get available semesters for specific admission year
 router.get("/meta/semesters", verifyGoogleToken, getAvailableSemesters);
+
+// GET /api/v1/leaderboard/:semester - Semester-specific leaderboard for specific admission year
+router.get("/:semester", verifyGoogleToken, getSemesterLeaderboard);
+
 
 export default router;
