@@ -76,3 +76,9 @@ Want to improve **Notes-Aid**? Follow these steps:
 Your contributions are **always welcome!** 🎉  
 
 ---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---

@@ -2,23 +2,28 @@ import React from "react";
 // import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import ProgressBar from "./ProgressBar";
+import { BookmarkButton } from "./BookmarkButton";
 
 interface ModuleCardProps {
   module: number;
+  subjectName: string;
   topics: number;
   isActive: boolean;
   onClick: () => void;
   numberOfVideos: number;
   numberOfVideosCompleted: number;
+   currentSubject: string;
 }
 
 const ModuleCard: React.FC<ModuleCardProps> = ({
   module,
+  subjectName,
   topics,
   isActive,
   onClick,
   numberOfVideos,
-  numberOfVideosCompleted
+  numberOfVideosCompleted,
+  currentSubject
 }) => {
   // const total = 100;
   // const [done, setdone] = useState(20);
@@ -66,7 +71,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
         }
       `}
       >
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <h3 className={` font-semibold text-base-content`}>
@@ -76,11 +81,28 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
                 {topics} topics
               </span>
             </div>
+            
+
+            <div className="flex justify-center items-center gap-3">
+            <BookmarkButton 
+            item={{
+             id: `${subjectName}-module-${module}`,
+             title: `Module ${module}`,
+             subject: subjectName,
+             type: 'module',
+             module: module,
+             state: {  
+             selectedsubject: currentSubject,  
+             selectedmodule: module
+            }
+           }}
+           />
             <ChevronDown
               className={`w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform duration-200 ${
                 isActive ? "rotate-180" : ""
               }`}
             />
+            </div>
           </div>
 
           <div className="flex items-center gap-2">

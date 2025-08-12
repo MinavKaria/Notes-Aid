@@ -45,11 +45,11 @@ const Footer = () => {
             </Link>
             &amp;
             <Link
-              href="https://github.com/aarushsaboo"
+              href="https://github.com/yashankkothari"
               target="_blank"
               className="underline hover:text-primary"
             >
-              Aarush
+              Yashank
             </Link>
           </div>
         </div>
