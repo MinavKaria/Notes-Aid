@@ -1,8 +1,10 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { BookOpen, ChevronDown } from "lucide-react";
 import VideoAccordion from "./VideoAccordion";
 import ProgressBar from "./ProgressBar";
 import { BookmarkButton } from "./BookmarkButton";
+
 interface Topic {
   title: string;
   description: string;
@@ -32,6 +34,10 @@ interface TopicListProps {
   ) => void;
   moduleKey: string;
   subjectName: string;
+  year: string;
+  branch: string;
+  semester: string;
+  bookmarkId?: string | null;
 }
 
 const TopicList: React.FC<TopicListProps> = ({
@@ -41,20 +47,53 @@ const TopicList: React.FC<TopicListProps> = ({
   updateVideoProgress,
   moduleKey,
   subjectName,
+  year,
+  branch,
+  semester,
+  bookmarkId
 }) => {
   const [openTopicIndex, setOpenTopicIndex] = useState<number | null>(null);
-  // const [completedItems, setCompletedItems] = useState<Record<string, boolean>>({});
 
   const toggleTopic = (index: number) => {
     setOpenTopicIndex(openTopicIndex === index ? null : index);
-    // setDone((x)=>x+10);
   };
-
-  // console.log("Module Key is: "+moduleKey)
 
   useEffect(() => {
     setOpenTopicIndex(null);
   }, [topics]);
+
+  // Auto expanding th topic if it matches bookmarkId
+  useEffect(() => {
+    if (!bookmarkId) return;
+    
+    const topicPrefix = `subject-${subjectName}-module${moduleKey}-topic`;
+    if (bookmarkId.startsWith(topicPrefix)) {
+      const topicTitle = bookmarkId.replace(topicPrefix, '');
+      const topicIndex = topics.findIndex(topic => 
+        topic.title.replace(/\s/g, '') === topicTitle
+      );
+      if (topicIndex !== -1) {
+        setOpenTopicIndex(topicIndex);
+      }
+    }
+  }, [bookmarkId, topics, subjectName, moduleKey]);
+
+  useEffect(() => {
+  if (!bookmarkId) return;
+  
+  // Checking if this bookmark is for a video within any topic
+  const videoPrefix = `subject-${subjectName}-module${moduleKey}-topic`;
+  if (bookmarkId.includes('-video') && bookmarkId.startsWith(videoPrefix)) {
+    
+    const topicId = bookmarkId.split('-video')[0].replace(videoPrefix, '');
+    const topicIndex = topics.findIndex(topic => 
+      topic.title.replace(/\s/g, '') === topicId
+    );
+    if (topicIndex !== -1 && openTopicIndex !== topicIndex) {
+      setOpenTopicIndex(topicIndex);
+    }
+  }
+}, [openTopicIndex,bookmarkId, topics, subjectName, moduleKey]);
 
   if (!topics || topics.length === 0) {
     return (
@@ -65,8 +104,6 @@ const TopicList: React.FC<TopicListProps> = ({
       </div>
     );
   }
-  // const total = 100;
-  // const [done, setDone] = useState(70);
 
   return (
     <div className="space-y-3">
@@ -127,12 +164,12 @@ const TopicList: React.FC<TopicListProps> = ({
           }
 
           const completedTopics = progressData.topicProgress[topicKey] || 0;
-          console.log(completedTopics);
 
           return (
             <div
               key={index}
               className="bg-base-100 rounded-lg border overflow-hidden"
+              id={topicKey}
             >
               <ProgressBar
                 total={topic.videos?.length ?? 0}
@@ -157,7 +194,10 @@ const TopicList: React.FC<TopicListProps> = ({
                           id: `subject-${subjectName}-module${moduleKey}-topic${topic.title.replace(/\s/g, "")}`,
                           title: topic.title,
                           type: 'topic',
-                          subject: subjectName
+                          subject: subjectName,
+                          year,
+                          branch,
+                          semester
                           }} 
                         />
                         <ChevronDown
@@ -191,6 +231,7 @@ const TopicList: React.FC<TopicListProps> = ({
                         moduleKey={moduleKey}
                         updateVideoProgress={updateVideoProgress}
                         subjectName={subjectName}
+                        bookmarkId={bookmarkId}
                       />
                     </div>
                   ) : (

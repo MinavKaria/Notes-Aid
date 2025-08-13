@@ -10,6 +10,9 @@ interface BookmarkItem {
   url?: string;
   module?: number;
   topic?: string;
+  year?: string;
+  branch?: string;
+  semester?: string;
 }
 
 type BookmarkType = 'modules' | 'topics' | 'videos';
@@ -35,10 +38,13 @@ export default function BookmarksPage() {
   };
 
   const filteredBookmarks = bookmarks.filter(bookmark => {
-    if (activeTab === 'modules') return !bookmark.id.includes('topic') && !bookmark.id.includes('video');
-    if (activeTab === 'topics') return bookmark.id.includes('topic');
-    if (activeTab === 'videos') return bookmark.id.includes('video');
-    return true;
+  if (activeTab === 'modules')
+    return !bookmark.id.includes('topic') && !bookmark.id.includes('video');
+  if (activeTab === 'topics')
+    return bookmark.id.includes('topic') && !bookmark.id.includes('video');
+  if (activeTab === 'videos')
+    return bookmark.id.includes('video');
+  return true;
   });
 
   return (
@@ -79,7 +85,10 @@ export default function BookmarksPage() {
             >
               <div className="flex justify-between items-center">
                 <div>
-                  <Link href="/" className="block"> 
+                  <Link
+                    href={`/${item.year}/${item.branch}/${item.semester}?bookmarkId=${item.id}`}
+                    className="block"
+                  >
                     <h3 className="font-medium dark:text-white hover:underline">
                       {item.title}
                     </h3>

@@ -3,6 +3,7 @@ import React from "react";
 import { RefObject, Dispatch, SetStateAction } from "react";
 import { CheckSquare, Square, ChevronDown } from "lucide-react";
 import { BookmarkButton } from "./BookmarkButton";
+import { useEffect } from "react";
 
 interface VideoProps {
   checked: boolean;
@@ -21,6 +22,10 @@ interface VideoProps {
   moduleKey: string;
   topicKey: string;
   subjectName: string;
+  year: string;
+  branch: string;
+  semester: string;
+  bookmarkId?: string | null;
 }
 
 function Video({
@@ -34,6 +39,10 @@ function Video({
   moduleKey,
   topicKey,
   subjectName,
+  year,
+  branch,
+  semester,
+  bookmarkId
 }: VideoProps) {
   // console.log(videoKey)
 
@@ -47,6 +56,24 @@ function Video({
 
   const key = `${subjectName}-module${moduleKey}-topic${topicKey}-video${videoKey}`;
   const isCompleted = progressData.completeVideos[key] === true;
+
+  useEffect(() => {
+    if (!bookmarkId) return;
+    
+    const videoId = `subject-${subjectName}-module${moduleKey}-topic${topicKey}-video${videoKey}`;
+    if (bookmarkId === videoId && openVideoIndex !== index) {
+      toggleVideo(index);
+    }
+  }, [
+    bookmarkId,
+    index,
+    moduleKey,
+    openVideoIndex,
+    subjectName,
+    toggleVideo,
+    topicKey,
+    videoKey
+  ]);
 
   return (
     <>
@@ -82,6 +109,11 @@ function Video({
            module: Number(moduleKey),
            topics: topicKey,
            type: 'video',
+            year,
+            branch,
+            semester,
+          
+
            }} 
         />
           <ChevronDown

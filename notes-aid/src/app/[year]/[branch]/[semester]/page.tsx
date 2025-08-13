@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 // import ModuleCard from "../components/ModuleCard";
 // import TopicList from "../components/TopicList";
 // import Navbar from "../components/Navbar";
@@ -87,12 +87,35 @@ const EngineeringCurriculum: React.FC = () => {
   const typedNotesData = NotesData as NotesDataType;
 
   const subjects = slug && typedNotesData[slug]?.[branch]?.[sem];
-  // console.log(subjects)
   
 
   const pyq = (pyqLinks as PyqLinks)[slug] || [];
-  // console.log(pyq)
-  // const subjects = NotesData.fy.comps.oddSem;
+
+
+  const searchParams = useSearchParams();
+  const bookmarkId = searchParams.get("bookmarkId");
+
+useEffect(() => {
+  if (!bookmarkId) return;
+  const [subjectFromBookmark] = bookmarkId.split("-module-");
+
+  if (subjects && subjects[subjectFromBookmark]) {
+    setSelectedSubject(subjectFromBookmark);
+  }
+
+  setTimeout(() => {
+    const el = document.getElementById(bookmarkId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.add("ring-4", "ring-blue-500");
+
+      setTimeout(() => {
+        el.classList.remove("ring-4", "ring-blue-500");
+      }, 2000);
+    }
+  }, 300);
+}, [bookmarkId, subjects]);
+
 
   const isMountedRef = useRef(isMounted);
   useEffect(() => {
@@ -107,44 +130,175 @@ const EngineeringCurriculum: React.FC = () => {
    
   }, [subjects]);
 
-  const initialSubject = subjects ? Object.keys(subjects)[0] : "";
-  const [selectedSubject, setSelectedSubject] = useState(initialSubject);
+  const [selectedSubject, setSelectedSubject] = useState<string>("");
   const [selectedModule, setSelectedModule] = useState<number>(1);
+  const [isInitialized, setIsInitialized] = useState(false);
   
-
   useEffect(() => {
-  const params = new URLSearchParams(window.location.search);
-  const fromBookmark = params.get('fromBookmark');
-  
-  if (fromBookmark) {
-    try {
-      const bookmarkState = JSON.parse(fromBookmark);
-      if (bookmarkState.selectedSubject && bookmarkState.selectedModule) {
-        setSelectedSubject(bookmarkState.selectedSubject);
-        setSelectedModule(bookmarkState.selectedModule);
+    if (!subjects || !isMounted || isInitialized) return;
+
+    const subjectParam = searchParams.get("subject");
+    const moduleParam = searchParams.get("module");
+    const fromBookmark = searchParams.get("fromBookmark");
+    const bookmarkId = searchParams.get("bookmarkId");
+
+    console.log("Initializing after mount with:", { 
+      subjectParam, 
+      moduleParam, 
+      fromBookmark, 
+      bookmarkId,
+      subjects: Object.keys(subjects) 
+    });
+
+    let targetSubject = "";
+    let targetModule = 1;
+
+    if (bookmarkId) {
+      console.log("Processing bookmarkId:", bookmarkId);
+      
+      if (bookmarkId.includes('-module-')) {
+        const [subjectName, moduleInfo] = bookmarkId.split('-module-');
+        console.log("New format - Subject name:", subjectName, "Module info:", moduleInfo);
+        
+        const subjectKey = Object.keys(subjects).find(key => 
+          subjects[key].name === subjectName || 
+          subjects[key].name === decodeURIComponent(subjectName) ||
+          key === subjectName
+        );
+        
+        console.log("Found subject key:", subjectKey);
+        
+        if (subjectKey && subjects[subjectKey]) {
+          targetSubject = subjectKey;
+          
+          const moduleNum = parseInt(moduleInfo);
+          if (!isNaN(moduleNum)) {
+            const availableModules = Object.keys(subjects[subjectKey].modules);
+            if (availableModules.includes(moduleNum.toString())) {
+              targetModule = moduleNum;
+              console.log("New format parsing successful:", { targetSubject, targetModule });
+            } else {
+              targetModule = parseInt(availableModules[0]) || 1;
+              console.log("Module not found, using first:", targetModule);
+            }
+          }
+        } else {
+          console.log("Subject not found for name:", subjectName);
+          console.log("Available subjects:", Object.entries(subjects).map(([key, subject]) => ({ key, name: subject.name })));
+        }
+      } else {
+        const parts = bookmarkId.split('-');
+        console.log("Old format - Bookmark parts:", parts);
+        
+        if (parts.length >= 3 && parts[0] === 'subject') {
+          const subjectKey = parts[1];
+          console.log("Extracted subject key:", subjectKey);
+          
+          const modulePart = parts.find(part => part.startsWith('module'));
+          if (modulePart) {
+            const moduleNum = parseInt(modulePart.replace('module', ''));
+            console.log("Extracted module number:", moduleNum);
+            
+            if (subjects[subjectKey]) {
+              targetSubject = subjectKey;
+              
+              const availableModules = Object.keys(subjects[subjectKey].modules);
+              if (availableModules.includes(moduleNum.toString())) {
+                targetModule = moduleNum;
+                console.log("Old format parsing successful:", { targetSubject, targetModule });
+              } else {
+                targetModule = parseInt(availableModules[0]) || 1;
+                console.log("Module not found, using first:", targetModule);
+              }
+            } else {
+              console.log("Subject not found:", subjectKey, "Available:", Object.keys(subjects));
+            }
+          }
+        }
       }
-    } catch (e) {
-      console.error('Error parsing bookmark state', e);
     }
-  }
-  }, []);
 
-  useEffect(() => {
-  if (subjects && selectedSubject) {
-    const params = new URLSearchParams(window.location.search);
-    const moduleParam = params.get("module");
-
-    if (moduleParam) {
-      setSelectedModule(parseInt(moduleParam));
-    } else {
-      const firstModuleKey = Object.keys(
-        subjects[selectedSubject]?.modules || {}
-      )[0];
-      setSelectedModule(firstModuleKey ? parseInt(firstModuleKey) : 1);
+    if (subjectParam && subjects[subjectParam]) {
+      targetSubject = subjectParam;
+      console.log("Overriding with URL subject param:", targetSubject);
+      
+      if (moduleParam) {
+        const moduleNum = parseInt(moduleParam);
+        const availableModules = Object.keys(subjects[subjectParam].modules);
+        if (availableModules.includes(moduleNum.toString())) {
+          targetModule = moduleNum;
+          console.log("Overriding with URL module param:", targetModule);
+        }
+      }
     }
-  }
-  }, [selectedSubject, subjects]);
 
+    if (!targetSubject && fromBookmark) {
+      try {
+        const bookmarkState = JSON.parse(fromBookmark);
+        if (bookmarkState.selectedSubject && bookmarkState.selectedModule && subjects[bookmarkState.selectedSubject]) {
+          targetSubject = bookmarkState.selectedSubject;
+          targetModule = bookmarkState.selectedModule;
+          console.log("Using legacy bookmark:", { targetSubject, targetModule });
+        }
+      } catch (e) {
+        console.error("Error parsing bookmark state", e);
+      }
+    }
+
+    if (!targetSubject) {
+      targetSubject = Object.keys(subjects)[0];
+      const firstModuleKey = Object.keys(subjects[targetSubject]?.modules || {})[0];
+      targetModule = firstModuleKey ? parseInt(firstModuleKey) : 1;
+      console.log("Using defaults:", { targetSubject, targetModule });
+    }
+
+    console.log("Final initialization:", { targetSubject, targetModule });
+    
+    // Only set state if values are different or if this is first initialization
+    if (!isInitialized || targetSubject !== selectedSubject || targetModule !== selectedModule) {
+      console.log("Setting state:", { from: { selectedSubject, selectedModule }, to: { targetSubject, targetModule } });
+      setSelectedSubject(targetSubject);
+      setSelectedModule(targetModule);
+    }
+    setIsInitialized(true);
+
+  }, [subjects, searchParams, isMounted, isInitialized, selectedSubject, selectedModule]);
+
+  // Handler for subject selection
+  const handleSubjectSelect = (key: string) => {
+    console.log("Subject selected:", key);
+    setSelectedSubject(key);
+    let firstModuleKey: string | undefined;
+    if (subjects && typeof subjects === "object" && key in subjects) {
+      firstModuleKey = Object.keys((subjects as Subjects)[key]?.modules || {})[0];
+    }
+    const newModule = firstModuleKey ? parseInt(firstModuleKey) : 1;
+    console.log("Setting module to:", newModule);
+    setSelectedModule(newModule);
+    
+    // Update URL reflect current state
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('subject', key);
+    params.set('module', newModule.toString());
+    
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    console.log("Updating URL to:", newUrl);
+    window.history.pushState({}, '', newUrl);
+  };
+
+  // Handler for module selection
+    const handleModuleSelect = (moduleNum: number) => {
+    console.log("Module selected:", moduleNum);
+    setSelectedModule(moduleNum);
+    
+     const params = new URLSearchParams(searchParams.toString());
+    params.set('subject', selectedSubject);
+    params.set('module', moduleNum.toString());
+    
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    console.log("Updating URL to:", newUrl);
+    window.history.pushState({}, '', newUrl);
+  };
 
   const { progressData, updateVideoProgress, resetProgress } = useProgress(selectedSubject);
 
@@ -211,16 +365,7 @@ const EngineeringCurriculum: React.FC = () => {
               return (
                 <div
                   key={key}
-                  onClick={() => {
-                    setSelectedSubject(key)
-                    const firstModuleKey = Object.keys(
-                      subjects[key]?.modules || {}
-                    )[0]
-                    // console.log(key, firstModuleKey)
-                    setSelectedModule(
-                      firstModuleKey ? parseInt(firstModuleKey) : 1
-                    )
-                  }}
+                  onClick={() => handleSubjectSelect(key)}
                   className={`p-4 rounded-4xl cursor-pointer transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
                       ${
                         selectedSubject === key
@@ -301,14 +446,15 @@ const EngineeringCurriculum: React.FC = () => {
                         subjects[selectedSubject].modules[moduley].topics.length
                       }
                       isActive={selectedModule === moduley}
-                      onClick={() => setSelectedModule(moduley)}
+                      onClick={() => handleModuleSelect(moduley)}
                       numberOfVideosCompleted={
                         progressData.moduleProgress[moduley] || 0
                       }
                       numberOfVideos={numberVideoInModule(moduley)}
                       currentSubject={selectedSubject}
-                    
-                    
+                      year={slug}
+                      branch={branch}
+                      semester={sem}
                     />
                   );
                 }
@@ -344,6 +490,10 @@ const EngineeringCurriculum: React.FC = () => {
                 // moduleKey={`${selectedSubject}-module${selectedModule}`}
                 moduleKey={`${selectedModule}`}
                 subjectName={selectedSubject}
+                year={slug}
+                branch={branch}
+                semester={sem}
+                bookmarkId={bookmarkId}
               />
             </div>
           </div>

@@ -414,7 +414,9 @@ const Navbar = () => {
           </div>
           <button className="hidden" onClick={handleBestCalc}>Click this for the Best Calculator ever!!!</button>
            <Link href="/bookmarks">
+            <div className="p-2 rounded-full hover:bg-gray-500 transition-colors duration-200">
             <BookmarkIcon className="w-5 h-5 text-base-content" />
+          </div>
           </Link>
           <ThemeSwitcher/>
          

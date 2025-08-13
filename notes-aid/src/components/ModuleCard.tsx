@@ -12,7 +12,10 @@ interface ModuleCardProps {
   onClick: () => void;
   numberOfVideos: number;
   numberOfVideosCompleted: number;
-   currentSubject: string;
+  currentSubject: string;
+  year: string;
+  branch: string;
+  semester: string;
 }
 
 const ModuleCard: React.FC<ModuleCardProps> = ({
@@ -23,7 +26,10 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
   onClick,
   numberOfVideos,
   numberOfVideosCompleted,
-  currentSubject
+  currentSubject,
+  year,
+  branch,
+  semester
 }) => {
   // const total = 100;
   // const [done, setdone] = useState(20);
@@ -55,6 +61,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
   return (
     <>
       <div
+        id={`${subjectName}-module-${module}`}
         onClick={onClick}
         className={`
         p-3 
@@ -91,10 +98,13 @@ const ModuleCard: React.FC<ModuleCardProps> = ({
              subject: subjectName,
              type: 'module',
              module: module,
-             state: {  
-             selectedsubject: currentSubject,  
-             selectedmodule: module
-            }
+             year,
+             branch,
+             semester,
+             state: {
+               selectedsubject: currentSubject,
+               selectedmodule: module
+             }
            }}
            />
             <ChevronDown

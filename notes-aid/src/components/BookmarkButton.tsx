@@ -8,6 +8,9 @@ interface BookmarkItem {
   subject: string;
   module?: number;
   topics?: string;
+  year?: string;
+  branch?: string;
+  semester?: string;
   url?: string;
   state?: {
       selectedsubject: string;
