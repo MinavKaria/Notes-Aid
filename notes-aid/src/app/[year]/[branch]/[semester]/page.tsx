@@ -110,15 +110,41 @@ const EngineeringCurriculum: React.FC = () => {
   const initialSubject = subjects ? Object.keys(subjects)[0] : "";
   const [selectedSubject, setSelectedSubject] = useState(initialSubject);
   const [selectedModule, setSelectedModule] = useState<number>(1);
+  
 
   useEffect(() => {
-    if (subjects && selectedSubject) {
+  const params = new URLSearchParams(window.location.search);
+  const fromBookmark = params.get('fromBookmark');
+  
+  if (fromBookmark) {
+    try {
+      const bookmarkState = JSON.parse(fromBookmark);
+      if (bookmarkState.selectedSubject && bookmarkState.selectedModule) {
+        setSelectedSubject(bookmarkState.selectedSubject);
+        setSelectedModule(bookmarkState.selectedModule);
+      }
+    } catch (e) {
+      console.error('Error parsing bookmark state', e);
+    }
+  }
+  }, []);
+
+  useEffect(() => {
+  if (subjects && selectedSubject) {
+    const params = new URLSearchParams(window.location.search);
+    const moduleParam = params.get("module");
+
+    if (moduleParam) {
+      setSelectedModule(parseInt(moduleParam));
+    } else {
       const firstModuleKey = Object.keys(
         subjects[selectedSubject]?.modules || {}
       )[0];
       setSelectedModule(firstModuleKey ? parseInt(firstModuleKey) : 1);
     }
+  }
   }, [selectedSubject, subjects]);
+
 
   const { progressData, updateVideoProgress, resetProgress } = useProgress(selectedSubject);
 
@@ -270,6 +296,7 @@ const EngineeringCurriculum: React.FC = () => {
                     <ModuleCard
                       key={moduley}
                       module={moduley}
+                      subjectName={subjects[selectedSubject].name}
                       topics={
                         subjects[selectedSubject].modules[moduley].topics.length
                       }
@@ -279,7 +306,9 @@ const EngineeringCurriculum: React.FC = () => {
                         progressData.moduleProgress[moduley] || 0
                       }
                       numberOfVideos={numberVideoInModule(moduley)}
-                
+                      currentSubject={selectedSubject}
+                    
+                    
                     />
                   );
                 }

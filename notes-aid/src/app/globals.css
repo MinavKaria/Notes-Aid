@@ -7,8 +7,6 @@ layer(base);
 
 @custom-variant dark (&:is(.dark *));
 
-
-
 .text-gray {
   color: #C2C0B6;
 }
@@ -28,3 +26,4 @@ code {
 }
 
 /* this is a test */
+

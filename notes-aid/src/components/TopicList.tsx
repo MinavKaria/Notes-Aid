@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BookOpen, ChevronDown } from "lucide-react";
 import VideoAccordion from "./VideoAccordion";
 import ProgressBar from "./ProgressBar";
+import { BookmarkButton } from "./BookmarkButton";
 interface Topic {
   title: string;
   description: string;
@@ -150,11 +151,21 @@ const TopicList: React.FC<TopicListProps> = ({
                       <h4 className="text-sm text-base-content font-bold">
                         {topic.title}
                       </h4>
-                      <ChevronDown
-                        className={`w-4 h-4 text-slate-500 dark:text-slate-400 transition-transform duration-200 ${
+                        <div className='flex justify-center items-center gap-3'>
+                        <BookmarkButton
+                          item={{
+                          id: `subject-${subjectName}-module${moduleKey}-topic${topic.title.replace(/\s/g, "")}`,
+                          title: topic.title,
+                          type: 'topic',
+                          subject: subjectName
+                          }} 
+                        />
+                        <ChevronDown
+                          className={`w-4 h-4 text-slate-500 dark:text-slate-400 transition-transform duration-200 ${
                           openTopicIndex === index ? "rotate-180" : ""
-                        }`}
-                      />
+                          }`}
+                        />
+                        </div>
                     </div>
                     <p className="text-sm text-base-content mt-1">
                       {topic.description}
