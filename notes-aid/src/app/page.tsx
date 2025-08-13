@@ -10,6 +10,7 @@ import {
   NotebookText,
   RotateCcw,
 } from "lucide-react";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const branches = [
   { value: "comps", label: "Computer Science" },
@@ -39,6 +40,7 @@ const semesters = [
 
 export default function MainPage() {
   const router = useRouter();
+  const { data: session } = useSession();
   const [selectedBranch, setSelectedBranch] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedSemester, setSelectedSemester] = useState("");
@@ -98,6 +100,26 @@ export default function MainPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-base-200 via-base-100 to-base-200 dark:from-neutral dark:via-base-300 dark:to-neutral flex flex-col transition-colors duration-300">
+      {/* Login/Logout Button */}
+      <div className="w-full max-w-4xl mx-auto mt-4 flex justify-end">
+        {!session ? (
+          <button
+            className="btn btn-primary"
+            onClick={() => signIn()}
+          >
+            Sign In
+          </button>
+        ) : (
+          <button
+            className="btn btn-secondary"
+            onClick={() => signOut()}
+          >
+            Sign Out ({session.user?.name || session.user?.email})
+          </button>
+        )}
+      </div>
+      {/* User Progress Section */}
+      {/* Removed user progress section as per edit hint */}
       <div
         className={`flex-1 grid place-items-center p-4 transition-all duration-500 ${
           isLoading ? "opacity-0" : "opacity-100"
