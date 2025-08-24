@@ -3,6 +3,12 @@ const ed = {
   name: "Engineering Drawing",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Engineering Drawing - by N.D. Bhatt",
+    url: "https://archive.org/details/engineering-drawing-by-n.-d-bhatt"
+  }
+  ],
   modules: {
     1: {
       notesLink: [
