@@ -17,6 +17,8 @@ const Footer = () => {
             </Link>
           </div>
 
+          
+
           <Link
             href="/contributors"
             className="flex items-center gap-2 hover:text-primary"
@@ -52,6 +54,13 @@ const Footer = () => {
               Yashank
             </Link>
           </div>
+                      <Link
+              href="/feedback"
+              className="vtext-sm underline hover:text-primary block text-right"
+            >
+              Submit Feedback
+            </Link>
+
         </div>
       </div>
     </footer>
