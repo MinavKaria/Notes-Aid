@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 // import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Metrics from "../metrics";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer";
+// import Navbar from "../components/Navbar";
 import { Inter, Poppins, JetBrains_Mono } from "next/font/google";
 import SessionProvider from "../components/SessionProvider";
 
@@ -118,10 +118,10 @@ export default function RootLayout({
       <body>
         <SessionProvider>
           {/* <ThemeProvider attribute="class"> */}
-            <Navbar />
+            {/* <Navbar /> */}
             {children}
             <Metrics />
-            <Footer />
+            {/* <Footer /> */}
           {/* </ThemeProvider> */}
         </SessionProvider>
       </body>
