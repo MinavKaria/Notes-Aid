@@ -4,6 +4,15 @@ const am1 = {
   name: "Applied Mathematics 1",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Higher Engineering Mathematics – B.S. Grewal"
+  },
+  {
+    name: "Engineering Mathematics – Erwin Kreyszig",
+    url: "https://www.wileyindia.com/advanced-engineering-mathematics-10ed-isv.html"
+  }
+  ],
   modules: {
     1: {
       notesLink: [

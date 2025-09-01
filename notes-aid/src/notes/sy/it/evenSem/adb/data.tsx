@@ -4,6 +4,15 @@ const adb = {
   name: "Advanced Databases",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Database System Concepts – Silberschatz, Korth"
+  },
+  {
+    name: "Fundamentals of Database Systems – Elmasri & Navathe"
+  }
+],
+
   modules: {
     1: {
       notesLink: [
