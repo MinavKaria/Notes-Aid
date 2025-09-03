@@ -9,6 +9,7 @@ import {
   Calendar,
   NotebookText,
   RotateCcw,
+  Trophy,
 } from "lucide-react";
 
 const branches = [
@@ -84,6 +85,10 @@ export default function MainPage() {
       } else
         router.push(`/${selectedYear}/${selectedBranch}/${selectedSemester}`);
     }
+  };
+
+  const handleLeaderboard = () => {
+    router.push("/leaderboard");
   };
 
   const handleReturnToPrevious = () => {
@@ -207,6 +212,16 @@ export default function MainPage() {
               <BookOpen className="w-4 h-4" />
               Continue to Modules
             </button>
+
+            <button
+              onClick={handleLeaderboard}
+              className={`w-full btn btn-neutral dark:btn-primary transition-all duration-200 flex items-center justify-center gap-2`}
+            >
+              <Trophy className="w-4 h-4" />
+              Checkout Leaderboard
+            </button>
+
+
 
             <div className="flex items-center w-full justify-end">
               {hasPreviousSelection && (

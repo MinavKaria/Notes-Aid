@@ -2,6 +2,7 @@
 import React from "react";
 import { RefObject, Dispatch, SetStateAction } from "react";
 import { CheckSquare, Square, ChevronDown } from "lucide-react";
+import { BookmarkButton } from "./BookmarkButton";
 
 interface VideoProps {
   checked: boolean;
@@ -71,11 +72,24 @@ function Video({
           <span className="text-sm font-medium text-base-content">
             {video.title}
           </span>
+          <div className="flex gap-3 justify-center items-center">
+           <BookmarkButton
+           item={{
+           id: `subject-${subjectName}-module${moduleKey}-topic${topicKey}-video${videoKey}`,
+           title: video.title,
+           subject: subjectName,
+           url: video.url || "",
+           module: Number(moduleKey),
+           topics: topicKey,
+           type: 'video',
+           }} 
+        />
           <ChevronDown
             className={`w-4 h-4 text-slate-500 dark:text-slate-400 transition-transform duration-200 ${
               openVideoIndex === index ? "rotate-180" : ""
             }`}
           />
+          </div>
         </div>
       </div>
       <div
