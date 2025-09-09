@@ -4,6 +4,19 @@ const aoa = {
   name: "Analysis of Algorithms",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Introduction to Algorithms – Cormen, Leiserson, Rivest, Stein (CLRS)"
+  },
+  {
+    name: "Design and Analysis of Algorithms – S.Sridhar",
+    url: "https://www.drssridhar.com/?page_id=887"
+  },
+  {
+    name: "Algorithm Design – Jon Kleinberg & Éva Tardos"
+  }
+],
+
   modules: {
     1: {
       notesLink: [

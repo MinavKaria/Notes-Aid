@@ -4,6 +4,16 @@ const ec = {
   name: "Engineering Chemistry",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Engineering Chemistry - by Jain & Jain",
+    url: "https://www.erforum.net/2016/01/engineering-chemistry-by-jain-and-jain-pdf-free-ebook.html"
+  },
+  {
+    name: "A textbook of Engineering Chemistry - by Shashi Chawla",
+    url: "https://archive.org/details/EngineeringChemistryByShashiChawla"
+  }
+  ],
   modules: {
     1: {
       notesLink: [
