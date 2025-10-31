@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { NotebookPen, Bell, X, Download } from "lucide-react";
+import { NotebookPen, Bell, X, Download, BookmarkIcon } from "lucide-react";
 import ThemeSwitcher from "./ThemeChanger";
 
 interface Notification {
@@ -413,7 +413,11 @@ const Navbar = () => {
             )}
           </div>
           <button className="hidden" onClick={handleBestCalc}>Click this for the Best Calculator ever!!!</button>
+           <Link href="/bookmarks">
+            <BookmarkIcon className="w-5 h-5 text-base-content" />
+          </Link>
           <ThemeSwitcher/>
+         
         </div>
       </div>
     </nav>
