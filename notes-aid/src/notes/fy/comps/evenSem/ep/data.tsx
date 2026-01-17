@@ -4,6 +4,16 @@ const ep = {
   name: "Engineering Physics",
   icon: Brain,
   color: "blue",
+   suggestedBooks: [
+  {
+    name: "Engineering Physics – by Dr. D.K. Bhattacharya & Poonam Tandon (Oxford University Press)"
+  },
+  {
+    name: "Applied Physics – by Mani Naidu S. & Pearsson (Pearson Education)",
+    url: "https://books.google.co.in/books/about/A_Text_Book_of_Applied_Physics.html?id=84KgGpG19cAC&redir_esc=y"
+  }
+],
+
   modules: {
     1: {
       notesLink: [

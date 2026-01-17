@@ -5,6 +5,22 @@ const rdbms = {
   name: "Relational Database Management Systems",
   icon: Brain,
   color: "green",
+  suggestedBooks: [
+  {
+    name: "Database System Concepts – Abraham Silberschatz, Henry Korth, S. Sudarshan"
+  },
+  {
+    name: "Fundamentals of Database Systems – Ramez Elmasri, Shamkant B. Navathe"
+  },
+  {
+    name: "An Introduction to Database Systems – C.J. Date",
+    url: "https://docs.google.com/file/d/0B9aJA_iV4kHYR1I1Q1MxQ2VzX0U/edit?resourcekey=0-m-SoWfxx0CbK6tjYrMttow"
+  },
+  {
+    name: "Database Management Systems – Raghu Ramakrishnan, Johannes Gehrke"
+  }
+],
+
   modules: {
     1: {
       notesLink: [

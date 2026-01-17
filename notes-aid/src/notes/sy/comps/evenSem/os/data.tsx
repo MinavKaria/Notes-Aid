@@ -4,6 +4,21 @@ const os = {
   name: "Operating System",
   icon: Brain,
   color: "blue",
+  suggestedBooks: [
+  {
+    name: "Operating System Concepts – Abraham Silberschatz"
+  },
+  {
+    name: "Modern Operating Systems – Andrew S. Tanenbaum"
+  },
+  {
+    name: "Operating Systems – William Stallings"
+  },
+  {
+    name: "Operating Systems: Internals and Design Principles – William Stallings"
+  }
+],
+
   modules: {
     1: {
       notesLink: [
