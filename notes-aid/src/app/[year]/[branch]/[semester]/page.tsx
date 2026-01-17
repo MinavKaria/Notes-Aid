@@ -165,7 +165,7 @@ const EngineeringCurriculum: React.FC = () => {
   return (
     <div className="min-h-screen bg-base-100">
       <div className="w-full p-4 md:p-6">
-        <div className="max-w-full mx-auto bg-base-300 rounded-lg shadow-xs p-4 md:p-6">
+        <div className="max-w-full mx-auto bg-base-200 rounded-lg shadow-xs p-4 md:p-6">
           <div className="mb-6 md:mb-8 text-center md:text-left">
             <h1 className="text-lg md:text-2xl font-bold mb-2 text-base-content">
               Engineering Curriculum of {branch.toUpperCase()} /{" "}
@@ -195,10 +195,10 @@ const EngineeringCurriculum: React.FC = () => {
                       firstModuleKey ? parseInt(firstModuleKey) : 1
                     )
                   }}
-                  className={`p-4 rounded-4xl cursor-pointer transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
+                  className={`p-4 hover:bg-base-300 rounded-4xl border-dashed cursor-pointer border border-neutral-800 rounded-[0.75rem] transition-all flex-1 max-w-[120px] sm:max-w-[150px] md:max-w-none text-center 
                       ${
                         selectedSubject === key
-                          ? "bg-neutral text-neutral-content border-white shadow-xl"
+                          ? "bg-base-300 text-base-content shadow-xl"
                           : "bg-base-200  text-base-content  border-gray-200 shadow-sm"
                       }
                     `}
@@ -207,14 +207,14 @@ const EngineeringCurriculum: React.FC = () => {
                     <Icon
                       className={`w-6 h-6 ${
                         selectedSubject === key
-                          ? " text-neutral-content"
+                          ? " text-base-content"
                           : "text-base-content"
                       }`}
                     />
                     <h3
                       className={`font-medium dark:text-base text-sm md:text-base ${
                         selectedSubject === key
-                          ? "text-neutral-content"
+                          ? "text-base-content"
                           : "text-base-content"
                       }`}
                     >
@@ -236,7 +236,7 @@ const EngineeringCurriculum: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 ">
-            <div className="space-y-3 border border-border p-4 rounded-lg">
+            <div className="space-y-3 border border-base-300 border-dashed p-8 rounded-lg">
               <h2 className=" md:text-lg font-bold  text-base-content">
                 Important Links
               </h2>
@@ -249,7 +249,7 @@ const EngineeringCurriculum: React.FC = () => {
                         <a
                           href={pyq.url}
                           target="_blank"
-                          className="btn inline-block px-4 py-2 mt-2 text-sm font-medium bg-neutral text-neutral-content btn-soft btn-neutral border-1 border-primary"
+                          className="rounded-selector btn inline-block px-4 py-2 mt-2 text-sm font-medium bg-base-300 text-base-content btn-soft btn-neutral outline-[0rem] outline-dashed hover:outline-base-300 hover:outline-2 hover:duration-30 0 duration-300"
                           key={index}
                         >
                           {pyq.title}
@@ -287,18 +287,18 @@ const EngineeringCurriculum: React.FC = () => {
 
               <button
                 onClick={handleResetProgress}
-                className="w-full px-4 py-2 text-sm font-medium text-warning-content bg-warning rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                className="w-full px-4 py-2 text-sm font-medium text-warning-content bg-warning rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 hover:outline-warning hover:outline-[0.25rem]"
               >
                 <RotateCcw className="w-4 h-4" />
                 Reset Progress
               </button>
             </div>
 
-            <div className="md:col-span-2 bg-base-200 text-base-content rounded-lg p-4 md:p-6 border border-border">
+            <div className="md:col-span-2 bg-base-200 text-base-content rounded-lg p-4 md:p-6 border-dashed border-base-300 border-[0.05rem]">
               <h2 className="text-base md:text-lg font-bold mb-1 text-base-content">
                 {subjects[selectedSubject].name} - Module {selectedModule || 1}
               </h2>
-              <p className=" text-red-500 mb-4">
+              <p className=" text-error-content  mb-4">
                 These videos only serve as explanations for the college notes,
                 so please refer to the notes to study.
               </p>

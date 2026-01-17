@@ -74,7 +74,7 @@ const TopicList: React.FC<TopicListProps> = ({
           Study Materials for Module {moduleNumber}
         </h5>
       )}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-4">
         {notesLink.map((note: NotesLink, noteIndex: number) => (
           <React.Fragment key={`note-${noteIndex}`}>
             <a
@@ -82,7 +82,7 @@ const TopicList: React.FC<TopicListProps> = ({
               href={note.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn inline-flex items-center gap-2 px-4 py-2 bg-neutral text-neutral-content  border-1 border-primary"
+              className="btn rounded-selector inline-flex items-center gap-2 px-4 py-5 duration-300 hover:duration-300 bg-base-300 text-base-content outline-dashed outline-0 hover:outline-2 outline-base-300"
             >
               <BookOpen className="w-4 h-4" />
               {note.title}
@@ -130,16 +130,23 @@ const TopicList: React.FC<TopicListProps> = ({
 
           return (
             <div
-              key={index}
-              className="bg-base-100 rounded-lg border overflow-hidden"
-            >
+                key={index}
+                className={`rounded-lg overflow-hidden ${
+                  openTopicIndex === index
+                    ? "border border-t-0 border-4 border-solid border-base-300"
+                    : ""
+                } bg-base-100`}
+              >
+
               <ProgressBar
                 total={topic.videos?.length ?? 0}
                 completed={completedTopics}
               />
               <div
                 onClick={() => toggleTopic(index)}
-                className="p-3 cursor-pointer bg-base-300 transition-colors"
+                className={`p-3 cursor-pointer hover:bg-base-300 transition-colors ${
+                  openTopicIndex === index ? "bg-base-300" : "bg-base-100"
+                }`}
               >
                 <div className="flex items-start gap-3">
                   <div className="p-2 bg-base-100 rounded-sm">
@@ -170,8 +177,8 @@ const TopicList: React.FC<TopicListProps> = ({
               >
                 <div className="p-3 pt-0">
                   {topic.videos && topic.videos.length > 0 ? (
-                    <div className="mt-3 border-t dark:border-cardsBorder pt-3">
-                      <h5 className="text-sm font-medium text-base-content mb-2">
+                    <div className="dark:border-cardsBorder pt-3">
+                      <h5 className="text-sm font-large font-bold my-2 text-base-content ml-2">
                         Lecture Videos
                       </h5>
                       <VideoAccordion

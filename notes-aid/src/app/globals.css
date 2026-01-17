@@ -4,11 +4,42 @@ layer(base);
 @plugin "daisyui" {
   themes: all;
 }
-
 @custom-variant dark (&:is(.dark *));
 
-
-
+@plugin "daisyui/theme" {
+  name: "ShadCN";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(5% 0 0);
+  --color-base-200: oklch(0% 0 0);
+  --color-base-300: #27272a;
+  --color-base-content: oklch(100% 0 0);
+  --color-primary: oklch(100% 0 0);
+  --color-primary-content: oklch(0% 0 0);
+  --color-secondary: oklch(100% 0 0);
+  --color-secondary-content: oklch(0% 0 0);
+  --color-accent: oklch(100% 0 0);
+  --color-accent-content: oklch(0% 0 0);
+  --color-neutral: oklch(20% 0 0);
+  --color-neutral-content: oklch(100% 0 0);
+  --color-info: oklch(100% 0 0);
+  --color-info-content: oklch(0% 0 0);
+  --color-success: #24db6f;
+  --color-success-content: oklch(84% 0.238 128.85);
+  --color-warning: oklch(28% 0.066 53.813);
+  --color-warning-content: oklch(85% 0.199 91.936);
+  --color-error: oklch(25% 0.092 26.042);
+  --color-error-content: oklch(70% 0.191 22.216);
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.21875rem;
+  --border: 0.5px;
+  --depth: 0;
+  --noise: 0;
+  }
 .text-gray {
   color: #C2C0B6;
 }
